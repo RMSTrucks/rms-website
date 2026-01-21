@@ -49,9 +49,9 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="na-grid">
         <div class="na-content">
-          <span class="na-label">For New Authorities</span>
-          <h2>Just Got Your DOT?<br/><span class="gold">We've Got You.</span></h2>
-          <p>Getting insurance for a new authority is different. Most agents don't explain the process—they just send you a bill. We walk you through every coverage, every requirement, every step.</p>
+          <span class="na-label">Covered</span>
+          <h2>Just Got Your DOT?<br/><span class="accent">We've Got You.</span></h2>
+          <p>Getting insurance setup and your filings requires a special touch. Don't get lost in the process. You deserve explanations as well as a filing. Better yet, let us handle it for you.</p>
           <a href="/new-authorities" class="btn-outline">Learn What You Actually Need →</a>
         </div>
       </div>
@@ -553,27 +553,31 @@ import Layout from '../layouts/Layout.astro';
 
   .na-label {
     display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--forest);
-    opacity: 0.7;
+    letter-spacing: 0.15em;
+    color: var(--forest-deep);
     margin-bottom: 1rem;
   }
 
   .new-authority h2 {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--forest-deep);
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+  }
+
+  .new-authority .accent {
     color: var(--forest);
-    margin-bottom: 1rem;
   }
 
   .new-authority p {
-    color: var(--forest);
-    opacity: 0.85;
+    color: var(--forest-deep);
+    font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 1.5rem;
-    max-width: 600px;
+    max-width: 550px;
   }
 
   .btn-outline {
