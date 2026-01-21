@@ -51,8 +51,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="na-content">
           <span class="na-label">New Authorities</span>
           <h2>Just Got Your DOT?<br/><span class="accent">We Got You Covered.</span></h2>
-          <p>Getting insurance setup and your filings requires a special touch. Don't get lost in the process. You deserve explanations as well as a filing. Better yet, let us handle it for you.</p>
-          <a href="/new-authorities" class="btn-outline">Learn What You Actually Need →</a>
+          <p>Starting your insurance policy and getting the federal filings done right requires a special touch. Don't get lost in the process. Let us help today!</p>
+          <a href="tel:208-800-0640" class="na-cta">208-800-0640</a>
+          <p class="na-tagline">Licensed experts <span class="accent">standing by</span></p>
         </div>
       </div>
     </div>
@@ -578,6 +579,27 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.7;
     margin-bottom: 1.5rem;
     max-width: 550px;
+  }
+
+  .na-cta {
+    display: inline-block;
+    font-family: 'Crimson Pro', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--forest-deep);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .na-cta:hover {
+    color: var(--forest);
+  }
+
+  .na-tagline {
+    font-size: 0.9rem;
+    color: var(--forest-deep);
+    margin-bottom: 0;
   }
 
   .btn-outline {
