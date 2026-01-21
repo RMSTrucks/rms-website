@@ -12,6 +12,11 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="container hero-content">
+      <div class="new-venture-badge">
+        <span class="pulse-dot"></span>
+        <span>New Venture / New DOT Specialists</span>
+      </div>
+
       <h1>
         <span class="line">Finally,</span>
         <span class="line">someone on</span>
@@ -20,7 +25,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="hero-bottom">
         <p class="hero-tagline">
-          Trucking insurance from experts<br/>who actually explain things.
+          Trucking insurance from experts who actually explain things.
         </p>
 
         <div class="hero-cta">
@@ -32,11 +37,11 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-value">2,000+</span>
+            <span class="stat-value">100+</span>
             <span class="stat-name">Truckers</span>
           </div>
           <div class="stat">
-            <span class="stat-value">$14M+</span>
+            <span class="stat-value">$4.4M</span>
             <span class="stat-name">Placed</span>
           </div>
           <div class="stat">
@@ -550,7 +555,8 @@ import Layout from '../layouts/Layout.astro';
     min-height: 100vh;
     position: relative;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    padding-top: 2rem;
     padding-bottom: 4rem;
     overflow: hidden;
   }
@@ -592,6 +598,41 @@ import Layout from '../layouts/Layout.astro';
 
   .line { display: block; }
   .gold { color: var(--gold); }
+
+  .new-venture-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(218, 165, 32, 0.15);
+    border: 1px solid rgba(218, 165, 32, 0.4);
+    padding: 8px 16px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--gold);
+  }
+
+  .pulse-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 8px var(--gold);
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 8px var(--gold), 0 0 16px var(--gold);
+    }
+    50% {
+      opacity: 0.6;
+      box-shadow: 0 0 4px var(--gold);
+    }
+  }
 
   .hero-bottom {
     display: grid;
