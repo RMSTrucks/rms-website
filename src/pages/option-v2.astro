@@ -25,27 +25,28 @@ import Layout from '../layouts/Layout.astro';
 
       <p class="hero-tagline">Trucking insurance from experts who actually explain things.</p>
 
-      <div class="hero-cta">
+      <div class="hero-cta-block">
         <a href="tel:208-800-0640" class="btn-primary">
-          <span class="btn-label">Get a Quote</span>
+          <span class="btn-label">Talk to an Expert</span>
           <span class="btn-number">208-800-0640</span>
         </a>
+        <p class="hero-trust">Join 100+ owner-operators who got coverage they actually understand.</p>
       </div>
 
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-value">100+</span>
-          <span class="stat-label">Truckers</span>
+      <div class="hero-proof">
+        <div class="proof-item">
+          <span class="proof-value">100+</span>
+          <span class="proof-label">Truckers Helped</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-value">$4.4M</span>
-          <span class="stat-label">Placed</span>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <span class="proof-value">$4.4M</span>
+          <span class="proof-label">Coverage Placed</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-value">2022</span>
-          <span class="stat-label">Est.</span>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <span class="proof-value">Same Day</span>
+          <span class="proof-label">Certificates</span>
         </div>
       </div>
     </div>
@@ -510,6 +511,10 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.5;
   }
 
+  .hero-cta-block {
+    margin-bottom: 4rem;
+  }
+
   .btn-primary {
     display: inline-flex;
     flex-direction: column;
@@ -520,7 +525,7 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 4px;
     text-decoration: none;
     transition: all 0.3s ease;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
   }
 
   .btn-primary:hover {
@@ -543,36 +548,46 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 600;
   }
 
-  .hero-stats {
+  .hero-trust {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin: 0;
+  }
+
+  .hero-proof {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 2.5rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
   }
 
-  .stat {
+  .proof-item {
     text-align: center;
   }
 
-  .stat-value {
+  .proof-value {
     display: block;
     font-family: 'Crimson Pro', serif;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--gold);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
-  .stat-label {
-    font-size: 0.7rem;
+  .proof-label {
+    font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     opacity: 0.5;
   }
 
-  .stat-divider {
+  .proof-divider {
     width: 1px;
-    height: 40px;
+    height: 35px;
     background: rgba(255,255,255,0.15);
   }
 
