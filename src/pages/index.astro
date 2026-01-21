@@ -3,120 +3,743 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Trucking Insurance | RMS Insurance - We Actually Get It">
+
   <!-- Hero Section -->
-  <section style="background: linear-gradient(135deg, #0066cc 0%, #004499 100%); color: white; padding: 5rem 0;">
-    <div class="container" style="text-align: center;">
-      <h1 style="font-size: 2.5rem; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-        Trucking Insurance from People Who Actually Get It
-      </h1>
-      <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
-        You're running a business from behind the wheel. Insurance shouldn't be another headache.
-      </p>
-      <a href="tel:208-800-0640" class="btn" style="font-size: 1.25rem; padding: 16px 32px; background: white; color: #0066cc;">
-        Get My Quote: 208-800-0640
-      </a>
+  <section class="hero">
+    <!-- Background elements -->
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-lines"></div>
+      <div class="hero-glow"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-badge animate-fade-in-up">
+          <span class="badge-dot"></span>
+          Serving Owner-Operators Nationwide
+        </div>
+
+        <h1 class="animate-fade-in-up delay-1">
+          TRUCKING INSURANCE<br/>
+          <span class="hero-highlight">FROM PEOPLE WHO</span><br/>
+          <span class="hero-accent">ACTUALLY GET IT</span>
+        </h1>
+
+        <p class="hero-sub animate-fade-in-up delay-2">
+          You're running a business from behind the wheel.<br/>
+          Insurance shouldn't be another headache.
+        </p>
+
+        <div class="hero-cta animate-fade-in-up delay-3">
+          <a href="tel:208-800-0640" class="btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            Get My Quote: 208-800-0640
+          </a>
+          <a href="/new-authorities" class="btn btn-outline">
+            New Authority? Start Here
+          </a>
+        </div>
+      </div>
+
+      <!-- Stats floating card -->
+      <div class="hero-stats animate-fade-in-up delay-4">
+        <div class="stat-item">
+          <div class="stat-number">2,000+</div>
+          <div class="stat-label">Truckers Helped</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">$14M+</div>
+          <div class="stat-label">Coverage Placed</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">2022</div>
+          <div class="stat-label">Est.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator animate-fade-in delay-5">
+      <div class="scroll-line"></div>
     </div>
   </section>
 
   <!-- Value Props -->
-  <section style="padding: 4rem 0;">
+  <section class="value-section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div style="text-align: center; padding: 2rem;">
-          <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #0066cc;">Real Answers, Not Scripts</h3>
-          <p>You have questions. We have answers. Not "let me check with my manager" - actual knowledge about trucking insurance from people who've done this for years.</p>
-        </div>
-        <div style="text-align: center; padding: 2rem;">
-          <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #0066cc;">Fast When You Need It</h3>
-          <p>Certificate needed at 6am before a load? We get it. Speed matters in this business.</p>
-        </div>
-        <div style="text-align: center; padding: 2rem;">
-          <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #0066cc;">A Partner, Not Just a Vendor</h3>
-          <p>We're not here to sell you a policy and disappear. We help owner-operators run their business better - insurance is just part of it.</p>
-        </div>
+      <div class="section-header">
+        <span class="section-tag">WHY RMS</span>
+        <h2>NOT YOUR TYPICAL<br/><span class="text-orange">INSURANCE AGENCY</span></h2>
       </div>
-    </div>
-  </section>
 
-  <!-- Trust Section -->
-  <section style="background: #f8f9fa; padding: 3rem 0;">
-    <div class="container">
-      <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: center;">
-        <div>
-          <div style="font-size: 2rem; font-weight: 700; color: #0066cc;">Since 2022</div>
-          <div style="color: #666;">Serving Truckers</div>
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3>Real Answers, Not Scripts</h3>
+          <p>You have questions. We have answers. Not "let me check with my manager" &mdash; actual knowledge about trucking insurance from people who've done this for years.</p>
+          <div class="value-accent"></div>
         </div>
-        <div>
-          <div style="font-size: 2rem; font-weight: 700; color: #0066cc;">2,000+</div>
-          <div style="color: #666;">Truckers Helped</div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          <h3>Fast When You Need It</h3>
+          <p>Certificate needed at 6am before a load? We get it. Speed matters in this business.</p>
+          <div class="value-accent"></div>
         </div>
-        <div>
-          <div style="font-size: 2rem; font-weight: 700; color: #0066cc;">$14M+</div>
-          <div style="color: #666;">Coverage Placed</div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>A Partner, Not Just a Vendor</h3>
+          <p>We're not here to sell you a policy and disappear. We help owner-operators run their business better &mdash; insurance is just part of it.</p>
+          <div class="value-accent"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section style="padding: 4rem 0;">
+  <section class="process-section">
     <div class="container">
-      <h2 style="text-align: center; font-size: 2rem; margin-bottom: 3rem;">How It Works</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-        <div style="padding: 1.5rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: #0066cc; margin-bottom: 0.5rem;">1</div>
-          <h3 style="margin-bottom: 0.5rem;">Tell Us About Your Operation</h3>
-          <p style="color: #666;">Quick call or form. We ask the right questions so you don't have to guess what we need.</p>
+      <div class="section-header">
+        <span class="section-tag">THE PROCESS</span>
+        <h2>THREE STEPS TO<br/><span class="text-orange">STAYING COVERED</span></h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Tell Us About Your Operation</h3>
+            <p>Quick call or form. We ask the right questions so you don't have to guess what we need.</p>
+          </div>
+          <div class="step-line"></div>
         </div>
-        <div style="padding: 1.5rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: #0066cc; margin-bottom: 0.5rem;">2</div>
-          <h3 style="margin-bottom: 0.5rem;">Get Options That Fit</h3>
-          <p style="color: #666;">We shop the same carriers everyone uses, but we explain what you're actually buying - no insurance jargon.</p>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Get Options That Fit</h3>
+            <p>We shop the same carriers everyone uses, but we explain what you're actually buying &mdash; no insurance jargon.</p>
+          </div>
+          <div class="step-line"></div>
         </div>
-        <div style="padding: 1.5rem;">
-          <div style="font-size: 2rem; font-weight: 700; color: #0066cc; margin-bottom: 0.5rem;">3</div>
-          <h3 style="margin-bottom: 0.5rem;">Stay Covered, Stay Moving</h3>
-          <p style="color: #666;">Certs when you need them. Answers when you have questions. We're here.</p>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Stay Covered, Stay Moving</h3>
+            <p>Certs when you need them. Answers when you have questions. We're here.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section style="background: #f8f9fa; padding: 4rem 0;">
-    <div class="container" style="max-width: 800px;">
-      <h2 style="text-align: center; font-size: 2rem; margin-bottom: 3rem;">Common Questions</h2>
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="faq-header">
+          <span class="section-tag">FAQ</span>
+          <h2>COMMON<br/><span class="text-orange">QUESTIONS</span></h2>
+          <p class="faq-intro">Straight answers. No runaround.</p>
+        </div>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="margin-bottom: 0.5rem;">Do I really need all this coverage?</h3>
-        <p style="color: #666;">Some coverage is required by law (liability, cargo for certain loads). Some is smart protection. We'll tell you the difference and let you decide.</p>
-      </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>
+              <span>Do I really need all this coverage?</span>
+              <div class="faq-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </div>
+            </summary>
+            <div class="faq-answer">
+              <p>Some coverage is required by law (liability, cargo for certain loads). Some is smart protection. We'll tell you the difference and let you decide.</p>
+            </div>
+          </details>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="margin-bottom: 0.5rem;">How fast can I get a quote?</h3>
-        <p style="color: #666;">Most quotes same day. If you have your info ready, often within a couple hours.</p>
-      </div>
+          <details class="faq-item">
+            <summary>
+              <span>How fast can I get a quote?</span>
+              <div class="faq-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </div>
+            </summary>
+            <div class="faq-answer">
+              <p>Most quotes same day. If you have your info ready, often within a couple hours.</p>
+            </div>
+          </details>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="margin-bottom: 0.5rem;">Is your price lower than other agencies?</h3>
-        <p style="color: #666;">Honest answer: probably not. We all use the same carriers for new authorities. The price is basically the same everywhere. The difference is who picks up when you call, and whether they actually know the answer. <a href="/blog/pricing-truth">Read more about how trucking insurance pricing works.</a></p>
-      </div>
+          <details class="faq-item">
+            <summary>
+              <span>Is your price lower than other agencies?</span>
+              <div class="faq-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </div>
+            </summary>
+            <div class="faq-answer">
+              <p>Honest answer: probably not. We all use the same carriers for new authorities. The price is basically the same everywhere. The difference is who picks up when you call, and whether they actually know the answer. <a href="/blog/pricing-truth">Read more about how trucking insurance pricing works.</a></p>
+            </div>
+          </details>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="margin-bottom: 0.5rem;">I just got my authority. Where do I start?</h3>
-        <p style="color: #666;">Right here. <a href="/new-authorities">See our guide for new authorities.</a></p>
+          <details class="faq-item">
+            <summary>
+              <span>I just got my authority. Where do I start?</span>
+              <div class="faq-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </div>
+            </summary>
+            <div class="faq-answer">
+              <p>Right here. <a href="/new-authorities">See our guide for new authorities.</a></p>
+            </div>
+          </details>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section style="padding: 4rem 0; text-align: center;">
-    <div class="container">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to talk?</h2>
-      <p style="font-size: 1.25rem; margin-bottom: 2rem; color: #666;">Call us - we answer.</p>
-      <a href="tel:208-800-0640" class="btn" style="font-size: 1.5rem; padding: 20px 40px;">
+  <!-- Final CTA -->
+  <section class="cta-section">
+    <div class="cta-bg">
+      <div class="cta-gradient"></div>
+    </div>
+    <div class="container cta-content">
+      <h2>READY TO TALK?</h2>
+      <p>Call us. We answer.</p>
+      <a href="tel:208-800-0640" class="btn btn-large">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
         208-800-0640
       </a>
     </div>
   </section>
+
 </Layout>
+
+<style>
+  /* ========================================
+     HERO SECTION
+     ======================================== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 2rem 0;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f1f33 50%, #1a1a2e 100%);
+  }
+
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(ellipse, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+    filter: blur(60px);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .hero-text {
+    max-width: 800px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 107, 53, 0.15);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-highlight {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .hero-accent {
+    color: var(--orange);
+  }
+
+  .hero-sub {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    opacity: 0.8;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2.5rem;
+    border-radius: 8px;
+    margin-top: 4rem;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.02em;
+    color: var(--orange);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .scroll-line {
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--orange), transparent);
+    animation: scrollPulse 2s infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    50% { opacity: 0.5; transform: scaleY(0.8); }
+  }
+
+  /* ========================================
+     VALUE SECTION
+     ======================================== */
+  .value-section {
+    padding: 8rem 0;
+    background: var(--gray-100);
+    position: relative;
+  }
+
+  .section-header {
+    margin-bottom: 4rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    color: var(--orange);
+    margin-bottom: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--navy);
+  }
+
+  .text-orange {
+    color: var(--orange);
+  }
+
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .value-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--gray-200);
+  }
+
+  .value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(30, 58, 95, 0.1);
+  }
+
+  .value-card:hover .value-accent {
+    transform: scaleX(1);
+  }
+
+  .value-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .value-card p {
+    color: var(--gray-600);
+    line-height: 1.7;
+  }
+
+  .value-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  /* ========================================
+     PROCESS SECTION
+     ======================================== */
+  .process-section {
+    padding: 8rem 0;
+    background: white;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .process-step {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .step-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: var(--gray-100);
+    line-height: 1;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .process-step:hover .step-number {
+    color: var(--orange);
+  }
+
+  .step-content h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .step-content p {
+    color: var(--gray-600);
+    line-height: 1.7;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .step-line {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  .process-step:last-child .step-line {
+    display: none;
+  }
+
+  /* ========================================
+     FAQ SECTION
+     ======================================== */
+  .faq-section {
+    padding: 8rem 0;
+    background: var(--navy);
+    color: white;
+  }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .faq-header h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .faq-intro {
+    opacity: 0.7;
+    font-size: 1.1rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .faq-item {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.1rem;
+    list-style: none;
+    transition: background 0.3s ease;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 2rem 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+  }
+
+  .faq-answer a {
+    color: var(--orange);
+  }
+
+  /* ========================================
+     CTA SECTION
+     ======================================== */
+  .cta-section {
+    position: relative;
+    padding: 8rem 0;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .cta-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--orange) 0%, #e85a28 100%);
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    margin-bottom: 1rem;
+  }
+
+  .cta-content p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-large {
+    font-size: 1.5rem;
+    padding: 20px 48px;
+    background: white;
+    color: var(--orange);
+  }
+
+  .btn-large:hover {
+    background: var(--navy);
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 968px) {
+    .process-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .step-line {
+      display: none;
+    }
+
+    .faq-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .hero-stats {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .stat-divider {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 4rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .hero-cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .value-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
