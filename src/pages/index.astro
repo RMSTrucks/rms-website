@@ -8,6 +8,7 @@ import Layout from '../layouts/Layout.astro';
   <section class="hero">
     <div class="hero-bg">
       <div class="hero-gradient"></div>
+      <div class="hero-image"></div>
       <div class="hero-grid-pattern"></div>
     </div>
 
@@ -565,6 +566,20 @@ import Layout from '../layouts/Layout.astro';
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, #0D2118 0%, #1B4332 100%);
+  }
+
+  .hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    -webkit-mask-image: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%);
+    mask-image: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%);
   }
 
   .hero-grid-pattern {
