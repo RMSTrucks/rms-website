@@ -15,18 +15,20 @@ const { title, description = "Commercial trucking insurance from people who unde
     <meta name="description" content={description} />
     <title>{title}</title>
 
-    <!-- Fonts: Bebas Neue for headlines, Plus Jakarta Sans for body -->
+    <!-- Fonts: Crimson Pro for headlines/wordmark, DM Sans for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style is:global>
       :root {
-        --navy: #1e3a5f;
-        --navy-deep: #0f1f33;
-        --orange: #ff6b35;
-        --orange-hover: #e85a28;
+        --forest: #1B4332;
+        --forest-deep: #0D2118;
+        --gold: #DAA520;
+        --gold-hover: #C49B1A;
         --white: #ffffff;
+        --bg-light: #FAFAFA;
+        --text: #2D3436;
         --gray-100: #f4f6f8;
         --gray-200: #e2e6eb;
         --gray-600: #5a6675;
@@ -44,28 +46,29 @@ const { title, description = "Commercial trucking insurance from people who unde
       }
 
       body {
-        font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        font-family: 'DM Sans', -apple-system, sans-serif;
         line-height: 1.6;
-        color: var(--gray-800);
+        color: var(--text);
         background: var(--white);
         overflow-x: hidden;
       }
 
       /* Typography */
       h1, h2, h3, .headline {
-        font-family: 'Bebas Neue', Impact, sans-serif;
-        letter-spacing: 0.02em;
-        line-height: 1.1;
+        font-family: 'Crimson Pro', Georgia, serif;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        line-height: 1.15;
       }
 
       a {
-        color: var(--orange);
+        color: var(--gold);
         text-decoration: none;
         transition: color 0.2s ease;
       }
 
       a:hover {
-        color: var(--orange-hover);
+        color: var(--gold-hover);
       }
 
       .container {
@@ -79,7 +82,7 @@ const { title, description = "Commercial trucking insurance from people who unde
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: var(--orange);
+        background: var(--gold);
         color: white;
         padding: 16px 32px;
         border-radius: 4px;
@@ -103,9 +106,9 @@ const { title, description = "Commercial trucking insurance from people who unde
       }
 
       .btn:hover {
-        background: var(--orange-hover);
+        background: var(--forest);
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+        box-shadow: 0 8px 24px rgba(27, 67, 50, 0.3);
         text-decoration: none;
         color: white;
       }
@@ -122,7 +125,7 @@ const { title, description = "Commercial trucking insurance from people who unde
 
       .btn-outline:hover {
         background: var(--white);
-        color: var(--navy);
+        color: var(--forest);
       }
 
       /* Animations */
@@ -204,38 +207,45 @@ const { title, description = "Commercial trucking insurance from people who unde
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(30, 58, 95, 0.95);
+      background: rgba(27, 67, 50, 0.97);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.1);
       padding: 1rem 0;
     ">
       <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
         <a href="/" style="
-          font-family: 'Bebas Neue', sans-serif;
-          font-size: 1.8rem;
           color: var(--white);
-          letter-spacing: 0.05em;
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 12px;
         ">
+          <!-- Oak Crown Mark -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 120 150" style="flex-shrink: 0;">
+            <circle cx="60" cy="12" r="10" fill="#DAA520"/>
+            <rect x="54" y="28" width="12" height="118" fill="#FFFFFF"/>
+            <rect x="38" y="32" width="44" height="10" fill="#FFFFFF"/>
+            <rect x="24" y="52" width="72" height="10" fill="#FFFFFF"/>
+            <rect x="12" y="72" width="96" height="10" fill="#FFFFFF"/>
+            <rect x="24" y="92" width="72" height="10" fill="#FFFFFF"/>
+            <rect x="38" y="112" width="44" height="10" fill="#FFFFFF"/>
+          </svg>
           <span style="
-            background: var(--orange);
-            padding: 4px 10px;
-            border-radius: 2px;
-          ">RMS</span>
-          <span style="opacity: 0.9;">INSURANCE</span>
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+          ">RMS Insurance</span>
         </a>
         <a href="tel:208-800-0640" style="
-          font-family: 'Bebas Neue', sans-serif;
-          font-size: 1.5rem;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 1.1rem;
+          font-weight: 600;
           color: var(--white);
-          letter-spacing: 0.05em;
           display: flex;
           align-items: center;
           gap: 8px;
           transition: all 0.3s ease;
-        " onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--white)'">
+        " onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--white)'">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
           </svg>
@@ -250,50 +260,61 @@ const { title, description = "Commercial trucking insurance from people who unde
 
     <!-- Footer -->
     <footer style="
-      background: var(--navy-deep);
+      background: var(--forest-deep);
       color: var(--white);
       padding: 5rem 0 3rem;
       position: relative;
       overflow: hidden;
     ">
-      <!-- Diagonal accent -->
+      <!-- Gold accent bar -->
       <div style="
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        height: 6px;
-        background: linear-gradient(90deg, var(--orange), var(--orange) 30%, transparent 30%);
+        height: 4px;
+        background: linear-gradient(90deg, var(--gold), var(--gold) 30%, transparent 30%);
       "></div>
 
       <div class="container">
         <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem;" class="footer-grid">
           <div>
             <div style="
-              font-family: 'Bebas Neue', sans-serif;
-              font-size: 2rem;
-              letter-spacing: 0.05em;
-              margin-bottom: 1rem;
               display: flex;
               align-items: center;
-              gap: 10px;
+              gap: 12px;
+              margin-bottom: 1.5rem;
             ">
-              <span style="background: var(--orange); padding: 4px 10px; border-radius: 2px;">RMS</span>
-              <span>INSURANCE</span>
+              <!-- Oak Crown Mark -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 120 150">
+                <circle cx="60" cy="12" r="10" fill="#DAA520"/>
+                <rect x="54" y="28" width="12" height="118" fill="#FFFFFF"/>
+                <rect x="38" y="32" width="44" height="10" fill="#FFFFFF"/>
+                <rect x="24" y="52" width="72" height="10" fill="#FFFFFF"/>
+                <rect x="12" y="72" width="96" height="10" fill="#FFFFFF"/>
+                <rect x="24" y="92" width="72" height="10" fill="#FFFFFF"/>
+                <rect x="38" y="112" width="44" height="10" fill="#FFFFFF"/>
+              </svg>
+              <span style="
+                font-family: 'Crimson Pro', Georgia, serif;
+                font-size: 1.6rem;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+              ">RMS Insurance</span>
             </div>
-            <p style="color: rgba(255,255,255,0.7); max-width: 300px; line-height: 1.8;">
-              Trucking insurance from people who actually understand the business. Real answers. Fast service. Always.
+            <p style="color: rgba(255,255,255,0.7); max-width: 320px; line-height: 1.8;">
+              Finally, someone on your side. Trucking insurance from experts who actually explain things.
             </p>
           </div>
 
           <div>
             <h4 style="
-              font-family: 'Bebas Neue', sans-serif;
-              font-size: 1.2rem;
-              letter-spacing: 0.1em;
+              font-family: 'Crimson Pro', Georgia, serif;
+              font-size: 1.1rem;
+              font-weight: 600;
               margin-bottom: 1.5rem;
-              color: var(--orange);
-            ">QUICK LINKS</h4>
+              color: var(--gold);
+            ">Quick Links</h4>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
               <li><a href="/new-authorities" style="color: rgba(255,255,255,0.7); transition: color 0.2s;">New Authorities</a></li>
               <li><a href="/blog/pricing-truth" style="color: rgba(255,255,255,0.7); transition: color 0.2s;">Pricing Truth</a></li>
@@ -302,15 +323,16 @@ const { title, description = "Commercial trucking insurance from people who unde
 
           <div>
             <h4 style="
-              font-family: 'Bebas Neue', sans-serif;
-              font-size: 1.2rem;
-              letter-spacing: 0.1em;
+              font-family: 'Crimson Pro', Georgia, serif;
+              font-size: 1.1rem;
+              font-weight: 600;
               margin-bottom: 1.5rem;
-              color: var(--orange);
-            ">CONTACT</h4>
+              color: var(--gold);
+            ">Contact</h4>
             <a href="tel:208-800-0640" style="
-              font-family: 'Bebas Neue', sans-serif;
-              font-size: 1.8rem;
+              font-family: 'Crimson Pro', Georgia, serif;
+              font-size: 1.5rem;
+              font-weight: 600;
               color: var(--white);
               display: block;
               margin-bottom: 0.5rem;
