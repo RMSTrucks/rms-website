@@ -8,45 +8,37 @@ import Layout from '../layouts/Layout.astro';
   <section class="hero">
     <div class="hero-bg">
       <div class="hero-gradient"></div>
-      <div class="hero-truck"></div>
     </div>
 
     <div class="container hero-content">
       <div class="new-venture-badge">
-        <span class="pulse-dot"></span>
-        <span>New Venture / New DOT Specialists</span>
+        <span class="badge-icon">&#9679;</span>
+        <span>New Venture & New DOT Specialists</span>
       </div>
 
-      <h1>
-        <span class="line">Finally,</span>
-        <span class="line">someone on</span>
-        <span class="line"><span class="gold">your side.</span></span>
-      </h1>
+      <h1>Trucking insurance<br/>that actually <span class="gold">makes sense.</span></h1>
 
-      <p class="hero-tagline">Trucking insurance from experts who actually explain things.</p>
+      <p class="hero-sub">The industry profits from your confusion. We don't.</p>
 
-      <div class="hero-cta-block">
-        <a href="tel:208-800-0640" class="btn-primary">
-          <span class="btn-label">Talk to an Expert</span>
-          <span class="btn-number">208-800-0640</span>
-        </a>
-        <p class="hero-trust">Join 100+ owner-operators who got coverage they actually understand.</p>
-      </div>
+      <a href="tel:208-800-0640" class="hero-cta">
+        <span class="cta-label">Talk to an Expert</span>
+        <span class="cta-number">208-800-0640</span>
+      </a>
 
-      <div class="hero-proof">
-        <div class="proof-item">
-          <span class="proof-value">100+</span>
-          <span class="proof-label">Truckers Helped</span>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <span class="trust-num">100+</span>
+          <span class="trust-text">Truckers</span>
         </div>
-        <div class="proof-divider"></div>
-        <div class="proof-item">
-          <span class="proof-value">$4.4M</span>
-          <span class="proof-label">Coverage Placed</span>
+        <span class="trust-sep"></span>
+        <div class="trust-item">
+          <span class="trust-num">$4.4M</span>
+          <span class="trust-text">Placed</span>
         </div>
-        <div class="proof-divider"></div>
-        <div class="proof-item">
-          <span class="proof-value">Same Day</span>
-          <span class="proof-label">Certificates</span>
+        <span class="trust-sep"></span>
+        <div class="trust-item">
+          <span class="trust-num">Same Day</span>
+          <span class="trust-text">Certificates</span>
         </div>
       </div>
     </div>
@@ -412,7 +404,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ========================================
-     HERO
+     HERO - Clean, minimal, conversion-focused
      ======================================== */
   .hero {
     min-height: 100vh;
@@ -422,7 +414,7 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    padding: 6rem 0;
+    padding: 6rem 2rem;
   }
 
   .hero-bg {
@@ -434,161 +426,121 @@ import Layout from '../layouts/Layout.astro';
   .hero-gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, var(--forest-deep) 0%, var(--forest) 100%);
-  }
-
-  .hero-truck {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1400&q=80');
-    background-size: cover;
-    background-position: center right;
-    opacity: 0.2;
-    -webkit-mask-image: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
-    mask-image: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+    background: var(--forest-deep);
   }
 
   .hero-content {
     position: relative;
     z-index: 1;
     color: var(--white);
-    padding: 2rem;
-    max-width: 900px;
+    max-width: 800px;
   }
 
   .new-venture-badge {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    background: linear-gradient(135deg, rgba(218,165,32,0.15) 0%, rgba(218,165,32,0.05) 100%);
-    border: 1px solid rgba(218,165,32,0.6);
-    padding: 14px 28px;
-    border-radius: 50px;
-    margin-bottom: 4rem;
-    font-size: 0.8rem;
+    gap: 10px;
+    background: rgba(218,165,32,0.1);
+    border: 1px solid rgba(218,165,32,0.3);
+    padding: 10px 20px;
+    border-radius: 100px;
+    margin-bottom: 3rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     color: var(--gold);
-    box-shadow: 0 0 40px rgba(218,165,32,0.2);
   }
 
-  .pulse-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--gold);
-    border-radius: 50%;
-    box-shadow: 0 0 8px var(--gold);
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--gold), 0 0 16px var(--gold); }
-    50% { opacity: 0.4; box-shadow: 0 0 4px var(--gold); }
+  .badge-icon {
+    font-size: 6px;
+    opacity: 0.8;
   }
 
   .hero h1 {
-    font-size: clamp(3.5rem, 10vw, 7rem);
-    line-height: 1.05;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    line-height: 1.1;
     letter-spacing: -0.02em;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
   }
 
-  .hero h1 .line {
-    display: block;
-  }
-
-  .hero-tagline {
-    font-size: 1.35rem;
-    opacity: 0.8;
-    margin-bottom: 3.5rem;
-    max-width: 550px;
+  .hero-sub {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    opacity: 0.7;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.5;
   }
 
-  .hero-cta-block {
-    margin-bottom: 4rem;
-  }
-
-  .btn-primary {
+  .hero-cta {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     background: var(--gold);
-    color: var(--forest);
-    padding: 1.5rem 3rem;
+    color: var(--forest-deep);
+    padding: 1.25rem 3.5rem;
     border-radius: 4px;
     text-decoration: none;
-    transition: all 0.3s ease;
-    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+    margin-bottom: 3rem;
   }
 
-  .btn-primary:hover {
+  .hero-cta:hover {
     background: var(--white);
     transform: translateY(-2px);
   }
 
-  .btn-label {
-    font-size: 0.7rem;
-    font-weight: 600;
+  .cta-label {
+    font-size: 0.65rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     opacity: 0.7;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
 
-  .btn-number {
+  .cta-number {
     font-family: 'Crimson Pro', serif;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 600;
+    letter-spacing: 0.02em;
   }
 
   .hero-trust {
-    font-size: 0.9rem;
-    opacity: 0.6;
-    margin: 0;
-  }
-
-  .hero-proof {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2.5rem;
-    padding: 1.5rem 2rem;
-    background: rgba(255,255,255,0.05);
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.1);
+    gap: 2rem;
   }
 
-  .proof-item {
-    text-align: center;
+  .trust-item {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
   }
 
-  .proof-value {
-    display: block;
+  .trust-num {
     font-family: 'Crimson Pro', serif;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--gold);
-    margin-bottom: 2px;
   }
 
-  .proof-label {
-    font-size: 0.65rem;
+  .trust-text {
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     opacity: 0.5;
   }
 
-  .proof-divider {
-    width: 1px;
-    height: 35px;
-    background: rgba(255,255,255,0.15);
+  .trust-sep {
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
   }
 
   /* ========================================
@@ -1226,16 +1178,33 @@ import Layout from '../layouts/Layout.astro';
 
   @media (max-width: 640px) {
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
     }
 
     .new-venture-badge {
-      font-size: 0.7rem;
-      padding: 10px 16px;
+      font-size: 0.65rem;
+      padding: 8px 14px;
     }
 
-    .hero-stats {
-      flex-wrap: wrap;
+    .hero-trust {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .trust-sep {
+      display: none;
+    }
+
+    .hero-cta {
+      padding: 1rem 2.5rem;
+    }
+
+    .cta-number {
+      font-size: 1.5rem;
     }
   }
 </style>
