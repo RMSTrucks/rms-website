@@ -20,9 +20,8 @@ import Layout from '../layouts/Layout.astro';
           Serving Owner-Operators Nationwide
         </div>
 
-        <h1 class="animate-fade-in-up delay-1">
-          Finally, someone<br/>
-          <span class="hero-accent">on your side.</span>
+        <h1 class="hero-headline">
+          <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
         </h1>
 
         <p class="hero-sub animate-fade-in-up delay-2">
@@ -322,14 +321,32 @@ import Layout from '../layouts/Layout.astro';
     animation: pulse 2s infinite;
   }
 
-  .hero h1 {
+  .hero-headline {
     font-size: clamp(3rem, 8vw, 5rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
+    min-height: 2.4em;
   }
 
-  .hero-accent {
+  .typewriter {
+    display: inline;
+  }
+
+  .typewriter .gold {
     color: var(--gold);
+  }
+
+  .cursor {
+    display: inline-block;
+    color: var(--gold);
+    font-weight: 300;
+    animation: blink 0.8s infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
 
   .hero-sub {
@@ -737,3 +754,72 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 </style>
+
+<script>
+  // Typewriter effect
+  const phrases = [
+    { text: "Finally, someone", gold: false },
+    { text: "\n", gold: false },
+    { text: "on your side.", gold: true }
+  ];
+
+  const typewriter = document.getElementById('typewriter');
+  const cursor = document.querySelector('.cursor');
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let isPaused = false;
+
+  function type() {
+    if (isPaused) return;
+
+    const currentPhrase = phrases[phraseIndex];
+
+    if (!isDeleting && charIndex <= currentPhrase.text.length) {
+      // Typing
+      const char = currentPhrase.text.charAt(charIndex);
+
+      if (char === '\n') {
+        typewriter.innerHTML += '<br/>';
+      } else {
+        if (currentPhrase.gold) {
+          // Check if we need to start a gold span
+          const existingHTML = typewriter.innerHTML;
+          if (!existingHTML.includes('<span class="gold">') || existingHTML.endsWith('</span>')) {
+            typewriter.innerHTML = existingHTML + '<span class="gold">' + char;
+          } else {
+            // Insert before the closing </span>
+            const parts = existingHTML.split('</span>');
+            if (parts.length > 1) {
+              typewriter.innerHTML = existingHTML + char;
+            } else {
+              typewriter.innerHTML = existingHTML.replace(/<span class="gold">([^<]*)$/, '<span class="gold">$1' + char);
+            }
+          }
+        } else {
+          typewriter.innerHTML += char;
+        }
+      }
+
+      charIndex++;
+
+      // Random delay for realistic typing
+      const delay = 50 + Math.random() * 80;
+      setTimeout(type, delay);
+    } else if (!isDeleting && phraseIndex < phrases.length - 1) {
+      // Move to next phrase
+      phraseIndex++;
+      charIndex = 0;
+      setTimeout(type, 100);
+    } else if (!isDeleting && phraseIndex === phrases.length - 1) {
+      // Done typing - close the gold span if open
+      if (!typewriter.innerHTML.endsWith('</span>')) {
+        typewriter.innerHTML += '</span>';
+      }
+      // Keep cursor blinking at the end
+    }
+  }
+
+  // Start after a brief delay
+  setTimeout(type, 800);
+</script>
