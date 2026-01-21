@@ -12,11 +12,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="container hero-content">
-      <div class="new-venture-badge">
-        <span class="pulse-dot"></span>
-        <span>New Venture / New DOT Specialists</span>
-      </div>
-
       <h1>
         <span class="line">Finally,</span>
         <span class="line">someone on</span>
@@ -25,7 +20,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="hero-bottom">
         <p class="hero-tagline">
-          Trucking insurance from experts who actually explain things.
+          Trucking insurance from experts<br/>who actually explain things.
         </p>
 
         <div class="hero-cta">
@@ -37,11 +32,11 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-value">100+</span>
+            <span class="stat-value">2,000+</span>
             <span class="stat-name">Truckers</span>
           </div>
           <div class="stat">
-            <span class="stat-value">$4.4M</span>
+            <span class="stat-value">$14M+</span>
             <span class="stat-name">Placed</span>
           </div>
           <div class="stat">
@@ -555,8 +550,7 @@ import Layout from '../layouts/Layout.astro';
     min-height: 100vh;
     position: relative;
     display: flex;
-    align-items: center;
-    padding-top: 2rem;
+    align-items: flex-end;
     padding-bottom: 4rem;
     overflow: hidden;
   }
@@ -587,10 +581,6 @@ import Layout from '../layouts/Layout.astro';
     z-index: 1;
     width: 100%;
     color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .hero h1 {
@@ -603,58 +593,18 @@ import Layout from '../layouts/Layout.astro';
   .line { display: block; }
   .gold { color: var(--gold); }
 
-  .new-venture-badge {
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: linear-gradient(135deg, rgba(218, 165, 32, 0.25) 0%, rgba(218, 165, 32, 0.1) 100%);
-    border: 1px solid var(--gold);
-    padding: 12px 24px;
-    border-radius: 100px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--gold);
-    box-shadow: 0 0 20px rgba(218, 165, 32, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-  }
-
-  .pulse-dot {
-    width: 12px;
-    height: 12px;
-    background: var(--gold);
-    border-radius: 50%;
-    animation: pulse 1.5s ease-in-out infinite;
-    box-shadow: 0 0 12px var(--gold), 0 0 24px var(--gold);
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-      box-shadow: 0 0 8px var(--gold), 0 0 16px var(--gold);
-    }
-    50% {
-      opacity: 0.6;
-      box-shadow: 0 0 4px var(--gold);
-    }
-  }
-
   .hero-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 4rem;
+    align-items: end;
   }
 
   .hero-tagline {
     font-size: 1.25rem;
     line-height: 1.6;
     opacity: 0.8;
+    max-width: 300px;
   }
 
   .btn-primary {
@@ -694,7 +644,7 @@ import Layout from '../layouts/Layout.astro';
     gap: 2rem;
   }
 
-  .stat { text-align: center; }
+  .stat { text-align: right; }
 
   .stat-value {
     display: block;
