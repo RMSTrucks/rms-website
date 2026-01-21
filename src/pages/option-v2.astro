@@ -97,32 +97,53 @@ import Layout from '../layouts/Layout.astro';
         <div class="coverage-card">
           <span class="coverage-badge required">Required by FMCSA</span>
           <h3>Auto Liability</h3>
-          <p>The coverage that keeps you legal. Protects you when you're at fault in an accident. Federal law requires $750,000 minimum for interstate carriers.</p>
+          <ul>
+            <li>Keeps you legal</li>
+            <li>Protects when you're at fault</li>
+            <li>Federal law requires $750K minimum for interstate</li>
+          </ul>
         </div>
         <div class="coverage-card">
           <span class="coverage-badge">Protect Your Truck</span>
           <h3>Physical Damage</h3>
-          <p>Covers your rig if it's damaged or totaled—collision, fire, theft, vandalism. This is the coverage that lets you sleep at night.</p>
+          <ul>
+            <li>Covers damage or total loss to your rig</li>
+            <li>Collision, fire, theft, vandalism</li>
+            <li>The coverage that lets you sleep at night</li>
+          </ul>
         </div>
         <div class="coverage-card">
           <span class="coverage-badge">Protect What You Haul</span>
           <h3>Cargo Insurance</h3>
-          <p>Covers the freight you're hauling if it's damaged, stolen, or lost. Required by most brokers and shippers.</p>
+          <ul>
+            <li>Covers freight if damaged, stolen, or lost</li>
+            <li>Required by most brokers and shippers</li>
+          </ul>
         </div>
         <div class="coverage-card">
           <span class="coverage-badge">Slip and Fall</span>
           <h3>General Liability</h3>
-          <p>Protects your business when you're not in the truck—loading docks, customer locations, your office.</p>
+          <ul>
+            <li>Protects when you're not in the truck</li>
+            <li>Loading docks, customer locations, your office</li>
+          </ul>
         </div>
         <div class="coverage-card">
           <span class="coverage-badge">Off-Dispatch</span>
           <h3>Non-Trucking Liability</h3>
-          <p>Covers you when you're driving but not under dispatch—heading home, running errands, bobtailing.</p>
+          <ul>
+            <li>Covers when not under dispatch</li>
+            <li>Heading home, running errands, bobtailing</li>
+          </ul>
         </div>
         <div class="coverage-card">
           <span class="coverage-badge">Your Safety Net</span>
           <h3>Occupational Accident</h3>
-          <p>Medical coverage and disability protection if you're injured on the job. For owner-operators not covered by workers' comp.</p>
+          <ul>
+            <li>Medical coverage if injured on the job</li>
+            <li>Disability protection</li>
+            <li>For owner-ops not covered by workers' comp</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -702,6 +723,28 @@ import Layout from '../layouts/Layout.astro';
     color: var(--gray-600);
     font-size: 0.9rem;
     line-height: 1.6;
+  }
+
+  .coverage-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .coverage-card li {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+  }
+
+  .coverage-card li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
   }
 
   /* ========================================
