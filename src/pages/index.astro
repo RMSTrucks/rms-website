@@ -2,148 +2,125 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Trucking Insurance | RMS Insurance - Finally, Someone on Your Side">
+<Layout title="Trucking Insurance for New Authorities | RMS Insurance">
 
-  <!-- Hero Section -->
+  <!-- HERO - Bold Full-Bleed -->
   <section class="hero">
-    <!-- Background elements -->
     <div class="hero-bg">
       <div class="hero-gradient"></div>
-      <div class="hero-lines"></div>
-      <div class="hero-glow"></div>
+      <div class="hero-grid-pattern"></div>
     </div>
 
     <div class="container hero-content">
-      <div class="hero-text">
-        <div class="hero-badge animate-fade-in-up">
-          <span class="badge-dot"></span>
-          Serving Owner-Operators Nationwide
-        </div>
+      <h1>
+        <span class="line">Finally,</span>
+        <span class="line">someone on</span>
+        <span class="line"><span class="gold">your side.</span></span>
+      </h1>
 
-        <h1 class="hero-headline">
-          <span class="typewriter" id="typewriter"></span><span class="cursor" id="cursor">|</span><span class="fade-in-text" id="fadeText"> someone on your side.</span>
-        </h1>
-
-        <p class="hero-sub animate-fade-in-up delay-2">
-          Trucking insurance from experts who actually explain things.<br/>
-          No jargon. No runaround. Just answers.
+      <div class="hero-bottom">
+        <p class="hero-tagline">
+          Trucking insurance from experts<br/>who actually explain things.
         </p>
 
-        <div class="hero-cta animate-fade-in-up delay-3">
-          <a href="tel:208-800-0640" class="btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-            Get My Quote: 208-800-0640
-          </a>
-          <a href="/new-authorities" class="btn btn-outline">
-            New Authority? Start Here
+        <div class="hero-cta">
+          <a href="tel:208-800-0640" class="btn-primary">
+            <span class="btn-label">Get a Quote</span>
+            <span class="btn-number">208-800-0640</span>
           </a>
         </div>
-      </div>
 
-      <!-- Stats floating card -->
-      <div class="hero-stats animate-fade-in-up delay-4">
-        <div class="stat-item">
-          <div class="stat-number">2,000+</div>
-          <div class="stat-label">Truckers Helped</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">$14M+</div>
-          <div class="stat-label">Coverage Placed</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">2022</div>
-          <div class="stat-label">Est.</div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">2,000+</span>
+            <span class="stat-name">Truckers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">$14M+</span>
+            <span class="stat-name">Placed</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">2022</span>
+            <span class="stat-name">Est.</span>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Scroll indicator -->
-    <div class="scroll-indicator animate-fade-in delay-5">
+    <div class="scroll-indicator">
       <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- Value Props -->
-  <section class="value-section">
+  <!-- NEW AUTHORITY CALLOUT -->
+  <section class="new-authority">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Why RMS</span>
-        <h2>The Industry Profits From<br/><span class="text-gold">Your Confusion. We Don't.</span></h2>
+      <div class="na-content">
+        <div class="na-badge">For New Authorities</div>
+        <h2>Just Got Your DOT?<br/><span class="gold">We've Got You.</span></h2>
+        <p>Getting insurance for a new authority is different. Most agents don't explain the process - they just send you a bill. We walk you through every coverage, every requirement, every step.</p>
+        <a href="/new-authorities" class="btn-outline-dark">Learn What You Actually Need &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY RMS -->
+  <section class="values">
+    <div class="container">
+      <div class="values-header">
+        <span class="section-num">01</span>
+        <h2>The Industry Profits From Your Confusion.<br/><span class="gold">We Don't.</span></h2>
       </div>
 
-      <div class="value-grid">
-        <div class="value-card">
-          <div class="value-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
+      <div class="value-columns">
+        <div class="value-col">
           <h3>We Actually Explain Things</h3>
           <p>Insurance should make sense to you. If your agent can't explain it clearly, they either don't understand it or don't want you to.</p>
-          <div class="value-accent"></div>
         </div>
 
-        <div class="value-card">
-          <div class="value-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
+        <div class="value-col">
           <h3>We Know Your Business First</h3>
           <p>We ask what you haul, where you go, how you run. Then we find coverage that actually fits. Not maximum coverage. Right coverage.</p>
-          <div class="value-accent"></div>
         </div>
 
-        <div class="value-card">
-          <div class="value-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12,6 12,12 16,14"/>
-            </svg>
-          </div>
+        <div class="value-col">
           <h3>When You Call, Things Happen</h3>
           <p>You say what you need, it happens. Certificate requests get done while you're on the phone. One moment... done.</p>
-          <div class="value-accent"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section class="process-section">
+  <!-- HOW IT WORKS -->
+  <section class="process">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">The Process</span>
-        <h2>Three Steps to<br/><span class="text-gold">Staying Covered</span></h2>
+      <div class="process-header">
+        <span class="section-num">02</span>
+        <h2>How It Works</h2>
       </div>
 
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="step-number">01</div>
+      <div class="process-steps">
+        <div class="step">
+          <span class="step-num">01</span>
           <div class="step-content">
-            <h3>Tell Us About Your Operation</h3>
+            <h4>Tell Us About Your Operation</h4>
             <p>Quick call or form. We ask the right questions so you don't have to guess what we need.</p>
           </div>
-          <div class="step-line"></div>
         </div>
-
-        <div class="process-step">
-          <div class="step-number">02</div>
+        <div class="step-arrow"></div>
+        <div class="step">
+          <span class="step-num">02</span>
           <div class="step-content">
-            <h3>Get Options That Fit</h3>
-            <p>We shop the same carriers everyone uses, but we explain what you're actually buying &mdash; no insurance jargon.</p>
+            <h4>Get Options That Fit</h4>
+            <p>We shop the same carriers everyone uses, but we explain what you're actually buying.</p>
           </div>
-          <div class="step-line"></div>
         </div>
-
-        <div class="process-step">
-          <div class="step-number">03</div>
+        <div class="step-arrow"></div>
+        <div class="step">
+          <span class="step-num">03</span>
           <div class="step-content">
-            <h3>Stay Covered, Stay Moving</h3>
+            <h4>Stay Covered, Stay Moving</h4>
             <p>Certs when you need them. Answers when you have questions. We're here.</p>
           </div>
         </div>
@@ -151,13 +128,127 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="section-num">03</span>
+        <h2>What Truckers Say</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <blockquote class="testimonial">
+          <p>"First agent who actually explained what I was buying instead of just sending me a bill. Made the whole process make sense."</p>
+          <footer>
+            <strong>Marcus T.</strong>
+            <span>Owner-Operator, Texas</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testimonial">
+          <p>"Called at 7am needing a cert for a new broker. Had it in my email before I finished my coffee. That's the kind of service you can't find anywhere else."</p>
+          <footer>
+            <strong>Jennifer R.</strong>
+            <span>Small Fleet Owner, Idaho</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testimonial">
+          <p>"New authority, didn't know what I was doing. They walked me through every coverage, what it does, why I need it. No pressure, just straight answers."</p>
+          <footer>
+            <strong>David K.</strong>
+            <span>New Authority, California</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE FORM -->
+  <section class="quote-form-section" id="quote">
+    <div class="container">
+      <div class="form-layout">
+        <div class="form-info">
+          <span class="section-num">04</span>
+          <h2>Get a Quote</h2>
+          <p>Fill out the form and we'll call you back. Usually same day, often within a couple hours.</p>
+
+          <div class="form-benefits">
+            <div class="benefit">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>No obligation quote</span>
+            </div>
+            <div class="benefit">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>We explain everything</span>
+            </div>
+            <div class="benefit">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Same day response</span>
+            </div>
+          </div>
+
+          <p class="form-alt">Or just call us: <a href="tel:208-800-0640">208-800-0640</a></p>
+        </div>
+
+        <form class="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="John Smith">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label for="dot">DOT Number (if you have one)</label>
+              <input type="text" id="dot" name="dot" placeholder="1234567">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="status">Where are you in the process?</label>
+            <select id="status" name="status">
+              <option value="">Select one...</option>
+              <option value="researching">Still researching / planning</option>
+              <option value="getting-dot">Getting my DOT number now</option>
+              <option value="new-authority">Just got my authority (< 6 months)</option>
+              <option value="established">Established trucker, shopping for better service</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Anything else we should know?</label>
+            <textarea id="message" name="message" rows="3" placeholder="What you haul, how many trucks, questions you have..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Get My Quote</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
-  <section class="faq-section">
+  <section class="faq">
     <div class="container">
       <div class="faq-layout">
         <div class="faq-header">
-          <span class="section-tag">FAQ</span>
-          <h2>Common<br/><span class="text-gold">Questions</span></h2>
+          <span class="section-num">05</span>
+          <h2>Common<br/><span class="gold">Questions</span></h2>
           <p class="faq-intro">Straight answers. No runaround.</p>
         </div>
 
@@ -165,12 +256,7 @@ import Layout from '../layouts/Layout.astro';
           <details class="faq-item">
             <summary>
               <span>Do I really need all this coverage?</span>
-              <div class="faq-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="12" y1="5" x2="12" y2="19"/>
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                </svg>
-              </div>
+              <div class="faq-icon">+</div>
             </summary>
             <div class="faq-answer">
               <p>Some coverage is required by law (liability, cargo for certain loads). Some is smart protection. We'll tell you the difference and let you decide.</p>
@@ -180,12 +266,7 @@ import Layout from '../layouts/Layout.astro';
           <details class="faq-item">
             <summary>
               <span>How fast can I get a quote?</span>
-              <div class="faq-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="12" y1="5" x2="12" y2="19"/>
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                </svg>
-              </div>
+              <div class="faq-icon">+</div>
             </summary>
             <div class="faq-answer">
               <p>Most quotes same day. If you have your info ready, often within a couple hours.</p>
@@ -195,30 +276,30 @@ import Layout from '../layouts/Layout.astro';
           <details class="faq-item">
             <summary>
               <span>Is your price lower than other agencies?</span>
-              <div class="faq-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="12" y1="5" x2="12" y2="19"/>
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                </svg>
-              </div>
+              <div class="faq-icon">+</div>
             </summary>
             <div class="faq-answer">
-              <p>Honest answer: probably not. We all use the same carriers for new authorities. The price is basically the same everywhere. The difference is who picks up when you call, and whether they actually know the answer. <a href="/blog/pricing-truth">Read more about how trucking insurance pricing works.</a></p>
+              <p>Honest answer: probably not. We all use the same carriers for new authorities. The price is basically the same everywhere. The difference is who picks up when you call, and whether they actually know the answer.</p>
             </div>
           </details>
 
           <details class="faq-item">
             <summary>
               <span>I just got my authority. Where do I start?</span>
-              <div class="faq-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="12" y1="5" x2="12" y2="19"/>
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                </svg>
-              </div>
+              <div class="faq-icon">+</div>
             </summary>
             <div class="faq-answer">
-              <p>Right here. <a href="/new-authorities">See our guide for new authorities.</a></p>
+              <p>Right here. <a href="/new-authorities">See our guide for new authorities</a> or just call us at <a href="tel:208-800-0640">208-800-0640</a>.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>What areas do you cover?</span>
+              <div class="faq-icon">+</div>
+            </summary>
+            <div class="faq-answer">
+              <p>We're based in Idaho but we write policies nationwide. Wherever you're running, we can help.</p>
             </div>
           </details>
         </div>
@@ -226,36 +307,40 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="cta-section">
-    <div class="cta-bg">
-      <div class="cta-gradient"></div>
-    </div>
-    <div class="container cta-content">
-      <h2>Ready to Talk?</h2>
-      <p>Call us. We answer.</p>
-      <a href="tel:208-800-0640" class="btn btn-large">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-        </svg>
-        208-800-0640
-      </a>
+  <!-- FINAL CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <p class="cta-label">Ready to talk?</p>
+        <a href="tel:208-800-0640" class="cta-phone">208-800-0640</a>
+        <p class="cta-sub">We answer.</p>
+      </div>
     </div>
   </section>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta">
+    <a href="tel:208-800-0640" class="sticky-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      Call for Quote
+    </a>
+  </div>
 
 </Layout>
 
 <style>
   /* ========================================
-     HERO SECTION
+     HERO
      ======================================== */
   .hero {
-    position: relative;
     min-height: 100vh;
+    position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 4rem;
     overflow: hidden;
-    padding: 2rem 0;
   }
 
   .hero-bg {
@@ -267,155 +352,101 @@ import Layout from '../layouts/Layout.astro';
   .hero-gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #1B4332 0%, #0D2118 50%, #0A1A12 100%);
+    background: linear-gradient(180deg, #0D2118 0%, #1B4332 100%);
   }
 
-  .hero-lines {
+  .hero-grid-pattern {
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .hero-glow {
-    position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 60%;
-    height: 80%;
-    background: radial-gradient(ellipse, rgba(218, 165, 32, 0.12) 0%, transparent 70%);
-    filter: blur(60px);
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
   }
 
   .hero-content {
     position: relative;
     z-index: 1;
+    width: 100%;
     color: white;
   }
 
-  .hero-text {
-    max-width: 1000px;
+  .hero h1 {
+    font-size: clamp(3.5rem, 10vw, 10rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin-bottom: 3rem;
   }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(218, 165, 32, 0.15);
-    border: 1px solid rgba(218, 165, 32, 0.3);
-    padding: 8px 16px;
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    margin-bottom: 2rem;
+  .line { display: block; }
+  .gold { color: var(--gold); }
+
+  .hero-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 4rem;
+    align-items: end;
   }
 
-  .badge-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--gold);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-
-  .hero-headline {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    white-space: nowrap;
-  }
-
-  @media (max-width: 900px) {
-    .hero-headline {
-      white-space: normal;
-      font-size: clamp(2rem, 8vw, 3.5rem);
-    }
-  }
-
-  .typewriter {
-    display: inline;
-  }
-
-  .cursor {
-    display: inline-block;
-    color: var(--gold);
-    font-weight: 300;
-    animation: blink 0.8s infinite;
-    margin-left: 2px;
-    transition: opacity 0.5s ease;
-  }
-
-  .cursor.fade-out {
-    animation: none;
-    opacity: 0;
-  }
-
-  .fade-in-text {
-    color: var(--gold);
-    opacity: 0;
-    transition: opacity 0.8s ease;
-  }
-
-  .fade-in-text.visible {
-    opacity: 1;
-  }
-
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
-
-  .hero-sub {
+  .hero-tagline {
     font-size: 1.25rem;
-    line-height: 1.7;
-    opacity: 0.85;
-    margin-bottom: 2.5rem;
-    max-width: 520px;
+    line-height: 1.6;
+    opacity: 0.8;
+    max-width: 300px;
   }
 
-  .hero-cta {
+  .btn-primary {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    background: var(--gold);
+    color: var(--forest);
+    padding: 1.5rem 2.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: white;
+    transform: translateY(-4px);
+    color: var(--forest);
+  }
+
+  .btn-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+  }
+
+  .btn-number {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 
   .hero-stats {
-    display: inline-flex;
-    align-items: center;
+    display: flex;
     gap: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1.5rem 2.5rem;
-    border-radius: 8px;
-    margin-top: 4rem;
   }
 
-  .stat-item {
-    text-align: center;
-  }
+  .stat { text-align: right; }
 
-  .stat-number {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 2.5rem;
+  .stat-value {
+    display: block;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--gold);
   }
 
-  .stat-label {
-    font-size: 0.85rem;
-    opacity: 0.7;
+  .stat-name {
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-  }
-
-  .stat-divider {
-    width: 1px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
+    opacity: 0.6;
   }
 
   .scroll-indicator {
@@ -429,179 +460,387 @@ import Layout from '../layouts/Layout.astro';
     width: 2px;
     height: 60px;
     background: linear-gradient(to bottom, var(--gold), transparent);
-    animation: scrollPulse 2s infinite;
-  }
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 1; transform: scaleY(1); }
-    50% { opacity: 0.5; transform: scaleY(0.8); }
   }
 
   /* ========================================
-     VALUE SECTION
+     NEW AUTHORITY CALLOUT
      ======================================== */
-  .value-section {
-    padding: 8rem 0;
-    background: var(--bg-light);
-    position: relative;
+  .new-authority {
+    padding: 6rem 0;
+    background: var(--gold);
   }
 
-  .section-header {
-    margin-bottom: 4rem;
+  .na-content {
+    max-width: 700px;
   }
 
-  .section-tag {
+  .na-badge {
     display: inline-block;
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-
-  .section-header h2 {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    letter-spacing: 0.1em;
     color: var(--forest);
-  }
-
-  .text-gold {
-    color: var(--gold);
-  }
-
-  .value-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-  }
-
-  .value-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--gray-200);
-  }
-
-  .value-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(27, 67, 50, 0.1);
-  }
-
-  .value-card:hover .value-accent {
-    transform: scaleX(1);
-  }
-
-  .value-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+    background: rgba(255,255,255,0.3);
+    padding: 6px 12px;
+    border-radius: 4px;
     margin-bottom: 1.5rem;
   }
 
-  .value-card h3 {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 600;
+  .new-authority h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
     color: var(--forest);
     margin-bottom: 1rem;
   }
 
-  .value-card p {
-    color: var(--gray-600);
+  .new-authority p {
+    font-size: 1.15rem;
+    color: var(--forest);
+    opacity: 0.85;
     line-height: 1.7;
+    margin-bottom: 2rem;
   }
 
-  .value-accent {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
+  .btn-outline-dark {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 2px solid var(--forest);
+    color: var(--forest);
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-dark:hover {
+    background: var(--forest);
+    color: white;
   }
 
   /* ========================================
-     PROCESS SECTION
+     VALUES
      ======================================== */
-  .process-section {
+  .values {
     padding: 8rem 0;
-    background: white;
+    background: var(--forest-deep);
+    color: white;
   }
 
-  .process-grid {
+  .values-header {
+    margin-bottom: 4rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .section-num {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .values h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .value-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
+    gap: 3rem;
+    padding-left: 4rem;
   }
 
-  .process-step {
-    position: relative;
-    padding: 2rem;
-    text-align: center;
-  }
-
-  .step-number {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 5rem;
-    font-weight: 600;
-    color: var(--gray-100);
-    line-height: 1;
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
-  }
-
-  .process-step:hover .step-number {
-    color: var(--gold);
-  }
-
-  .step-content h3 {
-    font-family: 'Crimson Pro', Georgia, serif;
+  .value-col h3 {
+    font-family: 'Crimson Pro', serif;
     font-size: 1.4rem;
-    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .value-col p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+  }
+
+  /* ========================================
+     PROCESS
+     ======================================== */
+  .process {
+    padding: 6rem 0;
+    background: var(--bg-light);
+  }
+
+  .process-header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+
+  .process-header .section-num {
     color: var(--forest);
-    margin-bottom: 0.75rem;
+    border-color: var(--forest);
+  }
+
+  .process h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-600);
+  }
+
+  .process-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .step {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .step-num {
+    font-family: 'Crimson Pro', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--gray-200);
+    line-height: 1;
+  }
+
+  .step-content h4 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.25rem;
+    color: var(--forest);
+    margin-bottom: 0.5rem;
   }
 
   .step-content p {
     color: var(--gray-600);
-    line-height: 1.7;
-    max-width: 280px;
-    margin: 0 auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
-  .step-line {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: 100%;
+  .step-arrow {
+    width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
-    transform: translateY(-50%);
-    z-index: 0;
-  }
-
-  .process-step:last-child .step-line {
-    display: none;
+    background: var(--gray-200);
+    margin-top: 1.5rem;
+    flex-shrink: 0;
   }
 
   /* ========================================
-     FAQ SECTION
+     TESTIMONIALS
      ======================================== */
-  .faq-section {
+  .testimonials {
+    padding: 8rem 0;
+    background: white;
+  }
+
+  .testimonials-header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+
+  .testimonials-header .section-num {
+    color: var(--forest);
+    border-color: var(--forest);
+  }
+
+  .testimonials h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-600);
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .testimonial {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--gold);
+  }
+
+  .testimonial p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .testimonial footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial strong {
+    color: var(--forest);
+    font-weight: 600;
+  }
+
+  .testimonial span {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+  }
+
+  /* ========================================
+     QUOTE FORM
+     ======================================== */
+  .quote-form-section {
     padding: 8rem 0;
     background: var(--forest);
+    color: white;
+  }
+
+  .form-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .form-info h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .form-info > p {
+    opacity: 0.8;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .form-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .benefit svg {
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .form-alt {
+    font-size: 0.95rem;
+    opacity: 0.7;
+  }
+
+  .form-alt a {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .quote-form {
+    background: rgba(255,255,255,0.05);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255,255,255,0.4);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.15);
+  }
+
+  .form-group select {
+    cursor: pointer;
+  }
+
+  .form-group select option {
+    background: var(--forest);
+    color: white;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--gold);
+    color: var(--forest);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-submit:hover {
+    background: white;
+    transform: translateY(-2px);
+  }
+
+  /* ========================================
+     FAQ
+     ======================================== */
+  .faq {
+    padding: 8rem 0;
+    background: var(--forest-deep);
     color: white;
   }
 
@@ -613,7 +852,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .faq-header h2 {
-    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 1rem;
   }
 
@@ -626,13 +865,13 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     flex-direction: column;
     gap: 1px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     border-radius: 8px;
     overflow: hidden;
   }
 
   .faq-item {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255,255,255,0.05);
   }
 
   .faq-item summary {
@@ -652,11 +891,12 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .faq-item summary:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255,255,255,0.08);
   }
 
   .faq-icon {
-    flex-shrink: 0;
+    font-size: 1.5rem;
+    color: var(--gold);
     transition: transform 0.3s ease;
   }
 
@@ -666,7 +906,7 @@ import Layout from '../layouts/Layout.astro';
 
   .faq-answer {
     padding: 0 2rem 1.5rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255,255,255,0.7);
     line-height: 1.7;
   }
 
@@ -675,68 +915,125 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ========================================
-     CTA SECTION
+     CTA
      ======================================== */
-  .cta-section {
-    position: relative;
+  .cta {
     padding: 8rem 0;
-    overflow: hidden;
-  }
-
-  .cta-bg {
-    position: absolute;
-    inset: 0;
-  }
-
-  .cta-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, var(--gold) 0%, #C49B1A 100%);
+    background: var(--gold);
   }
 
   .cta-content {
-    position: relative;
-    z-index: 1;
     text-align: center;
-    color: white;
   }
 
-  .cta-content h2 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+  .cta-label {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--forest);
+    opacity: 0.7;
     margin-bottom: 1rem;
   }
 
-  .cta-content p {
-    font-size: 1.5rem;
-    opacity: 0.9;
-    margin-bottom: 2.5rem;
-  }
-
-  .btn-large {
-    font-size: 1.5rem;
-    padding: 20px 48px;
-    background: white;
+  .cta-phone {
+    font-family: 'Crimson Pro', serif;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-weight: 600;
     color: var(--forest);
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
   }
 
-  .btn-large:hover {
-    background: var(--forest);
+  .cta-phone:hover {
+    transform: scale(1.02);
     color: white;
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .cta-sub {
+    font-size: 1.25rem;
+    color: var(--forest);
+    opacity: 0.8;
+    margin-top: 0.5rem;
+  }
+
+  /* ========================================
+     STICKY MOBILE CTA
+     ======================================== */
+  .sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: var(--forest);
+    z-index: 999;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  }
+
+  .sticky-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px;
+    background: var(--gold);
+    color: var(--forest);
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    text-decoration: none;
   }
 
   /* ========================================
      RESPONSIVE
      ======================================== */
   @media (max-width: 968px) {
-    .process-grid {
+    .hero-bottom {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
 
-    .step-line {
-      display: none;
+    .hero-stats {
+      justify-content: flex-start;
+    }
+
+    .stat { text-align: left; }
+
+    .values-header {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .value-columns {
+      grid-template-columns: 1fr;
+      padding-left: 0;
+    }
+
+    .process-steps {
+      flex-direction: column;
+    }
+
+    .step-arrow {
+      width: 2px;
+      height: 30px;
+      margin-left: 1.5rem;
+    }
+
+    .testimonial-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
     }
 
     .faq-layout {
@@ -744,63 +1041,23 @@ import Layout from '../layouts/Layout.astro';
       gap: 2rem;
     }
 
-    .hero-stats {
-      flex-wrap: wrap;
-      justify-content: center;
+    .sticky-cta {
+      display: block;
     }
 
-    .stat-divider {
-      display: none;
+    /* Add padding for sticky CTA */
+    .cta {
+      padding-bottom: 10rem;
     }
   }
 
   @media (max-width: 640px) {
-    .hero {
-      padding-top: 4rem;
+    .hero h1 {
+      font-size: 3rem;
     }
 
-    .hero-cta {
-      flex-direction: column;
-    }
-
-    .hero-cta .btn {
-      width: 100%;
-      justify-content: center;
-    }
-
-    .value-grid {
-      grid-template-columns: 1fr;
+    .quote-form {
+      padding: 1.5rem;
     }
   }
 </style>
-
-<script>
-  // Typewriter effect: Type "Finally," then fade cursor, fade in rest
-  const text = "Finally,";
-  const typewriter = document.getElementById('typewriter');
-  const cursor = document.getElementById('cursor');
-  const fadeText = document.getElementById('fadeText');
-  let charIndex = 0;
-
-  function type() {
-    if (charIndex < text.length) {
-      typewriter.textContent += text.charAt(charIndex);
-      charIndex++;
-      // Random delay for realistic typing
-      const delay = 60 + Math.random() * 100;
-      setTimeout(type, delay);
-    } else {
-      // Done typing "Finally,"
-      // Let cursor blink a few times, then fade out and fade in the rest
-      setTimeout(() => {
-        cursor.classList.add('fade-out');
-        setTimeout(() => {
-          fadeText.classList.add('visible');
-        }, 300);
-      }, 1200);
-    }
-  }
-
-  // Start after a brief delay
-  setTimeout(type, 800);
-</script>
