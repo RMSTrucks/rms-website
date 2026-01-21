@@ -1,0 +1,330 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Option 2: Centered Minimal | RMS Insurance">
+
+  <!-- OPTION 2: CENTERED MINIMAL - Clean, lots of white space -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Trucking Insurance</p>
+
+        <h1>Finally, someone<br/>on your side.</h1>
+
+        <p class="hero-sub">
+          No jargon. No runaround. Just answers.
+        </p>
+
+        <a href="tel:208-800-0640" class="cta-link">
+          <span class="cta-text">Call for a quote</span>
+          <span class="cta-number">208-800-0640</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Subtle scroll indicator -->
+    <div class="scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- Stats band -->
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-num">2,000+</span>
+          <span class="stat-label">Truckers Helped</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">$14M+</span>
+          <span class="stat-label">Coverage Placed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">Since 2022</span>
+          <span class="stat-label">Idaho Based</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Props - minimal cards -->
+  <section class="values">
+    <div class="container">
+      <h2>Why truckers choose us</h2>
+
+      <div class="value-list">
+        <article class="value-item">
+          <span class="value-marker"></span>
+          <div class="value-content">
+            <h3>We actually explain things</h3>
+            <p>Insurance should make sense to you. If your agent can't explain it clearly, they either don't understand it or don't want you to.</p>
+          </div>
+        </article>
+
+        <article class="value-item">
+          <span class="value-marker"></span>
+          <div class="value-content">
+            <h3>We know your business first</h3>
+            <p>We ask what you haul, where you go, how you run. Then we find coverage that actually fits. Not maximum coverage. Right coverage.</p>
+          </div>
+        </article>
+
+        <article class="value-item">
+          <span class="value-marker"></span>
+          <div class="value-content">
+            <h3>When you call, things happen</h3>
+            <p>You say what you need, it happens. Certificate requests get done while you're on the phone. One moment... done.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple CTA -->
+  <section class="cta">
+    <div class="container">
+      <p class="cta-prompt">Ready to talk?</p>
+      <a href="tel:208-800-0640" class="phone-link">208-800-0640</a>
+      <p class="cta-note">We answer.</p>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* MINIMAL HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    position: relative;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 700px;
+    padding: 4rem 2rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    color: var(--forest);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-sub {
+    font-size: 1.5rem;
+    color: var(--gray-600);
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+
+  .cta-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--forest);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 1rem;
+  }
+
+  .cta-link:hover {
+    color: var(--gold);
+  }
+
+  .cta-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .cta-number {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .scroll-hint span {
+    display: block;
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--gray-200), transparent);
+  }
+
+  /* STATS BAND */
+  .stats-band {
+    background: var(--forest);
+    padding: 4rem 0;
+  }
+
+  .stats-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .stat {
+    text-align: center;
+    color: white;
+  }
+
+  .stat-num {
+    display: block;
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(255,255,255,0.2);
+  }
+
+  /* VALUES */
+  .values {
+    padding: 10rem 0;
+    background: white;
+  }
+
+  .values h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .value-list {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .value-item {
+    display: grid;
+    grid-template-columns: 8px 1fr;
+    gap: 2rem;
+  }
+
+  .value-marker {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-top: 0.5rem;
+  }
+
+  .value-content h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.75rem;
+    color: var(--forest);
+    margin-bottom: 0.75rem;
+  }
+
+  .value-content p {
+    color: var(--gray-600);
+    line-height: 1.8;
+    font-size: 1.1rem;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 10rem 0;
+    background: var(--bg-light);
+    text-align: center;
+  }
+
+  .cta-prompt {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 1rem;
+  }
+
+  .phone-link {
+    font-family: 'Crimson Pro', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 600;
+    color: var(--forest);
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+  }
+
+  .phone-link:hover {
+    color: var(--gold);
+  }
+
+  .cta-note {
+    font-size: 1.25rem;
+    color: var(--gray-600);
+    margin-top: 0.5rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .stats-row {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .stat-divider {
+      width: 50px;
+      height: 1px;
+    }
+
+    .value-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    .value-marker {
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>
