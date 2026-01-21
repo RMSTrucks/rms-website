@@ -21,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <h1 class="hero-headline">
-          <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
+          <span class="typewriter" id="typewriter"></span><span class="cursor" id="cursor">|</span><span class="fade-in-text" id="fadeText"> someone on your side.</span>
         </h1>
 
         <p class="hero-sub animate-fade-in-up delay-2">
@@ -296,7 +296,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .hero-text {
-    max-width: 800px;
+    max-width: 1000px;
   }
 
   .hero-badge {
@@ -322,18 +322,21 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .hero-headline {
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    min-height: 2.4em;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .hero-headline {
+      white-space: normal;
+      font-size: clamp(2rem, 8vw, 3.5rem);
+    }
   }
 
   .typewriter {
     display: inline;
-  }
-
-  .typewriter .gold {
-    color: var(--gold);
   }
 
   .cursor {
@@ -342,6 +345,22 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 300;
     animation: blink 0.8s infinite;
     margin-left: 2px;
+    transition: opacity 0.5s ease;
+  }
+
+  .cursor.fade-out {
+    animation: none;
+    opacity: 0;
+  }
+
+  .fade-in-text {
+    color: var(--gold);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .fade-in-text.visible {
+    opacity: 1;
   }
 
   @keyframes blink {
@@ -756,67 +775,29 @@ import Layout from '../layouts/Layout.astro';
 </style>
 
 <script>
-  // Typewriter effect
-  const phrases = [
-    { text: "Finally, someone", gold: false },
-    { text: "\n", gold: false },
-    { text: "on your side.", gold: true }
-  ];
-
+  // Typewriter effect: Type "Finally," then fade cursor, fade in rest
+  const text = "Finally,";
   const typewriter = document.getElementById('typewriter');
-  const cursor = document.querySelector('.cursor');
-  let phraseIndex = 0;
+  const cursor = document.getElementById('cursor');
+  const fadeText = document.getElementById('fadeText');
   let charIndex = 0;
-  let isDeleting = false;
-  let isPaused = false;
 
   function type() {
-    if (isPaused) return;
-
-    const currentPhrase = phrases[phraseIndex];
-
-    if (!isDeleting && charIndex <= currentPhrase.text.length) {
-      // Typing
-      const char = currentPhrase.text.charAt(charIndex);
-
-      if (char === '\n') {
-        typewriter.innerHTML += '<br/>';
-      } else {
-        if (currentPhrase.gold) {
-          // Check if we need to start a gold span
-          const existingHTML = typewriter.innerHTML;
-          if (!existingHTML.includes('<span class="gold">') || existingHTML.endsWith('</span>')) {
-            typewriter.innerHTML = existingHTML + '<span class="gold">' + char;
-          } else {
-            // Insert before the closing </span>
-            const parts = existingHTML.split('</span>');
-            if (parts.length > 1) {
-              typewriter.innerHTML = existingHTML + char;
-            } else {
-              typewriter.innerHTML = existingHTML.replace(/<span class="gold">([^<]*)$/, '<span class="gold">$1' + char);
-            }
-          }
-        } else {
-          typewriter.innerHTML += char;
-        }
-      }
-
+    if (charIndex < text.length) {
+      typewriter.textContent += text.charAt(charIndex);
       charIndex++;
-
       // Random delay for realistic typing
-      const delay = 50 + Math.random() * 80;
+      const delay = 60 + Math.random() * 100;
       setTimeout(type, delay);
-    } else if (!isDeleting && phraseIndex < phrases.length - 1) {
-      // Move to next phrase
-      phraseIndex++;
-      charIndex = 0;
-      setTimeout(type, 100);
-    } else if (!isDeleting && phraseIndex === phrases.length - 1) {
-      // Done typing - close the gold span if open
-      if (!typewriter.innerHTML.endsWith('</span>')) {
-        typewriter.innerHTML += '</span>';
-      }
-      // Keep cursor blinking at the end
+    } else {
+      // Done typing "Finally,"
+      // Let cursor blink a few times, then fade out and fade in the rest
+      setTimeout(() => {
+        cursor.classList.add('fade-out');
+        setTimeout(() => {
+          fadeText.classList.add('visible');
+        }, 300);
+      }, 1200);
     }
   }
 
