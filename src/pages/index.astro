@@ -18,8 +18,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <h1>
-        <span class="line">Finally,</span>
-        <span class="line">someone on</span>
+        <span class="line">Finally, someone on</span>
         <span class="line"><span class="gold">your side.</span></span>
       </h1>
 
@@ -587,6 +586,10 @@ import Layout from '../layouts/Layout.astro';
     z-index: 1;
     width: 100%;
     color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero h1 {
@@ -635,17 +638,16 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .hero-bottom {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    gap: 4rem;
-    align-items: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
   }
 
   .hero-tagline {
     font-size: 1.25rem;
     line-height: 1.6;
     opacity: 0.8;
-    max-width: 300px;
   }
 
   .btn-primary {
@@ -685,7 +687,7 @@ import Layout from '../layouts/Layout.astro';
     gap: 2rem;
   }
 
-  .stat { text-align: right; }
+  .stat { text-align: center; }
 
   .stat-value {
     display: block;
