@@ -302,32 +302,57 @@ import Layout from '../layouts/Layout.astro';
   <!-- FAQ -->
   <section class="faq">
     <div class="container">
-      <div class="faq-layout">
-        <div class="faq-header">
+      <div class="faq-wrapper">
+        <div class="section-header centered">
           <span class="section-tag">FAQ</span>
           <h2>Straight Answers</h2>
         </div>
 
         <div class="faq-list">
           <details class="faq-item">
-            <summary>How much does trucking insurance cost?</summary>
-            <p>It depends on experience, equipment, what you haul, and safety record. New authority with newer truck: expect $12,000-$18,000/year. We'll give you a real quote based on your situation.</p>
+            <summary>
+              <span class="faq-question">How much does trucking insurance cost?</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>It depends on experience, equipment, what you haul, and safety record. New authority with newer truck: expect $12,000-$18,000/year. We'll give you a real quote based on your situation.</p>
+            </div>
           </details>
           <details class="faq-item">
-            <summary>Is your price lower than other agencies?</summary>
-            <p>Probably not much different—we use the same carriers. The difference is who picks up when you call and whether they actually know the answer.</p>
+            <summary>
+              <span class="faq-question">Is your price lower than other agencies?</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Probably not much different—we use the same carriers. The difference is who picks up when you call and whether they actually know the answer.</p>
+            </div>
           </details>
           <details class="faq-item">
-            <summary>How fast can I get a quote?</summary>
-            <p>Most quotes same day. If you have your info ready, often within a couple hours.</p>
+            <summary>
+              <span class="faq-question">How fast can I get a quote?</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Most quotes same day. If you have your info ready, often within a couple hours.</p>
+            </div>
           </details>
           <details class="faq-item">
-            <summary>I just got my authority. Where do I start?</summary>
-            <p>Call us. We'll walk you through what coverage you need and how to get your filings done.</p>
+            <summary>
+              <span class="faq-question">I just got my authority. Where do I start?</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Call us. We'll walk you through what coverage you need and how to get your filings done.</p>
+            </div>
           </details>
           <details class="faq-item">
-            <summary>Do I need cargo insurance?</summary>
-            <p>Practically yes—most brokers won't work with you without it. Standard is $100K.</p>
+            <summary>
+              <span class="faq-question">Do I need cargo insurance?</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Practically yes—most brokers won't work with you without it. Standard is $100K.</p>
+            </div>
           </details>
         </div>
       </div>
@@ -1054,49 +1079,98 @@ import Layout from '../layouts/Layout.astro';
      ======================================== */
   .faq {
     padding: 6rem 0;
-    background: var(--forest);
-    color: var(--white);
+    background: var(--gray-100);
   }
 
-  .faq-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: start;
+  .faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
   }
 
-  .faq-header h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem);
+  .faq .section-header h2 {
+    color: var(--forest);
   }
 
   .faq-list {
     display: flex;
     flex-direction: column;
-    gap: 1px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 8px;
-    overflow: hidden;
+    gap: 0;
   }
 
   .faq-item {
-    background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid var(--gray-200);
   }
 
   .faq-item summary {
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem 0;
     cursor: pointer;
-    font-weight: 500;
     list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
   }
 
   .faq-item summary::-webkit-details-marker {
     display: none;
   }
 
-  .faq-item p {
-    padding: 0 1.5rem 1.25rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.6;
+  .faq-question {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--forest);
+  }
+
+  .faq-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .faq-icon::before,
+  .faq-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--gold);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-icon::before {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .faq-icon::after {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .faq-item[open] .faq-icon::before {
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .faq-item[open] .faq-question {
+    color: var(--gold-hover);
+  }
+
+  .faq-answer {
+    padding: 0 0 1.5rem 0;
+  }
+
+  .faq-answer p {
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-size: 1rem;
   }
 
   /* ========================================
@@ -1259,7 +1333,6 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .quote-layout,
-    .faq-layout,
     .about-layout {
       grid-template-columns: 1fr;
       gap: 2rem;
