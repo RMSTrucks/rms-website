@@ -297,7 +297,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="quote-alt">Or call: <a href="tel:208-800-0640">208-800-0640</a></p>
         </div>
 
-        <form class="quote-form">
+        <form class="quote-form" action="/api/quote" method="POST">
           <div class="form-row">
             <div class="form-field">
               <label for="name">Your Name</label>
@@ -333,6 +333,7 @@ import Layout from '../layouts/Layout.astro';
             <textarea id="message" name="message" rows="3" placeholder="What you haul, how many trucks..."></textarea>
           </div>
           <button type="submit" class="btn-submit">Get My Quote</button>
+          <div class="form-message" style="display:none;"></div>
         </form>
       </div>
     </div>
@@ -1144,6 +1145,29 @@ import Layout from '../layouts/Layout.astro';
     background: var(--white);
   }
 
+  .btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .form-message {
+    margin-top: 12px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .form-message.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .form-message.error {
+    background: #fbe9e7;
+    color: #c62828;
+  }
+
   /* ========================================
      FAQ
      ======================================== */
@@ -1474,16 +1498,50 @@ import Layout from '../layouts/Layout.astro';
     });
   });
 
-  // Track form submission
+  // Handle form submission
   const quoteForm = document.querySelector('.quote-form');
   if (quoteForm) {
     quoteForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = quoteForm.querySelector('.btn-submit');
+      const msg = quoteForm.querySelector('.form-message');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      msg.style.display = 'none';
+
       if (typeof gtag !== 'undefined') {
         gtag('event', 'quote_form_submit', {
           'event_category': 'conversion',
           'event_label': 'quote_request'
         });
       }
+
+      fetch('/api/quote', {
+        method: 'POST',
+        body: new FormData(quoteForm)
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (data.success) {
+          msg.textContent = "Got it! We'll call you shortly.";
+          msg.className = 'form-message success';
+          msg.style.display = 'block';
+          quoteForm.reset();
+        } else {
+          msg.textContent = data.error || 'Something went wrong. Call us at 208-800-0640.';
+          msg.className = 'form-message error';
+          msg.style.display = 'block';
+        }
+      })
+      .catch(function() {
+        msg.textContent = 'Something went wrong. Call us at 208-800-0640.';
+        msg.className = 'form-message error';
+        msg.style.display = 'block';
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = 'Get My Quote';
+      });
     });
   }
 
