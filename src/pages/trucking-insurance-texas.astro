@@ -2,29 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Texas Trucking Insurance | RMS Truck Insurance" description="Licensed trucking insurance agency serving Texas. Expert help with TxDMV and federal authority. Fast quotes for owner-operators and new authorities in the Lone Star State.">
+<Layout title="Texas Trucking Insurance - Licensed, Specialized, Fast | RMS" description="Texas trucking insurance for owner-operators and new authorities. Licensed in Texas, 5-minute COIs, new authority specialists. Get your quote today.">
 
-  <!-- Texas-Specific Schema -->
+  <!-- Schema Markup -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
     "name": "RMS Truck Insurance",
-    "description": "Commercial trucking insurance agency licensed in Texas, specializing in owner-operators and new authorities",
+    "description": "Texas trucking insurance specialists for owner-operators and new authorities",
     "areaServed": {
       "@type": "State",
-      "name": "Texas",
-      "sameAs": "https://en.wikipedia.org/wiki/Texas"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Nampa",
-      "addressRegion": "ID",
-      "postalCode": "83651",
-      "addressCountry": "US"
+      "name": "Texas"
     },
     "telephone": "+1-208-800-0640",
-    "url": "https://rmstruckers.com/trucking-insurance-texas/"
+    "url": "https://rmstruckers.com/trucking-insurance-texas/",
+    "knowsAbout": ["commercial trucking insurance", "new authority insurance", "Texas trucking"],
+    "slogan": "Finally, someone on your side."
   }
   </script>
 
@@ -36,42 +30,34 @@ import Layout from '../layouts/Layout.astro';
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Do I need both a TxDMV number and USDOT number?",
+        "name": "How much does Texas trucking insurance cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "If you're only operating within Texas (intrastate), you need both - USDOT first, then TxDMV. If you're crossing state lines (interstate), you need USDOT + MC Number, and only need TxDMV if you also do Texas-only work."
+          "text": "For new authorities, expect $12,000-$18,000/year for a single truck with $750K liability. Rates depend on your experience, driving record, equipment, and cargo. Get a quote to see your actual numbers."
         }
       },
       {
         "@type": "Question",
-        "name": "What's the minimum insurance for Texas trucking?",
+        "name": "Can RMS insure new trucking companies?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Interstate carriers need $750,000 (federal requirement). Texas intrastate carriers need $500,000 for general freight, or $300,000 for household goods under 26,000 lbs."
+          "text": "Yes - that's our specialty. Most agencies avoid new authorities because they're harder to place. We've built our business on helping new truckers get started."
         }
       },
       {
         "@type": "Question",
-        "name": "How long does Texas authority take?",
+        "name": "How fast can I get a quote?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "TxDMV intrastate authority: 3-10 days. Federal MC authority (interstate): 20-21 days. RMS helps you time your insurance with your authority activation."
+          "text": "Same day for most operations. Complex risks (hazmat, specialized cargo) may take 24-48 hours to shop properly."
         }
       },
       {
         "@type": "Question",
-        "name": "I'm doing cross-border work to Mexico. What do I need?",
+        "name": "What if I'm doing cross-border work to Mexico?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You'll need USDOT, MC Number, and your insurance must meet both US and Mexican requirements. Many carriers running Laredo routes need additional coverage. Contact RMS to discuss your specific operation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's a TxDMV Cab Card?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your proof of insurance that must be kept in your truck at all times. Texas law requires you to present it to law enforcement on request. It can be paper or electronic."
+          "text": "We handle it. Laredo, El Paso, Brownsville - we know the coverage requirements for cross-border operations."
         }
       }
     ]
@@ -80,10 +66,7 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg">
-      <div class="hero-gradient"></div>
-    </div>
-
+    <div class="hero-bg"></div>
     <div class="container hero-content">
       <div class="state-badge">
         <span class="state-flag">&#9733;</span>
@@ -91,25 +74,23 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <h1>Texas Trucking Insurance</h1>
+      <p class="hero-tagline">Licensed. Specialized. Fast.</p>
 
-      <p class="hero-sub">The largest trucking market in the US deserves insurance experts who understand TxDMV, FMCSA, and the I-35 corridor.</p>
+      <p class="hero-sub">RMS helps Texas truckers get insured and on the road. New authority? Established carrier? We've got you covered in the Lone Star State.</p>
+
+      <div class="trust-badges">
+        <div class="badge"><span class="badge-icon">&#10003;</span> Licensed in Texas</div>
+        <div class="badge"><span class="badge-icon">&#10003;</span> 1,000+ Truckers Helped</div>
+        <div class="badge"><span class="badge-icon">&#10003;</span> 5-Minute COIs</div>
+        <div class="badge"><span class="badge-icon">&#10003;</span> Trucking Specialists Since 2020</div>
+      </div>
 
       <a href="tel:208-800-0640" class="hero-cta">
-        <span class="cta-label">Talk to a Texas Specialist</span>
+        <span class="cta-label">Get Your Texas Quote</span>
         <span class="cta-number">208-800-0640</span>
       </a>
 
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-num">66,000+</span>
-          <span class="stat-text">Trucking Companies in Texas</span>
-        </div>
-        <span class="stat-sep"></span>
-        <div class="stat-item">
-          <span class="stat-num">#1</span>
-          <span class="stat-text">Largest Trucking Market in US</span>
-        </div>
-      </div>
+      <p class="hero-note">New authority? We handle the 20-21 day wait period timing.</p>
     </div>
   </section>
 
@@ -117,191 +98,227 @@ import Layout from '../layouts/Layout.astro';
   <section class="requirements">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Texas Requirements</span>
-        <h2>Insurance Minimums for Texas Trucking</h2>
-        <p class="section-intro">Texas has its own requirements for intrastate carriers. Interstate carriers follow federal FMCSA rules.</p>
+        <span class="section-tag">What You Need</span>
+        <h2>Texas Insurance Requirements</h2>
+        <p class="section-intro">Texas has specific requirements depending on whether you're staying in-state or crossing state lines. Here's the quick breakdown:</p>
       </div>
 
-      <div class="requirements-table-wrap">
-        <table class="requirements-table">
+      <div class="table-wrap">
+        <table class="req-table">
           <thead>
             <tr>
-              <th>Operation Type</th>
+              <th>Your Operation</th>
               <th>Minimum Liability</th>
-              <th>Authority Needed</th>
+              <th>What You Need</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Interstate</strong> (crossing state lines)</td>
-              <td>$750,000</td>
+              <td>Interstate (most truckers)</td>
+              <td><strong>$750,000</strong></td>
               <td>USDOT + MC Number</td>
             </tr>
             <tr>
-              <td><strong>Intrastate</strong> (Texas only, general freight)</td>
-              <td>$500,000</td>
+              <td>Texas-only, general freight</td>
+              <td><strong>$500,000</strong></td>
               <td>USDOT + TxDMV Number</td>
             </tr>
             <tr>
-              <td><strong>Intrastate</strong> (household goods, >26K lbs)</td>
-              <td>$500,000</td>
+              <td>Texas-only, household goods</td>
+              <td><strong>$300,000-$500,000</strong></td>
               <td>USDOT + TxDMV Number</td>
             </tr>
             <tr>
-              <td><strong>Intrastate</strong> (household goods, &lt;26K lbs)</td>
-              <td>$300,000</td>
-              <td>USDOT + TxDMV Number</td>
-            </tr>
-            <tr>
-              <td><strong>Hazmat Transport</strong></td>
-              <td>$5,000,000</td>
-              <td>USDOT + MC + HM Permit</td>
-            </tr>
-            <tr>
-              <td><strong>Oil/Hopper Cargo</strong></td>
-              <td>$1,000,000</td>
-              <td>USDOT + MC</td>
+              <td>Hazmat</td>
+              <td><strong>$5,000,000</strong></td>
+              <td>Special permits</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="cargo-note">
-        <h4>Texas Cargo Requirements</h4>
-        <ul>
-          <li><strong>Household goods movers:</strong> $5,000 per shipper / $10,000 aggregate</li>
-          <li><strong>Workers comp or accident insurance:</strong> $300K medical (104 weeks), $100K AD&D</li>
-        </ul>
-        <p class="source">Source: <a href="https://www.txdmv.gov/sites/default/files/body-files/Motor_Carrier_Handbook.pdf" target="_blank" rel="noopener">TxDMV Motor Carrier Handbook</a></p>
+      <div class="section-cta">
+        <p>Not sure which category you fall into? That's what we're here for. We'll figure out exactly what you need - no more, no less.</p>
+        <a href="tel:208-800-0640" class="btn">Call 208-800-0640</a>
       </div>
     </div>
   </section>
 
-  <!-- GETTING AUTHORITY -->
-  <section class="authority">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-tag">Getting Started</span>
-        <h2>Getting Your Texas Authority</h2>
-      </div>
-
-      <div class="authority-grid">
-        <div class="authority-card">
-          <span class="authority-type">Intrastate Only</span>
-          <h3>Staying in Texas</h3>
-          <ol>
-            <li>Get USDOT number first (required)</li>
-            <li>Apply for TxDMV Number via eLINC system</li>
-            <li>Options: 7-day, 90-day, 1-year, or 2-year registration</li>
-            <li>Processing: 3-10 days</li>
-            <li>Insurance must be active in MCCS system</li>
-            <li>Keep Cab Card in vehicle at all times</li>
-          </ol>
-        </div>
-
-        <div class="authority-card">
-          <span class="authority-type">Interstate</span>
-          <h3>Crossing State Lines</h3>
-          <ol>
-            <li>Get USDOT number</li>
-            <li>Apply for MC Number from FMCSA ($300 fee)</li>
-            <li>Processing: 3-4 weeks (20-21 day wait period)</li>
-            <li>File BMC-91 (insurance) and BOC-3 (process agent)</li>
-            <li>RMS helps with federal filing timing</li>
-          </ol>
-        </div>
-      </div>
-
-      <p class="authority-source">Source: <a href="https://www.txdmv.gov/motor-carriers/how-to-be-a-motor-carrier" target="_blank" rel="noopener">TxDMV - Becoming a Motor Carrier</a></p>
-    </div>
-  </section>
-
-  <!-- TEXAS INDUSTRY -->
-  <section class="texas-industry">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Texas Trucking</span>
-        <h2>The Largest Trucking Market in America</h2>
-        <p class="section-intro">Texas isn't just big - it's the backbone of American freight movement.</p>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-card">
-          <span class="stat-big">66,000+</span>
-          <span class="stat-label">Trucking Companies</span>
-          <span class="stat-note">Most in the US</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-big">313,000+</span>
-          <span class="stat-label">Miles of Roadway</span>
-          <span class="stat-note">Largest highway network</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-big">2.1B</span>
-          <span class="stat-label">Tons of Freight</span>
-          <span class="stat-note">Moved annually</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-big">70%</span>
-          <span class="stat-label">US-Mexico Trade</span>
-          <span class="stat-note">Flows through Texas</span>
-        </div>
-      </div>
-
-      <div class="corridors">
-        <h3>Major Texas Corridors</h3>
-        <div class="corridor-grid">
-          <div class="corridor-card">
-            <span class="corridor-name">I-35</span>
-            <span class="corridor-route">Laredo - San Antonio - Austin - Dallas</span>
-            <p>Most critical north-south route. 40%+ of all US-Mexico trade. Truck stops at 100%+ capacity.</p>
-          </div>
-          <div class="corridor-card">
-            <span class="corridor-name">I-10</span>
-            <span class="corridor-route">El Paso - Houston (Coast to Coast)</span>
-            <p>Port Houston imports, California produce. El Paso handles electronics and automotive.</p>
-          </div>
-          <div class="corridor-card">
-            <span class="corridor-name">I-45</span>
-            <span class="corridor-route">Dallas - Houston</span>
-            <p>Connects the two largest Texas Triangle hubs.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="cross-border">
-        <h3>Cross-Border Trade</h3>
-        <p><strong>Laredo</strong> is the most active inland port in North America. 3.7 million trucks cross annually, moving $300+ billion in trade.</p>
-        <p>If you're running Mexico routes, you need insurance that meets both US and Mexican requirements. RMS can help.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY RMS FOR TEXAS -->
+  <!-- WHY RMS -->
   <section class="why-rms">
     <div class="container">
       <div class="section-header centered">
         <span class="section-tag">Why RMS</span>
-        <h2>Why Texas Truckers Choose RMS</h2>
+        <h2>Why Texas Truckers Choose Us</h2>
+      </div>
+
+      <div class="problem-box">
+        <p class="problem"><strong>The Problem:</strong> For new trucking companies, your options are limited. Progressive, Berkshire, GEICO - that's basically it for the first two years. The price is roughly the same no matter who you go through.</p>
+        <p class="insight"><em>"You're not shopping for a policy - you're shopping for an agent."</em></p>
       </div>
 
       <div class="value-grid">
         <div class="value-card">
+          <h3>Trucking Specialists Only</h3>
+          <p>We don't sell home or auto. We know trucking inside and out.</p>
+        </div>
+        <div class="value-card">
+          <h3>New Authority Experts</h3>
+          <p>We've helped 1,000+ truckers through the 20-21 day FMCSA wait. We time your insurance perfectly.</p>
+        </div>
+        <div class="value-card">
+          <h3>5-Minute COIs</h3>
+          <p>When a broker needs your certificate NOW, we deliver. Texas freight moves fast.</p>
+        </div>
+        <div class="value-card">
+          <h3>10-Minute Federal Filings</h3>
+          <p>Your BMC-91 and BOC-3 filed within minutes of binding.</p>
+        </div>
+        <div class="value-card">
           <h3>Licensed in Texas</h3>
-          <p>We're licensed to write trucking insurance in Texas. We know TxDMV requirements and work with carriers across all Texas operations.</p>
+          <p>Stewart Hyndman holds our Texas license. We know TxDMV and FMCSA.</p>
         </div>
-        <div class="value-card">
-          <h3>Interstate & Intrastate Experts</h3>
-          <p>We understand the difference between Texas-only authority and federal MC requirements. We'll make sure you get exactly what you need.</p>
+        <div class="value-card highlight">
+          <h3>"Finally, someone on your side."</h3>
+          <p>That's not just a tagline. It's how we do business.</p>
         </div>
-        <div class="value-card">
-          <h3>Fast COI Turnaround</h3>
-          <p>Texas freight moves fast. When a broker needs a certificate of insurance, you get it in minutes - not days.</p>
+      </div>
+
+      <div class="section-cta centered">
+        <a href="tel:208-800-0640" class="btn">Get Your Texas Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEXAS MARKET -->
+  <section class="texas-market">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Market</span>
+        <h2>Texas - The Biggest Trucking Market</h2>
+      </div>
+
+      <div class="market-content">
+        <div class="market-text">
+          <p>Texas has <strong>66,000+ trucking companies</strong> - more than any other state. That means:</p>
+          <ul>
+            <li>More freight opportunities (2.1 billion tons moved annually)</li>
+            <li>More competition for loads</li>
+            <li>More brokers who need your COI fast</li>
+          </ul>
         </div>
-        <div class="value-card">
-          <h3>New Authority Specialists</h3>
-          <p>Timing your insurance with your authority activation is critical. We've helped hundreds of Texas truckers get rolling without delays.</p>
+
+        <div class="corridors">
+          <h3>The Corridors That Matter</h3>
+          <div class="corridor-list">
+            <div class="corridor">
+              <span class="corridor-name">I-35</span>
+              <span class="corridor-route">Laredo → Dallas</span>
+              <p>40% of all US-Mexico trade. Busiest inland port in North America.</p>
+            </div>
+            <div class="corridor">
+              <span class="corridor-name">I-10</span>
+              <span class="corridor-route">El Paso → Houston</span>
+              <p>Port Houston imports, coast-to-coast freight.</p>
+            </div>
+            <div class="corridor">
+              <span class="corridor-name">Texas Triangle</span>
+              <span class="corridor-route">Dallas • Houston • San Antonio</span>
+              <p>70% of Texas logistics concentrated here.</p>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="section-cta">
+        <p>Running I-35 or I-10? We know these corridors. We know the coverage you need for cross-border work, port deliveries, and everything in between.</p>
+        <a href="tel:208-800-0640" class="btn">Talk to a Texas Specialist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW AUTHORITY PROCESS -->
+  <section class="new-authority">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag">New Authorities</span>
+        <h2>Starting a Trucking Company in Texas?</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="day">Day 1</span>
+          <p>Apply for USDOT and MC numbers ($300 FMCSA fee)</p>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-item">
+          <span class="day">Days 1-17</span>
+          <p>20-21 day waiting period begins</p>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-item highlight">
+          <span class="day">Day 18</span>
+          <p>RMS binds your insurance, files your BMC-91 within 10 minutes</p>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-item">
+          <span class="day">Day 21</span>
+          <p>Your authority goes active. You're legal to haul.</p>
+        </div>
+      </div>
+
+      <div class="rms-difference">
+        <h3>The RMS Difference</h3>
+        <p>We've done this 1,000+ times. We know exactly when to bind so you're not paying for insurance days you can't use, but your filings hit FMCSA in time.</p>
+        <p><strong>Texas-specific:</strong> If you're doing Texas-only (intrastate), you'll also need a TxDMV number. Different process, 3-10 days. We'll guide you through both if needed.</p>
+      </div>
+
+      <div class="section-cta centered">
+        <p>Starting a trucking company in Texas? Let's talk through your timeline.</p>
+        <a href="tel:208-800-0640" class="btn">Call 208-800-0640</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE OPTIONS -->
+  <section class="coverage">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Coverage</span>
+        <h2>What Texas Truckers Typically Need</h2>
+      </div>
+
+      <div class="coverage-grid">
+        <div class="coverage-card required">
+          <span class="coverage-badge">Required</span>
+          <h3>Auto Liability</h3>
+          <p>Damage/injury you cause to others. $750K minimum for interstate.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-badge">If Financed</span>
+          <h3>Physical Damage</h3>
+          <p>Your truck - collision, theft, fire. Required by most lenders.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-badge">Usually</span>
+          <h3>Cargo Insurance</h3>
+          <p>The freight you're hauling. Most brokers require it.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-badge">Sometimes</span>
+          <h3>General Liability</h3>
+          <p>Non-trucking incidents. Required by some brokers.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-badge">Optional</span>
+          <h3>Bobtail / NTL</h3>
+          <p>Driving without a trailer. Covers off-dispatch driving.</p>
+        </div>
+      </div>
+
+      <div class="coverage-approach">
+        <p><strong>Our approach:</strong> We don't upsell coverage you don't need. We figure out what's required, what's smart, and what's optional - then let you decide.</p>
+        <p class="carriers">Carriers we work with: Progressive, Berkshire Hathaway, GEICO, Artisan & Truckers, United Financial</p>
       </div>
     </div>
   </section>
@@ -317,50 +334,59 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="faq-list">
           <details class="faq-item">
-            <summary>Do I need both a TxDMV number and USDOT number?</summary>
-            <p>If you're only operating within Texas (intrastate), you need both - USDOT first, then TxDMV. If you're crossing state lines (interstate), you need USDOT + MC Number, and only need TxDMV if you also do Texas-only work.</p>
+            <summary>How much does Texas trucking insurance cost?</summary>
+            <p>For new authorities, expect $12,000-$18,000/year for a single truck with $750K liability. Rates depend on your experience, driving record, equipment, and cargo. Get a quote to see your actual numbers.</p>
           </details>
           <details class="faq-item">
-            <summary>What's the minimum insurance for Texas trucking?</summary>
-            <p>Interstate carriers need $750,000 (federal requirement). Texas intrastate carriers need $500,000 for general freight, or $300,000 for household goods under 26,000 lbs.</p>
+            <summary>Can RMS insure new trucking companies?</summary>
+            <p>Yes - that's our specialty. Most agencies avoid new authorities because they're harder to place. We've built our business on helping new truckers get started.</p>
           </details>
           <details class="faq-item">
-            <summary>How long does Texas authority take?</summary>
-            <p>TxDMV intrastate authority: 3-10 days. Federal MC authority (interstate): 20-21 days. RMS helps you time your insurance with your authority activation.</p>
+            <summary>How fast can I get a quote?</summary>
+            <p>Same day for most operations. Complex risks (hazmat, specialized cargo) may take 24-48 hours to shop properly.</p>
           </details>
           <details class="faq-item">
-            <summary>I'm doing cross-border work to Mexico. What do I need?</summary>
-            <p>You'll need USDOT, MC Number, and your insurance must meet both US and Mexican requirements. Many carriers running Laredo routes need additional coverage. Contact RMS to discuss your specific operation.</p>
+            <summary>What if I'm doing cross-border work to Mexico?</summary>
+            <p>We handle it. Laredo, El Paso, Brownsville - we know the coverage requirements for cross-border operations.</p>
           </details>
           <details class="faq-item">
-            <summary>What's a TxDMV Cab Card?</summary>
-            <p>Your proof of insurance that must be kept in your truck at all times. Texas law requires you to present it to law enforcement on request. It can be paper or electronic.</p>
+            <summary>I already have insurance but want to switch. Can you help?</summary>
+            <p>Absolutely. We'll quote you, and if we can beat your current rate or offer better service, we'll handle the switch. No pressure.</p>
           </details>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
-      <h2>Get Your Texas Trucking Insurance Quote</h2>
-      <p>Licensed in Texas. Specialists in trucking. Fast quotes, real answers.</p>
-      <a href="tel:208-800-0640" class="cta-phone">208-800-0640</a>
+      <h2>Ready to Get Your Texas Trucking Insurance?</h2>
+      <p>Whether you're a new authority waiting on FMCSA or an established owner-operator shopping rates, RMS is here to help.</p>
+
+      <div class="cta-options">
+        <a href="tel:208-800-0640" class="cta-phone">
+          <span class="cta-type">Call</span>
+          <span class="cta-value">208-800-0640</span>
+        </a>
+        <a href="sms:208-800-0644" class="cta-text">
+          <span class="cta-type">Text</span>
+          <span class="cta-value">208-800-0644</span>
+        </a>
+      </div>
+
+      <p class="trust-close">1,000+ truckers helped. Licensed in 40 states. Trucking specialists since 2020.</p>
     </div>
   </section>
 
   <!-- MOBILE STICKY -->
   <div class="mobile-cta">
-    <a href="tel:208-800-0640" class="mobile-btn">Call for Texas Quote</a>
+    <a href="tel:208-800-0640" class="mobile-btn">Get Texas Quote - 208-800-0640</a>
   </div>
 
 </Layout>
 
 <style>
-  /* ========================================
-     VARIABLES
-     ======================================== */
   :root {
     --forest: #1B4332;
     --forest-deep: #0D2118;
@@ -374,116 +400,159 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 2rem;
   }
 
-  .gold { color: var(--gold); }
-
   .section-tag {
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--gold);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .section-header {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .section-header.centered {
     text-align: center;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .section-header h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.1;
-    margin-bottom: 1rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
     color: var(--forest);
   }
 
   .section-intro {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--gray-600);
     line-height: 1.7;
+    max-width: 700px;
   }
 
-  /* ========================================
-     HERO
-     ======================================== */
-  .hero {
-    min-height: auto;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+  .btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--forest-deep);
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn:hover {
+    background: var(--forest);
+    color: var(--white);
+  }
+
+  .section-cta {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: var(--gray-100);
+    border-radius: 8px;
+    border-left: 4px solid var(--gold);
+  }
+
+  .section-cta.centered {
     text-align: center;
-    overflow: hidden;
-    padding: 8rem 2rem 5rem;
+    border-left: none;
+    border-top: 4px solid var(--gold);
+  }
+
+  .section-cta p {
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    padding: 7rem 2rem 5rem;
+    text-align: center;
+    color: var(--white);
   }
 
   .hero-bg {
     position: absolute;
     inset: 0;
-    z-index: 0;
-  }
-
-  .hero-gradient {
-    position: absolute;
-    inset: 0;
     background: var(--forest-deep);
+    z-index: 0;
   }
 
   .hero-content {
     position: relative;
     z-index: 1;
-    color: var(--white);
     max-width: 800px;
+    margin: 0 auto;
   }
 
   .state-badge {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: rgba(218,165,32,0.1);
+    gap: 8px;
+    background: rgba(218,165,32,0.15);
     border: 1px solid rgba(218,165,32,0.3);
-    padding: 10px 20px;
-    border-radius: 100px;
-    margin-bottom: 2rem;
-    font-size: 0.75rem;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--gold);
+    margin-bottom: 1.5rem;
   }
 
-  .state-flag {
-    font-size: 1rem;
-  }
+  .state-flag { font-size: 1rem; }
 
   .hero h1 {
-    font-size: clamp(2.5rem, 7vw, 4rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: var(--gold);
     margin-bottom: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .hero-sub {
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-    opacity: 0.8;
-    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    opacity: 0.85;
     line-height: 1.6;
+    margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .badge-icon {
+    color: var(--gold);
+    font-weight: bold;
   }
 
   .hero-cta {
@@ -492,11 +561,11 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     background: var(--gold);
     color: var(--forest-deep);
-    padding: 1.25rem 3.5rem;
+    padding: 1.25rem 3rem;
     border-radius: 4px;
     text-decoration: none;
-    transition: all 0.2s ease;
-    margin-bottom: 2.5rem;
+    transition: all 0.2s;
+    margin-bottom: 1rem;
   }
 
   .hero-cta:hover {
@@ -508,470 +577,464 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.65rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     opacity: 0.7;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
   .cta-number {
     font-family: 'Crimson Pro', serif;
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    letter-spacing: 0.02em;
   }
 
-  .hero-stats {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  .hero-note {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-style: italic;
   }
 
-  .stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .stat-num {
-    font-family: 'Crimson Pro', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--gold);
-  }
-
-  .stat-text {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    opacity: 0.5;
-  }
-
-  .stat-sep {
-    width: 4px;
-    height: 4px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 50%;
-  }
-
-  /* ========================================
-     REQUIREMENTS
-     ======================================== */
+  /* REQUIREMENTS */
   .requirements {
-    padding: 6rem 0;
+    padding: 5rem 0;
     background: var(--white);
   }
 
-  .requirements-table-wrap {
+  .table-wrap {
     overflow-x: auto;
-    margin-bottom: 2rem;
   }
 
-  .requirements-table {
+  .req-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.95rem;
   }
 
-  .requirements-table th,
-  .requirements-table td {
+  .req-table th,
+  .req-table td {
     padding: 1rem 1.25rem;
     text-align: left;
     border-bottom: 1px solid var(--gray-200);
   }
 
-  .requirements-table th {
+  .req-table th {
     background: var(--forest);
     color: var(--white);
-    font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
-  .requirements-table th:first-child {
-    border-radius: 4px 0 0 0;
-  }
+  .req-table th:first-child { border-radius: 4px 0 0 0; }
+  .req-table th:last-child { border-radius: 0 4px 0 0; }
 
-  .requirements-table th:last-child {
-    border-radius: 0 4px 0 0;
-  }
-
-  .requirements-table td {
+  .req-table td {
     background: var(--gray-100);
   }
 
-  .requirements-table tr:hover td {
-    background: var(--gray-200);
-  }
-
-  .cargo-note {
-    background: var(--gray-100);
-    padding: 1.5rem 2rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--gold);
-  }
-
-  .cargo-note h4 {
-    font-family: 'Crimson Pro', serif;
-    color: var(--forest);
-    margin-bottom: 0.75rem;
-  }
-
-  .cargo-note ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1rem 0;
-  }
-
-  .cargo-note li {
-    color: var(--gray-600);
-    margin-bottom: 0.5rem;
-    padding-left: 1rem;
-    position: relative;
-  }
-
-  .cargo-note li::before {
-    content: '-';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-  }
-
-  .source {
-    font-size: 0.85rem;
-    color: var(--gray-600);
-    margin: 0;
-  }
-
-  .source a {
-    color: var(--gold);
-  }
-
-  /* ========================================
-     AUTHORITY
-     ======================================== */
-  .authority {
-    padding: 6rem 0;
+  /* WHY RMS */
+  .why-rms {
+    padding: 5rem 0;
     background: var(--gray-100);
   }
 
-  .authority-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .authority-card {
+  .problem-box {
     background: var(--white);
     padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .problem {
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .insight {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.4rem;
+    color: var(--forest);
+  }
+
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .value-card {
+    background: var(--white);
+    padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--gray-200);
   }
 
-  .authority-type {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .value-card.highlight {
+    background: var(--forest);
+    border-color: var(--forest);
+  }
+
+  .value-card.highlight h3,
+  .value-card.highlight p {
+    color: var(--white);
+  }
+
+  .value-card.highlight h3 {
     color: var(--gold);
+  }
+
+  .value-card h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.15rem;
+    color: var(--forest);
     margin-bottom: 0.5rem;
   }
 
-  .authority-card h3 {
-    font-family: 'Crimson Pro', serif;
-    font-size: 1.5rem;
-    color: var(--forest);
-    margin-bottom: 1.25rem;
-  }
-
-  .authority-card ol {
-    padding-left: 1.25rem;
+  .value-card p {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    line-height: 1.6;
     margin: 0;
   }
 
-  .authority-card li {
-    color: var(--gray-600);
-    line-height: 1.7;
-    margin-bottom: 0.5rem;
-  }
-
-  .authority-source {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--gray-600);
-  }
-
-  .authority-source a {
-    color: var(--gold);
-  }
-
-  /* ========================================
-     TEXAS INDUSTRY
-     ======================================== */
-  .texas-industry {
-    padding: 6rem 0;
+  /* TEXAS MARKET */
+  .texas-market {
+    padding: 5rem 0;
     background: var(--forest-deep);
     color: var(--white);
   }
 
-  .texas-industry .section-header h2 {
+  .texas-market .section-header h2 {
     color: var(--white);
   }
 
-  .texas-industry .section-intro {
-    color: rgba(255,255,255,0.7);
-  }
-
-  .stats-grid {
+  .market-content {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 4rem;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
   }
 
-  .stat-card {
-    text-align: center;
-    padding: 1.5rem;
+  .market-text p {
+    margin-bottom: 1rem;
   }
 
-  .stat-big {
-    display: block;
-    font-family: 'Crimson Pro', serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 0.25rem;
+  .market-text ul {
+    padding-left: 1.25rem;
   }
 
-  .stat-label {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--white);
-    margin-bottom: 0.25rem;
-  }
-
-  .stat-note {
-    display: block;
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.5);
-  }
-
-  .corridors {
-    margin-bottom: 3rem;
+  .market-text li {
+    margin-bottom: 0.5rem;
+    opacity: 0.85;
   }
 
   .corridors h3 {
     font-family: 'Crimson Pro', serif;
-    font-size: 1.5rem;
     color: var(--gold);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
-  .corridor-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+  .corridor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .corridor-card {
+  .corridor {
     background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 1.5rem;
-    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--gold);
   }
 
   .corridor-name {
-    display: block;
     font-family: 'Crimson Pro', serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    color: var(--white);
   }
 
   .corridor-route {
     display: block;
     font-size: 0.8rem;
     color: var(--gold);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
-  .corridor-card p {
-    color: rgba(255,255,255,0.7);
+  .corridor p {
     font-size: 0.9rem;
-    line-height: 1.6;
+    opacity: 0.8;
     margin: 0;
   }
 
-  .cross-border {
-    background: rgba(218,165,32,0.1);
-    border: 1px solid rgba(218,165,32,0.3);
-    padding: 2rem;
-    border-radius: 8px;
+  .texas-market .section-cta {
+    background: rgba(255,255,255,0.05);
+    border-color: var(--gold);
   }
 
-  .cross-border h3 {
+  .texas-market .section-cta p {
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* NEW AUTHORITY */
+  .new-authority {
+    padding: 5rem 0;
+    background: var(--white);
+  }
+
+  .timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .timeline-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--gray-100);
+    border-radius: 8px;
+    max-width: 180px;
+  }
+
+  .timeline-item.highlight {
+    background: var(--gold);
+  }
+
+  .timeline-item.highlight .day {
+    color: var(--forest-deep);
+  }
+
+  .timeline-item.highlight p {
+    color: var(--forest-deep);
+  }
+
+  .day {
+    display: block;
     font-family: 'Crimson Pro', serif;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .timeline-connector {
+    width: 40px;
+    height: 2px;
+    background: var(--gray-200);
+  }
+
+  .rms-difference {
+    background: var(--gray-100);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+
+  .rms-difference h3 {
+    font-family: 'Crimson Pro', serif;
+    color: var(--forest);
     margin-bottom: 1rem;
   }
 
-  .cross-border p {
-    color: rgba(255,255,255,0.8);
+  .rms-difference p {
+    color: var(--gray-600);
     line-height: 1.7;
     margin-bottom: 0.75rem;
   }
 
-  .cross-border p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* ========================================
-     WHY RMS
-     ======================================== */
-  .why-rms {
-    padding: 6rem 0;
-    background: var(--white);
-  }
-
-  .value-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .value-card {
+  /* COVERAGE */
+  .coverage {
+    padding: 5rem 0;
     background: var(--gray-100);
-    padding: 2rem;
+  }
+
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+
+  .coverage-card {
+    background: var(--white);
+    padding: 1.25rem;
     border-radius: 8px;
     border: 1px solid var(--gray-200);
   }
 
-  .value-card h3 {
-    font-family: 'Crimson Pro', serif;
-    font-size: 1.25rem;
-    color: var(--forest);
-    margin-bottom: 0.75rem;
+  .coverage-card.required {
+    border-color: var(--gold);
+    border-width: 2px;
   }
 
-  .value-card p {
+  .coverage-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: var(--gray-600);
-    line-height: 1.7;
+    background: var(--gray-100);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+
+  .coverage-card.required .coverage-badge {
+    background: rgba(218,165,32,0.2);
+    color: var(--gold-hover);
+  }
+
+  .coverage-card h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    color: var(--forest);
+    margin-bottom: 0.4rem;
+  }
+
+  .coverage-card p {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    line-height: 1.5;
     margin: 0;
   }
 
-  /* ========================================
-     FAQ
-     ======================================== */
+  .coverage-approach {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .coverage-approach p {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .carriers {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+  }
+
+  /* FAQ */
   .faq {
-    padding: 6rem 0;
-    background: var(--gray-100);
+    padding: 5rem 0;
+    background: var(--white);
   }
 
   .faq-layout {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: start;
+    gap: 3rem;
   }
 
   .faq-header h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem);
     color: var(--forest);
   }
 
   .faq-list {
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
   .faq-item {
     border-bottom: 1px solid var(--gray-200);
-    background: var(--white);
   }
 
   .faq-item:first-child {
     border-top: 1px solid var(--gray-200);
-    border-radius: 8px 8px 0 0;
-  }
-
-  .faq-item:last-child {
-    border-radius: 0 0 8px 8px;
   }
 
   .faq-item summary {
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem 0;
     cursor: pointer;
-    font-weight: 500;
-    list-style: none;
     font-family: 'Crimson Pro', serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--forest);
+    list-style: none;
   }
 
-  .faq-item summary::-webkit-details-marker {
-    display: none;
-  }
+  .faq-item summary::-webkit-details-marker { display: none; }
 
-  .faq-item summary:hover {
-    color: var(--gold-hover);
-  }
+  .faq-item summary:hover { color: var(--gold-hover); }
 
-  .faq-item[open] summary {
-    color: var(--gold-hover);
-    border-bottom: 1px solid var(--gray-200);
-  }
+  .faq-item[open] summary { color: var(--gold-hover); }
 
   .faq-item p {
-    padding: 1.25rem 1.5rem;
+    padding: 0 0 1.25rem;
     color: var(--gray-600);
     line-height: 1.7;
-    margin: 0;
   }
 
-  /* ========================================
-     FINAL CTA
-     ======================================== */
+  /* FINAL CTA */
   .final-cta {
-    padding: 6rem 0;
+    padding: 5rem 0;
     background: var(--gold);
     text-align: center;
   }
 
   .final-cta h2 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
     color: var(--forest);
     margin-bottom: 0.5rem;
   }
 
-  .final-cta p {
+  .final-cta > p {
     color: var(--forest);
-    opacity: 0.8;
-    margin-bottom: 1.5rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .cta-phone {
-    font-family: 'Crimson Pro', serif;
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 600;
-    color: var(--forest);
+  .cta-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-phone, .cta-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
-    display: block;
-    transition: color 0.3s ease;
+    color: var(--forest);
   }
 
-  .cta-phone:hover {
+  .cta-type {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+  }
+
+  .cta-value {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .cta-phone:hover .cta-value,
+  .cta-text:hover .cta-value {
     color: var(--white);
   }
 
-  /* ========================================
-     MOBILE STICKY
-     ======================================== */
+  .trust-close {
+    font-size: 0.9rem;
+    color: var(--forest);
+    opacity: 0.75;
+  }
+
+  /* MOBILE */
   .mobile-cta {
     display: none;
     position: fixed;
@@ -995,60 +1058,21 @@ import Layout from '../layouts/Layout.astro';
     text-decoration: none;
   }
 
-  /* ========================================
-     RESPONSIVE
-     ======================================== */
   @media (max-width: 968px) {
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .corridor-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .authority-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .value-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .faq-layout {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .mobile-cta {
-      display: block;
-    }
-
-    .final-cta {
-      padding-bottom: 8rem;
-    }
+    .value-grid { grid-template-columns: repeat(2, 1fr); }
+    .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+    .market-content { grid-template-columns: 1fr; }
+    .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .timeline { flex-direction: column; }
+    .timeline-connector { width: 2px; height: 20px; }
+    .mobile-cta { display: block; }
+    .final-cta { padding-bottom: 7rem; }
   }
 
   @media (max-width: 640px) {
-    .hero h1 {
-      font-size: 2.2rem;
-    }
-
-    .hero-stats {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .stat-sep {
-      display: none;
-    }
-
-    .stats-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .stat-big {
-      font-size: 2rem;
-    }
+    .value-grid { grid-template-columns: 1fr; }
+    .coverage-grid { grid-template-columns: 1fr; }
+    .trust-badges { flex-direction: column; align-items: center; }
+    .cta-options { flex-direction: column; gap: 1rem; }
   }
 </style>
