@@ -12,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="container hero-content">
       <div class="new-venture-badge">
-        <span class="badge-icon">&#9679;</span>
+        <span class="status-dot green-glow"></span>
         <span>New Venture & New DOT Specialists</span>
       </div>
 
@@ -53,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
           <h2>Just Got Your DOT?<br/><span class="accent">We Got You Covered.</span></h2>
           <p>Starting your insurance policy and getting the federal filings done right requires a special touch. Don't get lost in the process. Let us help today!</p>
           <a href="tel:208-800-0640" class="na-cta">208-800-0640</a>
-          <p class="na-tagline">Licensed experts <span class="accent">standing by</span></p>
+          <p class="na-tagline"><span class="status-dot status-indicator"></span> Licensed experts <span class="accent">standing by</span></p>
         </div>
       </div>
     </div>
@@ -478,9 +478,39 @@ import Layout from '../layouts/Layout.astro';
     color: var(--gold);
   }
 
-  .badge-icon {
-    font-size: 6px;
-    opacity: 0.8;
+  /* Status dot - traffic light indicator */
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+  }
+
+  .status-dot.green-glow {
+    background: #22c55e;
+    box-shadow: 0 0 8px #22c55e, 0 0 16px #22c55e;
+    animation: pulse-green 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-green {
+    0%, 100% { box-shadow: 0 0 8px #22c55e, 0 0 16px #22c55e; }
+    50% { box-shadow: 0 0 12px #22c55e, 0 0 24px #22c55e, 0 0 36px #22c55e; }
+  }
+
+  .status-dot.status-green {
+    background: #22c55e;
+    box-shadow: 0 0 6px #22c55e;
+  }
+
+  .status-dot.status-yellow {
+    background: #eab308;
+    box-shadow: 0 0 6px #eab308;
+  }
+
+  .status-dot.status-red {
+    background: #ef4444;
+    box-shadow: 0 0 6px #ef4444;
   }
 
   .hero h1 {
@@ -1280,3 +1310,34 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 </style>
+
+<script>
+  // Traffic light status indicator based on Mountain Time
+  function updateStatusIndicator() {
+    const indicator = document.querySelector('.status-indicator');
+    if (!indicator) return;
+
+    // Get current hour in Mountain Time
+    const now = new Date();
+    const mtTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Denver' }));
+    const hour = mtTime.getHours();
+
+    // Remove existing status classes
+    indicator.classList.remove('status-green', 'status-yellow', 'status-red');
+
+    // Green: 6am-6pm (business hours)
+    // Yellow: 6pm-10pm (evening)
+    // Red: 10pm-6am (overnight)
+    if (hour >= 6 && hour < 18) {
+      indicator.classList.add('status-green');
+    } else if (hour >= 18 && hour < 22) {
+      indicator.classList.add('status-yellow');
+    } else {
+      indicator.classList.add('status-red');
+    }
+  }
+
+  // Run on load and every minute
+  updateStatusIndicator();
+  setInterval(updateStatusIndicator, 60000);
+</script>
