@@ -4,6 +4,192 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Trucking Insurance for New Authorities | RMS Truck Insurance">
 
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does trucking insurance cost per month?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For owner-operators with their own authority, trucking insurance typically costs $800-$1,500 per month ($9,000-$18,000 per year). Leased operators pay less. Costs vary significantly by state — Ohio can be as low as $7,000/year while Illinois can run as high as $22,000/year for new authorities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is trucking insurance so expensive for new authorities?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "New authority trucking insurance is expensive because only 3-4 carriers will write the policy — Progressive, Berkshire Hathaway, GEICO, and occasionally Artisan & Truckers. Limited competition means limited pricing pressure. After 2 years of clean operation, more carriers compete for your business and rates improve significantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the cheapest trucking insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The cheapest trucking insurance for a single-truck owner-operator with their own authority starts around $7,000-$9,000/year for liability-only coverage in lower-cost states. Adding physical damage and cargo brings the total to $12,000-$20,000/year depending on location."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does physical damage coverage cost for a semi truck?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Physical damage coverage (comprehensive + collision) for a semi truck typically costs $2,000-$13,000 per year, depending on the truck's value, age, state, and your deductible. If your truck is financed or leased, physical damage is required by your lender."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does trucking insurance cost more in certain states?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Trucking insurance costs vary significantly by state. As of 2026: Texas $8,500-$18,000/year, Illinois $10,000-$22,000/year, Ohio $7,000-$16,000/year, Pennsylvania $8,000-$19,000/year, Georgia $9,000-$20,000/year for new authority owner-operators."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get trucking insurance with a new authority?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To get trucking insurance with a new authority: apply for your USDOT and MC numbers, wait through the 20-21 day FMCSA processing period, then bind your insurance and file your BMC-91 before your authority activates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get trucking insurance with no experience?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can get trucking insurance with no experience, but your options are limited and rates are higher. Most carriers require at least a valid CDL — some want 1-2 years of CDL experience even as a company driver."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the BMC-91 filing and why do I need it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The BMC-91 is the proof of insurance filing that your insurance company submits to FMCSA. Without it, your operating authority cannot go active — you're not legally allowed to haul freight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the 20-21 day waiting period for new authority?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After you apply for your MC (Motor Carrier) number, FMCSA imposes a 20-21 day waiting period before your authority can go active. During this time, your application is published in the FMCSA register for public protest. You cannot operate during this period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to get trucking insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Getting a trucking insurance quote takes same-day for most operations. Binding the policy (making it active) takes 1-2 business days after you approve the quote. Total from first call to legally hauling: typically 2-5 business days after your MC number's waiting period ends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is bobtail insurance (non-trucking liability)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bobtail insurance (technically called non-trucking liability or NTL) covers your truck when you're driving without a trailer and not under dispatch — for example, driving home after dropping a load, or running personal errands in your truck."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between cargo insurance and auto liability?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Auto liability covers damage or injury you cause to OTHER people (their car, their medical bills, property you hit). Cargo insurance covers the FREIGHT you're hauling. Liability protects others FROM you. Cargo protects the goods you're responsible FOR."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need physical damage coverage on my truck?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You need physical damage coverage if your truck is financed or leased — your lender requires it. If you own the truck outright, it's optional but recommended for trucks worth more than $20,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does general liability insurance cover for trucking companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "General liability (GL) for trucking companies covers non-driving incidents: someone slips on your property, you damage a dock during loading, or a third party is injured at your facility. It does NOT cover accidents while driving, damaged freight, or your truck being damaged."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is trailer interchange coverage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trailer interchange coverage protects trailers you're pulling that you don't own — trailers borrowed or swapped under a trailer interchange agreement with another carrier or shipper."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are FMCSA insurance requirements for trucking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FMCSA requires all interstate motor carriers to maintain minimum insurance coverage filed with proof via Form BMC-91. General freight (non-hazmat) requires $750,000 minimum liability. Oil transport requires $1,000,000. Hazardous materials requires $5,000,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a COI and why do brokers keep asking for it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A COI (Certificate of Insurance) is a one-page document proving you have active insurance coverage. Brokers request it before giving you a load because they need proof you're insured before they'll put freight on your truck."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if my trucking insurance lapses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your trucking insurance lapses, your carrier files a notice of cancellation with FMCSA. After a 30-day notice period, your operating authority is revoked. You cannot legally haul freight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I choose a trucking insurance agent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For new authorities, you're choosing an agent more than choosing a policy. Only 3-4 carriers write new trucking companies, and their rates are similar regardless of which agent sells it. The difference is service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I switch trucking insurance agents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can switch agents at any time without penalty. Your policy stays with the same carrier — you're just changing who services it (called a 'broker of record' change) or you can move to a new policy entirely at renewal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What carriers write new authority trucking insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main carriers that write new authority trucking insurance: Progressive Commercial (most common, widest appetite), Berkshire Hathaway/Guard (competitive on some classes), GEICO Commercial (selective but competitive), and Artisan & Truckers Casualty (regional). After 2 years, options expand significantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it worth getting multiple trucking insurance quotes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For new authorities (under 2 years): getting 2-3 quotes is smart, but don't expect dramatic differences. With only 3-4 carriers willing to write you, the range is usually $1,000-$3,000 spread on a $15,000 policy. For established carriers (2+ years): absolutely shop — pricing can vary by 30-50%."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg">
@@ -346,28 +532,170 @@ import Layout from '../layouts/Layout.astro';
         <div class="faq-header">
           <span class="section-tag">FAQ</span>
           <h2>Straight Answers</h2>
+          <p class="faq-intro">22 questions truckers actually ask, answered directly.</p>
         </div>
 
         <div class="faq-list">
+          <h3 class="faq-category">Cost & Pricing</h3>
+
           <details class="faq-item">
-            <summary>How much does trucking insurance cost?</summary>
-            <p>It depends on experience, equipment, what you haul, and safety record. New authority with newer truck: expect $10,000-$18,000/year. We'll give you a real quote based on your situation.</p>
+            <summary>How much does trucking insurance cost per month?</summary>
+            <p>For owner-operators with their own authority, trucking insurance typically costs $800-$1,500 per month ($9,000-$18,000 per year). Leased operators pay less.</p>
+            <p>Your actual cost depends on years in business, driving record, equipment age and value, cargo type, and operating radius. Costs vary significantly by state — Ohio can be as low as $7,000/year while Illinois can run as high as $22,000/year for new authorities.</p>
+            <p>New authorities (first 2 years) are at the high end because fewer carriers will write the policy. After 2 years with clean history, rates typically drop 20-30%.</p>
           </details>
+
           <details class="faq-item">
-            <summary>Is your price lower than other agencies?</summary>
-            <p>Same carriers, same base price if they did it right. The difference shows up later—when you need to add a truck, change something, or have a question. That's when expertise matters.</p>
+            <summary>Why is trucking insurance so expensive for new authorities?</summary>
+            <p>New authority trucking insurance is expensive because only 3-4 carriers will write the policy — Progressive, Berkshire Hathaway, GEICO, and occasionally Artisan & Truckers. Limited competition means limited pricing pressure.</p>
+            <p>The carriers see new authorities as higher risk because there's no operating history to evaluate. After 2 years of clean operation, more carriers compete for your business and rates improve significantly.</p>
+            <p>This is why choosing the right agent matters more than shopping carriers for new authorities. The policy options are nearly identical — the difference is service, speed, and expertise with the FMCSA process.</p>
           </details>
+
           <details class="faq-item">
-            <summary>How fast can I get a quote?</summary>
-            <p>Most quotes same day. If you have your info ready, often within a couple hours.</p>
+            <summary>What's the cheapest trucking insurance?</summary>
+            <p>The cheapest trucking insurance for a single-truck owner-operator with their own authority starts around $7,000-$9,000/year for liability-only coverage in lower-cost states. Adding physical damage and cargo brings the total to $12,000-$20,000/year depending on location.</p>
+            <p>To get the lowest rate, you need: 2+ years operating authority with no claims, clean MVR (no violations in 3 years), newer equipment (under 10 years old), and no hazmat or specialized cargo.</p>
+            <p>Warning: "cheapest" often means minimum coverage. If you're hauling $100K loads with only $100K cargo coverage, one claim wipes you out. Get adequate coverage, not just the cheapest.</p>
           </details>
+
           <details class="faq-item">
-            <summary>I just got my authority. Where do I start?</summary>
-            <p>Call us. We'll walk you through what coverage you need and how to get your filings done.</p>
+            <summary>How much does physical damage coverage cost for a semi truck?</summary>
+            <p>Physical damage coverage (comprehensive + collision) for a semi truck typically costs $2,000-$13,000 per year, depending on the truck's value, age, state, and your deductible.</p>
+            <p>If your truck is financed or leased, physical damage is required by your lender. If you own it outright, it's optional — but one total loss without coverage means you're buying a new truck out of pocket.</p>
+            <p>Deductible choice matters: a $2,500 deductible saves 15-25% on premium vs a $1,000 deductible.</p>
           </details>
+
           <details class="faq-item">
-            <summary>Do I need cargo insurance?</summary>
-            <p>Practically yes—most brokers won't work with you without it. Standard is $100K.</p>
+            <summary>Does trucking insurance cost more in certain states?</summary>
+            <p>Yes. Trucking insurance costs vary significantly by state based on traffic density, litigation environment, and state-specific regulations. As of 2026, here are typical annual ranges for new authority owner-operators:</p>
+            <p>Texas: $8,500-$18,000/year. Illinois: $10,000-$22,000/year. Ohio: $7,000-$16,000/year. Pennsylvania: $8,000-$19,000/year. Georgia: $9,000-$20,000/year.</p>
+            <p>If you operate interstate (which most truckers do), your rates are based on your garaging state plus your operating radius — not just where you're registered.</p>
+          </details>
+
+          <h3 class="faq-category">New Authority</h3>
+
+          <details class="faq-item">
+            <summary>How do I get trucking insurance with a new authority?</summary>
+            <p>To get trucking insurance with a new authority: apply for your USDOT and MC numbers, wait through the 20-21 day FMCSA processing period, then bind your insurance and file your BMC-91 before your authority activates.</p>
+            <p>Step by step: (1) Apply for USDOT + MC number at FMCSA ($300 fee). (2) Wait 20-21 days (FMCSA processing). (3) Around day 18-19, bind your insurance policy. (4) Your agent files BMC-91 (proof of insurance) with FMCSA. (5) Day 21: Authority goes active — you can legally haul.</p>
+            <p>Timing matters: bind too early and you pay for days you can't operate. Bind too late and your authority activation is delayed. An experienced agent handles the timing.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I get trucking insurance with no experience?</summary>
+            <p>Yes, you can get trucking insurance with no experience, but your options are limited and rates are higher. Most carriers require at least a valid CDL — some want 1-2 years of CDL experience even as a company driver.</p>
+            <p>Carriers that write new/inexperienced drivers: Progressive (most flexible on experience), Berkshire Hathaway (case-by-case), and GEICO Commercial (minimum CDL required).</p>
+            <p>Tips to improve your chances: complete a CDL training program, start with a clean MVR, consider leasing to a carrier first to build history, then get your own authority after 1-2 years.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What is the BMC-91 filing and why do I need it?</summary>
+            <p>The BMC-91 is the proof of insurance filing that your insurance company submits to FMCSA. Without it, your operating authority cannot go active — you're not legally allowed to haul freight.</p>
+            <p>Your agent (not you) files the BMC-91 electronically with FMCSA after your policy is bound. It typically takes 24-48 hours to show in the FMCSA system, but some agents can file within minutes.</p>
+            <p>You also need a BOC-3 (process agent designation) filed separately. Together, the BMC-91 and BOC-3 are what activate your MC authority.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What is the 20-21 day waiting period for new authority?</summary>
+            <p>After you apply for your MC (Motor Carrier) number, FMCSA imposes a 20-21 day waiting period before your authority can go active. During this time, your application is published in the FMCSA register for public protest.</p>
+            <p>You cannot operate during this period. The waiting period cannot be shortened or waived. Use this time to get insurance quotes lined up, set up your ELD, get your truck inspected, and find your first load.</p>
+            <p>Your insurance should be bound around day 18-19, so the BMC-91 filing processes before day 21.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How long does it take to get trucking insurance?</summary>
+            <p>Getting a trucking insurance quote takes same-day for most operations. Binding the policy (making it active) takes 1-2 business days after you approve the quote.</p>
+            <p>Timeline breakdown: Quote same day (simple) to 48 hours (complex/hazmat). Binding 1-2 days after approval. BMC-91 filing minutes to 48 hours depending on agent. FMCSA processing 24-48 hours after filing.</p>
+            <p>Total from first call to legally hauling: typically 2-5 business days after your MC number's waiting period ends.</p>
+          </details>
+
+          <h3 class="faq-category">Coverage Types</h3>
+
+          <details class="faq-item">
+            <summary>What is bobtail insurance (non-trucking liability)?</summary>
+            <p>Bobtail insurance (technically called non-trucking liability or NTL) covers your truck when you're driving without a trailer and not under dispatch — for example, driving home after dropping a load, or running personal errands in your truck.</p>
+            <p>Who needs it: Owner-operators leased to a motor carrier. The carrier's policy covers you while dispatched; NTL covers everything else.</p>
+            <p>Who doesn't need it: If you have your own authority, your auto liability already covers all driving. You don't need separate bobtail coverage.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What's the difference between cargo insurance and auto liability?</summary>
+            <p>Auto liability covers damage or injury you cause to OTHER people (their car, their medical bills, property you hit). Cargo insurance covers the FREIGHT you're hauling.</p>
+            <p>Auto liability is required by FMCSA — minimum $750,000 for general freight. Pays when you're at fault in an accident and others are harmed. Cargo insurance is usually required by brokers/shippers — typically $100,000 coverage. Pays when freight is damaged, lost, or stolen.</p>
+            <p>They protect different things: liability protects others FROM you. Cargo protects the goods you're responsible FOR.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do I need physical damage coverage on my truck?</summary>
+            <p>You need physical damage coverage if your truck is financed or leased — your lender requires it. If you own the truck outright, it's optional but recommended for trucks worth more than $20,000.</p>
+            <p>Physical damage covers collision (you hit something or roll over) and comprehensive (theft, fire, vandalism, weather, hitting an animal).</p>
+            <p>The math: If your truck is worth $80,000 and physical damage costs $3,000/year, you're paying 3.75% of the truck's value for protection. One total loss without coverage means replacing an $80K truck out of pocket. If your truck is worth under $15,000, the premium-to-value ratio often doesn't make sense.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What does general liability insurance cover for trucking companies?</summary>
+            <p>General liability (GL) for trucking companies covers non-driving incidents: someone slips on your property, you damage a dock during loading, or a third party is injured at your facility.</p>
+            <p>General liability does NOT cover accidents while driving (that's auto liability), damaged freight (that's cargo), or your truck being damaged (that's physical damage).</p>
+            <p>Who needs it: Trucking companies with a physical location, employees, or who do their own loading/unloading. Solo owner-operators with no physical office and no employees often don't need GL unless broker agreements require it.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What is trailer interchange coverage?</summary>
+            <p>Trailer interchange coverage protects trailers you're pulling that you don't own — trailers borrowed or swapped under a trailer interchange agreement with another carrier or shipper.</p>
+            <p>Your physical damage policy covers YOUR trailer. Trailer interchange covers THEIR trailer while it's in your possession. Common scenario: you pick up a loaded trailer at a shipper's yard, haul it, and drop it. If that trailer is damaged while you have it, trailer interchange pays.</p>
+            <p>Who needs it: Carriers who regularly pull trailers they don't own under interchange agreements. If you only pull your own trailer, you don't need this.</p>
+          </details>
+
+          <h3 class="faq-category">Process & Compliance</h3>
+
+          <details class="faq-item">
+            <summary>What are FMCSA insurance requirements for trucking?</summary>
+            <p>FMCSA requires all interstate motor carriers to maintain minimum insurance coverage filed with proof via Form BMC-91. General freight (non-hazmat) requires $750,000 minimum liability. Oil transport requires $1,000,000. Hazardous materials requires $5,000,000.</p>
+            <p>These are minimums. Many brokers and shippers require $1,000,000 in auto liability regardless of FMCSA minimums.</p>
+            <p>Additionally, you need a BOC-3 (process agent) filing in every state you operate.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What is a COI and why do brokers keep asking for it?</summary>
+            <p>A COI (Certificate of Insurance) is a one-page document proving you have active insurance coverage. Brokers request it before giving you a load because they need proof you're insured before they'll put freight on your truck.</p>
+            <p>A COI shows your carrier name and policy number, coverage types and limits, effective and expiration dates, and the broker listed as "certificate holder."</p>
+            <p>Fast COI turnaround matters: if a broker has a load leaving today and needs your COI first, a 24-hour wait means you lose the load. Good agents deliver COIs in minutes, not days.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What happens if my trucking insurance lapses?</summary>
+            <p>If your trucking insurance lapses, your carrier files a notice of cancellation with FMCSA. After a 30-day notice period, your operating authority is revoked. You cannot legally haul freight.</p>
+            <p>Consequences: FMCSA revokes your authority, you must re-file and potentially re-wait 20-21 days, your insurance history shows a gap (carriers charge more), and brokers see the gap in the SAFER system.</p>
+            <p>If you're struggling with payment, talk to your agent BEFORE the cancellation date. There are often options (payment plans, finding cheaper coverage) that avoid a lapse.</p>
+          </details>
+
+          <h3 class="faq-category">Shopping & Choosing</h3>
+
+          <details class="faq-item">
+            <summary>How do I choose a trucking insurance agent?</summary>
+            <p>For new authorities, you're choosing an agent more than choosing a policy. Only 3-4 carriers write new trucking companies, and their rates are similar regardless of which agent sells it. The difference is service.</p>
+            <p>What to look for: Trucking specialization (generalist agents who also sell home and auto don't know FMCSA). Filing speed (BMC-91 in minutes vs days). COI turnaround (when a broker needs your cert at 6pm Friday). New authority experience (hundreds done vs your first). Accessibility (call/text a real person vs phone tree).</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I switch trucking insurance agents?</summary>
+            <p>Yes, you can switch agents at any time without penalty. Your policy stays with the same carrier — you're just changing who services it (called a "broker of record" change) or you can move to a new policy entirely at renewal.</p>
+            <p>Mid-term BOR change: sign a broker of record letter — same carrier, same policy, different agent, no gap. At renewal: shop new quotes 30-60 days before expiration.</p>
+            <p>Best practice: Shop at renewal, not mid-term, unless service is genuinely unacceptable.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What carriers write new authority trucking insurance?</summary>
+            <p>The main carriers that write new authority trucking insurance (companies with less than 2 years of operating history): Progressive Commercial (most common, widest appetite), Berkshire Hathaway/Guard (competitive on some classes), GEICO Commercial (selective but competitive), and Artisan & Truckers Casualty (regional, sometimes available).</p>
+            <p>After 2 years of clean history, your options expand significantly to include Great West Casualty, Northland, National Indemnity, Sentry, and many others. This is when rates typically drop 20-40%.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is it worth getting multiple trucking insurance quotes?</summary>
+            <p>For new authorities (under 2 years): getting 2-3 quotes is smart, but don't expect dramatic differences. With only 3-4 carriers willing to write you, the range is usually $1,000-$3,000 spread on a $15,000 policy.</p>
+            <p>For established carriers (2+ years): absolutely shop. Your options expand to 10+ carriers and pricing can vary by 30-50%. A good agent who shops multiple markets can save thousands.</p>
+            <p>What matters more than number of quotes: Is the agent comparing apples to apples? Are they explaining differences, not just price? Are they recommending adequate coverage, not just cheapest?</p>
           </details>
         </div>
       </div>
@@ -1224,10 +1552,37 @@ import Layout from '../layouts/Layout.astro';
     color: var(--gold-hover);
   }
 
+  .faq-intro {
+    color: var(--gray-600);
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .faq-category {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gold-hover);
+    margin: 2rem 0 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--gray-200);
+  }
+
+  .faq-category:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
   .faq-item p {
-    padding: 0 0 1.25rem;
+    padding: 0 0 1rem;
     color: var(--gray-600);
     line-height: 1.7;
+  }
+
+  .faq-item p:last-child {
+    padding-bottom: 1.25rem;
   }
 
   /* ========================================
