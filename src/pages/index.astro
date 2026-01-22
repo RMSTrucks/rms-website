@@ -187,6 +187,45 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- STATES WE SERVE -->
+  <section class="states-served">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag">Coverage Area</span>
+        <h2>States We Serve</h2>
+        <p class="section-intro">Licensed in 40+ states. Specialized knowledge in the markets that matter most to truckers.</p>
+      </div>
+
+      <div class="states-grid">
+        <a href="/trucking-insurance-texas/" class="state-card">
+          <span class="state-flag">&#9733;</span>
+          <h3>Texas</h3>
+          <p>66,000+ trucking companies. I-35 corridor. Cross-border specialists.</p>
+        </a>
+        <a href="/trucking-insurance-illinois/" class="state-card">
+          <span class="state-flag">&#9733;</span>
+          <h3>Illinois</h3>
+          <p>Midwest freight hub. I-55, I-80, I-94 corridors. Chicago-area specialists.</p>
+        </a>
+        <a href="/trucking-insurance-ohio/" class="state-card">
+          <span class="state-flag">&#9733;</span>
+          <h3>Ohio</h3>
+          <p>East-West crossroads. I-70, I-71, I-75 corridors. Manufacturing freight.</p>
+        </a>
+        <a href="/trucking-insurance-pennsylvania/" class="state-card">
+          <span class="state-flag">&#9733;</span>
+          <h3>Pennsylvania</h3>
+          <p>Northeast gateway. I-76, I-80, I-81 corridors. Port of Philadelphia.</p>
+        </a>
+        <a href="/trucking-insurance-georgia/" class="state-card">
+          <span class="state-flag">&#9733;</span>
+          <h3>Georgia</h3>
+          <p>Southeast logistics hub. I-75, I-85, I-20 corridors. Port of Savannah.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- HOW IT WORKS -->
   <section class="how-it-works">
     <div class="container">
@@ -834,6 +873,61 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ========================================
+     STATES WE SERVE
+     ======================================== */
+  .states-served {
+    padding: 6rem 0;
+    background: var(--white);
+  }
+
+  .states-served .section-header h2 {
+    color: var(--forest);
+  }
+
+  .states-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+  }
+
+  .state-card {
+    background: var(--gray-100);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .state-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .state-card .state-flag {
+    font-size: 1.25rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .state-card h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.15rem;
+    color: var(--forest);
+    margin-bottom: 0.5rem;
+  }
+
+  .state-card p {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ========================================
      HOW IT WORKS
      ======================================== */
   .how-it-works {
@@ -1250,6 +1344,10 @@ import Layout from '../layouts/Layout.astro';
      RESPONSIVE
      ======================================== */
   @media (max-width: 968px) {
+    .states-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .value-grid,
     .coverage-grid,
     .testimonial-grid {
@@ -1291,6 +1389,10 @@ import Layout from '../layouts/Layout.astro';
   }
 
   @media (max-width: 640px) {
+    .states-grid {
+      grid-template-columns: 1fr;
+    }
+
     .hero h1 {
       font-size: 2.2rem;
     }

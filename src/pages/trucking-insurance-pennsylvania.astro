@@ -379,6 +379,23 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- OTHER STATES -->
+  <section class="other-states">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag">Also Serving</span>
+        <h2>Trucking Insurance in Other States</h2>
+      </div>
+      <div class="states-grid">
+        <a href="/trucking-insurance-texas/" class="state-link">Texas</a>
+        <a href="/trucking-insurance-illinois/" class="state-link">Illinois</a>
+        <a href="/trucking-insurance-ohio/" class="state-link">Ohio</a>
+        <a href="/trucking-insurance-georgia/" class="state-link">Georgia</a>
+      </div>
+      <p class="states-note">Licensed in 40+ states. <a href="/">See all coverage areas</a></p>
+    </div>
+  </section>
+
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
@@ -1076,6 +1093,54 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.9rem;
     color: var(--forest);
     opacity: 0.75;
+  }
+
+  /* OTHER STATES */
+  .other-states {
+    padding: 4rem 0;
+    background: var(--gray-100);
+  }
+
+  .other-states .section-header h2 {
+    color: var(--forest);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .states-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .state-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
+    color: var(--forest);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .state-link:hover {
+    border-color: var(--gold);
+    color: var(--gold-hover);
+    transform: translateY(-1px);
+  }
+
+  .states-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+  }
+
+  .states-note a {
+    color: var(--gold-hover);
+    font-weight: 500;
   }
 
   /* MOBILE */
