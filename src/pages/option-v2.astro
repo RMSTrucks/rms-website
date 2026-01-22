@@ -1054,8 +1054,7 @@ import Layout from '../layouts/Layout.astro';
      ======================================== */
   .faq {
     padding: 6rem 0;
-    background: var(--forest);
-    color: var(--white);
+    background: var(--white);
   }
 
   .faq-layout {
@@ -1067,36 +1066,49 @@ import Layout from '../layouts/Layout.astro';
 
   .faq-header h2 {
     font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--forest);
   }
 
   .faq-list {
     display: flex;
     flex-direction: column;
-    gap: 1px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 8px;
-    overflow: hidden;
+    gap: 0;
   }
 
   .faq-item {
-    background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid var(--gray-200);
   }
 
   .faq-item summary {
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem 0;
     cursor: pointer;
     font-weight: 500;
     list-style: none;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem;
+    color: var(--forest);
   }
 
   .faq-item summary::-webkit-details-marker {
     display: none;
   }
 
+  .faq-item summary:hover {
+    color: var(--gold-hover);
+  }
+
+  .faq-item[open] summary {
+    color: var(--gold-hover);
+  }
+
   .faq-item p {
-    padding: 0 1.5rem 1.25rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.6;
+    padding: 0 0 1.25rem;
+    color: var(--gray-600);
+    line-height: 1.7;
   }
 
   /* ========================================
