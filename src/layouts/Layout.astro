@@ -22,9 +22,9 @@ const { title, description = "Commercial trucking insurance from people who unde
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DG2LGB2Z9"></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      window.gtag = function(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-7DG2LGB2Z9');
     </script>
