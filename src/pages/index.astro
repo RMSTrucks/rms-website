@@ -1352,4 +1352,47 @@ import Layout from '../layouts/Layout.astro';
   // Run on load and every minute
   updateStatusIndicator();
   setInterval(updateStatusIndicator, 60000);
+
+  // ============================================
+  // ANALYTICS TRACKING
+  // ============================================
+
+  // Track form start (first field focus)
+  let formStarted = false;
+  document.querySelectorAll('.quote-form input, .quote-form select, .quote-form textarea').forEach(function(field) {
+    field.addEventListener('focus', function() {
+      if (!formStarted && typeof gtag !== 'undefined') {
+        formStarted = true;
+        gtag('event', 'form_start', {
+          'event_category': 'engagement',
+          'event_label': 'quote_form'
+        });
+      }
+    });
+  });
+
+  // Track form submission
+  const quoteForm = document.querySelector('.quote-form');
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', function(e) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'quote_form_submit', {
+          'event_category': 'conversion',
+          'event_label': 'quote_request'
+        });
+      }
+    });
+  }
+
+  // Track CTA clicks
+  document.querySelectorAll('.hero-cta, .btn, .na-cta, .mobile-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'cta_click', {
+          'event_category': 'engagement',
+          'event_label': this.textContent.trim().substring(0, 50)
+        });
+      }
+    });
+  });
 </script>

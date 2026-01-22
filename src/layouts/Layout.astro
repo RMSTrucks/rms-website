@@ -20,6 +20,15 @@ const { title, description = "Commercial trucking insurance from people who unde
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DG2LGB2Z9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7DG2LGB2Z9');
+    </script>
+
     <style is:global>
       :root {
         --forest: #1B4332;
@@ -366,5 +375,20 @@ const { title, description = "Commercial trucking insurance from people who unde
         }
       }
     </style>
+
+    <!-- Global Analytics Events -->
+    <script>
+      // Track phone clicks
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'phone_click', {
+              'event_category': 'conversion',
+              'event_label': this.href.replace('tel:', '')
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
