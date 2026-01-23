@@ -1,31 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FAQSection from '../components/FAQSection.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import faqData from '../data/faqs.json';
 ---
 
 <Layout title="Trucking Insurance for New Authorities | RMS Truck Insurance">
 
-  <!-- FAQPage Schema -->
-  <script type="application/ld+json" slot="head">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much does trucking insurance cost per month?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For owner-operators with their own authority, trucking insurance typically costs $800-$1,500 per month ($9,000-$18,000 per year). Leased operators pay less. Costs vary significantly by state — Ohio can be as low as $7,000/year while Illinois can run as high as $22,000/year for new authorities."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why is trucking insurance so expensive for new authorities?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "New authority trucking insurance is expensive because only 3-4 carriers will write the policy — Progressive, Berkshire Hathaway, GEICO, and occasionally Artisan & Truckers. Limited competition means limited pricing pressure. After 2 years of clean operation, more carriers compete for your business and rates improve significantly."
-        }
-      },
+  <!-- FAQPage Schema (generated from data) -->
+  <FAQSchema categories={faqData.categories} slot="head" />
+
+  <!-- Old FAQ schema removed - now generated from src/data/faqs.json via FAQSchema component
       {
         "@type": "Question",
         "name": "What's the cheapest trucking insurance?",
@@ -187,8 +172,7 @@ import Layout from '../layouts/Layout.astro';
         }
       }
     ]
-  }
-  </script>
+  end of old schema -->
 
   <!-- HERO -->
   <section class="hero">
@@ -525,8 +509,15 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq">
+  <!-- FAQ (generated from src/data/faqs.json) -->
+  <FAQSection
+    categories={faqData.categories}
+    title="Straight Answers"
+    intro="22 questions truckers actually ask, answered directly."
+  />
+
+  <!-- Old hardcoded FAQ section removed
+  <section class="faq-old">
     <div class="container">
       <div class="faq-layout">
         <div class="faq-header">
@@ -701,6 +692,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+  end of old FAQ section -->
 
   <!-- ABOUT -->
   <section class="about">

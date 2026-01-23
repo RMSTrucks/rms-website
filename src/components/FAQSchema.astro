@@ -1,0 +1,41 @@
+---
+interface FAQ {
+  question: string;
+  answer?: string;
+  schemaAnswer?: string;
+}
+
+interface FAQCategory {
+  name: string;
+  questions: FAQ[];
+}
+
+interface Props {
+  /** Pass categories for grouped FAQs (extracts all questions) */
+  categories?: FAQCategory[];
+  /** Pass flat list for simple FAQ sections */
+  faqs?: FAQ[];
+}
+
+const { categories, faqs } = Astro.props;
+
+// Flatten categories into a single list if provided
+const allFaqs = categories
+  ? categories.flatMap(cat => cat.questions)
+  : (faqs || []);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": allFaqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.schemaAnswer || faq.answer || ""
+    }
+  }))
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

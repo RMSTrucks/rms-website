@@ -1,0 +1,61 @@
+---
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface FAQCategory {
+  name: string;
+  questions: FAQ[];
+}
+
+interface Props {
+  /** Pass categories for grouped FAQs (homepage style) */
+  categories?: FAQCategory[];
+  /** Pass flat list for simple FAQ sections (state pages) */
+  faqs?: FAQ[];
+  /** Section title */
+  title?: string;
+  /** Intro text below title */
+  intro?: string;
+}
+
+const { categories, faqs, title = "FAQ", intro } = Astro.props;
+---
+
+<section class="faq">
+  <div class="container">
+    <div class="faq-layout">
+      <div class="faq-header">
+        <span class="section-tag">FAQ</span>
+        <h2>{title}</h2>
+        {intro && <p class="faq-intro">{intro}</p>}
+      </div>
+
+      <div class="faq-list">
+        {categories && categories.map((cat) => (
+          <>
+            <h3 class="faq-category">{cat.name}</h3>
+            {cat.questions.map((q) => (
+              <details class="faq-item">
+                <summary>{q.question}</summary>
+                {q.answer.split('\n\n').map((para) => (
+                  <p>{para}</p>
+                ))}
+              </details>
+            ))}
+          </>
+        ))}
+
+        {faqs && faqs.map((q) => (
+          <details class="faq-item">
+            <summary>{q.question}</summary>
+            {q.answer.split('\n\n').map((para) => (
+              <p>{para}</p>
+            ))}
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

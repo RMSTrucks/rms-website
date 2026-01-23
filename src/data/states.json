@@ -1,0 +1,423 @@
+[
+  {
+    "slug": "texas",
+    "name": "Texas",
+    "nickname": "Lone Star State",
+    "flag": "&#9733;",
+    "meta": {
+      "title": "Texas Trucking Insurance | New Authority Specialists | RMS",
+      "description": "Licensed Texas trucking insurance for owner-operators and new authorities. 5-minute COIs, same-day quotes. 1,000+ truckers helped. Get your Texas quote today."
+    },
+    "hero": {
+      "tagline": "Licensed. Specialized. Fast.",
+      "subtext": "RMS helps Texas truckers get insured and on the road. New authority? Established carrier? We've got you covered in the Lone Star State.",
+      "badges": ["Licensed in Texas", "1,000+ Truckers Helped", "5-Minute COIs", "Trucking Specialists Since 2020"],
+      "note": "New authority? We handle the 20-21 day wait period timing."
+    },
+    "requirements": [
+      { "operation": "Interstate (most truckers)", "liability": "$750,000", "authority": "USDOT + MC Number" },
+      { "operation": "Texas-only, general freight", "liability": "$500,000", "authority": "USDOT + TxDMV Number" },
+      { "operation": "Texas-only, household goods", "liability": "$300,000-$500,000", "authority": "USDOT + TxDMV Number" },
+      { "operation": "Hazmat", "liability": "$5,000,000", "authority": "Special permits" }
+    ],
+    "market": {
+      "headline": "Texas - The Biggest Trucking Market",
+      "intro": "Texas has <strong>66,000+ trucking companies</strong> - more than any other state.",
+      "stats": [
+        "More freight opportunities (2.1 billion tons moved annually)",
+        "More competition for loads",
+        "More brokers who need your COI fast"
+      ],
+      "corridors": [
+        { "name": "I-35", "route": "Laredo to Dallas", "description": "40% of all US-Mexico trade. Busiest inland port in North America." },
+        { "name": "I-10", "route": "El Paso to Houston", "description": "Port Houston imports, coast-to-coast freight." },
+        { "name": "Texas Triangle", "route": "Dallas - Houston - San Antonio", "description": "70% of Texas logistics concentrated here." }
+      ],
+      "ctaText": "Running I-35 or I-10? We know these corridors. We know the coverage you need for cross-border work, port deliveries, and everything in between."
+    },
+    "newAuthority": {
+      "stateSpecific": "If you're doing Texas-only (intrastate), you'll also need a TxDMV number. Different process, 3-10 days. We'll guide you through both if needed."
+    },
+    "whyRms": {
+      "problem": "For new trucking companies, your options are limited. Progressive, Berkshire, GEICO - that's basically it for the first two years. The price is roughly the same no matter who you go through.",
+      "insight": "You're not shopping for a policy - you're shopping for an agent.",
+      "cards": [
+        { "title": "Trucking Specialists Only", "text": "We don't sell home or auto. We know trucking inside and out." },
+        { "title": "New Authority Experts", "text": "We've helped 1,000+ truckers through the 20-21 day FMCSA wait. We time your insurance perfectly." },
+        { "title": "5-Minute COIs", "text": "When a broker needs your certificate NOW, we deliver. Texas freight moves fast." },
+        { "title": "10-Minute Federal Filings", "text": "Your BMC-91 and BOC-3 filed within minutes of binding." },
+        { "title": "Licensed in Texas", "text": "Stewart Hyndman holds our Texas license. We know TxDMV and FMCSA." },
+        { "title": "\"Finally, someone on your side.\"", "text": "That's not just a tagline. It's how we do business.", "highlight": true }
+      ]
+    },
+    "coverage": [
+      { "badge": "Required", "name": "Auto Liability", "text": "Damage/injury you cause to others. $750K minimum for interstate.", "required": true },
+      { "badge": "If Financed", "name": "Physical Damage", "text": "Your truck - collision, theft, fire. Required by most lenders." },
+      { "badge": "Usually", "name": "Cargo Insurance", "text": "The freight you're hauling. Most brokers require it." },
+      { "badge": "Sometimes", "name": "General Liability", "text": "Non-trucking incidents. Required by some brokers." },
+      { "badge": "Optional", "name": "Bobtail / NTL", "text": "Driving without a trailer. Covers off-dispatch driving." }
+    ],
+    "faqs": [
+      {
+        "question": "How much does Texas trucking insurance cost?",
+        "answer": "For new authorities in Texas, expect $8,500-$18,000/year for a single truck with $750K liability. Your actual rate depends on experience, driving record, equipment, and cargo type."
+      },
+      {
+        "question": "Can RMS insure new trucking companies?",
+        "answer": "Yes - that's our specialty. Most agencies avoid new authorities because they're harder to place. We've built our business on helping new truckers get started."
+      },
+      {
+        "question": "How fast can I get a quote?",
+        "answer": "Same day for most operations. Complex risks (hazmat, specialized cargo) may take 24-48 hours to shop properly."
+      },
+      {
+        "question": "What if I'm doing cross-border work to Mexico?",
+        "answer": "We handle it. Laredo, El Paso, Brownsville - we know the coverage requirements for cross-border operations."
+      },
+      {
+        "question": "I already have insurance but want to switch. Can you help?",
+        "answer": "Absolutely. We'll quote you, and if we can beat your current rate or offer better service, we'll handle the switch. No pressure."
+      }
+    ],
+    "otherStates": ["illinois", "ohio", "pennsylvania", "georgia"],
+    "statesGridIntro": "Licensed in 40+ states."
+  },
+  {
+    "slug": "georgia",
+    "name": "Georgia",
+    "nickname": "Peach State",
+    "flag": "&#9733;",
+    "meta": {
+      "title": "Georgia Trucking Insurance | Savannah Port Coverage | RMS",
+      "description": "Licensed Georgia trucking insurance for owner-operators and new authorities. Port of Savannah drayage, I-75/I-85 corridor specialists. Get quoted today."
+    },
+    "hero": {
+      "tagline": "Licensed. Specialized. Fast.",
+      "subtext": "Whether you're running I-75 to Atlanta, hauling containers out of Savannah, or launching a new authority - we only do trucking, and we're licensed in Georgia.",
+      "badges": ["Licensed in Georgia", "1,000+ Truckers Helped", "5-Minute COIs", "Trucking Specialists Since 2020"],
+      "note": "Port of Savannah drayage? We know the coverage you need."
+    },
+    "requirements": [
+      { "operation": "Intrastate (state minimum)", "liability": "$100K/$300K", "authority": "Georgia USDOT + \"GA\" suffix" },
+      { "operation": "Intrastate (recommended)", "liability": "$750,000", "authority": "Georgia USDOT + \"GA\" suffix" },
+      { "operation": "Interstate (general freight)", "liability": "$750,000", "authority": "USDOT + MC Number" },
+      { "operation": "Interstate (hazmat)", "liability": "$1,000,000-$5,000,000", "authority": "USDOT + MC + HM permit" },
+      { "operation": "Household goods", "liability": "$750,000", "authority": "MC Number + HHG authority" }
+    ],
+    "market": {
+      "headline": "Georgia: The Freight Crossroads of the Southeast",
+      "intro": "Georgia is a critical freight hub with unmatched access to the Southeast market.",
+      "stats": [
+        "Port of Savannah: 3rd busiest US container port",
+        "16,000+ trucks daily on I-75",
+        "80% of US population within a 2-day truck haul",
+        "85% of world's top 3PLs operate in Georgia"
+      ],
+      "corridors": [
+        { "name": "I-75", "route": "North-South through Atlanta, Macon", "description": "Auto parts, general freight, Florida-bound loads. 16,000+ trucks/day." },
+        { "name": "I-85", "route": "Northeast to Charlotte/DC", "description": "Manufacturing, retail distribution. Major Atlanta-to-Northeast corridor." },
+        { "name": "I-16", "route": "Savannah to Macon (connects to I-75)", "description": "Port containers, import/export freight. The Savannah lifeline." }
+      ],
+      "ctaText": "Running containers out of Savannah or freight through Atlanta? We know Georgia corridors and the coverage your operation needs."
+    },
+    "newAuthority": {
+      "stateSpecific": "If you're doing Georgia-only (intrastate), you'll register under the GIMC program through the Georgia Department of Public Safety. You'll need a USDOT number with a 'GA' suffix. We'll guide you through the process."
+    },
+    "whyRms": {
+      "problem": "For new trucking companies, your options are limited. Progressive, Berkshire, GEICO - that's basically it for the first two years. The price is roughly the same no matter who you go through.",
+      "insight": "You're not shopping for a policy - you're shopping for an agent.",
+      "cards": [
+        { "title": "Trucking Specialists Only", "text": "We don't sell home or auto. We know trucking inside and out." },
+        { "title": "New Authority Experts", "text": "We've helped 1,000+ truckers through the 20-21 day FMCSA wait. We time your insurance perfectly." },
+        { "title": "5-Minute COIs", "text": "When a broker needs your certificate NOW, we deliver. Georgia freight moves fast." },
+        { "title": "10-Minute Federal Filings", "text": "Your BMC-91 and BOC-3 filed within minutes of binding." },
+        { "title": "Licensed in Georgia", "text": "We know Georgia DPS requirements and FMCSA." },
+        { "title": "\"Finally, someone on your side.\"", "text": "That's not just a tagline. It's how we do business.", "highlight": true }
+      ]
+    },
+    "coverage": [
+      { "badge": "Required", "name": "Auto Liability", "text": "Damage/injury you cause to others. $750K minimum for interstate.", "required": true },
+      { "badge": "If Financed", "name": "Physical Damage", "text": "Your truck - collision, theft, fire. Required by most lenders." },
+      { "badge": "Usually", "name": "Cargo Insurance", "text": "The freight you're hauling. Most brokers require it." },
+      { "badge": "Sometimes", "name": "General Liability", "text": "Non-trucking incidents. Required by some brokers." },
+      { "badge": "Optional", "name": "Bobtail / NTL", "text": "Driving without a trailer. Covers off-dispatch driving." }
+    ],
+    "faqs": [
+      {
+        "question": "What are the minimum insurance requirements for trucking in Georgia?",
+        "answer": "For intrastate carriers, Georgia's statutory minimums are $100,000 per person / $300,000 per accident in bodily injury liability. However, most brokers and shippers require $750,000-$1,000,000 regardless of state minimums. Interstate carriers need a minimum of $750,000 filed with FMCSA."
+      },
+      {
+        "question": "Do I need separate authority for intrastate-only trucking in Georgia?",
+        "answer": "Yes. If you only operate within Georgia, you register under the Georgia Intrastate Motor Carrier (GIMC) program through the Georgia Department of Public Safety. You'll need a USDOT number with a 'GA' suffix displayed on your vehicle."
+      },
+      {
+        "question": "How fast can I get a quote?",
+        "answer": "Same day for most operations. Complex risks (hazmat, port drayage, specialized cargo) may take 24-48 hours to shop properly."
+      },
+      {
+        "question": "What insurance do I need for Port of Savannah container hauling?",
+        "answer": "Port/drayage operations typically need Auto Liability ($750K+), Cargo Insurance, Physical Damage, and Trailer Interchange coverage for chassis and container swaps."
+      },
+      {
+        "question": "Can I get same-day proof of insurance for my Georgia trucking company?",
+        "answer": "Yes. RMS issues Certificates of Insurance (COIs) in 5 minutes. Federal filings (BMC-91/91X) take about 10 minutes."
+      }
+    ],
+    "otherStates": ["texas", "illinois", "ohio", "pennsylvania"],
+    "statesGridIntro": "Licensed in 40+ states."
+  },
+  {
+    "slug": "illinois",
+    "name": "Illinois",
+    "nickname": "Prairie State",
+    "flag": "&#9733;",
+    "meta": {
+      "title": "Illinois Trucking Insurance | Chicago Freight Specialists | RMS",
+      "description": "Licensed Illinois trucking insurance for owner-operators and new authorities. ICC and FMCSA experts. Same-day quotes, 5-minute COIs. Call 208-800-0640."
+    },
+    "hero": {
+      "tagline": "Licensed. Specialized. Fast.",
+      "subtext": "RMS helps Illinois truckers get insured and on the road. Running through Chicago? New authority? Established carrier? We've got you covered in the Prairie State.",
+      "badges": ["Licensed in Illinois", "1,000+ Truckers Helped", "5-Minute COIs", "Trucking Specialists Since 2020"],
+      "note": "ICC cab cards? FMCSA filings? We handle it all."
+    },
+    "requirements": [
+      { "operation": "Interstate (crossing state lines)", "liability": "$750,000", "authority": "USDOT + MC Number + BMC-91" },
+      { "operation": "Intrastate, GVWR 10,001+ lbs", "liability": "$750,000", "authority": "USDOT + Illinois ICC Certificate" },
+      { "operation": "Intrastate, GVWR under 10,000 lbs", "liability": "$300,000", "authority": "Illinois ICC Certificate" },
+      { "operation": "Hazmat (any operation)", "liability": "$5,000,000", "authority": "Special permits + HM endorsement" }
+    ],
+    "market": {
+      "headline": "Illinois - The Freight Capital of America",
+      "intro": "Illinois is the crossroads of American freight with Chicago as its beating heart.",
+      "stats": [
+        "6,400+ trucking companies in Chicago metro alone",
+        "30,000+ freight generators within 10 miles of I-80",
+        "O'Hare: 6th-ranked air cargo hub nationally",
+        "42 urban interstates and freeways supporting freight"
+      ],
+      "corridors": [
+        { "name": "I-80", "route": "Coast-to-Coast through Northern IL", "description": "Transcontinental freight. 492,000+ workers within 3 miles." },
+        { "name": "I-55", "route": "Chicago to St. Louis", "description": "North-south freight spine. Tier 1 nationally significant corridor." },
+        { "name": "I-90", "route": "Through Chicago (Jane Addams Tollway)", "description": "East-west connection to Wisconsin, Indiana, and beyond." }
+      ],
+      "ctaText": "Running the Chicago intermodal yards or hauling down I-55? We know Illinois freight and the coverage requirements for your operation."
+    },
+    "newAuthority": {
+      "stateSpecific": "Illinois intrastate carriers need an ICC Certificate. You'll also need cab cards for each vehicle ($5 each, renewed annually by December 31). We'll remind you when renewals are due."
+    },
+    "whyRms": {
+      "problem": "For new trucking companies, your options are limited. Progressive, Berkshire, GEICO - that's basically it for the first two years. The price is roughly the same no matter who you go through.",
+      "insight": "You're not shopping for a policy - you're shopping for an agent.",
+      "cards": [
+        { "title": "Trucking Specialists Only", "text": "We don't sell home or auto. We know trucking inside and out." },
+        { "title": "New Authority Experts", "text": "We've helped 1,000+ truckers through the 20-21 day FMCSA wait. We time your insurance perfectly." },
+        { "title": "5-Minute COIs", "text": "When a broker needs your certificate NOW, we deliver. Illinois freight moves fast." },
+        { "title": "10-Minute Federal Filings", "text": "Your BMC-91 and BOC-3 filed within minutes of binding." },
+        { "title": "Licensed in Illinois", "text": "We know ICC requirements and FMCSA." },
+        { "title": "\"Finally, someone on your side.\"", "text": "That's not just a tagline. It's how we do business.", "highlight": true }
+      ]
+    },
+    "coverage": [
+      { "badge": "Required", "name": "Auto Liability", "text": "Damage/injury you cause to others. $750K minimum for interstate.", "required": true },
+      { "badge": "If Financed", "name": "Physical Damage", "text": "Your truck - collision, theft, fire. Required by most lenders." },
+      { "badge": "Usually", "name": "Cargo Insurance", "text": "The freight you're hauling. Most brokers require it." },
+      { "badge": "Sometimes", "name": "General Liability", "text": "Non-trucking incidents. Required by some brokers." },
+      { "badge": "Optional", "name": "Bobtail / NTL", "text": "Driving without a trailer. Covers off-dispatch driving." }
+    ],
+    "faqs": [
+      {
+        "question": "How much does Illinois trucking insurance cost?",
+        "answer": "For new authorities in Illinois, expect $10,000-$22,000/year for a single truck with $750K liability. Chicago-area operations are at the higher end due to traffic density and litigation environment."
+      },
+      {
+        "question": "Do I need both FMCSA authority AND Illinois ICC authority?",
+        "answer": "Only if you're doing BOTH interstate and intrastate work. Interstate-only? Just FMCSA. Illinois-only? Just ICC. Both? You need both. We'll help you figure out which applies."
+      },
+      {
+        "question": "How fast can I get a quote?",
+        "answer": "Same day for most operations. Complex risks like hazmat or oversized loads may take 24-48 hours to shop properly."
+      },
+      {
+        "question": "What is the Illinois ICC cab card and do I need one?",
+        "answer": "Every vehicle doing intrastate for-hire work in Illinois needs a cab card ($5 each). They renew annually by December 31. RMS will remind you when it's time."
+      },
+      {
+        "question": "Do I need special coverage for Chicago intermodal yard work?",
+        "answer": "Standard auto liability and cargo cover most intermodal work. Some yard operators require higher cargo limits. Call RMS and we'll check your specific contracts."
+      }
+    ],
+    "otherStates": ["texas", "ohio", "pennsylvania", "georgia"],
+    "statesGridIntro": "Licensed in 40+ states."
+  },
+  {
+    "slug": "ohio",
+    "name": "Ohio",
+    "nickname": "Crossroads State",
+    "flag": "&#9733;",
+    "meta": {
+      "title": "Ohio Trucking Insurance | PUCO Authority Experts | RMS",
+      "description": "Licensed Ohio trucking insurance for owner-operators and new authorities. PUCO and FMCSA specialists. Same-day quotes. 1,000+ truckers helped."
+    },
+    "hero": {
+      "tagline": "Licensed. Specialized. Fast.",
+      "subtext": "RMS helps Ohio truckers get insured and on the road. New authority? Running the Turnpike? Hauling out of Columbus or Cincinnati? We've got you covered in the Crossroads State.",
+      "badges": ["Licensed in Ohio", "1,000+ Truckers Helped", "5-Minute COIs", "Trucking Specialists Since 2020"],
+      "note": "PUCO filings? Form E? We handle it all within minutes."
+    },
+    "requirements": [
+      { "operation": "Interstate, general freight", "liability": "$750,000", "authority": "USDOT + MC Number" },
+      { "operation": "Intrastate, general freight (10,001+ lbs)", "liability": "$750,000", "authority": "USDOT + PUCO (CPCN)" },
+      { "operation": "Intrastate, cargo vans/sprinters", "liability": "$300,000", "authority": "USDOT + PUCO (CPCN)" },
+      { "operation": "Household goods", "liability": "$750,000", "authority": "USDOT + PUCO + Tariff filing" },
+      { "operation": "Hazmat (any)", "liability": "$1,000,000+", "authority": "USDOT + MC/PUCO + Special permits" }
+    ],
+    "market": {
+      "headline": "Ohio - The Crossroads of America",
+      "intro": "Over one billion tons of freight valued at $1.2+ trillion moves through Ohio every year.",
+      "stats": [
+        "98,000+ CDL drivers work in Ohio",
+        "46,000+ freight generators along I-75 alone",
+        "5 major interstates converge here",
+        "I-70/I-75 crossroads: trucks destined for all 48 states"
+      ],
+      "corridors": [
+        { "name": "I-70", "route": "East-West through Columbus", "description": "Columbus hub, connects Indianapolis to Pittsburgh. 26.5% of crossroads truck traffic." },
+        { "name": "I-75", "route": "Cincinnati to Toledo to Detroit", "description": "North-south spine. 46,000+ freight generators along the corridor." },
+        { "name": "I-80/90 Turnpike", "route": "Northern Ohio, Coast-to-Coast", "description": "Chicago to New York corridor. Long-haul transcontinental freight." }
+      ],
+      "ctaText": "Running the I-70/I-75 crossroads or hauling through Columbus? We know Ohio corridors and what your operation needs."
+    },
+    "newAuthority": {
+      "stateSpecific": "Ohio intrastate carriers need a CPCN (Certificate of Public Convenience and Necessity) from PUCO. You'll also need a Form E filing. We handle both electronically within minutes of binding."
+    },
+    "whyRms": {
+      "problem": "For new trucking companies, your options are limited. Progressive, Berkshire, GEICO - that's basically it for the first two years. The price is roughly the same no matter who you go through.",
+      "insight": "You're not shopping for a policy - you're shopping for an agent.",
+      "cards": [
+        { "title": "Trucking Specialists Only", "text": "We don't sell home or auto. We know trucking inside and out." },
+        { "title": "New Authority Experts", "text": "We've helped 1,000+ truckers through the 20-21 day FMCSA wait. We time your insurance perfectly." },
+        { "title": "5-Minute COIs", "text": "When a broker needs your certificate NOW, we deliver. Ohio freight moves fast." },
+        { "title": "10-Minute Federal Filings", "text": "Your BMC-91, BOC-3, and Form E filed within minutes of binding." },
+        { "title": "Licensed in Ohio", "text": "We know PUCO requirements and FMCSA." },
+        { "title": "\"Finally, someone on your side.\"", "text": "That's not just a tagline. It's how we do business.", "highlight": true }
+      ]
+    },
+    "coverage": [
+      { "badge": "Required", "name": "Auto Liability", "text": "Damage/injury you cause to others. $750K minimum for interstate.", "required": true },
+      { "badge": "If Financed", "name": "Physical Damage", "text": "Your truck - collision, theft, fire. Required by most lenders." },
+      { "badge": "Usually", "name": "Cargo Insurance", "text": "The freight you're hauling. Most brokers require it." },
+      { "badge": "Sometimes", "name": "General Liability", "text": "Non-trucking incidents. Required by some brokers." },
+      { "badge": "Optional", "name": "Bobtail / NTL", "text": "Driving without a trailer. Covers off-dispatch driving." }
+    ],
+    "faqs": [
+      {
+        "question": "How much does Ohio trucking insurance cost?",
+        "answer": "For new authorities in Ohio, expect $7,000-$16,000/year for a single truck with $750K liability. Ohio rates are among the most competitive in the country."
+      },
+      {
+        "question": "Do I need PUCO authority if I only haul within Ohio?",
+        "answer": "Yes - if you're a for-hire carrier hauling point-to-point within Ohio, you need a CPCN from PUCO. Private carriers and interstate-only operations are exempt."
+      },
+      {
+        "question": "Can RMS file my Form E with PUCO?",
+        "answer": "Absolutely. When we bind your policy, we file your Form E electronically with PUCO and your BMC-91X with FMCSA. Both filings happen within minutes."
+      },
+      {
+        "question": "What insurance do I need to run I-75 between Ohio and Michigan?",
+        "answer": "Since you're crossing state lines, you need interstate authority (USDOT + MC number) with a minimum $750,000 liability. No PUCO needed for interstate work."
+      },
+      {
+        "question": "What happens if my trucking insurance lapses in Ohio?",
+        "answer": "PUCO will suspend your intrastate authority until updated proof is filed. FMCSA will revoke your interstate authority. Either way, you cannot legally haul."
+      }
+    ],
+    "otherStates": ["texas", "illinois", "pennsylvania", "georgia"],
+    "statesGridIntro": "Licensed in 40+ states."
+  },
+  {
+    "slug": "pennsylvania",
+    "name": "Pennsylvania",
+    "nickname": "Keystone State",
+    "flag": "&#9733;",
+    "meta": {
+      "title": "Pennsylvania Trucking Insurance | PUC Filing Experts | RMS",
+      "description": "Licensed PA trucking insurance for owner-operators and new authorities. PUC and FMCSA specialists. Port of Philadelphia drayage coverage. Call today."
+    },
+    "hero": {
+      "tagline": "Licensed. Specialized. Fast.",
+      "subtext": "RMS helps Pennsylvania truckers get insured and on the road. New authority? Established carrier? We know the Keystone State's requirements inside and out.",
+      "badges": ["Licensed in Pennsylvania", "1,000+ Truckers Helped", "5-Minute COIs", "Trucking Specialists Since 2020"],
+      "note": "PUC Form E filings? We handle it within minutes of binding."
+    },
+    "requirements": [
+      { "operation": "Interstate (crossing state lines)", "liability": "$750,000", "authority": "USDOT + MC Number" },
+      { "operation": "PA intrastate, general freight", "liability": "$300,000", "authority": "USDOT + PA PUC Certificate" },
+      { "operation": "PA intrastate, household goods", "liability": "$300,000", "authority": "USDOT + PA PUC + Tariff" },
+      { "operation": "Hazmat (any)", "liability": "$1,000,000-$5,000,000", "authority": "Special permits + endorsements" }
+    ],
+    "market": {
+      "headline": "Pennsylvania - A Critical Freight Corridor",
+      "intro": "Pennsylvania sits at the crossroads of the Northeast's freight network.",
+      "stats": [
+        "Port of Philadelphia handling 841,000+ TEUs annually",
+        "I-81 carries 3.6 billion truck-miles per year",
+        "Lehigh Valley: massive warehouse corridor along I-78",
+        "Pittsburgh: steel, manufacturing, energy freight"
+      ],
+      "corridors": [
+        { "name": "I-76 (PA Turnpike)", "route": "Pittsburgh to Philadelphia", "description": "East-west backbone. Cross-state freight and Ohio/NJ connections." },
+        { "name": "I-81", "route": "NY to MD through Central PA", "description": "North-south workhorse. 3.6 billion truck-miles/year. Warehouse alley." },
+        { "name": "I-78", "route": "Lehigh Valley to NJ/NYC", "description": "Lehigh Valley logistics hub. Amazon, FedEx, major distribution centers." }
+      ],
+      "ctaText": "Running the PA Turnpike or hauling through the Lehigh Valley? We know Pennsylvania freight and what your operation requires."
+    },
+    "newAuthority": {
+      "stateSpecific": "PA intrastate carriers need a PUC Certificate and Form E filing. We file both electronically within minutes. Interstate-only carriers just need federal authority - no PUC needed."
+    },
+    "whyRms": {
+      "problem": "For new trucking companies, your options are limited. Progressive, Berkshire, GEICO - that's basically it for the first two years. The price is roughly the same no matter who you go through.",
+      "insight": "You're not shopping for a policy - you're shopping for an agent.",
+      "cards": [
+        { "title": "Trucking Specialists Only", "text": "We don't sell home or auto. We know trucking inside and out." },
+        { "title": "New Authority Experts", "text": "We've helped 1,000+ truckers through the 20-21 day FMCSA wait. We time your insurance perfectly." },
+        { "title": "5-Minute COIs", "text": "When a broker needs your certificate NOW, we deliver. PA freight moves fast." },
+        { "title": "10-Minute Federal Filings", "text": "Your BMC-91, BOC-3, and Form E filed within minutes of binding." },
+        { "title": "Licensed in Pennsylvania", "text": "We know PA PUC requirements and FMCSA." },
+        { "title": "\"Finally, someone on your side.\"", "text": "That's not just a tagline. It's how we do business.", "highlight": true }
+      ]
+    },
+    "coverage": [
+      { "badge": "Required", "name": "Auto Liability", "text": "Damage/injury you cause to others. $750K minimum for interstate.", "required": true },
+      { "badge": "If Financed", "name": "Physical Damage", "text": "Your truck - collision, theft, fire. Required by most lenders." },
+      { "badge": "Usually", "name": "Cargo Insurance", "text": "The freight you're hauling. Most brokers require it." },
+      { "badge": "Sometimes", "name": "General Liability", "text": "Non-trucking incidents. Required by some brokers." },
+      { "badge": "Optional", "name": "Bobtail / NTL", "text": "Driving without a trailer. Covers off-dispatch driving." }
+    ],
+    "faqs": [
+      {
+        "question": "Do I need PA PUC authority if I'm crossing state lines?",
+        "answer": "No. If you're hauling interstate (origin or destination outside PA), you only need federal FMCSA authority (USDOT + MC number). PA PUC is only for intrastate - both pickup and delivery within Pennsylvania."
+      },
+      {
+        "question": "How much does Pennsylvania trucking insurance cost?",
+        "answer": "For new authorities in Pennsylvania, expect $8,000-$19,000/year for a single truck with $750K liability. PA rates reflect the high-traffic corridors and urban density around Philadelphia and the Lehigh Valley."
+      },
+      {
+        "question": "How fast can I get a quote from RMS?",
+        "answer": "Same day for most operations. Complex risks (hazmat, port work, specialized cargo) may take 24-48 hours to shop properly."
+      },
+      {
+        "question": "What's the difference between Form E and a certificate of insurance?",
+        "answer": "Form E is the official PUC filing - it goes directly from your insurer to the PA PUC as proof of coverage. A certificate of insurance (COI) is what you give to brokers and shippers. You need both for PA intrastate work. RMS handles the Form E filing and issues COIs in 5 minutes."
+      },
+      {
+        "question": "I'm hauling out of the Port of Philadelphia. Any special requirements?",
+        "answer": "Port work may require additional coverage depending on your cargo. Refrigerated loads have special weight permits (up to 107,500 lbs in the Philadelphia area). RMS knows PhilaPort operations and will make sure your coverage matches what the terminals and brokers require."
+      }
+    ],
+    "otherStates": ["texas", "illinois", "ohio", "georgia"],
+    "statesGridIntro": "Licensed in 40+ states."
+  }
+]
