@@ -6,14 +6,14 @@
         {
           "id": "cost-per-month",
           "question": "How much does trucking insurance cost per month?",
-          "answer": "For owner-operators with their own authority, trucking insurance typically costs $800-$1,500 per month ($9,000-$18,000 per year). Leased operators pay less.\n\nYour actual cost depends on years in business, driving record, equipment age and value, cargo type, and operating radius. Costs vary significantly by state — Ohio can be as low as $7,000/year while Illinois can run as high as $22,000/year for new authorities.\n\nNew authorities (first 2 years) are at the high end because fewer carriers will write the policy. After 2 years with clean history, rates typically drop 20-30%.",
-          "schemaAnswer": "For owner-operators with their own authority, trucking insurance typically costs $800-$1,500 per month ($9,000-$18,000 per year). Leased operators pay less. Costs vary significantly by state — Ohio can be as low as $7,000/year while Illinois can run as high as $22,000/year for new authorities."
+          "answer": "For owner-operators with their own authority, trucking insurance typically costs $800-$1,500 per month ($9,000-$18,000 per year). Leased operators pay less.\n\nYour actual cost depends on years in business, driving record, equipment age and value, cargo type, and operating radius. Costs vary significantly by state — Ohio can be as low as $11,000/year while Illinois can run as high as $22,000/year for new authorities.\n\nNew authorities (first 2 years) are at the high end because fewer carriers will write the policy. After 2 years with clean history, rates typically drop 20-30%.",
+          "schemaAnswer": "For owner-operators with their own authority, trucking insurance typically costs $800-$1,500 per month ($9,000-$18,000 per year). Leased operators pay less. Costs vary significantly by state — Ohio can be as low as $11,000/year while Illinois can run as high as $22,000/year for new authorities."
         },
         {
           "id": "why-expensive-new-authority",
           "question": "Why is trucking insurance so expensive for new authorities?",
-          "answer": "New authority trucking insurance is expensive because only 3-4 carriers will write the policy — Progressive, Berkshire Hathaway, GEICO, and occasionally Artisan & Truckers. Limited competition means limited pricing pressure.\n\nThe carriers see new authorities as higher risk because there's no operating history to evaluate. After 2 years of clean operation, more carriers compete for your business and rates improve significantly.\n\nThis is why choosing the right agent matters more than shopping carriers for new authorities. The policy options are nearly identical — the difference is service, speed, and expertise with the FMCSA process.",
-          "schemaAnswer": "New authority trucking insurance is expensive because only 3-4 carriers will write the policy — Progressive, Berkshire Hathaway, GEICO, and occasionally Artisan & Truckers. Limited competition means limited pricing pressure. After 2 years of clean operation, more carriers compete for your business and rates improve significantly."
+          "answer": "New authority trucking insurance is expensive because only 3-4 carriers will write the policy — Progressive, NICO, BHHC, GEICO, and Canal. Limited competition means limited pricing pressure.\n\nThe carriers see new authorities as higher risk because there's no operating history to evaluate. After 2 years of clean operation, more carriers compete for your business and rates improve significantly.\n\nThis is why choosing the right agent matters more than shopping carriers for new authorities. The policy options are nearly identical — the difference is service, speed, and expertise with the FMCSA process.",
+          "schemaAnswer": "New authority trucking insurance is expensive because only 3-4 carriers will write the policy — Progressive, NICO, BHHC, GEICO, and Canal. Limited competition means limited pricing pressure. After 2 years of clean operation, more carriers compete for your business and rates improve significantly."
         },
         {
           "id": "cheapest-insurance",
@@ -30,8 +30,8 @@
         {
           "id": "cost-by-state",
           "question": "Does trucking insurance cost more in certain states?",
-          "answer": "Yes. Trucking insurance costs vary significantly by state based on traffic density, litigation environment, and state-specific regulations. As of 2026, here are typical annual ranges for new authority owner-operators:\n\nTexas: $8,500-$18,000/year. Illinois: $10,000-$22,000/year. Ohio: $7,000-$16,000/year. Pennsylvania: $8,000-$19,000/year. Georgia: $9,000-$20,000/year.\n\nIf you operate interstate (which most truckers do), your rates are based on your garaging state plus your operating radius — not just where you're registered.",
-          "schemaAnswer": "Yes. Trucking insurance costs vary significantly by state. As of 2026: Texas $8,500-$18,000/year, Illinois $10,000-$22,000/year, Ohio $7,000-$16,000/year, Pennsylvania $8,000-$19,000/year, Georgia $9,000-$20,000/year for new authority owner-operators."
+          "answer": "Yes. Trucking insurance costs vary significantly by state based on traffic density, litigation environment, and state-specific regulations. As of 2026, here are typical annual ranges for new authority owner-operators:\n\nTexas: $8,500-$18,000/year. Illinois: $10,000-$22,000/year. Ohio: $11,000-$16,000/year. Pennsylvania: $8,000-$19,000/year. Georgia: $9,000-$20,000/year.\n\nIf you operate interstate (which most truckers do), your rates are based on your garaging state plus your operating radius — not just where you're registered.",
+          "schemaAnswer": "Yes. Trucking insurance costs vary significantly by state. As of 2026: Texas $8,500-$18,000/year, Illinois $10,000-$22,000/year, Ohio $11,000-$16,000/year, Pennsylvania $8,000-$19,000/year, Georgia $9,000-$20,000/year for new authority owner-operators."
         }
       ]
     },
@@ -47,7 +47,7 @@
         {
           "id": "no-experience",
           "question": "Can I get trucking insurance with no experience?",
-          "answer": "Yes, you can get trucking insurance with no experience, but your options are limited and rates are higher. Most carriers require at least a valid CDL — some want 1-2 years of CDL experience even as a company driver.\n\nCarriers that write new/inexperienced drivers: Progressive (most flexible on experience), Berkshire Hathaway (case-by-case), and GEICO Commercial (minimum CDL required).\n\nTips to improve your chances: complete a CDL training program, start with a clean MVR, consider leasing to a carrier first to build history, then get your own authority after 1-2 years.",
+          "answer": "Yes, you can get trucking insurance with no experience, but your options are limited and rates are higher. Most carriers require at least a valid CDL — some want 1-2 years of CDL experience even as a company driver.\n\nCarriers that write new/inexperienced drivers: Progressive (most common for new authorities), NICO (competitive rates), BHHC (case-by-case), GEICO (selective), and Canal (regional).\n\nTips to improve your chances: complete a CDL training program, start with a clean MVR, consider leasing to a carrier first to build history, then get your own authority after 1-2 years.",
           "schemaAnswer": "Yes, you can get trucking insurance with no experience, but your options are limited and rates are higher. Most carriers require at least a valid CDL — some want 1-2 years of CDL experience even as a company driver."
         },
         {
@@ -146,8 +146,8 @@
         {
           "id": "which-carriers",
           "question": "What carriers write new authority trucking insurance?",
-          "answer": "The main carriers that write new authority trucking insurance (companies with less than 2 years of operating history): Progressive Commercial (most common, widest appetite), Berkshire Hathaway/Guard (competitive on some classes), GEICO Commercial (selective but competitive), and Artisan & Truckers Casualty (regional, sometimes available).\n\nAfter 2 years of clean history, your options expand significantly to include Great West Casualty, Northland, National Indemnity, Sentry, and many others. This is when rates typically drop 20-40%.",
-          "schemaAnswer": "The main carriers that write new authority trucking insurance: Progressive Commercial (most common, widest appetite), Berkshire Hathaway/Guard (competitive on some classes), GEICO Commercial (selective but competitive), and Artisan & Truckers Casualty (regional). After 2 years, options expand significantly."
+          "answer": "The main carriers that write new authority trucking insurance (companies with less than 2 years of operating history): Progressive (most common, widest appetite), NICO (competitive on some classes), BHHC (competitive rates), GEICO Commercial (selective but competitive), and Canal Insurance (regional coverage).\n\nAfter 2 years of clean history, your options expand significantly to include Great West Casualty, Northland, Sentry, and many others. This is when rates typically drop 20-40%.",
+          "schemaAnswer": "The main carriers that write new authority trucking insurance: Progressive (most common, widest appetite), NICO (competitive on some classes), BHHC (competitive rates), GEICO Commercial (selective but competitive), and Canal Insurance (regional). After 2 years, options expand significantly."
         },
         {
           "id": "multiple-quotes",

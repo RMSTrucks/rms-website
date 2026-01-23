@@ -5,6 +5,9 @@ interface Props {
 }
 
 const { title, description = "Commercial trucking insurance from people who understand the business. Fast quotes, real answers, certificates when you need them." } = Astro.props;
+
+// Derive canonical URL from current page
+const canonicalURL = new URL(Astro.url.pathname, 'https://rmstruckers.com').href;
 ---
 
 <!doctype html>
@@ -15,26 +18,65 @@ const { title, description = "Commercial trucking insurance from people who unde
     <meta name="description" content={description} />
     <title>{title}</title>
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://rmstruckers.com/og-image.png" />
+    <meta property="og:site_name" content="RMS Truck Insurance" />
+
     <!-- Fonts: Crimson Pro for headlines/wordmark, DM Sans for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Schema.org LocalBusiness markup -->
+    <!-- Schema.org InsuranceAgency markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "InsuranceAgency",
       "name": "RMS Truck Insurance",
-      "description": "Commercial trucking insurance for owner-operators and small fleets. Expert advice, fast quotes, certificates when you need them.",
+      "description": "Commercial trucking insurance for owner-operators, new authorities, and small fleets. Licensed in 40+ states. 5-minute certificates, same-day quotes, expert FMCSA guidance.",
       "url": "https://rmstruckers.com",
       "telephone": "+1-208-800-0640",
       "foundingDate": "2022",
-      "areaServed": "US",
-      "serviceType": ["Commercial Trucking Insurance", "Auto Liability", "Cargo Insurance", "Physical Damage"],
-      "slogan": "Finally, someone on your side."
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "serviceType": ["Commercial Trucking Insurance", "New Authority Insurance", "Auto Liability", "Cargo Insurance", "Physical Damage", "Non-Trucking Liability", "General Liability", "Occupational Accident"],
+      "slogan": "Finally, someone on your side.",
+      "knowsAbout": ["FMCSA compliance", "BMC-91 filings", "new authority insurance", "owner-operator insurance", "certificates of insurance"],
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": "2-10"
+      },
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Jake Deaton",
+          "jobTitle": "Co-Founder"
+        },
+        {
+          "@type": "Person",
+          "name": "Stewart Hyndman",
+          "jobTitle": "Co-Founder"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "ID",
+        "addressCountry": "US"
+      }
     }
     </script>
+
+    <!-- Slot for page-specific schema -->
+    <slot name="head" />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DG2LGB2Z9"></script>
