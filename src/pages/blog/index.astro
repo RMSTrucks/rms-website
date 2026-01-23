@@ -1,0 +1,165 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<Layout title="Blog | RMS Truck Insurance" description="Straight talk about trucking insurance - pricing, coverage, compliance, and how to protect your business.">
+  <section class="blog-listing">
+    <div class="container">
+      <div class="blog-header">
+        <span class="section-tag">Blog</span>
+        <h1>Trucking Insurance, Explained</h1>
+        <p class="blog-intro">Straight answers about pricing, coverage, and compliance. No fluff.</p>
+      </div>
+
+      {posts.length === 0 && (
+        <p class="no-posts">Posts coming soon. In the meantime, check our <a href="/#faq">FAQ section</a>.</p>
+      )}
+
+      <div class="post-list">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}/`} class="post-card">
+            <div class="post-card-content">
+              <time datetime={post.data.publishDate.toISOString()}>
+                {post.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </time>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+              {post.data.tags.length > 0 && (
+                <div class="post-tags">
+                  {post.data.tags.map((tag) => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+            <span class="read-more">Read article</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .blog-listing {
+    padding: 4rem 0 6rem;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .blog-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-hover);
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-header h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    color: var(--forest);
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-intro {
+    color: var(--gray-600);
+    font-size: 1.1rem;
+  }
+
+  .no-posts {
+    color: var(--gray-600);
+    font-size: 1.1rem;
+  }
+
+  .no-posts a {
+    color: var(--gold-hover);
+  }
+
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .post-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: var(--gray-100);
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .post-card:hover {
+    border-color: var(--gold);
+  }
+
+  .post-card time {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+  }
+
+  .post-card h2 {
+    font-size: 1.25rem;
+    color: var(--forest);
+    margin-bottom: 0.5rem;
+  }
+
+  .post-card p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .post-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .tag {
+    background: var(--white);
+    color: var(--gray-600);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+
+  .read-more {
+    color: var(--gold-hover);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    margin-left: 2rem;
+  }
+
+  @media (max-width: 640px) {
+    .post-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .read-more {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }
+</style>

@@ -29,6 +29,12 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://rmstruckers.com').href
     <meta property="og:image" content="https://rmstruckers.com/og-image.png" />
     <meta property="og:site_name" content="RMS Truck Insurance" />
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://rmstruckers.com/og-image.png" />
+
     <!-- Fonts: Crimson Pro for headlines/wordmark, DM Sans for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -1,0 +1,188 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={`${post.data.title} | RMS Truck Insurance`} description={post.data.description}>
+  <article class="blog-post">
+    <div class="container">
+      <div class="post-header">
+        <a href="/blog/" class="back-link">Back to Blog</a>
+        <h1>{post.data.title}</h1>
+        <div class="post-meta">
+          <time datetime={post.data.publishDate.toISOString()}>
+            {post.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+          <span class="author">by {post.data.author}</span>
+        </div>
+        {post.data.tags.length > 0 && (
+          <div class="post-tags">
+            {post.data.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+      <div class="post-content">
+        <Content />
+      </div>
+      <div class="post-cta">
+        <h3>Need trucking insurance?</h3>
+        <p>Get a quote in minutes. We'll call you back same day.</p>
+        <a href="/#quote" class="btn">Get a Quote</a>
+        <span class="or">or call <a href="tel:208-800-0640">208-800-0640</a></span>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .blog-post {
+    padding: 4rem 0 6rem;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--gold-hover);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  .post-header h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    color: var(--forest);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .post-meta {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .post-meta .author {
+    margin-left: 1rem;
+  }
+
+  .post-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .tag {
+    background: var(--gray-100);
+    color: var(--gray-600);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+
+  .post-content {
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  .post-content :global(h2) {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
+    color: var(--forest);
+    margin: 2.5rem 0 1rem;
+  }
+
+  .post-content :global(h3) {
+    font-size: 1.2rem;
+    color: var(--forest);
+    margin: 2rem 0 0.75rem;
+  }
+
+  .post-content :global(p) {
+    margin-bottom: 1.25rem;
+  }
+
+  .post-content :global(ul), .post-content :global(ol) {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .post-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content :global(blockquote) {
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--gray-100);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .post-content :global(strong) {
+    color: var(--forest);
+  }
+
+  .post-cta {
+    margin-top: 4rem;
+    padding: 2.5rem;
+    background: var(--forest-deep);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .post-cta h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-cta p {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 1.5rem;
+  }
+
+  .post-cta .btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--forest-deep);
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .post-cta .or {
+    display: block;
+    margin-top: 1rem;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+  }
+
+  .post-cta .or a {
+    color: var(--gold);
+  }
+</style>
