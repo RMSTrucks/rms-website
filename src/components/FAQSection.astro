@@ -59,3 +59,98 @@ const { categories, faqs, title = "FAQ", intro } = Astro.props;
     </div>
   </div>
 </section>
+
+<style>
+  .faq {
+    padding: 6rem 0;
+    background: var(--white);
+  }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .faq-header h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--forest);
+  }
+
+  .faq-intro {
+    color: var(--gray-600);
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-category {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gold-hover);
+    margin: 2rem 0 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--gray-200);
+  }
+
+  .faq-category:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid var(--gray-200);
+  }
+
+  .faq-item summary {
+    padding: 1.25rem 0;
+    cursor: pointer;
+    font-weight: 500;
+    list-style: none;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem;
+    color: var(--forest);
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary:hover {
+    color: var(--gold-hover);
+  }
+
+  .faq-item[open] summary {
+    color: var(--gold-hover);
+  }
+
+  .faq-item p {
+    padding: 0 0 1rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+  }
+
+  .faq-item p:last-child {
+    padding-bottom: 1.25rem;
+  }
+
+  @media (max-width: 968px) {
+    .faq-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
