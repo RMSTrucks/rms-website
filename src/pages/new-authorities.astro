@@ -1,19 +1,49 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  { question: "How much is this going to cost?", answer: "New authority insurance is expensive - typically $12,000-$20,000/year for liability alone. That's the reality. It goes down after you build history." },
+  { question: "Can I get a lower price somewhere else?", answer: "Probably not. We all have access to the same 3-4 carriers that write new authorities. The rates are basically the same. The difference is service." },
+  { question: "How long until I'm covered?", answer: "Once you accept a quote and pay, coverage can bind same day. Filings typically process within 24-48 hours." }
+];
 ---
 
 <Layout
   title="New Authority Trucking Insurance - Get Covered Fast | RMS"
   description="Just got your DOT? We specialize in new authority insurance. Same-day binding, fast FMCSA filings, 5-minute certificates. Start hauling sooner."
 >
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  })} />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rmstruckers.com/" },
+      { "@type": "ListItem", "position": 2, "name": "New Authority Insurance", "item": "https://rmstruckers.com/new-authorities/" }
+    ]
+  })} />
+
   <!-- Hero -->
-  <section style="background: linear-gradient(135deg, #0066cc 0%, #004499 100%); color: white; padding: 5rem 0;">
+  <section style="background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%); color: white; padding: 5rem 0;">
     <div class="container" style="text-align: center;">
       <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">New Authority? Let's Get You Covered Right.</h1>
       <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9;">
         Getting your authority is hard enough. RMS Truck Insurance makes insurance the easy part.
       </p>
-      <a href="tel:208-800-0640" class="btn" style="font-size: 1.25rem; padding: 16px 32px; background: white; color: #0066cc;">
+      <a href="tel:208-800-0640" class="btn" style="font-size: 1.25rem; padding: 16px 32px;">
         Talk to Someone Who Gets It: 208-800-0640
       </a>
     </div>
@@ -42,7 +72,7 @@ import Layout from '../layouts/Layout.astro';
       <h2 style="font-size: 2rem; margin-bottom: 2rem;">Here's What We'll Do</h2>
 
       <div style="margin-bottom: 2rem;">
-        <h3 style="color: #0066cc; margin-bottom: 1rem;">Walk You Through What You Actually Need</h3>
+        <h3 style="color: var(--forest); margin-bottom: 1rem;">Walk You Through What You Actually Need</h3>
         <p style="margin-bottom: 1rem;">New authority insurance isn't complicated, but nobody explains it clearly. We will.</p>
         <p style="margin-bottom: 0.5rem;"><strong>Required:</strong></p>
         <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #666;">
@@ -59,12 +89,12 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div style="margin-bottom: 2rem;">
-        <h3 style="color: #0066cc; margin-bottom: 1rem;">Get You Quoted Fast</h3>
+        <h3 style="color: var(--forest); margin-bottom: 1rem;">Get You Quoted Fast</h3>
         <p style="color: #666;">You need to get moving. We'll get you options quickly so you can start running loads.</p>
       </div>
 
       <div>
-        <h3 style="color: #0066cc; margin-bottom: 1rem;">Be Here When You Have Questions</h3>
+        <h3 style="color: var(--forest); margin-bottom: 1rem;">Be Here When You Have Questions</h3>
         <p style="color: #666;">You will have questions. That's normal. And RMS Truck Insurance actually answers the phone.</p>
       </div>
     </div>
@@ -93,11 +123,11 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- CTA -->
-  <section style="background: #0066cc; color: white; padding: 4rem 0; text-align: center;">
+  <section style="background: var(--forest); color: white; padding: 4rem 0; text-align: center;">
     <div class="container">
       <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
       <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9;">Call us - we answer.</p>
-      <a href="tel:208-800-0640" class="btn" style="font-size: 1.5rem; padding: 20px 40px; background: white; color: #0066cc;">
+      <a href="tel:208-800-0640" class="btn" style="font-size: 1.5rem; padding: 20px 40px; background: white; color: var(--forest);">
         208-800-0640
       </a>
     </div>

@@ -6,6 +6,30 @@ import Layout from '../../layouts/Layout.astro';
   title="How Much Does Trucking Insurance Cost? (2026 Rates) | RMS"
   description="Real trucking insurance costs: $8,000-$20,000/year for new authorities. What affects your rate, which carriers write new DOTs, and how to save. No BS."
 >
+  <!-- BlogPosting Schema -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why Every Agency Quotes You the Same Price",
+    "description": "Real trucking insurance costs: $8,000-$20,000/year for new authorities. What affects your rate, which carriers write new DOTs, and how to save.",
+    "datePublished": "2025-01-01",
+    "author": { "@type": "Person", "name": "Jake Deaton" },
+    "publisher": { "@type": "Organization", "name": "RMS Truck Insurance", "url": "https://rmstruckers.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rmstruckers.com/blog/pricing-truth/" },
+    "keywords": "trucking insurance cost, new authority insurance, insurance rates"
+  })} />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rmstruckers.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://rmstruckers.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Pricing Truth", "item": "https://rmstruckers.com/blog/pricing-truth/" }
+    ]
+  })} />
+
   <article style="padding: 4rem 0;">
     <div class="container" style="max-width: 700px;">
       <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Why Every Agency Quotes You the Same Price</h1>
@@ -13,7 +37,7 @@ import Layout from '../../layouts/Layout.astro';
 
       <h2 style="margin-top: 2rem; margin-bottom: 1rem;">The Uncomfortable Truth</h2>
       <p style="margin-bottom: 1rem;">Here's something most insurance agencies won't tell you:</p>
-      <p style="margin-bottom: 1.5rem; font-weight: 600; font-size: 1.1rem; background: #f8f9fa; padding: 1rem; border-left: 4px solid #0066cc;">
+      <p style="margin-bottom: 1.5rem; font-weight: 600; font-size: 1.1rem; background: #f8f9fa; padding: 1rem; border-left: 4px solid var(--forest);">
         For new authorities, everyone has access to the same carriers at basically the same rates.
       </p>
       <p style="margin-bottom: 1.5rem;">That agency promising to "shop 50 carriers" for you? For new ventures, there are really only 3-4 carriers willing to write the policy. We all have access to them. The rates are set by the carriers, not the agencies.</p>
@@ -66,7 +90,7 @@ import Layout from '../../layouts/Layout.astro';
       </ul>
       <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 2rem;">Same insurance. Better partner.</p>
 
-      <div style="background: #0066cc; color: white; padding: 2rem; border-radius: 8px; text-align: center;">
+      <div style="background: var(--forest); color: white; padding: 2rem; border-radius: 8px; text-align: center;">
         <p style="margin-bottom: 1rem;">If that matters to you, let's talk.</p>
         <a href="tel:208-800-0640" style="font-size: 1.5rem; color: white; font-weight: 700;">208-800-0640</a>
       </div>
