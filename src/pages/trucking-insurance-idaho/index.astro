@@ -1,0 +1,773 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = "Idaho Trucking Insurance - Local Experts Who Know Idaho Law | RMS";
+const description = "Idaho-based trucking insurance agency. We know Idaho Code 49-948 chain laws, 105,500 lb weight limits, and FMCSA compliance. New authorities welcome. Call 208-800-0640.";
+
+const faqs = [
+  {
+    question: "Does Idaho require chains on all highways in winter?",
+    answer: "No. Idaho's chain law (Idaho Code 49-948) applies only on three specific passes: Lookout Pass (I-90), Fourth of July Pass (I-90), and Lolo Pass (Highway 12). ITD posts when chains are required - they can't mandate chains on bare pavement."
+  },
+  {
+    question: "Are farm trucks exempt from Idaho's chain law?",
+    answer: "Yes. Under Idaho Code 49-948(6), farm equipment transport and agricultural product haulers are exempt from chain requirements. So are forest product carriers, mining product carriers, and several other operation types."
+  },
+  {
+    question: "What's Idaho's weight limit?",
+    answer: "Idaho allows 105,500 lbs on state highways under Idaho Code 49-1001 - higher than the 80,000 lb federal limit. The federal limit still applies on interstates (I-84, I-90, I-15, I-86)."
+  },
+  {
+    question: "What happens if I don't have my medical card during an inspection?",
+    answer: "As of April 1, 2025, you'll be placed Out of Service (OOS) immediately - first offense, no warnings. Carry a copy or photo of your valid medical certificate at all times. Source: Idaho State Police CVS."
+  },
+  {
+    question: "Is RMS actually based in Idaho?",
+    answer: "Yes. RMS Truck Insurance is headquartered in Idaho. When you call 208-800-0640, you're calling an Idaho office. We're not a national company with an Idaho phone number - we're local."
+  },
+  {
+    question: "Can you insure new trucking companies with no experience?",
+    answer: "Yes - that's our specialty. Most agencies avoid new authorities because they're harder to place. We've built our business on helping new owner-operators get started. Over 1,000 truckers helped through the new authority process."
+  },
+  {
+    question: "How fast can I get a certificate of insurance?",
+    answer: "5 minutes or less once you're bound. When a broker needs your COI now, we deliver. Idaho freight doesn't wait, and neither do we."
+  },
+  {
+    question: "I haul heavy loads on state highways. Do you understand Idaho's weight rules?",
+    answer: "Yes. Idaho Code 49-1001 allows 105,500 lbs on state highways, with higher limits for specific commodities like logs, ores, and agricultural products. If you need overweight permits under Idaho Code 49-1004, we make sure your coverage matches your operation."
+  },
+  {
+    question: "Do I need Idaho-specific insurance?",
+    answer: "Federal requirements are the same regardless of your home state. You need FMCSA-compliant coverage with proper BMC-91 filing. If you're doing Idaho-only (intrastate) operations, requirements differ slightly - call us and we'll walk you through it."
+  },
+  {
+    question: "How do I get a quote?",
+    answer: "Call 208-800-0640, text 208-800-0644, or fill out our online quote form. Same-day quotes for most operations. Complex risks (hazmat, specialized, 105,500 lb operations) may take 24-48 hours to shop properly."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "InsuranceAgency",
+    "name": "RMS Truck Insurance",
+    "description": "Idaho-based trucking insurance specialists for owner-operators and new authorities",
+    "areaServed": { "@type": "State", "name": "Idaho" },
+    "telephone": "+1-208-800-0640",
+    "url": "https://rmstruckers.com/trucking-insurance-idaho/",
+    "knowsAbout": ["commercial trucking insurance", "new authority insurance", "Idaho trucking", "Idaho Code 49-948", "Idaho weight limits"],
+    "slogan": "Finally, someone on your side."
+  })} />
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  })} />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rmstruckers.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Idaho Trucking Insurance", "item": "https://rmstruckers.com/trucking-insurance-idaho/" }
+    ]
+  })} />
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="state-badge">
+        <span class="state-flag">&#9733;</span>
+        <span>Based in Idaho</span>
+      </div>
+
+      <h1>Idaho Trucking Insurance</h1>
+      <p class="hero-tagline">Local Experts Who Know Idaho Law</p>
+      <p class="hero-sub">RMS Truck Insurance is based right here in Idaho. We know Idaho Code, Idaho roads, and Idaho trucking operations. When you call 208-800-0640, you get someone in your time zone who understands what it means to run Lookout Pass in January.</p>
+
+      <div class="trust-badges">
+        <div class="badge"><span class="badge-icon">&#10003;</span> Based in Idaho</div>
+        <div class="badge"><span class="badge-icon">&#10003;</span> 1,000+ Truckers Helped</div>
+        <div class="badge"><span class="badge-icon">&#10003;</span> 5-Minute COIs</div>
+        <div class="badge"><span class="badge-icon">&#10003;</span> Idaho Code Experts</div>
+      </div>
+
+      <a href="tel:208-800-0640" class="hero-cta">
+        <span class="cta-label">Get Your Idaho Quote</span>
+        <span class="cta-number">208-800-0640</span>
+      </a>
+
+      <p class="hero-note">New authority? Established carrier? Hauling potatoes or coast-to-coast? We've got you covered.</p>
+    </div>
+  </section>
+
+  <!-- IDAHO REGULATIONS -->
+  <section class="regulations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Idaho-Specific Knowledge</span>
+        <h2>Idaho's Unique Trucking Regulations</h2>
+        <p class="section-intro">Idaho has trucking regulations that differ significantly from federal standards. Most insurance agents quote you a policy and move on. We make sure you understand the rules that affect your operation.</p>
+      </div>
+
+      <div class="reg-grid">
+        <!-- Weight Limits -->
+        <div class="reg-card">
+          <div class="reg-header">
+            <h3>105,500-Pound State Weight Limit</h3>
+            <span class="reg-cite">Idaho Code 49-1001</span>
+          </div>
+          <p>Idaho allows a <strong>maximum gross vehicle weight of 105,500 lbs</strong> on state highways - well above the federal 80,000 lb limit.</p>
+          <table class="reg-table">
+            <tr><td>Idaho state highways</td><td><strong>105,500 lbs</strong></td></tr>
+            <tr><td>Interstate (I-84, I-90, I-15, I-86)</td><td>80,000 lbs</td></tr>
+            <tr><td>Single axle</td><td>20,000 lbs</td></tr>
+            <tr><td>Single wheel</td><td>10,000 lbs</td></tr>
+          </table>
+          <p class="reg-note">Higher limits available for logs, ores, and agricultural commodities on state highways.</p>
+          <a href="/trucking-insurance-idaho/weight-limits/" class="reg-link">Full weight limits guide &rarr;</a>
+        </div>
+
+        <!-- Chain Laws -->
+        <div class="reg-card">
+          <div class="reg-header">
+            <h3>Idaho's Chain Law: Three Passes Only</h3>
+            <span class="reg-cite">Idaho Code 49-948</span>
+          </div>
+          <p>Idaho's chain law applies on <strong>three mountain passes</strong> - not statewide. National agents often don't know this.</p>
+          <ul class="reg-list">
+            <li><strong>Lookout Pass</strong> (I-90, Montana border)</li>
+            <li><strong>Fourth of July Pass</strong> (I-90, Coeur d'Alene to Kellogg)</li>
+            <li><strong>Lolo Pass</strong> (Highway 12, Montana border)</li>
+          </ul>
+          <p class="reg-note">Agricultural, forest product, and mining haulers are EXEMPT from chain requirements.</p>
+          <a href="/trucking-insurance-idaho/chain-laws/" class="reg-link">Full chain law guide &rarr;</a>
+        </div>
+
+        <!-- Medical Cert -->
+        <div class="reg-card highlight">
+          <div class="reg-header">
+            <h3>Medical Certificate Enforcement</h3>
+            <span class="reg-cite">Effective April 1, 2025</span>
+          </div>
+          <p>Starting <strong>April 1, 2025</strong>, Idaho State Police will place drivers <strong>Out of Service (OOS)</strong> immediately if operating without a valid medical certificate on file. First offense - immediate OOS. No warnings.</p>
+          <p class="reg-note"><strong>RMS recommendation:</strong> Keep a photo of your med card on your phone. When we bind your policy, we verify your medical certification status.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY RMS -->
+  <section class="why-rms">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag">Why RMS</span>
+        <h2>Why Idaho Truckers Choose Us</h2>
+      </div>
+
+      <div class="rms-intro">
+        <p>RMS Truck Insurance is an Idaho-based agency specializing in commercial trucking insurance for owner-operators. We started here, we operate here, and we serve truckers across 40+ states from right here in the Gem State.</p>
+        <p>When you call 208-800-0640, you get someone who knows Lookout Pass, Fourth of July Pass, and Lolo Pass by name. Someone who understands the 105,500 lb state weight limit vs. 80,000 lb federal limit. Someone who works Mountain Time and can cite Idaho Code when you need compliance answers.</p>
+      </div>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <h3>Trucking Specialists Only</h3>
+          <p>We don't sell home or auto. We know trucking inside and out.</p>
+        </div>
+        <div class="value-card">
+          <h3>New Authority Experts</h3>
+          <p>We've helped 1,000+ truckers through the 20-21 day FMCSA wait. We time your insurance perfectly.</p>
+        </div>
+        <div class="value-card">
+          <h3>5-Minute COIs</h3>
+          <p>When a broker needs your certificate NOW, we deliver. Idaho freight moves fast.</p>
+        </div>
+        <div class="value-card">
+          <h3>10-Minute Federal Filings</h3>
+          <p>Your BMC-91 and BOC-3 filed within minutes of binding.</p>
+        </div>
+        <div class="value-card">
+          <h3>Local to Idaho</h3>
+          <p>We're your neighbors who know Idaho roads, Idaho weather, and Idaho trucking operations.</p>
+        </div>
+        <div class="value-card highlight">
+          <h3>"Finally, someone on your side."</h3>
+          <p>That's not just a tagline. It's how we do business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IDAHO OPERATIONS -->
+  <section class="operations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">We Know Idaho</span>
+        <h2>Idaho Operations We Understand</h2>
+      </div>
+
+      <div class="ops-grid">
+        <div class="ops-card">
+          <h3>Agricultural Haulers</h3>
+          <p>Potatoes, grain, onions, sugar beets - seasonal freight, chain law exemptions, higher weight allowances on state highways.</p>
+        </div>
+        <div class="ops-card">
+          <h3>I-84 Corridor Runs</h3>
+          <p>Portland to Salt Lake and everything between. Cabbage Hill weather, weigh stations, and truck stops we know by name.</p>
+        </div>
+        <div class="ops-card">
+          <h3>Livestock Transport</h3>
+          <p>Cattle operations, auction runs, feedlot deliveries. Specialized cargo coverage for animals.</p>
+        </div>
+        <div class="ops-card">
+          <h3>Logging Operations</h3>
+          <p>Timber hauling in Northern Idaho, 105,500 lb loads on state routes, chain law exemptions for forest products.</p>
+        </div>
+        <div class="ops-card">
+          <h3>Mining/Construction</h3>
+          <p>Oversize loads, Boise metro growth, state permit requirements under Idaho Code 49-1004.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORRIDORS -->
+  <section class="corridors">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Corridors</span>
+        <h2>The Idaho Corridors We Know</h2>
+      </div>
+
+      <div class="corridor-grid">
+        <div class="corridor-card">
+          <h3>I-84: The Main Artery</h3>
+          <p class="corridor-route">Oregon border through Boise, Twin Falls, to Utah</p>
+          <p>The primary freight corridor for Pacific Northwest produce, Port of Portland freight, Salt Lake distribution, and cross-country runs connecting I-80 and I-90.</p>
+        </div>
+        <div class="corridor-card">
+          <h3>I-90: The Northern Crossings</h3>
+          <p class="corridor-route">Lookout Pass and Fourth of July Pass</p>
+          <p>Seattle/Spokane freight heading east, Coeur d'Alene and Kellogg operations, Montana and beyond. Two of Idaho's three chain law locations.</p>
+        </div>
+        <div class="corridor-card">
+          <h3>North-South Routes</h3>
+          <p class="corridor-route">US-95, US-93, I-15</p>
+          <p>US-95: Lewiston through Boise to Nevada (timber, ag). US-93: Twin Falls to Nevada (cattle). I-15: Eastern Idaho to Montana/Utah.</p>
+        </div>
+      </div>
+
+      <div class="cities-section">
+        <h3>Population Centers</h3>
+        <div class="cities-grid">
+          <div class="city"><strong>Boise</strong><span>Metro construction, distribution, HP/Micron supply chain</span></div>
+          <div class="city"><strong>Twin Falls</strong><span>Chobani, Glanbia food processing, dairy transport</span></div>
+          <div class="city"><strong>Pocatello</strong><span>Rail intermodal, phosphate mining</span></div>
+          <div class="city"><strong>Idaho Falls</strong><span>INL contractors, agriculture, eastern corridor hub</span></div>
+          <div class="city"><strong>Nampa/Caldwell</strong><span>Treasure Valley logistics, ag processing</span></div>
+          <div class="city"><strong>Lewiston</strong><span>Timber, Port of Lewiston barge freight</span></div>
+          <div class="city"><strong>Coeur d'Alene</strong><span>Northern Idaho hub, I-90 corridor operations</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS -->
+  <section class="requirements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Requirements</span>
+        <h2>Idaho Trucking Insurance Requirements</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table class="req-table">
+          <thead>
+            <tr>
+              <th>Requirement</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>USDOT Number</td><td>Required for all commercial vehicles</td></tr>
+            <tr><td>MC Number</td><td>Required for for-hire interstate carriers</td></tr>
+            <tr><td>Minimum Liability</td><td><strong>$750,000</strong> for general freight</td></tr>
+            <tr><td>BMC-91 Filing</td><td>Proof of insurance filed with FMCSA</td></tr>
+            <tr><td>BOC-3 Filing</td><td>Process agent designation (required)</td></tr>
+            <tr><td>UCR Registration</td><td>Annual unified carrier registration</td></tr>
+            <tr><td>IFTA Registration</td><td>International Fuel Tax Agreement</td></tr>
+            <tr><td>IRP Registration</td><td>International Registration Plan for apportioned plates</td></tr>
+            <tr><td>HVUT</td><td>Heavy Highway Vehicle Use Tax (55,000+ lbs). File IRS Form 2290.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="req-note"><strong>Hazmat haulers:</strong> $5,000,000 minimum liability. Additional permits required.</p>
+      <p class="req-note"><strong>RMS handles the federal filings.</strong> When we bind your policy, your BMC-91 files within 10 minutes. Your BOC-3 files the same day.</p>
+    </div>
+  </section>
+
+  <!-- NEW AUTHORITY -->
+  <section class="new-authority">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag">New Authority</span>
+        <h2>New Authority in Idaho? Here's How It Works</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="day">Day 1</span>
+          <p>Apply for USDOT and MC numbers ($300 FMCSA fee)</p>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-item">
+          <span class="day">Days 1-20</span>
+          <p>Waiting period - FMCSA publishes but authority not active</p>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-item highlight">
+          <span class="day">Day 18-19</span>
+          <p>RMS binds your insurance and files your BMC-91</p>
+        </div>
+        <div class="timeline-connector"></div>
+        <div class="timeline-item">
+          <span class="day">Day 21</span>
+          <p>Authority goes active. You're legal to haul.</p>
+        </div>
+      </div>
+
+      <div class="timing-note">
+        <h3>Why Timing Matters</h3>
+        <p>If we bind your insurance too early, you're paying for days you can't use. If we file too late, your authority doesn't activate on time. We've done this 1,000+ times - we know exactly when to pull the trigger.</p>
+        <p><strong>The Idaho Advantage:</strong> As an Idaho-based company, we can meet you in person if needed. Complex situation? Questions about your authority? We're local.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section class="coverage">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Coverage</span>
+        <h2>Coverage Options for Idaho Truckers</h2>
+      </div>
+
+      <div class="coverage-grid">
+        <div class="coverage-card required">
+          <span class="coverage-badge">Required</span>
+          <h3>Auto Liability</h3>
+          <p>Damage/injury you cause to others. $750K minimum for interstate.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-badge">If Financed</span>
+          <h3>Physical Damage</h3>
+          <p>Your truck - collision, theft, fire, vandalism.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-badge">Usually</span>
+          <h3>Cargo Insurance</h3>
+          <p>The freight you're hauling. Required by most brokers.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-badge">Optional</span>
+          <h3>Bobtail/Non-Trucking</h3>
+          <p>Driving without a trailer, personal use.</p>
+        </div>
+        <div class="coverage-card">
+          <span class="coverage-badge">Optional</span>
+          <h3>Occupational Accident</h3>
+          <p>Medical coverage if you're injured (independent contractors).</p>
+        </div>
+      </div>
+
+      <div class="idaho-coverage">
+        <h3>Idaho-Specific Coverage Considerations</h3>
+        <ul>
+          <li><strong>Winter coverage:</strong> Physical damage matters when Lookout Pass gets icy - chain law exemption doesn't mean weather exemption</li>
+          <li><strong>Heavy haul:</strong> 105,500 lb loads on state highways need proper cargo coverage</li>
+          <li><strong>Agricultural endorsements:</strong> Livestock haulers may need specific cargo coverage for animals</li>
+          <li><strong>Logging operations:</strong> Specialized equipment coverage for timber hauling</li>
+          <li><strong>Permit load coverage:</strong> Oversize/overweight operations under Idaho Code 49-1004</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Cost</span>
+        <h2>How Much Does Idaho Trucking Insurance Cost?</h2>
+      </div>
+
+      <div class="pricing-content">
+        <p class="pricing-answer">For new authorities with a single truck, expect <strong>$12,000-$18,000 per year</strong> for a standard package with $750K liability.</p>
+
+        <div class="pricing-includes">
+          <p>That includes:</p>
+          <ul>
+            <li>Auto liability ($750,000)</li>
+            <li>Cargo insurance ($100,000)</li>
+            <li>Physical damage (depends on truck value)</li>
+          </ul>
+        </div>
+
+        <div class="pricing-factors">
+          <h3>Factors That Affect Your Rate</h3>
+          <div class="factors-grid">
+            <div class="factor"><strong>Driving experience</strong><span>2+ years CDL = better rates</span></div>
+            <div class="factor"><strong>MVR (driving record)</strong><span>Clean record vs. violations matters significantly</span></div>
+            <div class="factor"><strong>Equipment age</strong><span>Newer trucks = higher physical damage, better liability</span></div>
+            <div class="factor"><strong>Cargo type</strong><span>General freight vs. hazmat vs. specialized</span></div>
+            <div class="factor"><strong>Operating radius</strong><span>Local Idaho vs. nationwide</span></div>
+            <div class="factor"><strong>Weight</strong><span>105,500 lb operations vs. standard 80K</span></div>
+          </div>
+        </div>
+
+        <div class="pricing-reality">
+          <p><strong>The reality for new authorities:</strong> Your carrier options are limited for the first 2 years. Progressive, Berkshire, National Indemnity - that's basically it. The rates are similar no matter which agent you use. So you're not shopping for a policy - you're shopping for an agent.</p>
+          <p>That's where we come in. Same carriers, better service. 5-minute COIs. 10-minute filings. Someone who knows Idaho Code 49-948 when you ask about chains.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="faq-header">
+          <span class="section-tag">FAQ</span>
+          <h2>Idaho Trucking Insurance Questions</h2>
+        </div>
+        <div class="faq-list">
+          {faqs.map(faq => (
+            <details class="faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="resources">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Resources</span>
+        <h2>Idaho Trucking Resources</h2>
+      </div>
+
+      <div class="resources-grid">
+        <a href="/trucking-insurance-idaho/chain-laws/" class="resource-card internal">
+          <h3>Idaho Chain Laws Guide</h3>
+          <p>Complete breakdown of Idaho Code 49-948 - the three passes, chain requirements, and all exemptions.</p>
+        </a>
+        <a href="/trucking-insurance-idaho/weight-limits/" class="resource-card internal">
+          <h3>Idaho Weight Limits & Permits</h3>
+          <p>105,500 lb state limit, commodity exemptions, permit types, and damage liability rules.</p>
+        </a>
+        <div class="resource-card external">
+          <h3>Idaho Motor Carrier Services</h3>
+          <p>IRP/IFTA questions: 208-334-8611</p>
+        </div>
+        <div class="resource-card external">
+          <h3>Idaho 511</h3>
+          <p>Road conditions: <a href="https://511.idaho.gov" target="_blank" rel="noopener">511.idaho.gov</a></p>
+        </div>
+        <div class="resource-card external">
+          <h3>Idaho State Police CVS</h3>
+          <p>Commercial vehicle safety: <a href="https://isp.idaho.gov/cvs/" target="_blank" rel="noopener">isp.idaho.gov/cvs/</a></p>
+        </div>
+        <div class="resource-card external">
+          <h3>Idaho Code Title 49</h3>
+          <p>Motor vehicle statutes: <a href="https://legislature.idaho.gov" target="_blank" rel="noopener">legislature.idaho.gov</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Ready to Talk to Your Idaho Insurance Experts?</h2>
+      <p>Whether you're a new authority waiting on FMCSA, an established owner-operator shopping rates, or a fleet based in the Treasure Valley, RMS is here. We're local, we specialize in trucking, we know Idaho law, and we move fast.</p>
+
+      <div class="cta-options">
+        <a href="tel:208-800-0640" class="cta-phone">
+          <span class="cta-type">Call</span>
+          <span class="cta-value">208-800-0640</span>
+        </a>
+        <a href="sms:208-800-0644" class="cta-text">
+          <span class="cta-type">Text</span>
+          <span class="cta-value">208-800-0644</span>
+        </a>
+      </div>
+
+      <p class="trust-close">Idaho-based. Idaho Code experts. Trucking specialists since 2020. Licensed in 40+ states.</p>
+    </div>
+  </section>
+
+  <!-- MOBILE STICKY -->
+  <div class="mobile-cta">
+    <a href="tel:208-800-0640" class="mobile-btn">Get Idaho Quote - 208-800-0640</a>
+  </div>
+
+</Layout>
+
+<style>
+  :root {
+    --forest: #1B4332;
+    --forest-deep: #0D2118;
+    --gold: #DAA520;
+    --gold-hover: #C49B1A;
+    --white: #ffffff;
+    --gray-100: #f7f7f7;
+    --gray-200: #e5e5e5;
+    --gray-600: #6b7280;
+    --text: #1f2937;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+  .section-tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.75rem;
+  }
+
+  .section-header { margin-bottom: 2.5rem; }
+  .section-header.centered { text-align: center; }
+  .section-header h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.15; margin-bottom: 0.75rem; color: var(--forest); }
+  .section-intro { font-size: 1.05rem; color: var(--gray-600); line-height: 1.7; max-width: 700px; }
+
+  .btn {
+    display: inline-block; background: var(--gold); color: var(--forest-deep);
+    padding: 14px 28px; border-radius: 4px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+  }
+  .btn:hover { background: var(--forest); color: var(--white); }
+
+  /* HERO */
+  .hero { position: relative; padding: 7rem 2rem 5rem; text-align: center; color: var(--white); }
+  .hero-bg { position: absolute; inset: 0; background: var(--forest-deep); z-index: 0; }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+
+  .state-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(218,165,32,0.15); border: 1px solid rgba(218,165,32,0.3);
+    padding: 8px 16px; border-radius: 50px; font-size: 0.7rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 1.5rem;
+  }
+  .state-flag { font-size: 1rem; }
+  .hero h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); margin-bottom: 0.25rem; }
+  .hero-tagline { font-size: 1.1rem; color: var(--gold); margin-bottom: 1.5rem; font-weight: 500; }
+  .hero-sub { font-size: 1.05rem; opacity: 0.85; line-height: 1.7; margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+  .trust-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+  .badge { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; opacity: 0.8; }
+  .badge-icon { color: var(--gold); font-weight: bold; }
+
+  .hero-cta {
+    display: inline-flex; flex-direction: column; align-items: center;
+    background: var(--gold); color: var(--forest-deep); padding: 1.25rem 3rem;
+    border-radius: 4px; text-decoration: none; transition: all 0.2s; margin-bottom: 1rem;
+  }
+  .hero-cta:hover { background: var(--white); transform: translateY(-2px); }
+  .cta-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin-bottom: 2px; }
+  .cta-number { font-family: 'Crimson Pro', serif; font-size: 1.6rem; font-weight: 600; }
+  .hero-note { font-size: 0.9rem; opacity: 0.7; font-style: italic; }
+
+  /* REGULATIONS */
+  .regulations { padding: 5rem 0; background: var(--white); }
+  .reg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .reg-card { background: var(--gray-100); padding: 1.75rem; border-radius: 8px; border: 1px solid var(--gray-200); }
+  .reg-card.highlight { background: #fff8e6; border-color: var(--gold); }
+  .reg-header { margin-bottom: 1rem; }
+  .reg-header h3 { font-family: 'Crimson Pro', serif; font-size: 1.15rem; color: var(--forest); margin-bottom: 0.25rem; }
+  .reg-cite { font-size: 0.75rem; color: var(--gold); font-weight: 600; }
+  .reg-card p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 1rem; }
+  .reg-table { width: 100%; font-size: 0.85rem; margin: 1rem 0; }
+  .reg-table td { padding: 0.5rem 0; border-bottom: 1px solid var(--gray-200); }
+  .reg-table td:last-child { text-align: right; }
+  .reg-list { padding-left: 1.25rem; margin: 1rem 0; }
+  .reg-list li { font-size: 0.9rem; color: var(--gray-600); margin-bottom: 0.5rem; }
+  .reg-note { font-size: 0.85rem; color: var(--text); font-style: italic; margin-top: 1rem; }
+  .reg-link { font-size: 0.85rem; font-weight: 600; color: var(--gold); }
+
+  /* WHY RMS */
+  .why-rms { padding: 5rem 0; background: var(--gray-100); }
+  .rms-intro { max-width: 700px; margin: 0 auto 2.5rem; text-align: center; }
+  .rms-intro p { color: var(--gray-600); line-height: 1.7; margin-bottom: 1rem; }
+
+  .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .value-card { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--gray-200); }
+  .value-card.highlight { background: var(--forest); border-color: var(--forest); }
+  .value-card.highlight h3, .value-card.highlight p { color: var(--white); }
+  .value-card.highlight h3 { color: var(--gold); }
+  .value-card h3 { font-family: 'Crimson Pro', serif; font-size: 1.1rem; color: var(--forest); margin-bottom: 0.5rem; }
+  .value-card p { color: var(--gray-600); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+
+  /* OPERATIONS */
+  .operations { padding: 5rem 0; background: var(--white); }
+  .ops-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+  .ops-card { background: var(--gray-100); padding: 1.25rem; border-radius: 8px; border-left: 3px solid var(--gold); }
+  .ops-card h3 { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--forest); margin-bottom: 0.5rem; }
+  .ops-card p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.5; margin: 0; }
+
+  /* CORRIDORS */
+  .corridors { padding: 5rem 0; background: var(--forest-deep); color: var(--white); }
+  .corridors .section-header h2 { color: var(--white); }
+  .corridor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+  .corridor-card { background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--gold); }
+  .corridor-card h3 { font-family: 'Crimson Pro', serif; font-size: 1.15rem; color: var(--white); margin-bottom: 0.25rem; }
+  .corridor-route { font-size: 0.8rem; color: var(--gold); margin-bottom: 0.75rem; }
+  .corridor-card p { font-size: 0.9rem; opacity: 0.8; line-height: 1.6; margin: 0; }
+
+  .cities-section h3 { font-family: 'Crimson Pro', serif; color: var(--gold); margin-bottom: 1rem; }
+  .cities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .city { background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; }
+  .city strong { display: block; color: var(--white); margin-bottom: 0.25rem; }
+  .city span { font-size: 0.8rem; opacity: 0.7; }
+
+  /* REQUIREMENTS */
+  .requirements { padding: 5rem 0; background: var(--white); }
+  .table-wrap { overflow-x: auto; }
+  .req-table { width: 100%; border-collapse: collapse; }
+  .req-table th, .req-table td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--gray-200); }
+  .req-table th { background: var(--forest); color: var(--white); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .req-table th:first-child { border-radius: 4px 0 0 0; }
+  .req-table th:last-child { border-radius: 0 4px 0 0; }
+  .req-table td { background: var(--gray-100); }
+  .req-note { margin-top: 1.5rem; color: var(--gray-600); font-size: 0.95rem; }
+
+  /* NEW AUTHORITY */
+  .new-authority { padding: 5rem 0; background: var(--gray-100); }
+  .timeline { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 2.5rem; flex-wrap: wrap; }
+  .timeline-item { text-align: center; padding: 1.5rem; background: var(--white); border-radius: 8px; max-width: 180px; }
+  .timeline-item.highlight { background: var(--gold); }
+  .timeline-item.highlight .day { color: var(--forest-deep); }
+  .timeline-item.highlight p { color: var(--forest-deep); }
+  .day { display: block; font-family: 'Crimson Pro', serif; font-size: 1.1rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem; }
+  .timeline-item p { font-size: 0.85rem; color: var(--gray-600); margin: 0; line-height: 1.5; }
+  .timeline-connector { width: 40px; height: 2px; background: var(--gray-200); }
+
+  .timing-note { background: var(--white); padding: 2rem; border-radius: 8px; max-width: 700px; margin: 0 auto; }
+  .timing-note h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 1rem; }
+  .timing-note p { color: var(--gray-600); line-height: 1.7; margin-bottom: 0.75rem; }
+
+  /* COVERAGE */
+  .coverage { padding: 5rem 0; background: var(--white); }
+  .coverage-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .coverage-card { background: var(--gray-100); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--gray-200); }
+  .coverage-card.required { border-color: var(--gold); border-width: 2px; }
+  .coverage-badge { display: inline-block; font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-600); background: var(--white); padding: 3px 8px; border-radius: 4px; margin-bottom: 0.5rem; }
+  .coverage-card.required .coverage-badge { background: rgba(218,165,32,0.2); color: var(--gold-hover); }
+  .coverage-card h3 { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--forest); margin-bottom: 0.4rem; }
+  .coverage-card p { font-size: 0.8rem; color: var(--gray-600); line-height: 1.5; margin: 0; }
+
+  .idaho-coverage { background: var(--gray-100); padding: 2rem; border-radius: 8px; }
+  .idaho-coverage h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 1rem; }
+  .idaho-coverage ul { padding-left: 1.25rem; }
+  .idaho-coverage li { color: var(--gray-600); margin-bottom: 0.75rem; line-height: 1.6; }
+
+  /* PRICING */
+  .pricing { padding: 5rem 0; background: var(--gray-100); }
+  .pricing-content { max-width: 800px; }
+  .pricing-answer { font-size: 1.15rem; color: var(--text); margin-bottom: 1.5rem; }
+  .pricing-includes { margin-bottom: 2rem; }
+  .pricing-includes ul { padding-left: 1.25rem; }
+  .pricing-includes li { color: var(--gray-600); margin-bottom: 0.5rem; }
+
+  .pricing-factors { margin-bottom: 2rem; }
+  .pricing-factors h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 1rem; }
+  .factors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .factor { background: var(--white); padding: 1rem; border-radius: 6px; }
+  .factor strong { display: block; color: var(--forest); font-size: 0.9rem; margin-bottom: 0.25rem; }
+  .factor span { font-size: 0.8rem; color: var(--gray-600); }
+
+  .pricing-reality { background: var(--white); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--gold); }
+  .pricing-reality p { color: var(--gray-600); line-height: 1.7; margin-bottom: 0.75rem; }
+  .pricing-reality p:last-child { margin-bottom: 0; }
+
+  /* FAQ */
+  .faq { padding: 5rem 0; background: var(--white); }
+  .faq-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; }
+  .faq-header h2 { color: var(--forest); }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid var(--gray-200); }
+  .faq-item:first-child { border-top: 1px solid var(--gray-200); }
+  .faq-item summary { padding: 1.25rem 0; cursor: pointer; font-family: 'Crimson Pro', serif; font-size: 1.05rem; color: var(--forest); list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--gold-hover); }
+  .faq-item[open] summary { color: var(--gold-hover); }
+  .faq-item p { padding: 0 0 1.25rem; color: var(--gray-600); line-height: 1.7; }
+
+  /* RESOURCES */
+  .resources { padding: 5rem 0; background: var(--gray-100); }
+  .resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .resource-card { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--gray-200); }
+  .resource-card.internal { border-left: 4px solid var(--gold); text-decoration: none; display: block; transition: all 0.2s; }
+  .resource-card.internal:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .resource-card h3 { font-family: 'Crimson Pro', serif; font-size: 1.1rem; color: var(--forest); margin-bottom: 0.5rem; }
+  .resource-card p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.5; margin: 0; }
+  .resource-card.external a { color: var(--gold); font-weight: 500; }
+
+  /* FINAL CTA */
+  .final-cta { padding: 5rem 0; background: var(--gold); text-align: center; }
+  .final-cta h2 { color: var(--forest); margin-bottom: 0.75rem; }
+  .final-cta > .container > p { color: var(--forest); opacity: 0.85; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .cta-options { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+  .cta-phone, .cta-text { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--forest); }
+  .cta-type { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; }
+  .cta-value { font-family: 'Crimson Pro', serif; font-size: 2rem; font-weight: 600; }
+  .cta-phone:hover .cta-value, .cta-text:hover .cta-value { color: var(--white); }
+  .trust-close { font-size: 0.9rem; color: var(--forest); opacity: 0.75; }
+
+  /* MOBILE */
+  .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 1rem; background: var(--forest); z-index: 999; }
+  .mobile-btn { display: block; width: 100%; padding: 14px; background: var(--gold); color: var(--forest); font-weight: 600; text-align: center; border-radius: 4px; text-decoration: none; }
+
+  @media (max-width: 968px) {
+    .reg-grid { grid-template-columns: 1fr; }
+    .value-grid { grid-template-columns: repeat(2, 1fr); }
+    .ops-grid { grid-template-columns: repeat(2, 1fr); }
+    .corridor-grid { grid-template-columns: 1fr; }
+    .cities-grid { grid-template-columns: repeat(2, 1fr); }
+    .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+    .factors-grid { grid-template-columns: 1fr; }
+    .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .resources-grid { grid-template-columns: 1fr; }
+    .timeline { flex-direction: column; }
+    .timeline-connector { width: 2px; height: 20px; }
+    .mobile-cta { display: block; }
+    .final-cta { padding-bottom: 7rem; }
+  }
+
+  @media (max-width: 640px) {
+    .value-grid { grid-template-columns: 1fr; }
+    .ops-grid { grid-template-columns: 1fr; }
+    .coverage-grid { grid-template-columns: 1fr; }
+    .cities-grid { grid-template-columns: 1fr; }
+    .trust-badges { flex-direction: column; align-items: center; }
+    .cta-options { flex-direction: column; gap: 1rem; }
+  }
+</style>
