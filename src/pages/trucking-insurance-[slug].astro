@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import FAQSection from '../components/FAQSection.astro';
 import FAQSchema from '../components/FAQSchema.astro';
+import QuoteForm from '../components/QuoteForm.astro';
 import states from '../data/states.json';
 
 export function getStaticPaths() {
@@ -244,6 +245,9 @@ const { state } = Astro.props;
 
   <!-- FAQ -->
   <FAQSection faqs={state.faqs} title={`${state.name} Trucking Insurance Questions`} />
+
+  <!-- QUOTE FORM -->
+  <QuoteForm state={state.name} title={`Get Your ${state.name} Trucking Insurance Quote`} />
 
   <!-- OTHER STATES -->
   <section class="other-states">

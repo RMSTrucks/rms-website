@@ -24,11 +24,11 @@ RMS Truck Insurance is a trucking-focused insurance agency serving owner-operato
 
 - Homepage: https://rmstruckers.com/
 - New Authorities: https://rmstruckers.com/new-authorities/
-- Idaho Trucking Insurance: https://rmstruckers.com/trucking-insurance-idaho/
 - Texas Trucking Insurance: https://rmstruckers.com/trucking-insurance-texas/
-- California Trucking Insurance: https://rmstruckers.com/trucking-insurance-california/
-- Florida Trucking Insurance: https://rmstruckers.com/trucking-insurance-florida/
 - Georgia Trucking Insurance: https://rmstruckers.com/trucking-insurance-georgia/
+- Illinois Trucking Insurance: https://rmstruckers.com/trucking-insurance-illinois/
+- Ohio Trucking Insurance: https://rmstruckers.com/trucking-insurance-ohio/
+- Pennsylvania Trucking Insurance: https://rmstruckers.com/trucking-insurance-pennsylvania/
 - Blog: https://rmstruckers.com/blog/
 
 ## Contact
