@@ -347,6 +347,31 @@ const description = "Idaho allows 105,500 lb trucks on state highways vs 80,000 
     </div>
   </section>
 
+  <!-- RELATED GUIDES -->
+  <section class="related">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">More Idaho Guides</span>
+        <h2>Related Idaho Trucking Guides</h2>
+      </div>
+
+      <div class="related-grid">
+        <a href="/trucking-insurance-idaho/" class="related-card">
+          <h3>Idaho Trucking Insurance</h3>
+          <p>Complete guide to insurance requirements for Idaho-based carriers.</p>
+        </a>
+        <a href="/trucking-insurance-idaho/chain-laws/" class="related-card">
+          <h3>Idaho Chain Laws</h3>
+          <p>Three passes, chain requirements, and all exemptions under Idaho Code 49-948.</p>
+        </a>
+        <a href="/trucking-insurance-idaho/registration/" class="related-card">
+          <h3>Registration Guide</h3>
+          <p>IRP, IFTA, UCR, and HVUT requirements for Idaho carriers.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta">
     <div class="container">
@@ -527,6 +552,14 @@ const description = "Idaho allows 105,500 lb trucks on state highways vs 80,000 
   /* FOOTER NOTE */
   .footer-note { padding: 2rem 0; background: var(--gray-100); }
   .last-updated { font-size: 0.85rem; color: var(--gray-600); text-align: center; }
+
+  /* RELATED */
+  .related { padding: 4rem 0; background: var(--gray-100); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .related-card { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--gray-200); border-left: 4px solid var(--gold); text-decoration: none; transition: all 0.2s; }
+  .related-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .related-card h3 { font-family: 'Crimson Pro', serif; font-size: 1.1rem; color: var(--forest); margin-bottom: 0.5rem; }
+  .related-card p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.5; margin: 0; }
 
   /* MOBILE */
   .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 1rem; background: var(--forest); z-index: 999; }
