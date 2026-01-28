@@ -1,0 +1,474 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Idaho Commercial Vehicle Registration Guide | IRP, IFTA, UCR, HVUT"
+  description="Operating a commercial truck in Idaho means keeping multiple registrations current. IRP, IFTA, UCR, HVUT - everything you need to stay legal on the road."
+>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Idaho Commercial Vehicle Registration Guide",
+    "description": "Operating a commercial truck in Idaho means keeping multiple registrations and filings current. IRP, IFTA, UCR, HVUT - everything you need to stay legal.",
+    "author": { "@type": "Organization", "name": "RMS Truck Insurance" },
+    "publisher": { "@type": "Organization", "name": "RMS Truck Insurance" },
+    "datePublished": "2026-01-28",
+    "dateModified": "2026-01-28"
+  })} />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rmstruckers.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Idaho Trucking Insurance", "item": "https://rmstruckers.com/trucking-insurance-idaho/" },
+      { "@type": "ListItem", "position": 3, "name": "Idaho Commercial Registration", "item": "https://rmstruckers.com/idaho-commercial-registration/" }
+    ]
+  })} />
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <a href="/trucking-insurance-idaho/" class="back-link">&larr; Idaho Trucking Insurance</a>
+      <h1>Idaho Commercial Vehicle Registration Guide</h1>
+      <p class="hero-sub">Operating a commercial truck in Idaho means keeping multiple registrations and filings current. Miss one deadline, and you're parked - or worse, fined. This guide covers what Idaho-based carriers need to stay legal on the road.</p>
+    </div>
+  </section>
+
+  <!-- IRP -->
+  <section class="registration irp">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">International Registration Plan</span>
+        <h2>IRP: Interstate Registration</h2>
+      </div>
+
+      <div class="content-grid">
+        <div class="content-main">
+          <h3>What It Is</h3>
+          <p>IRP is the registration system for commercial vehicles traveling across state lines. Instead of buying plates in every state you haul through, IRP lets you register once and pay fees proportionally based on the miles you drive in each jurisdiction.</p>
+
+          <h3>Who Needs It</h3>
+          <p>You need IRP registration if your vehicle:</p>
+          <ul>
+            <li>Has two axles and a gross vehicle weight (GVW) over <strong>26,000 lbs</strong>, OR</li>
+            <li>Has <strong>three or more axles</strong> regardless of weight, OR</li>
+            <li>Is used in combination when the combined weight exceeds <strong>26,000 lbs</strong></li>
+          </ul>
+          <p class="exception"><strong>Exception:</strong> Vehicles operating only within Idaho don't need IRP. But the moment you cross a state line for commercial purposes, you need it.</p>
+        </div>
+
+        <div class="content-sidebar">
+          <div class="how-to-box">
+            <h3>How to Get It in Idaho</h3>
+            <ol>
+              <li><strong>Gather your documents:</strong>
+                <ul>
+                  <li>Proof of vehicle ownership (title or lease)</li>
+                  <li>USDOT number</li>
+                  <li>Vehicle identification info (VIN, year, make)</li>
+                  <li>Estimated miles per jurisdiction</li>
+                </ul>
+              </li>
+              <li><strong>File through Idaho's Commercial Registration System:</strong>
+                <ul>
+                  <li>Portal: <a href="https://crs.idaho.celtic-host.com" target="_blank" rel="noopener">crs.idaho.celtic-host.com</a></li>
+                  <li>Or contact CVS: cvs@itd.idaho.gov | 208-872-3163</li>
+                </ul>
+              </li>
+              <li><strong>Pay your fees:</strong> Based on miles projected in each state</li>
+              <li><strong>Receive your cab card:</strong> This goes in your truck - lists every jurisdiction where you're registered</li>
+            </ol>
+            <p class="renewal"><strong>Renewal:</strong> IRP runs on an annual cycle. Renew before expiration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IFTA -->
+  <section class="registration ifta">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">International Fuel Tax Agreement</span>
+        <h2>IFTA: Fuel Tax Reporting</h2>
+      </div>
+
+      <div class="content-grid">
+        <div class="content-main">
+          <h3>What It Is</h3>
+          <p>IFTA simplifies fuel tax reporting for carriers operating in multiple states. Instead of filing separate fuel tax returns in every state, you file one quarterly report with Idaho and they distribute taxes owed to other jurisdictions.</p>
+
+          <h3>Who Needs It</h3>
+          <p>You need IFTA if you operate a qualified motor vehicle (over 26,000 lbs or 3+ axles) in <strong>two or more IFTA jurisdictions</strong>. If you only run in Idaho, you don't need IFTA - but most commercial truckers cross state lines.</p>
+
+          <h3>Quarterly Filing</h3>
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Quarter</th>
+                <th>Period</th>
+                <th>Due Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Q1</td><td>Jan-Mar</td><td><strong>April 30</strong></td></tr>
+              <tr><td>Q2</td><td>Apr-Jun</td><td><strong>July 31</strong></td></tr>
+              <tr><td>Q3</td><td>Jul-Sep</td><td><strong>October 31</strong></td></tr>
+              <tr><td>Q4</td><td>Oct-Dec</td><td><strong>January 31</strong></td></tr>
+            </tbody>
+          </table>
+
+          <h3>What You Report</h3>
+          <ul>
+            <li>Total miles driven in each jurisdiction</li>
+            <li>Total gallons of fuel purchased in each jurisdiction</li>
+            <li>Fuel tax owed (or credit if you bought fuel in high-tax states)</li>
+          </ul>
+        </div>
+
+        <div class="content-sidebar">
+          <div class="filing-box">
+            <h3>Where to File</h3>
+            <p>File your IFTA returns through Idaho Transportation Department:</p>
+            <ul>
+              <li><strong>Portal:</strong> <a href="https://crs.idaho.celtic-host.com" target="_blank" rel="noopener">crs.idaho.celtic-host.com</a></li>
+              <li><strong>Email:</strong> cvs@itd.idaho.gov</li>
+              <li><strong>Phone:</strong> 208-872-3163</li>
+            </ul>
+            <p class="warning"><strong>Penalty for late filing:</strong> Interest accrues on unpaid taxes, plus potential license revocation if you don't file for multiple quarters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UCR -->
+  <section class="registration ucr">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Unified Carrier Registration</span>
+        <h2>UCR: Annual Federal Registration</h2>
+      </div>
+
+      <div class="content-grid">
+        <div class="content-main">
+          <h3>What It Is</h3>
+          <p>UCR is an annual federal registration requirement for interstate carriers. The fees fund state motor carrier safety programs and enforcement.</p>
+
+          <h3>Who Needs It</h3>
+          <p>If you operate commercial motor vehicles in interstate commerce - hauling across state lines - you need UCR. This includes:</p>
+          <ul>
+            <li>Motor carriers</li>
+            <li>Freight brokers</li>
+            <li>Leasing companies</li>
+            <li>Freight forwarders</li>
+          </ul>
+        </div>
+
+        <div class="content-sidebar">
+          <div class="fee-box">
+            <h3>How to Register</h3>
+            <p>UCR registration is based on fleet size:</p>
+            <table class="fee-table">
+              <thead>
+                <tr>
+                  <th>Fleet Size</th>
+                  <th>2024 Fee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>0-2 vehicles</td><td>$176</td></tr>
+                <tr><td>3-5 vehicles</td><td>$362</td></tr>
+                <tr><td>6-20 vehicles</td><td>$730</td></tr>
+                <tr><td>21-100 vehicles</td><td>$1,813</td></tr>
+                <tr><td>101-1,000 vehicles</td><td>$8,539</td></tr>
+              </tbody>
+            </table>
+            <p>Register at <a href="https://www.ucr.gov" target="_blank" rel="noopener">ucr.gov</a> or through Idaho CVS.</p>
+            <p class="deadline"><strong>Deadline:</strong> UCR runs calendar year (Jan 1 - Dec 31). Register before operating in the new year.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HVUT -->
+  <section class="registration hvut">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Heavy Vehicle Use Tax</span>
+        <h2>HVUT: Form 2290</h2>
+      </div>
+
+      <div class="content-grid">
+        <div class="content-main">
+          <h3>What It Is</h3>
+          <p>HVUT is a federal tax on heavy vehicles using public highways. The <strong>IRS collects this tax - not Idaho</strong> - and the revenue funds highway maintenance.</p>
+
+          <h3>Who Needs It</h3>
+          <p>You owe HVUT if your vehicle has a taxable gross weight of <strong>55,000 lbs or more</strong>.</p>
+
+          <h3>The Tax</h3>
+          <ul>
+            <li><strong>Annual tax:</strong> $100-$550 depending on weight</li>
+            <li><strong>Tax year:</strong> July 1 through June 30</li>
+          </ul>
+
+          <h3>When to File</h3>
+          <p><strong>Filing period:</strong> July 1 through September 30</p>
+          <p>If you put a new vehicle on the road mid-year, file by the last day of the month following the month you first used it.</p>
+        </div>
+
+        <div class="content-sidebar">
+          <div class="irs-box">
+            <h3>Where to File</h3>
+            <p><strong>File directly with the IRS</strong> - not with Idaho:</p>
+            <ul>
+              <li>E-file through IRS-approved providers</li>
+              <li>Paper Form 2290 to IRS</li>
+              <li>You'll receive a <strong>stamped Schedule 1</strong> proving payment</li>
+            </ul>
+            <p class="important"><strong>Why this matters:</strong> You can't register a vehicle over 55,000 lbs without a stamped Schedule 1. IRP won't process your registration without proof of HVUT payment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="checklist">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag">Staying Compliant</span>
+        <h2>The Compliance Checklist</h2>
+      </div>
+
+      <div class="checklist-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Requirement</th>
+              <th>Frequency</th>
+              <th>Filed With</th>
+              <th>Deadline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>IRP Registration</td>
+              <td>Annual</td>
+              <td>Idaho CVS</td>
+              <td>Before expiration</td>
+            </tr>
+            <tr>
+              <td>IFTA Returns</td>
+              <td>Quarterly</td>
+              <td>Idaho CVS</td>
+              <td>End of month after quarter</td>
+            </tr>
+            <tr>
+              <td>UCR Registration</td>
+              <td>Annual</td>
+              <td>UCR.gov or Idaho CVS</td>
+              <td>January 1</td>
+            </tr>
+            <tr>
+              <td>HVUT (Form 2290)</td>
+              <td>Annual</td>
+              <td>IRS</td>
+              <td>September 30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- RMS HELPS -->
+  <section class="rms-helps">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag">How RMS Helps</span>
+        <h2>Insurance and Compliance Go Together</h2>
+      </div>
+
+      <div class="helps-content">
+        <p>You can't bind a policy on a truck that's not legally registered, and you can't haul legal freight without proper coverage.</p>
+
+        <h3>What RMS Does Before Binding</h3>
+        <ul>
+          <li><strong>Verify IRP is current</strong> - We check your cab card expiration before writing a policy</li>
+          <li><strong>Confirm IFTA status</strong> - Lapsed IFTA means you're not legally operating interstate</li>
+          <li><strong>Check UCR registration</strong> - Required for all interstate carriers</li>
+          <li><strong>Validate HVUT payment</strong> - Stamped Schedule 1 proves you're compliant</li>
+        </ul>
+
+        <div class="why-matters">
+          <h3>Why This Matters to You</h3>
+          <p>Some agents will bind your insurance without checking compliance. Then you get pulled over in Oregon, DOT finds your IRP lapsed, and you're parked. Your insurance was valid, but you weren't legal to operate.</p>
+          <p><strong>RMS catches these issues before they cost you a load.</strong></p>
+          <p>We know Idaho's requirements because we work with Idaho truckers daily. New authority or established carrier - we verify your filings are current before we bind your coverage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag">Idaho CVS Contact</span>
+        <h2>Commercial Vehicle Services</h2>
+      </div>
+
+      <div class="contact-box">
+        <table>
+          <tr><td><strong>Email</strong></td><td><a href="mailto:cvs@itd.idaho.gov">cvs@itd.idaho.gov</a></td></tr>
+          <tr><td><strong>Phone</strong></td><td>208-872-3163</td></tr>
+          <tr><td><strong>Online Portal</strong></td><td><a href="https://crs.idaho.celtic-host.com" target="_blank" rel="noopener">crs.idaho.celtic-host.com</a></td></tr>
+        </table>
+        <p>For IRP, IFTA, and UCR questions, CVS is your direct contact at Idaho Transportation Department.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Get Compliant, Get Covered</h2>
+      <p>Running legal in Idaho means keeping four registrations current: IRP, IFTA, UCR, and HVUT. Miss any one of them and you're risking fines, impoundment, or worse - being stranded at a weigh station 1,000 miles from home.</p>
+      <p>RMS Truck Insurance works with Idaho carriers who want an agent that understands compliance. We verify your filings before binding, so you're not just insured - you're legal to haul.</p>
+      <a href="tel:208-800-0640" class="btn">Call RMS: 208-800-0640</a>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="disclaimer">
+    <div class="container">
+      <p><em>Last updated: January 2026</em></p>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  :root {
+    --forest: #1B4332;
+    --forest-deep: #0D2118;
+    --gold: #DAA520;
+    --gold-hover: #C49B1A;
+    --white: #ffffff;
+    --gray-100: #f7f7f7;
+    --gray-200: #e5e5e5;
+    --gray-600: #6b7280;
+    --text: #1f2937;
+    --alert: #dc2626;
+  }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+
+  .section-tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.75rem;
+  }
+
+  .section-header { margin-bottom: 2.5rem; }
+  .section-header.centered { text-align: center; }
+  .section-header h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); line-height: 1.15; margin-bottom: 0.75rem; color: var(--forest); }
+
+  .btn {
+    display: inline-block; background: var(--gold); color: var(--forest-deep);
+    padding: 14px 28px; border-radius: 4px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+  }
+  .btn:hover { background: var(--forest); color: var(--white); }
+
+  /* HERO */
+  .hero { position: relative; padding: 6rem 2rem 4rem; color: var(--white); }
+  .hero-bg { position: absolute; inset: 0; background: var(--forest-deep); z-index: 0; }
+  .hero-content { position: relative; z-index: 1; max-width: 700px; }
+  .back-link { display: inline-block; color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; text-decoration: none; }
+  .back-link:hover { text-decoration: underline; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin-bottom: 1rem; }
+  .hero-sub { font-size: 1.1rem; opacity: 0.85; line-height: 1.6; }
+
+  /* REGISTRATION SECTIONS */
+  .registration { padding: 4rem 0; }
+  .registration.irp { background: var(--white); }
+  .registration.ifta { background: var(--gray-100); }
+  .registration.ucr { background: var(--white); }
+  .registration.hvut { background: var(--gray-100); }
+
+  .content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; }
+  .content-main h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin: 1.5rem 0 0.75rem; font-size: 1.15rem; }
+  .content-main h3:first-child { margin-top: 0; }
+  .content-main p { color: var(--gray-600); line-height: 1.7; margin-bottom: 0.75rem; }
+  .content-main ul, .content-main ol { padding-left: 1.5rem; color: var(--gray-600); margin-bottom: 1rem; }
+  .content-main li { margin-bottom: 0.5rem; line-height: 1.6; }
+  .exception { background: rgba(218,165,32,0.1); padding: 1rem; border-radius: 4px; font-size: 0.95rem; }
+
+  .content-sidebar > div { background: var(--gray-100); padding: 1.5rem; border-radius: 8px; }
+  .registration.ifta .content-sidebar > div,
+  .registration.hvut .content-sidebar > div { background: var(--white); }
+  .content-sidebar h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 1rem; font-size: 1.1rem; }
+  .content-sidebar p { color: var(--gray-600); font-size: 0.95rem; margin-bottom: 0.75rem; }
+  .content-sidebar ul, .content-sidebar ol { padding-left: 1.25rem; color: var(--gray-600); font-size: 0.95rem; margin-bottom: 1rem; }
+  .content-sidebar li { margin-bottom: 0.5rem; }
+  .content-sidebar a { color: var(--gold); }
+  .renewal, .deadline { background: var(--forest); color: var(--white); padding: 0.75rem; border-radius: 4px; font-size: 0.9rem; margin-top: 1rem; margin-bottom: 0; }
+  .warning { color: var(--alert); font-weight: 500; font-size: 0.9rem; }
+  .important { background: rgba(218,165,32,0.15); padding: 1rem; border-radius: 4px; font-size: 0.9rem; margin-bottom: 0; }
+
+  .schedule-table, .fee-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .schedule-table th, .schedule-table td,
+  .fee-table th, .fee-table td { padding: 0.6rem; text-align: left; border-bottom: 1px solid var(--gray-200); font-size: 0.9rem; }
+  .schedule-table th, .fee-table th { background: var(--forest); color: var(--white); }
+
+  /* CHECKLIST */
+  .checklist { padding: 4rem 0; background: var(--white); }
+  .checklist-table { overflow-x: auto; }
+  .checklist-table table { width: 100%; border-collapse: collapse; }
+  .checklist-table th, .checklist-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--gray-200); }
+  .checklist-table th { background: var(--forest); color: var(--white); font-size: 0.85rem; }
+  .checklist-table td { background: var(--gray-100); }
+
+  /* RMS HELPS */
+  .rms-helps { padding: 4rem 0; background: var(--gray-100); }
+  .helps-content { max-width: 700px; margin: 0 auto; }
+  .helps-content > p { color: var(--gray-600); text-align: center; font-size: 1.1rem; margin-bottom: 2rem; }
+  .helps-content h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 1rem; }
+  .helps-content ul { padding-left: 1.5rem; color: var(--gray-600); margin-bottom: 2rem; }
+  .helps-content li { margin-bottom: 0.5rem; }
+
+  .why-matters { background: var(--white); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--gold); }
+  .why-matters h3 { margin-top: 0; }
+  .why-matters p { color: var(--gray-600); margin-bottom: 0.75rem; }
+  .why-matters p:last-child { margin-bottom: 0; }
+
+  /* CONTACT */
+  .contact { padding: 4rem 0; background: var(--white); }
+  .contact-box { max-width: 500px; margin: 0 auto; background: var(--gray-100); padding: 2rem; border-radius: 8px; text-align: center; }
+  .contact-box table { width: 100%; margin-bottom: 1rem; }
+  .contact-box td { padding: 0.5rem; text-align: left; }
+  .contact-box td:first-child { width: 120px; }
+  .contact-box a { color: var(--gold); }
+  .contact-box > p { color: var(--gray-600); font-size: 0.9rem; margin: 0; }
+
+  /* CTA */
+  .cta-section { padding: 4rem 0; background: var(--gold); text-align: center; }
+  .cta-section h2 { color: var(--forest); margin-bottom: 1rem; }
+  .cta-section p { color: var(--forest); opacity: 0.85; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+  /* DISCLAIMER */
+  .disclaimer { padding: 2rem 0; background: var(--gray-100); }
+  .disclaimer p { color: var(--gray-600); font-size: 0.9rem; text-align: center; margin: 0; }
+
+  @media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

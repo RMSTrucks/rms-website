@@ -79,7 +79,7 @@
         "answer": "Absolutely. We'll quote you, and if we can beat your current rate or offer better service, we'll handle the switch. No pressure."
       }
     ],
-    "otherStates": ["illinois", "ohio", "pennsylvania", "georgia"],
+    "otherStates": ["idaho", "illinois", "ohio", "georgia"],
     "statesGridIntro": "Licensed in 40+ states."
   },
   {
@@ -164,7 +164,7 @@
         "answer": "Yes. RMS issues Certificates of Insurance (COIs) in 5 minutes. Federal filings (BMC-91/91X) take about 10 minutes."
       }
     ],
-    "otherStates": ["texas", "illinois", "ohio", "pennsylvania"],
+    "otherStates": ["idaho", "texas", "illinois", "ohio"],
     "statesGridIntro": "Licensed in 40+ states."
   },
   {
@@ -248,7 +248,7 @@
         "answer": "Standard auto liability and cargo cover most intermodal work. Some yard operators require higher cargo limits. Call RMS and we'll check your specific contracts."
       }
     ],
-    "otherStates": ["texas", "ohio", "pennsylvania", "georgia"],
+    "otherStates": ["idaho", "texas", "ohio", "georgia"],
     "statesGridIntro": "Licensed in 40+ states."
   },
   {
@@ -333,7 +333,7 @@
         "answer": "PUCO will suspend your intrastate authority until updated proof is filed. FMCSA will revoke your interstate authority. Either way, you cannot legally haul."
       }
     ],
-    "otherStates": ["texas", "illinois", "pennsylvania", "georgia"],
+    "otherStates": ["idaho", "texas", "illinois", "georgia"],
     "statesGridIntro": "Licensed in 40+ states."
   },
   {
@@ -417,7 +417,14 @@
         "answer": "Port work may require additional coverage depending on your cargo. Refrigerated loads have special weight permits (up to 107,500 lbs in the Philadelphia area). RMS knows PhilaPort operations and will make sure your coverage matches what the terminals and brokers require."
       }
     ],
-    "otherStates": ["texas", "illinois", "ohio", "georgia"],
+    "otherStates": ["idaho", "texas", "illinois", "ohio"],
     "statesGridIntro": "Licensed in 40+ states."
+  },
+  {
+    "slug": "idaho",
+    "name": "Idaho",
+    "nickname": "Gem State",
+    "flag": "&#127466;&#127465;",
+    "customPage": true
   }
 ]

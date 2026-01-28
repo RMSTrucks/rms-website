@@ -1,0 +1,492 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Idaho Truck Weight Limits & Permits Guide | 105,500 lb State Limit"
+  description="Idaho allows heavier trucks than most states. The 105,500 lb state limit beats the 80,000 lb federal cap. Know which limit applies where - permits, exemptions, and liability."
+>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Idaho Truck Weight Limits & Permits Guide",
+    "description": "Idaho allows heavier trucks than most states. The 105,500 lb state limit beats the 80,000 lb federal cap - but knowing which limit applies where is the difference between legal hauling and an overweight citation.",
+    "author": { "@type": "Organization", "name": "RMS Truck Insurance" },
+    "publisher": { "@type": "Organization", "name": "RMS Truck Insurance" },
+    "datePublished": "2026-01-28",
+    "dateModified": "2026-01-28"
+  })} />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rmstruckers.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Idaho Trucking Insurance", "item": "https://rmstruckers.com/trucking-insurance-idaho/" },
+      { "@type": "ListItem", "position": 3, "name": "Idaho Weight Limits & Permits", "item": "https://rmstruckers.com/idaho-weight-limits-permits/" }
+    ]
+  })} />
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <a href="/trucking-insurance-idaho/" class="back-link">&larr; Idaho Trucking Insurance</a>
+      <h1>Idaho Truck Weight Limits & Permits</h1>
+      <p class="hero-sub">Idaho allows heavier trucks than most states. The 105,500 lb state limit beats the 80,000 lb federal cap - but knowing which limit applies where is the difference between legal hauling and an overweight citation.</p>
+    </div>
+  </section>
+
+  <!-- WEIGHT LIMITS -->
+  <section class="weight-limits">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Idaho Code 49-1001</span>
+        <h2>Idaho's Weight Limits Explained</h2>
+      </div>
+
+      <div class="limits-grid">
+        <div class="limit-card highlight">
+          <h3>State Highway Limit</h3>
+          <span class="limit-value">105,500 lbs</span>
+          <p>On Idaho state highways, your maximum gross vehicle weight is <strong>105,500 pounds</strong>. That's 25,500 lbs more than federal limits.</p>
+          <p class="applies-to">This applies to:</p>
+          <ul>
+            <li>State highways</li>
+            <li>US routes within Idaho</li>
+            <li>Most county roads (unless posted otherwise)</li>
+          </ul>
+        </div>
+
+        <div class="limit-card">
+          <h3>Interstate Limit</h3>
+          <span class="limit-value">80,000 lbs</span>
+          <p>On federal interstates (I-84, I-86, I-90, I-15), the standard <strong>80,000 lb federal limit</strong> applies. However, commodity exemptions can get you higher - more on that below.</p>
+        </div>
+      </div>
+
+      <div class="axle-limits">
+        <h3>Axle Weight Limits</h3>
+        <p>Idaho enforces these per-axle limits regardless of route:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Axle Configuration</th>
+              <th>Maximum Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Single axle</td><td><strong>20,000 lbs</strong></td></tr>
+            <tr><td>Single wheel</td><td><strong>10,000 lbs</strong></td></tr>
+            <tr><td>Tandem axle (36+ ft spacing)</td><td><strong>34,000 lbs</strong> per tandem</td></tr>
+          </tbody>
+        </table>
+        <p class="note"><strong>Bridge formula:</strong> Idaho uses the federal bridge formula (W=500((LN/N-1)+12N+36)) to calculate allowable weight based on axle spacing. Closer axles = less weight allowed. The spacing between your first and last axle determines your max gross.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMODITY EXEMPTIONS -->
+  <section class="exemptions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Idaho Code 49-1001 Exemptions</span>
+        <h2>Commodity Exemptions: Who Gets Higher Limits</h2>
+        <p class="section-intro">Idaho Code 49-1001 grants higher weight allowances for specific commodity haulers on <strong>non-interstate</strong> highways:</p>
+      </div>
+
+      <div class="exempt-grid">
+        <div class="exempt-card">
+          <h3>Logs & Forestry Products</h3>
+          <p>Logs, pulp wood, stull, rough lumber, poles, piling</p>
+          <span class="limit-badge">Up to 79,000 lbs on designated routes</span>
+        </div>
+
+        <div class="exempt-card">
+          <h3>Mining Products</h3>
+          <p>Ores, concentrates, sand, gravel, aggregates</p>
+          <span class="limit-badge">Up to 79,000 lbs on designated routes</span>
+        </div>
+
+        <div class="exempt-card">
+          <h3>Agricultural Commodities</h3>
+          <p>Farm products including livestock</p>
+          <span class="limit-badge">Up to 79,000 lbs on designated routes</span>
+        </div>
+      </div>
+
+      <div class="exemption-note">
+        <p>These exemptions apply to <strong>state highways only</strong> - not I-84, I-86, I-90, or I-15. If you haul these commodities, you can legally run heavier than standard federal limits without a permit, but only on the right roads.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMIT TYPES -->
+  <section class="permits">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Idaho Code 49-1004 Series</span>
+        <h2>Permit Types</h2>
+        <p class="section-intro">When your load exceeds legal limits, Idaho offers several permit options:</p>
+      </div>
+
+      <div class="permit-grid">
+        <div class="permit-card">
+          <h3>Single Trip Permits</h3>
+          <span class="permit-code">49-1004</span>
+          <p>For one-time oversize or overweight moves:</p>
+          <ul>
+            <li>Issued by ITD or local authorities</li>
+            <li>Must apply before moving the load</li>
+            <li>Permit must be carried in the vehicle</li>
+            <li>Fees based on weight and distance (4 cents to $1.02+ per mile)</li>
+          </ul>
+        </div>
+
+        <div class="permit-card highlight">
+          <h3>Annual Special Route Permits</h3>
+          <span class="permit-code">49-1004A</span>
+          <p>For regular heavy hauling up to 129,000 lbs:</p>
+          <ul>
+            <li>Allows gross weights between 105,501 and 129,000 lbs</li>
+            <li>Limited to ITD-designated routes</li>
+            <li>Routes must meet structural and safety engineering standards</li>
+            <li>Check the "Designated Routes up to 129K" map from ITD</li>
+            <li>Administrative fee: max $55 per vehicle annually</li>
+          </ul>
+        </div>
+
+        <div class="permit-card">
+          <h3>Local Authority Heavy Permits</h3>
+          <span class="permit-code">49-1004B</span>
+          <p>For heavy loads on county and local roads:</p>
+          <ul>
+            <li>Same 105,501-129,000 lb range</li>
+            <li>Issued by local jurisdictions</li>
+            <li>Must respond to permit requests within 30 days</li>
+            <li>May include seasonal or time restrictions</li>
+            <li>Appeal process available if denied</li>
+            <li>Same $55 annual cap applies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="permit-requirements">
+        <h3>Key Permit Requirements</h3>
+        <p>All permits:</p>
+        <ul>
+          <li>Must be obtained <strong>BEFORE</strong> moving the load</li>
+          <li>Can be issued digitally or hard copy</li>
+          <li>Must be available for inspection by law enforcement</li>
+          <li>May include route restrictions, time limits, and conditions</li>
+          <li>May require security/bond depending on load</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAMAGE LIABILITY -->
+  <section class="liability">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Idaho Code 49-1006</span>
+        <h2>Damage Liability: What You Need to Know</h2>
+        <p class="section-intro">This is where it gets serious. Idaho Code 49-1006 makes both the <strong>vehicle owner AND operator</strong> jointly and severally liable for highway and bridge damage.</p>
+      </div>
+
+      <div class="liability-content">
+        <div class="liability-box">
+          <h3>What This Means</h3>
+          <p>If your overweight load damages a road or bridge, you're on the hook - <strong>even if you had a permit</strong>. The statute specifically covers:</p>
+          <ul>
+            <li>Damage from vehicles exceeding weight limits</li>
+            <li>Damage from improperly operated vehicles</li>
+            <li>Damage from permitted loads (yes, the permit doesn't shield you from damage claims)</li>
+          </ul>
+        </div>
+
+        <div class="liability-box">
+          <h3>Who Pays</h3>
+          <p>"Joint and several liability" means ITD or the local authority can pursue:</p>
+          <ul>
+            <li>The vehicle owner</li>
+            <li>The driver/operator</li>
+            <li>Both</li>
+          </ul>
+          <p class="warning">They don't have to split the bill. Either party can be held responsible for the full amount.</p>
+        </div>
+
+        <div class="liability-box">
+          <h3>Bridge Restrictions</h3>
+          <p>Idaho law prohibits multiple heavy vehicles from crossing bridges simultaneously when:</p>
+          <ul>
+            <li>Bridge span is 19 feet or greater</li>
+            <li>Bridge is posted for single-lane traffic</li>
+            <li>Vehicles exceed standard weight limits</li>
+          </ul>
+          <p class="warning">Violating this creates additional liability exposure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO GET PERMITS -->
+  <section class="how-to">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Getting Permitted</span>
+        <h2>How to Get Permits</h2>
+      </div>
+
+      <div class="how-to-grid">
+        <div class="how-to-card">
+          <h3>ITD Permit Office</h3>
+          <ul>
+            <li><strong>Online:</strong> Idaho Transportation Department permits portal</li>
+            <li><strong>Phone:</strong> Idaho Motor Carrier Services at 208-334-8611</li>
+            <li><strong>Process:</strong> Submit application, receive permit number before moving</li>
+          </ul>
+        </div>
+
+        <div class="how-to-card">
+          <h3>Local Authority Permits</h3>
+          <ul>
+            <li>Contact the county or city highway department for the route</li>
+            <li>30-day response window required by law</li>
+            <li>If denied, you can request a public hearing</li>
+          </ul>
+        </div>
+
+        <div class="how-to-card">
+          <h3>What You'll Need</h3>
+          <ul>
+            <li>Vehicle configuration details (axles, spacing, dimensions)</li>
+            <li>Gross weight</li>
+            <li>Commodity type</li>
+            <li>Origin and destination</li>
+            <li>Proposed route</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timing-warning">
+        <h3>Timing</h3>
+        <p>Apply before your load moves. Operating overweight without a permit isn't just a fine - it's full liability for any damage plus the citation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE CONNECTION -->
+  <section class="insurance">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag">The Insurance Connection</span>
+        <h2>Why This Matters for Your Coverage</h2>
+      </div>
+
+      <div class="insurance-content">
+        <p>Higher weight limits mean higher exposure. Idaho's 105,500 lb state limit and 129,000 lb permit routes put more stress on equipment and create larger liability scenarios.</p>
+
+        <p><strong>Your trucking insurance should account for:</strong></p>
+        <ul>
+          <li>The commodities you haul (ag, mining, and forestry have exemptions but also have risks)</li>
+          <li>The routes you run (permitted routes have specific requirements)</li>
+          <li>Damage liability under 49-1006 (your policy should cover highway damage claims)</li>
+        </ul>
+
+        <p>RMS Truck Insurance writes policies for Idaho heavy haulers. We know the weight limits, the permit routes, and the liability exposure. If you're running heavier than 80K in Idaho, make sure your coverage matches your operation.</p>
+
+        <a href="tel:208-800-0640" class="btn">Call 208-800-0640 for a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK REFERENCE -->
+  <section class="quick-ref">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-tag">Quick Reference</span>
+        <h2>Idaho Weight Limits Summary</h2>
+      </div>
+
+      <div class="summary-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Limit Type</th>
+              <th>Weight</th>
+              <th>Where It Applies</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Federal interstate</td><td>80,000 lbs</td><td>I-84, I-86, I-90, I-15</td></tr>
+            <tr><td>Idaho state highways</td><td>105,500 lbs</td><td>State routes, US highways</td></tr>
+            <tr><td>Commodity exemption</td><td>79,000 lbs</td><td>Non-interstate (ag, mining, forestry)</td></tr>
+            <tr><td>Annual permit max</td><td>129,000 lbs</td><td>Designated routes only</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="statute-citations">
+        <h3>Statute Citations</h3>
+        <ul>
+          <li><strong>Weight limits:</strong> Idaho Code 49-1001</li>
+          <li><strong>Permits:</strong> Idaho Code 49-1004, 49-1004A, 49-1004B</li>
+          <li><strong>Damage liability:</strong> Idaho Code 49-1006</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="disclaimer">
+    <div class="container">
+      <p><em>Last updated: January 2026. Verify current permit requirements with ITD before hauling.</em></p>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  :root {
+    --forest: #1B4332;
+    --forest-deep: #0D2118;
+    --gold: #DAA520;
+    --gold-hover: #C49B1A;
+    --white: #ffffff;
+    --gray-100: #f7f7f7;
+    --gray-200: #e5e5e5;
+    --gray-600: #6b7280;
+    --text: #1f2937;
+    --alert: #dc2626;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+  .section-tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.75rem;
+  }
+
+  .section-header { margin-bottom: 2.5rem; }
+  .section-header.centered { text-align: center; }
+  .section-header h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); line-height: 1.15; margin-bottom: 0.75rem; color: var(--forest); }
+  .section-intro { font-size: 1.05rem; color: var(--gray-600); line-height: 1.7; }
+
+  .btn {
+    display: inline-block; background: var(--gold); color: var(--forest-deep);
+    padding: 14px 28px; border-radius: 4px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+  }
+  .btn:hover { background: var(--forest); color: var(--white); }
+
+  /* HERO */
+  .hero { position: relative; padding: 6rem 2rem 4rem; color: var(--white); }
+  .hero-bg { position: absolute; inset: 0; background: var(--forest-deep); z-index: 0; }
+  .hero-content { position: relative; z-index: 1; max-width: 700px; }
+  .back-link { display: inline-block; color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; text-decoration: none; }
+  .back-link:hover { text-decoration: underline; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin-bottom: 1rem; }
+  .hero-sub { font-size: 1.1rem; opacity: 0.85; line-height: 1.6; }
+
+  /* WEIGHT LIMITS */
+  .weight-limits { padding: 4rem 0; background: var(--white); }
+  .limits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+  .limit-card { background: var(--gray-100); padding: 2rem; border-radius: 8px; }
+  .limit-card.highlight { border: 2px solid var(--gold); background: rgba(218,165,32,0.05); }
+  .limit-card h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 0.5rem; }
+  .limit-value { display: block; font-family: 'Crimson Pro', serif; font-size: 2.5rem; font-weight: 600; color: var(--gold); margin-bottom: 1rem; }
+  .limit-card p { color: var(--gray-600); line-height: 1.6; margin-bottom: 0.75rem; }
+  .applies-to { font-weight: 600; color: var(--forest); margin-top: 1rem; }
+  .limit-card ul { padding-left: 1.25rem; color: var(--gray-600); }
+  .limit-card li { margin-bottom: 0.5rem; }
+
+  .axle-limits { background: var(--gray-100); padding: 2rem; border-radius: 8px; }
+  .axle-limits h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 1rem; }
+  .axle-limits > p { color: var(--gray-600); margin-bottom: 1rem; }
+  .axle-limits table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+  .axle-limits th, .axle-limits td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--gray-200); }
+  .axle-limits th { background: var(--forest); color: var(--white); font-size: 0.85rem; }
+  .note { font-size: 0.9rem; color: var(--gray-600); background: var(--white); padding: 1rem; border-radius: 4px; margin: 0; }
+
+  /* EXEMPTIONS */
+  .exemptions { padding: 4rem 0; background: var(--gray-100); }
+  .exempt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+  .exempt-card { background: var(--white); padding: 1.5rem; border-radius: 8px; }
+  .exempt-card h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 0.5rem; }
+  .exempt-card p { color: var(--gray-600); font-size: 0.9rem; margin-bottom: 1rem; }
+  .limit-badge { display: inline-block; background: rgba(218,165,32,0.2); color: var(--gold-hover); padding: 0.5rem 1rem; border-radius: 4px; font-weight: 600; font-size: 0.9rem; }
+
+  .exemption-note { background: var(--white); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--gold); }
+  .exemption-note p { margin: 0; color: var(--gray-600); }
+
+  /* PERMITS */
+  .permits { padding: 4rem 0; background: var(--white); }
+  .permit-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
+  .permit-card { background: var(--gray-100); padding: 2rem; border-radius: 8px; }
+  .permit-card.highlight { border: 2px solid var(--gold); background: rgba(218,165,32,0.05); }
+  .permit-card h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 0.25rem; }
+  .permit-code { display: inline-block; color: var(--gold); font-weight: 600; font-size: 0.85rem; margin-bottom: 1rem; }
+  .permit-card p { color: var(--gray-600); margin-bottom: 0.75rem; }
+  .permit-card ul { padding-left: 1.25rem; color: var(--gray-600); }
+  .permit-card li { margin-bottom: 0.5rem; }
+
+  .permit-requirements { background: var(--gray-100); padding: 2rem; border-radius: 8px; }
+  .permit-requirements h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 1rem; }
+  .permit-requirements p { color: var(--gray-600); margin-bottom: 0.75rem; }
+  .permit-requirements ul { padding-left: 1.25rem; color: var(--gray-600); }
+  .permit-requirements li { margin-bottom: 0.5rem; }
+
+  /* LIABILITY */
+  .liability { padding: 4rem 0; background: #fef2f2; }
+  .liability-content { display: flex; flex-direction: column; gap: 1.5rem; }
+  .liability-box { background: var(--white); padding: 2rem; border-radius: 8px; }
+  .liability-box h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 1rem; }
+  .liability-box p { color: var(--gray-600); margin-bottom: 0.75rem; }
+  .liability-box ul { padding-left: 1.25rem; color: var(--gray-600); margin-bottom: 0.75rem; }
+  .liability-box li { margin-bottom: 0.5rem; }
+  .warning { color: var(--alert); font-weight: 500; }
+
+  /* HOW TO */
+  .how-to { padding: 4rem 0; background: var(--white); }
+  .how-to-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+  .how-to-card { background: var(--gray-100); padding: 1.5rem; border-radius: 8px; }
+  .how-to-card h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 1rem; font-size: 1.1rem; }
+  .how-to-card ul { padding-left: 1.25rem; color: var(--gray-600); margin: 0; }
+  .how-to-card li { margin-bottom: 0.5rem; }
+
+  .timing-warning { background: var(--forest); color: var(--white); padding: 2rem; border-radius: 8px; }
+  .timing-warning h3 { color: var(--gold); margin-bottom: 0.75rem; }
+  .timing-warning p { margin: 0; }
+
+  /* INSURANCE */
+  .insurance { padding: 4rem 0; background: var(--gray-100); }
+  .insurance-content { background: var(--white); padding: 2.5rem; border-radius: 8px; text-align: center; max-width: 700px; margin: 0 auto; }
+  .insurance-content p { color: var(--gray-600); margin-bottom: 1rem; line-height: 1.7; }
+  .insurance-content ul { padding-left: 1.5rem; text-align: left; color: var(--gray-600); margin-bottom: 1.5rem; display: inline-block; }
+  .insurance-content li { margin-bottom: 0.5rem; }
+
+  /* QUICK REF */
+  .quick-ref { padding: 4rem 0; background: var(--white); }
+  .summary-table { background: var(--gray-100); padding: 2rem; border-radius: 8px; overflow-x: auto; margin-bottom: 2rem; }
+  .summary-table table { width: 100%; border-collapse: collapse; }
+  .summary-table th, .summary-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--gray-200); }
+  .summary-table th { background: var(--forest); color: var(--white); font-size: 0.85rem; }
+
+  .statute-citations { background: var(--gray-100); padding: 2rem; border-radius: 8px; }
+  .statute-citations h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 1rem; }
+  .statute-citations ul { padding-left: 1.25rem; color: var(--gray-600); margin: 0; }
+  .statute-citations li { margin-bottom: 0.5rem; }
+
+  /* DISCLAIMER */
+  .disclaimer { padding: 2rem 0; background: var(--gray-100); }
+  .disclaimer p { color: var(--gray-600); font-size: 0.9rem; text-align: center; margin: 0; }
+
+  @media (max-width: 768px) {
+    .limits-grid { grid-template-columns: 1fr; }
+    .exempt-grid { grid-template-columns: 1fr; }
+    .how-to-grid { grid-template-columns: 1fr; }
+  }
+</style>
