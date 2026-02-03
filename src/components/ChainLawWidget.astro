@@ -1,0 +1,430 @@
+---
+/**
+ * ChainLawWidget - Interactive Idaho chain law quick reference
+ * Shows the three passes, current status link, and key exemptions
+ * Phase 1: Static info with expandable details
+ */
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+
+const passes = [
+  {
+    name: "Lookout Pass",
+    route: "I-90",
+    elevation: "4,725 ft",
+    location: "Idaho-Montana border",
+    note: "Highest, most frequently chained"
+  },
+  {
+    name: "Fourth of July Pass",
+    route: "I-90",
+    elevation: "3,081 ft",
+    location: "Coeur d'Alene to Kellogg",
+    note: "Lower elevation, steep grades"
+  },
+  {
+    name: "Lolo Pass",
+    route: "US-12",
+    elevation: "5,233 ft",
+    location: "Idaho-Montana border",
+    note: "Most remote, limited services"
+  }
+];
+
+const exemptions = [
+  { type: "Agricultural", examples: "Farm equipment, grain, produce, livestock, hay" },
+  { type: "Forest Products", examples: "Logs, lumber, wood chips" },
+  { type: "Mining Products", examples: "Sand, gravel, aggregates, ore" },
+  { type: "Government", examples: "Mail, school buses, tow trucks" }
+];
+---
+
+<div class={`chain-widget ${compact ? 'compact' : ''}`}>
+  <div class="widget-header">
+    <div class="widget-title">
+      <span class="widget-icon">&#9889;</span>
+      <h3>Idaho Chain Law Quick Reference</h3>
+    </div>
+    <a href="https://511.idaho.gov" target="_blank" rel="noopener" class="status-link">
+      <span class="status-dot"></span>
+      Check Current Conditions
+    </a>
+  </div>
+
+  <div class="widget-body">
+    <!-- The Three Passes -->
+    <div class="passes-section">
+      <h4>Chain Law Applies on 3 Passes Only</h4>
+      <div class="passes-grid">
+        {passes.map(pass => (
+          <div class="pass-item">
+            <div class="pass-header">
+              <span class="pass-name">{pass.name}</span>
+              <span class="pass-route">{pass.route}</span>
+            </div>
+            <div class="pass-details">
+              <span class="pass-elevation">{pass.elevation}</span>
+              <span class="pass-location">{pass.location}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Key Facts -->
+    <div class="facts-row">
+      <div class="fact">
+        <span class="fact-label">Minimum Chains</span>
+        <span class="fact-value">4 (tractor-trailer)</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">Citation</span>
+        <span class="fact-value">Misdemeanor</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">Bare Pavement</span>
+        <span class="fact-value">No chains required</span>
+      </div>
+    </div>
+
+    <!-- Exemptions (Expandable) -->
+    <details class="exemptions-section">
+      <summary>
+        <span class="summary-text">View Exemptions</span>
+        <span class="summary-note">(Ag, Forest, Mining exempt)</span>
+      </summary>
+      <div class="exemptions-content">
+        <p class="exempt-intro">These operations are <strong>exempt from chain requirements</strong> even when chains are posted:</p>
+        <div class="exempt-grid">
+          {exemptions.map(ex => (
+            <div class="exempt-item">
+              <span class="exempt-type">{ex.type}</span>
+              <span class="exempt-examples">{ex.examples}</span>
+            </div>
+          ))}
+        </div>
+        <p class="exempt-warning">Exemption means you won't be cited - it doesn't mean chains are a bad idea in severe conditions.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="widget-footer">
+    <a href="/idaho-chain-laws/" class="full-guide-link">
+      Full Chain Law Guide (Idaho Code 49-948) &rarr;
+    </a>
+  </div>
+</div>
+
+<style>
+  .chain-widget {
+    background: var(--white, #fff);
+    border: 2px solid var(--gold, #DAA520);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: var(--forest, #1B4332);
+    color: var(--white, #fff);
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .widget-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .widget-icon {
+    font-size: 1.25rem;
+  }
+
+  .widget-title h3 {
+    margin: 0;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .status-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(218, 165, 32, 0.2);
+    border: 1px solid rgba(218, 165, 32, 0.4);
+    color: var(--gold, #DAA520);
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .status-link:hover {
+    background: var(--gold, #DAA520);
+    color: var(--forest, #1B4332);
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .widget-body {
+    padding: 1.25rem;
+  }
+
+  /* Passes Section */
+  .passes-section h4 {
+    margin: 0 0 1rem;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    color: var(--forest, #1B4332);
+  }
+
+  .passes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .pass-item {
+    background: var(--gray-100, #f7f7f7);
+    padding: 0.75rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--gold, #DAA520);
+  }
+
+  .pass-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+    gap: 0.5rem;
+  }
+
+  .pass-name {
+    font-weight: 600;
+    color: var(--forest, #1B4332);
+    font-size: 0.9rem;
+  }
+
+  .pass-route {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--gold, #DAA520);
+    background: rgba(218, 165, 32, 0.15);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  .pass-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .pass-elevation {
+    font-size: 0.8rem;
+    color: var(--gray-600, #6b7280);
+    font-weight: 500;
+  }
+
+  .pass-location {
+    font-size: 0.75rem;
+    color: var(--gray-600, #6b7280);
+  }
+
+  /* Facts Row */
+  .facts-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-200, #e5e5e5);
+  }
+
+  .fact {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1;
+  }
+
+  .fact-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-600, #6b7280);
+    margin-bottom: 0.25rem;
+  }
+
+  .fact-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--forest, #1B4332);
+  }
+
+  /* Exemptions Section */
+  .exemptions-section {
+    margin-top: 1rem;
+    border: 1px solid var(--gray-200, #e5e5e5);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .exemptions-section summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--gray-100, #f7f7f7);
+    cursor: pointer;
+    list-style: none;
+    font-size: 0.9rem;
+  }
+
+  .exemptions-section summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .exemptions-section summary::before {
+    content: '+';
+    font-weight: bold;
+    color: var(--gold, #DAA520);
+    font-size: 1rem;
+    width: 1rem;
+    text-align: center;
+  }
+
+  .exemptions-section[open] summary::before {
+    content: '-';
+  }
+
+  .summary-text {
+    font-weight: 600;
+    color: var(--forest, #1B4332);
+  }
+
+  .summary-note {
+    font-size: 0.8rem;
+    color: var(--gray-600, #6b7280);
+  }
+
+  .exemptions-content {
+    padding: 1rem;
+    background: var(--white, #fff);
+  }
+
+  .exempt-intro {
+    font-size: 0.85rem;
+    color: var(--gray-600, #6b7280);
+    margin: 0 0 0.75rem;
+  }
+
+  .exempt-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .exempt-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-100, #f7f7f7);
+    border-radius: 4px;
+  }
+
+  .exempt-type {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--forest, #1B4332);
+  }
+
+  .exempt-examples {
+    font-size: 0.75rem;
+    color: var(--gray-600, #6b7280);
+  }
+
+  .exempt-warning {
+    font-size: 0.8rem;
+    color: var(--gray-600, #6b7280);
+    font-style: italic;
+    margin: 0.75rem 0 0;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--gray-200, #e5e5e5);
+  }
+
+  /* Footer */
+  .widget-footer {
+    padding: 0.75rem 1.25rem;
+    background: var(--gray-100, #f7f7f7);
+    border-top: 1px solid var(--gray-200, #e5e5e5);
+  }
+
+  .full-guide-link {
+    display: block;
+    color: var(--gold-hover, #C49B1A);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .full-guide-link:hover {
+    color: var(--forest, #1B4332);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .widget-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .passes-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .facts-row {
+      flex-wrap: wrap;
+    }
+
+    .fact {
+      min-width: calc(50% - 0.5rem);
+    }
+
+    .exempt-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Compact mode */
+  .chain-widget.compact .widget-body {
+    padding: 1rem;
+  }
+
+  .chain-widget.compact .passes-section h4 {
+    font-size: 0.9rem;
+  }
+</style>

@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import FAQSection from '../components/FAQSection.astro';
 import FAQSchema from '../components/FAQSchema.astro';
 import QuoteForm from '../components/QuoteForm.astro';
+import ChainLawWidget from '../components/ChainLawWidget.astro';
 
 const faqs = [
   {
@@ -134,17 +135,8 @@ const faqs = [
           <a href="/idaho-weight-limits-permits/" class="reg-link">Full weight limits guide &rarr;</a>
         </div>
 
-        <div class="reg-card">
-          <h3>Chain Law: 3 Specific Passes</h3>
-          <p class="reg-cite">Idaho Code 49-948</p>
-          <p>Idaho's chain law applies on <strong>three mountain passes</strong> - not statewide:</p>
-          <ul>
-            <li><strong>Lookout Pass</strong> (I-90, Montana border)</li>
-            <li><strong>Fourth of July Pass</strong> (I-90, between Coeur d'Alene and Kellogg)</li>
-            <li><strong>Lolo Pass</strong> (Highway 12, Montana border)</li>
-          </ul>
-          <p class="reg-note"><strong>Agricultural haulers are exempt</strong> from Idaho's chain law. So are forest products, mining products, and more.</p>
-          <a href="/idaho-chain-laws/" class="reg-link">Complete chain law guide &rarr;</a>
+        <div class="reg-card chain-widget-container">
+          <ChainLawWidget />
         </div>
 
         <div class="reg-card alert">
@@ -622,10 +614,16 @@ const faqs = [
 
   /* REGULATIONS */
   .regulations { padding: 5rem 0; background: var(--white); }
-  .reg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .reg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .reg-card { background: var(--gray-100); padding: 2rem; border-radius: 8px; border: 1px solid var(--gray-200); }
   .reg-card.highlight { border-color: var(--gold); border-width: 2px; }
   .reg-card.alert { border-color: var(--alert); border-width: 2px; background: #fef2f2; }
+  .reg-card.chain-widget-container {
+    grid-column: 1 / -1;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
   .reg-card h3 { font-family: 'Crimson Pro', serif; color: var(--forest); margin-bottom: 0.5rem; }
   .reg-cite { font-size: 0.8rem; color: var(--gold); font-weight: 600; margin-bottom: 1rem; }
   .reg-card p { color: var(--gray-600); line-height: 1.7; margin-bottom: 0.75rem; }
@@ -767,6 +765,7 @@ const faqs = [
 
   @media (max-width: 968px) {
     .reg-grid { grid-template-columns: 1fr; }
+    .reg-card.chain-widget-container { grid-column: 1; }
     .value-grid { grid-template-columns: repeat(2, 1fr); }
     .ops-grid { grid-template-columns: repeat(2, 1fr); }
     .corridor-grid { grid-template-columns: 1fr; }
