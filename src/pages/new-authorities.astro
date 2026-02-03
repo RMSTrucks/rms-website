@@ -4,7 +4,9 @@ import Layout from '../layouts/Layout.astro';
 const faqs = [
   { question: "How much is this going to cost?", answer: "New authority insurance is expensive - typically $12,000-$20,000/year for liability alone. That's the reality. It goes down after you build history." },
   { question: "Can I get a lower price somewhere else?", answer: "Probably not. We all have access to the same 3-4 carriers that write new authorities. The rates are basically the same. The difference is service." },
-  { question: "How long until I'm covered?", answer: "Once you accept a quote and pay, coverage can bind same day. Filings typically process within 24-48 hours." }
+  { question: "How long until I'm covered?", answer: "Once you accept a quote and pay, coverage can bind same day. Filings typically process within 24-48 hours." },
+  { question: "What do I need to get a quote?", answer: "Pending MC/DOT numbers, vehicle info (year, make, model, VIN), your MVR, operating radius, and cargo types you'll haul." },
+  { question: "What is the BMC-91 filing?", answer: "The BMC-91 is proof of insurance that your agent files with FMCSA. Without it, your authority can't go active. RMS files BMC-91s within 24-48 hours of binding." }
 ];
 ---
 
@@ -37,99 +39,817 @@ const faqs = [
   })} />
 
   <!-- Hero -->
-  <section style="background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%); color: white; padding: 5rem 0;">
-    <div class="container" style="text-align: center;">
-      <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">New Authority? Let's Get You Covered Right.</h1>
-      <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9;">
-        Getting your authority is hard enough. RMS Truck Insurance makes insurance the easy part.
+  <section class="hero-section">
+    <div class="container hero-content">
+      <h1>New Authority Trucking Insurance: Everything You Need to Start Hauling</h1>
+      <p class="hero-sub">
+        You did it. After the paperwork, the wait, the FMCSA applications - you're about to have your own authority. Now you just need insurance before you can legally operate.
       </p>
-      <a href="tel:208-800-0640" class="btn" style="font-size: 1.25rem; padding: 16px 32px;">
-        Talk to Someone Who Gets It: 208-800-0640
+      <p class="hero-note">
+        RMS Truck Insurance works with new authorities every day. We know the timeline. We know the filings. We know which carriers actually write new MCs.
+      </p>
+      <a href="tel:208-800-0640" class="btn hero-cta">
+        Call or Text: 208-800-0640
       </a>
     </div>
   </section>
 
-  <!-- We Know What You're Dealing With -->
-  <section style="padding: 4rem 0;">
-    <div class="container" style="max-width: 800px;">
-      <h2 style="font-size: 2rem; margin-bottom: 2rem;">We Know What You're Dealing With</h2>
-      <p style="margin-bottom: 1.5rem;">You just got your authority (or you're about to). Congratulations - and welcome to the chaos:</p>
-      <ul style="margin-left: 1.5rem; margin-bottom: 2rem; color: #666;">
-        <li style="margin-bottom: 0.5rem;">DOT filings and compliance paperwork</li>
-        <li style="margin-bottom: 0.5rem;">Finding your first loads on the boards</li>
-        <li style="margin-bottom: 0.5rem;">Figuring out which brokers to trust</li>
-        <li style="margin-bottom: 0.5rem;">Managing cash flow before the money starts flowing</li>
-        <li style="margin-bottom: 0.5rem;">Learning the difference between a good rate and a trap</li>
-        <li style="margin-bottom: 0.5rem;"><strong>And now... figuring out insurance</strong></li>
-      </ul>
-      <p style="color: #666;">One more thing on the pile. We get it.</p>
+  <!-- Timeline Section -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2>Step-by-Step Timeline: From Application to Active Authority</h2>
+      <p class="section-intro">Most new operators don't realize getting authority isn't instant. Here's what actually happens:</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">Day 1</div>
+          <div class="timeline-content">
+            <h3>Apply for Operating Authority</h3>
+            <p>Submit your MC/DOT application through FMCSA. Cost: $300 per authority type. This starts a mandatory 21-day waiting period.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">Days 1-10</div>
+          <div class="timeline-content">
+            <h3>Get Your Insurance Quotes</h3>
+            <p>Don't wait until day 20. Start getting insurance quotes immediately. Only 3-4 carriers even write new authorities - you're not shopping dozens of options. Get quotes early so you're ready to bind when the time comes.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">Day 14-18</div>
+          <div class="timeline-content">
+            <h3>Accept a Quote and Bind Coverage</h3>
+            <p>Once you accept a quote and pay, your coverage can bind same day. But here's the key: your insurer must file the BMC-91 with FMCSA. RMS typically completes BMC-91 filings within 24-48 hours.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">Day 21+</div>
+          <div class="timeline-content">
+            <h3>Authority Goes Active</h3>
+            <p>After the 21-day waiting period, assuming your BMC-91 is on file, your authority status changes from "pending" to "active." You can now legally operate.</p>
+            <p class="timeline-warning"><strong>Reality check:</strong> If your BMC-91 isn't filed by day 21, your authority stays pending. Every extra day is money you're not making.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">Day 22+</div>
+          <div class="timeline-content">
+            <h3>Get Your First Load</h3>
+            <p>With active authority and insurance in place, you can now book loads. Brokers will request your Certificate of Insurance (COI). RMS issues COIs same-day - because waiting until tomorrow means losing the load today.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- What We'll Do -->
-  <section style="background: #f8f9fa; padding: 4rem 0;">
-    <div class="container" style="max-width: 800px;">
-      <h2 style="font-size: 2rem; margin-bottom: 2rem;">Here's What We'll Do</h2>
+  <!-- Documents Checklist -->
+  <section class="checklist-section">
+    <div class="container">
+      <h2>Required Documents Checklist</h2>
+      <p class="section-intro">Before you call for a quote, gather these documents. Having everything ready speeds up the process by days.</p>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="color: var(--forest); margin-bottom: 1rem;">Walk You Through What You Actually Need</h3>
-        <p style="margin-bottom: 1rem;">New authority insurance isn't complicated, but nobody explains it clearly. We will.</p>
-        <p style="margin-bottom: 0.5rem;"><strong>Required:</strong></p>
-        <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: #666;">
-          <li>Auto Liability (BI/PD) - minimum $750K, most need $1M</li>
-          <li>Cargo Insurance - required for most freight</li>
-          <li>FMCSA filings (we handle this)</li>
-        </ul>
-        <p style="margin-bottom: 0.5rem;"><strong>Smart to Have:</strong></p>
-        <ul style="margin-left: 1.5rem; color: #666;">
-          <li>Physical Damage (if you're financing)</li>
-          <li>Non-Trucking Liability (bobtail)</li>
-          <li>Occupational Accident</li>
-        </ul>
+      <div class="checklist-grid">
+        <div class="checklist-card">
+          <h3>Required for Every New Authority</h3>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Pending MC Number - From your FMCSA application</li>
+            <li><span class="check-icon"></span>DOT Number - Assigned when you register</li>
+            <li><span class="check-icon"></span>Driver's License - For all drivers on the policy</li>
+            <li><span class="check-icon"></span>MVR (Motor Vehicle Record) - Most agents can pull this for you</li>
+            <li><span class="check-icon"></span>Vehicle Information - Year, make, model, VIN for each truck</li>
+            <li><span class="check-icon"></span>Trailer Information - If you own trailers (year, make, VIN, type)</li>
+            <li><span class="check-icon"></span>EIN or SSN - For the business entity</li>
+            <li><span class="check-icon"></span>BOC-3 Filing Confirmation - Your process agent registration</li>
+          </ul>
+        </div>
+
+        <div class="checklist-card">
+          <h3>Additional Documents (Situational)</h3>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Loss Runs - If you had prior trucking insurance</li>
+            <li><span class="check-icon"></span>Equipment Financing Documents - Lenders often require specific coverage levels</li>
+            <li><span class="check-icon"></span>Lease Agreements - If leasing equipment or leasing onto a carrier</li>
+            <li><span class="check-icon"></span>CDL Copy - Some carriers want physical copies</li>
+          </ul>
+          <p class="checklist-tip"><strong>Pro tip:</strong> Missing one document can delay your quote by a week. Check this list before you call.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="color: var(--forest); margin-bottom: 1rem;">Get You Quoted Fast</h3>
-        <p style="color: #666;">You need to get moving. We'll get you options quickly so you can start running loads.</p>
+  <!-- Cost Breakdown -->
+  <section class="cost-section">
+    <div class="container">
+      <h2>Cost Breakdown: What New Authorities Actually Pay</h2>
+      <p class="section-intro">Let's talk real numbers. New authorities pay more than established carriers - that's just how insurance pricing works.</p>
+
+      <div class="cost-tables">
+        <div class="cost-card">
+          <h3>Insurance Costs (Annual Estimates)</h3>
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>Coverage Type</th>
+                <th>Typical Cost</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Auto Liability ($1M)</td>
+                <td>$8,000-$14,000</td>
+                <td>Required. Most new authorities land here.</td>
+              </tr>
+              <tr>
+                <td>Cargo Insurance ($100K)</td>
+                <td>$400-$1,200</td>
+                <td>Required by brokers, not always by law</td>
+              </tr>
+              <tr>
+                <td>Physical Damage</td>
+                <td>$1,500-$4,000</td>
+                <td>Required if you're financing the truck</td>
+              </tr>
+              <tr>
+                <td>Non-Trucking Liability</td>
+                <td>$500-$1,000</td>
+                <td>For personal use when not under dispatch</td>
+              </tr>
+              <tr>
+                <td>Occupational Accident</td>
+                <td>$1,200-$3,000</td>
+                <td>Health coverage for owner-operators</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="cost-total">
+            <strong>Total First-Year Insurance: $12,000-$20,000+</strong>
+            <p>Rates typically drop 15-25% after your first clean year.</p>
+          </div>
+        </div>
+
+        <div class="cost-card">
+          <h3>Other Startup Costs (Not Insurance)</h3>
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>MC Application</td><td>$300</td></tr>
+              <tr><td>DOT Registration</td><td>$0 (included)</td></tr>
+              <tr><td>BOC-3 Filing</td><td>$30-$50</td></tr>
+              <tr><td>UCR Registration</td><td>$59-$76</td></tr>
+              <tr><td>IFTA License</td><td>Varies by state</td></tr>
+              <tr><td>IRP Registration</td><td>Varies by state</td></tr>
+              <tr><td>ELD Device</td><td>$200-$500 + monthly</td></tr>
+            </tbody>
+          </table>
+          <div class="cost-total">
+            <strong>Total Startup (non-insurance): $600-$1,500</strong>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div>
-        <h3 style="color: var(--forest); margin-bottom: 1rem;">Be Here When You Have Questions</h3>
-        <p style="color: #666;">You will have questions. That's normal. And RMS Truck Insurance actually answers the phone.</p>
+  <!-- Top 5 Mistakes -->
+  <section class="mistakes-section">
+    <div class="container">
+      <h2>Top 5 Mistakes New Authorities Make</h2>
+      <p class="section-intro">We've helped hundreds of new authorities get insured. These mistakes cost people time and money every week:</p>
+
+      <div class="mistakes-grid">
+        <div class="mistake-card">
+          <div class="mistake-number">1</div>
+          <h3>Waiting Until Day 20 to Get Insurance</h3>
+          <p>Your authority has a 21-day waiting period. Some operators think, "I'll deal with insurance later." Then day 18 hits, they scramble for quotes, and their authority sits pending for an extra week.</p>
+          <p class="mistake-fix"><strong>Fix:</strong> Start getting quotes on day 1. Have a policy ready to bind by day 14.</p>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">2</div>
+          <h3>Underinsuring Cargo</h3>
+          <p>FMCSA doesn't always require cargo insurance, but try getting loads without it. Most brokers require $100,000 minimum. Better freight requires $150,000-$250,000.</p>
+          <p class="mistake-fix"><strong>Fix:</strong> Get at least $100K cargo. If you haul anything valuable, go higher.</p>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">3</div>
+          <h3>Choosing the Cheapest Quote (Ignoring Service)</h3>
+          <p>We all have access to the same 3-4 carriers. The rates are basically the same. A $500 difference doesn't matter when you need a certificate at 6pm Friday and your agent's office is closed.</p>
+          <p class="mistake-fix"><strong>Fix:</strong> Ask: Can I get same-day COIs? What are your hours? How fast do you file the BMC-91?</p>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">4</div>
+          <h3>Not Understanding Physical Damage Requirements</h3>
+          <p>If you financed your truck, your lender requires physical damage coverage. Skip it, and you're in default. But if you own outright? It's optional.</p>
+          <p class="mistake-fix"><strong>Fix:</strong> Check your financing agreement. Know what's required vs. optional.</p>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">5</div>
+          <h3>Operating Before Authority Is Active</h3>
+          <p>Operating with pending authority - even one load - is illegal. Get caught, and you're looking at fines, out-of-service orders, and a permanent mark on your record.</p>
+          <p class="mistake-fix"><strong>Fix:</strong> Wait. Check FMCSA's SAFER system to confirm your authority is active before booking anything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Happens After -->
+  <section class="after-section">
+    <div class="container">
+      <h2>What Happens After You Get Insured</h2>
+      <p class="section-intro">Getting the policy is step one. Here's what to expect in your first 90 days:</p>
+
+      <div class="after-grid">
+        <div class="after-card">
+          <h3>Week 1: Get Familiar With Your Coverage</h3>
+          <p>Read your policy. Know your liability limit, cargo limit, deductibles, how to file a claim, and how to request COIs.</p>
+        </div>
+
+        <div class="after-card">
+          <h3>Week 2-4: Set Up Your COI Process</h3>
+          <p>You'll request certificates constantly. Every broker wants proof of insurance. RMS issues same-day COIs because loads don't wait.</p>
+        </div>
+
+        <div class="after-card">
+          <h3>Month 2-3: Watch for Audits</h3>
+          <p>Insurance carriers sometimes audit new policies. If something changed - you added a truck, hired a driver - report it proactively.</p>
+        </div>
+
+        <div class="after-card">
+          <h3>Month 6-12: Prepare for Renewal</h3>
+          <p>With 6-12 months of clean history, you qualify for better rates. Start shopping 60 days before renewal. RMS reaches out proactively.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section style="padding: 4rem 0;">
-    <div class="container" style="max-width: 800px;">
-      <h2 style="font-size: 2rem; margin-bottom: 2rem;">Common New Authority Questions</h2>
+  <section class="faq-section">
+    <div class="container">
+      <h2>Common New Authority Questions</h2>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="margin-bottom: 0.5rem;">How much is this going to cost?</h3>
-        <p style="color: #666;">New authority insurance is expensive - typically $12,000-$20,000/year for liability alone. That's the reality. It goes down after you build history.</p>
+      <div class="faq-grid">
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <h3>{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
       </div>
+    </div>
+  </section>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="margin-bottom: 0.5rem;">Can I get a lower price somewhere else?</h3>
-        <p style="color: #666;">Probably not. We all have access to the same 3-4 carriers that write new authorities. The rates are basically the same. The difference is service.</p>
-      </div>
+  <!-- Why RMS -->
+  <section class="why-section">
+    <div class="container">
+      <h2>Why RMS for New Authorities</h2>
+      <p class="section-intro">We specialize in new authorities. It's not a side business - it's what we do.</p>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="margin-bottom: 0.5rem;">How long until I'm covered?</h3>
-        <p style="color: #666;">Once you accept a quote and pay, coverage can bind same day. Filings typically process within 24-48 hours.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>We Know the Carriers</h3>
+          <p>We know the 3-4 carriers that write new MCs and their quirks. Progressive, NICO, BHHC, GEICO, Canal - we work with all of them.</p>
+        </div>
+        <div class="why-card">
+          <h3>Plain English Explanations</h3>
+          <p>We explain every coverage in plain English. No jargon, no confusion.</p>
+        </div>
+        <div class="why-card">
+          <h3>Fast BMC-91 Filings</h3>
+          <p>BMC-91 filings completed in 24-48 hours. Your authority won't be delayed because of us.</p>
+        </div>
+        <div class="why-card">
+          <h3>Same-Day COIs</h3>
+          <p>Same-day certificates when you need them. Because the load won't wait until Monday.</p>
+        </div>
+        <div class="why-card">
+          <h3>Real Humans Answer</h3>
+          <p>Real humans who answer the phone, including evenings. No call centers, no runaround.</p>
+        </div>
+        <div class="why-card highlight">
+          <h3>"Finally, someone on your side."</h3>
+          <p>That's not just a tagline. It's how we do business.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section style="background: var(--forest); color: white; padding: 4rem 0; text-align: center;">
+  <section class="cta-section">
     <div class="container">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
-      <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9;">Call us - we answer.</p>
-      <a href="tel:208-800-0640" class="btn" style="font-size: 1.5rem; padding: 20px 40px; background: white; color: var(--forest);">
+      <h2>Ready to Get Your Authority Active?</h2>
+      <p>Call or text: <strong>208-800-0640</strong></p>
+      <p>We'll walk through your situation, explain what you need, and get you quoted. No pressure, no jargon, no confusion.</p>
+      <a href="tel:208-800-0640" class="btn btn-large">
         208-800-0640
       </a>
+      <p class="cta-note">Or fill out a quote request and we'll call you back within one business day.</p>
     </div>
   </section>
 </Layout>
+
+<style>
+  /* Hero */
+  .hero-section {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%);
+    color: white;
+    padding: 5rem 0;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-sub {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+
+  .hero-note {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+  }
+
+  .hero-cta {
+    font-size: 1.25rem;
+    padding: 16px 32px;
+  }
+
+  /* Timeline */
+  .timeline-section {
+    padding: 5rem 0;
+    background: var(--white);
+  }
+
+  .timeline-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--forest);
+  }
+
+  .section-intro {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+  }
+
+  .timeline {
+    max-width: 700px;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .timeline-item:last-child {
+    border-bottom: none;
+  }
+
+  .timeline-marker {
+    flex-shrink: 0;
+    width: 80px;
+    font-weight: 600;
+    color: var(--gold);
+    font-size: 0.9rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--forest);
+  }
+
+  .timeline-content p {
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  .timeline-warning {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: #FFF8E7;
+    border-left: 3px solid var(--gold);
+    font-size: 0.95rem;
+  }
+
+  /* Checklist */
+  .checklist-section {
+    padding: 5rem 0;
+    background: var(--gray-100);
+  }
+
+  .checklist-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--forest);
+  }
+
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .checklist-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .checklist-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+  }
+
+  .checklist-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--forest);
+  }
+
+  .checklist {
+    list-style: none;
+    padding: 0;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+
+  .check-icon::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gray-200);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .checklist-tip {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #FFF8E7;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  /* Cost Section */
+  .cost-section {
+    padding: 5rem 0;
+    background: var(--white);
+  }
+
+  .cost-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--forest);
+  }
+
+  .cost-tables {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+  }
+
+  @media (max-width: 900px) {
+    .cost-tables {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cost-card {
+    background: var(--gray-100);
+    padding: 2rem;
+    border-radius: 8px;
+  }
+
+  .cost-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--forest);
+  }
+
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .cost-table th {
+    background: var(--forest);
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .cost-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-600);
+  }
+
+  .cost-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .cost-total {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 4px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .cost-total p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+  }
+
+  /* Mistakes */
+  .mistakes-section {
+    padding: 5rem 0;
+    background: var(--forest-deep);
+    color: white;
+  }
+
+  .mistakes-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .mistakes-section .section-intro {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .mistakes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .mistakes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .mistake-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mistake-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: var(--gold);
+    color: var(--forest-deep);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .mistake-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mistake-card p {
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .mistake-fix {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(218, 165, 32, 0.15);
+    border-radius: 4px;
+    color: var(--gold) !important;
+  }
+
+  /* After Section */
+  .after-section {
+    padding: 5rem 0;
+    background: var(--gray-100);
+  }
+
+  .after-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--forest);
+  }
+
+  .after-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .after-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .after-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .after-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+  }
+
+  .after-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--forest);
+  }
+
+  .after-card p {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+
+  /* FAQ */
+  .faq-section {
+    padding: 5rem 0;
+    background: var(--white);
+  }
+
+  .faq-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--forest);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+  }
+
+  @media (max-width: 768px) {
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .faq-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--forest);
+  }
+
+  .faq-item p {
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  /* Why RMS */
+  .why-section {
+    padding: 5rem 0;
+    background: var(--gray-100);
+  }
+
+  .why-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--forest);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .why-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+  }
+
+  .why-card.highlight {
+    background: var(--forest);
+    color: white;
+    border-color: var(--forest);
+  }
+
+  .why-card.highlight h3 {
+    color: var(--gold);
+  }
+
+  .why-card.highlight p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .why-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--forest);
+  }
+
+  .why-card p {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  .btn-large {
+    font-size: 1.5rem;
+    padding: 20px 48px;
+    margin-top: 1rem;
+    display: inline-block;
+  }
+
+  .cta-note {
+    margin-top: 1.5rem;
+    font-size: 1rem !important;
+    opacity: 0.7;
+  }
+</style>
