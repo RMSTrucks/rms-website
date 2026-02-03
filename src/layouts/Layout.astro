@@ -95,6 +95,30 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://rmstruckers.com').href
       gtag('config', 'G-7DG2LGB2Z9');
     </script>
 
+    <!--
+    ============================================
+    GOOGLE ADS CONVERSION TRACKING - GLOBAL SETUP
+    ============================================
+
+    To enable Google Ads tracking:
+
+    1. Uncomment the script below and replace YOUR_CONVERSION_ID:
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-YOUR_CONVERSION_ID"></script>
+    <script>
+      gtag('config', 'AW-YOUR_CONVERSION_ID');
+    </script>
+
+    2. The conversion event fires on /thank-you/ page after form submission
+
+    3. To get your Conversion ID:
+       - Go to Google Ads > Tools & Settings > Conversions
+       - Create a conversion action (Website > Submit lead form)
+       - Copy the Conversion ID (looks like: AW-123456789)
+
+    ============================================
+    -->
+
     <style is:global>
       :root {
         --forest: #1B4332;

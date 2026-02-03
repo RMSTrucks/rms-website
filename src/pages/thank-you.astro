@@ -1,0 +1,337 @@
+---
+/**
+ * Thank You / Confirmation Page
+ *
+ * Purpose: Confirmation after form submission
+ * - Simple, reassuring message
+ * - Phone number for urgent needs
+ * - Google Ads conversion tracking placeholder
+ * - noindex to avoid showing in search
+ */
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Thank you for your quote request. We'll be in touch shortly." />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Thank You - RMS Truck Insurance</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics (existing) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DG2LGB2Z9"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7DG2LGB2Z9');
+
+      // Track page view as form completion
+      gtag('event', 'form_complete', {
+        'event_category': 'conversion',
+        'event_label': 'quote_form_thank_you'
+      });
+    </script>
+
+    <!--
+    ============================================
+    GOOGLE ADS CONVERSION TRACKING
+    ============================================
+
+    This is where the Google Ads conversion fires.
+
+    Step 1: Add your Google Ads gtag (if not already loaded globally):
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-YOUR_CONVERSION_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-YOUR_CONVERSION_ID');
+    </script>
+
+    Step 2: Fire the conversion event (replace with your actual values):
+
+    <script>
+      gtag('event', 'conversion', {
+        'send_to': 'AW-YOUR_CONVERSION_ID/YOUR_CONVERSION_LABEL',
+        'value': 1.0,
+        'currency': 'USD'
+      });
+    </script>
+
+    To get these values:
+    1. Go to Google Ads > Tools & Settings > Conversions
+    2. Create a new conversion action (Website > Submit lead form)
+    3. Choose "Install the tag yourself"
+    4. Copy the Conversion ID and Conversion Label
+
+    Example with real values would look like:
+    gtag('event', 'conversion', {'send_to': 'AW-123456789/AbC123xyz'});
+
+    ============================================
+    -->
+
+    <style is:global>
+      :root {
+        --forest: #1B4332;
+        --forest-deep: #0D2118;
+        --gold: #DAA520;
+        --gold-hover: #C49B1A;
+        --white: #ffffff;
+        --gray-100: #f7f7f7;
+        --gray-600: #6b7280;
+        --text: #1f2937;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'DM Sans', -apple-system, sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background: var(--forest-deep);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1, h2, h3 {
+        font-family: 'Crimson Pro', Georgia, serif;
+        font-weight: 600;
+        line-height: 1.15;
+      }
+
+      a {
+        color: var(--gold);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <a href="/" class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="35" viewBox="0 0 120 150">
+            <circle cx="60" cy="12" r="10" fill="#DAA520"/>
+            <rect x="54" y="28" width="12" height="118" fill="#FFFFFF"/>
+            <rect x="38" y="32" width="44" height="10" fill="#FFFFFF"/>
+            <rect x="24" y="52" width="72" height="10" fill="#FFFFFF"/>
+            <rect x="12" y="72" width="96" height="10" fill="#FFFFFF"/>
+            <rect x="24" y="92" width="72" height="10" fill="#FFFFFF"/>
+            <rect x="38" y="112" width="44" height="10" fill="#FFFFFF"/>
+          </svg>
+          <span>RMS Truck Insurance</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <div class="success-icon">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+
+        <h1>Got It!</h1>
+        <p class="lead">Your quote request is in. We'll be in touch shortly.</p>
+
+        <div class="what-next">
+          <h2>What Happens Next</h2>
+          <ol>
+            <li><strong>We review your info</strong> - Usually within a few hours during business hours</li>
+            <li><strong>We call or text you</strong> - To ask any follow-up questions and give you options</li>
+            <li><strong>You decide</strong> - No pressure, real answers</li>
+          </ol>
+        </div>
+
+        <div class="urgent-box">
+          <p><strong>Need coverage today?</strong></p>
+          <p>Call us now and we'll prioritize your quote:</p>
+          <a href="tel:208-800-0640" class="phone-link">208-800-0640</a>
+        </div>
+
+        <a href="/" class="back-link">&larr; Back to homepage</a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 RMS Truck Insurance</p>
+      </div>
+    </footer>
+
+    <style>
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .header {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      .logo span {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 0;
+        text-align: center;
+        color: var(--white);
+      }
+
+      .success-icon {
+        color: var(--gold);
+        margin-bottom: 1.5rem;
+      }
+
+      .main h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .lead {
+        font-size: 1.25rem;
+        opacity: 0.8;
+        margin-bottom: 3rem;
+      }
+
+      .what-next {
+        text-align: left;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .what-next h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: var(--gold);
+      }
+
+      .what-next ol {
+        list-style: none;
+        counter-reset: step;
+        padding: 0;
+        margin: 0;
+      }
+
+      .what-next li {
+        counter-increment: step;
+        padding-left: 2rem;
+        position: relative;
+        margin-bottom: 0.75rem;
+        opacity: 0.8;
+      }
+
+      .what-next li::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      .what-next li strong {
+        color: var(--white);
+      }
+
+      .urgent-box {
+        background: var(--gold);
+        color: var(--forest-deep);
+        padding: 2rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+
+      .urgent-box p {
+        margin-bottom: 0.5rem;
+      }
+
+      .urgent-box p:first-child {
+        font-size: 1.1rem;
+      }
+
+      .phone-link {
+        font-family: 'Crimson Pro', serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--forest-deep);
+        display: block;
+        margin-top: 0.5rem;
+        transition: opacity 0.2s;
+      }
+
+      .phone-link:hover {
+        opacity: 0.8;
+      }
+
+      .back-link {
+        color: rgba(255,255,255,0.5);
+        font-size: 0.9rem;
+        transition: color 0.2s;
+      }
+
+      .back-link:hover {
+        color: var(--gold);
+      }
+
+      .footer {
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
+        color: rgba(255,255,255,0.4);
+        font-size: 0.85rem;
+      }
+    </style>
+
+    <!-- Track phone clicks on this page -->
+    <script is:inline>
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'phone_click', {
+              'event_category': 'conversion',
+              'event_label': 'thank_you_urgent_call'
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
