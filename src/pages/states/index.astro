@@ -1,0 +1,208 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEOHead from '../../components/SEOHead.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getActiveStates } from '../../data/states';
+
+const states = getActiveStates().sort((a, b) => a.name.localeCompare(b.name));
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'States', href: '' },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    ...(item.href ? { "item": `https://rmstruckers.com${item.href}` } : {}),
+  })),
+};
+
+// Group states by first letter
+const grouped: Record<string, typeof states> = {};
+for (const s of states) {
+  const letter = s.name[0];
+  if (!grouped[letter]) grouped[letter] = [];
+  grouped[letter].push(s);
+}
+const letters = Object.keys(grouped).sort();
+---
+
+<Layout
+  title="Trucking Insurance by State | RMS Truck Insurance"
+  description="Find commercial trucking insurance in your state. RMS Truck Insurance is licensed in 39+ states with same-day quotes and expert guidance for owner-operators and fleets."
+>
+  <SEOHead
+    slot="head"
+    title="Trucking Insurance by State | RMS Truck Insurance"
+    description="Find commercial trucking insurance in your state. RMS Truck Insurance is licensed in 39+ states with same-day quotes and expert guidance for owner-operators and fleets."
+    canonicalUrl="/states/"
+    jsonLd={breadcrumbSchema}
+  />
+
+  <div class="states-index">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      <PageHeader
+        title="Trucking Insurance by State"
+        subtitle="We're licensed in 39+ states. Find insurance requirements, corridors, and coverage details for your state."
+      />
+
+      <div class="states-index__intro">
+        <p>
+          Every state has different insurance minimums, regulations, and trucking corridors.
+          Select your state below to see requirements, get a quote, and learn what coverage you need.
+        </p>
+      </div>
+
+      <div class="states-index__grid">
+        {letters.map((letter) => (
+          <div class="states-index__group">
+            <h2 class="states-index__letter">{letter}</h2>
+            <ul class="states-index__list">
+              {grouped[letter].map((s) => (
+                <li>
+                  <a href={`/states/trucking-insurance-${s.slug}/`} class="states-index__link">
+                    <span class="states-index__abbrev">{s.abbrev}</span>
+                    <span class="states-index__name">{s.name}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="states-index__cta">
+        <p>
+          Don't see your state? Call us at <a href="tel:+12088000640">(208) 800-0640</a> -- we may still be able to help.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .states-index {
+    padding: 0 0 4rem;
+  }
+
+  .states-index__intro {
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+  }
+
+  .states-index__intro p {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+
+  .states-index__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+
+  .states-index__letter {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .states-index__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .states-index__link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .states-index__link:hover {
+    color: var(--gold);
+  }
+
+  .states-index__link:hover .states-index__abbrev {
+    background: var(--forest);
+    color: var(--gold);
+    border-color: var(--forest);
+  }
+
+  .states-index__abbrev {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    background: var(--bg-light);
+    border: 1px solid var(--gray-200);
+    color: var(--forest);
+    flex-shrink: 0;
+    transition: all 0.15s ease;
+  }
+
+  .states-index__name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  .states-index__link:hover .states-index__name {
+    color: var(--gold);
+  }
+
+  .states-index__cta {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .states-index__cta p {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .states-index__cta a {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .states-index__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .states-index__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

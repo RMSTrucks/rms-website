@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import SubpageLayout from '../../../layouts/SubpageLayout.astro';
+
+export async function getStaticPaths() {
+  const subpageEntries = await getCollection('state-subpages');
+  return subpageEntries.map((entry) => {
+    // File naming: {state-slug}--{topic-slug}.md
+    const [stateSlug, topicSlug] = entry.slug.split('--');
+    return {
+      params: { slug: stateSlug, topic: topicSlug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<SubpageLayout entry={entry}>
+  <Content />
+</SubpageLayout>

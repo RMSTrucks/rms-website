@@ -1,0 +1,374 @@
+---
+import Layout from './Layout.astro';
+import SEOHead from '../components/SEOHead.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StateSidebar from '../components/StateSidebar.astro';
+import CorridorLinks from '../components/CorridorLinks.astro';
+import RelatedStates from '../components/RelatedStates.astro';
+import QuoteFormCTA from '../components/QuoteFormCTA.astro';
+import CoverageNav from '../components/CoverageNav.astro';
+import FAQSection from '../components/FAQSection.astro';
+
+import type { CollectionEntry } from 'astro:content';
+import type { CorridorData } from '../data/corridors';
+
+interface Props {
+  entry: CollectionEntry<'states'>;
+  corridors: CorridorData[];
+}
+
+const { entry, corridors } = Astro.props;
+const {
+  title, state, stateAbbrev, metaDescription, ogImage,
+  subpages, relatedStates, faqItems,
+  insuranceMinimums, federalMinimum,
+  coverageOptions, freightHubs, regulations,
+} = entry.data;
+
+const stateSlug = state.toLowerCase().replace(/\s+/g, '-');
+const canonicalUrl = `/states/trucking-insurance-${stateSlug}/`;
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'States', href: '/states/' },
+  { label: state, href: '' },
+];
+
+// JSON-LD schemas
+const insuranceAgencySchema = {
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "name": "RMS Truck Insurance",
+  "url": "https://rmstruckers.com",
+  "description": `Commercial trucking insurance specialists serving owner-operators and fleets in ${state}.`,
+  "areaServed": { "@type": "State", "name": state },
+  "serviceType": "Commercial Trucking Insurance",
+  "telephone": "+12088000640",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    ...(item.href ? { "item": `https://rmstruckers.com${item.href}` } : {}),
+  })),
+};
+
+const faqSchema = faqItems?.length ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+  })),
+} : null;
+
+const jsonLdSchemas = [insuranceAgencySchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+---
+
+<Layout title={`${title} | RMS Truck Insurance`} description={metaDescription}>
+  <SEOHead
+    slot="head"
+    title={`${title} | RMS Truck Insurance`}
+    description={metaDescription}
+    canonicalUrl={canonicalUrl}
+    ogImage={ogImage}
+    jsonLd={jsonLdSchemas}
+  />
+
+  <div class="hub-page">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      <PageHeader title={title} />
+
+      <div class="hub-page__layout">
+        <article class="hub-page__content">
+          <!-- Markdown body from Content Collection -->
+          <section class="hub-page__section hub-page__section--intro">
+            <h2>Trucking in {state}</h2>
+            <slot />
+          </section>
+
+          <!-- Corridors -->
+          {corridors.length > 0 && (
+            <section class="hub-page__section">
+              <h2>Major Trucking Corridors in {state}</h2>
+              <CorridorLinks corridors={corridors} currentState={stateAbbrev} />
+            </section>
+          )}
+
+          <!-- Insurance Requirements Table -->
+          <section class="hub-page__section">
+            <h2>{state} Trucking Insurance Requirements</h2>
+            <div class="hub-page__insurance-grid">
+              <div class="hub-page__insurance-card">
+                <h3>State Minimums (Intrastate)</h3>
+                <table class="hub-page__table">
+                  <tbody>
+                    <tr><td>Bodily Injury (per person)</td><td>{insuranceMinimums.biPerPerson}</td></tr>
+                    <tr><td>Bodily Injury (per accident)</td><td>{insuranceMinimums.biPerAccident}</td></tr>
+                    <tr><td>Property Damage</td><td>{insuranceMinimums.pdPerAccident}</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="hub-page__insurance-card hub-page__insurance-card--federal">
+                <h3>Federal Minimum (Interstate)</h3>
+                <p class="hub-page__federal-amount">{federalMinimum}</p>
+                <p class="hub-page__federal-note">Required for interstate for-hire carriers</p>
+              </div>
+            </div>
+            <p class="hub-page__recommendation">
+              <strong>RMS Recommendation:</strong> We recommend $1,000,000 CSL for most carriers.
+              Most brokers and shippers require $1M, and it protects your personal assets.
+            </p>
+          </section>
+
+          <!-- Coverage Types -->
+          <section class="hub-page__section">
+            <h2>Coverage Types for {state} Truckers</h2>
+            <CoverageNav />
+          </section>
+
+          <!-- Freight Hubs -->
+          {freightHubs && freightHubs.length > 0 && (
+            <section class="hub-page__section">
+              <h2>Major Freight Hubs in {state}</h2>
+              <div class="hub-page__freight-grid">
+                {freightHubs.map((hub) => (
+                  <div class="hub-page__freight-card">
+                    <h3>{hub.name}</h3>
+                    <p>{hub.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <!-- Regulations -->
+          {regulations && regulations.length > 0 && (
+            <section class="hub-page__section">
+              <h2>{state} Trucking Regulations</h2>
+              <table class="hub-page__table hub-page__table--full">
+                <thead><tr><th>Category</th><th>Requirement</th></tr></thead>
+                <tbody>
+                  {regulations.map((reg) => (
+                    <tr><td>{reg.category}</td><td>{reg.detail}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          )}
+
+          <!-- Full-width Quote CTA -->
+          <QuoteFormCTA variant="full-width" state={state} />
+
+          <!-- FAQ -->
+          {faqItems?.length > 0 && (
+            <section class="hub-page__section">
+              <FAQSection faqs={faqItems} title={`${state} Trucking Insurance FAQ`} />
+            </section>
+          )}
+
+          <!-- Related States -->
+          <RelatedStates currentState={state} relatedStates={relatedStates} />
+        </article>
+
+        <aside class="hub-page__sidebar">
+          <StateSidebar state={state} stateAbbrev={stateAbbrev} subpages={subpages} />
+          <QuoteFormCTA variant="sidebar" state={state} />
+        </aside>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<!-- Close CRM form embed script -->
+<script src="https://app.close.com/forms/embed.js" is:inline defer></script>
+
+<style>
+  .hub-page {
+    padding: 0 0 4rem;
+  }
+
+  .hub-page__layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2.5rem;
+  }
+
+  .hub-page__content {
+    min-width: 0;
+  }
+
+  .hub-page__section {
+    margin-bottom: 3rem;
+  }
+
+  .hub-page__section h2 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  /* Insurance grid */
+  .hub-page__insurance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hub-page__insurance-card {
+    padding: 1.5rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    background: var(--bg-light);
+  }
+
+  .hub-page__insurance-card h3 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+  }
+
+  .hub-page__insurance-card--federal {
+    background: var(--forest);
+    color: var(--white);
+  }
+
+  .hub-page__insurance-card--federal h3 {
+    color: var(--gold);
+  }
+
+  .hub-page__federal-amount {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0 0 0.5rem;
+  }
+
+  .hub-page__federal-note {
+    font-family: 'DM Sans', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .hub-page__recommendation {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    padding: 1rem;
+    border-left: 4px solid var(--gold);
+    background: rgba(218, 165, 32, 0.04);
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Tables */
+  .hub-page__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .hub-page__table td,
+  .hub-page__table th {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--gray-200);
+    text-align: left;
+    color: var(--text);
+  }
+
+  .hub-page__table th {
+    font-weight: 600;
+    background: var(--bg-light);
+  }
+
+  .hub-page__table--full {
+    margin-top: 1rem;
+  }
+
+  /* Freight grid */
+  .hub-page__freight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .hub-page__freight-card {
+    padding: 1.25rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+  }
+
+  .hub-page__freight-card h3 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .hub-page__freight-card p {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--gray-600);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Sidebar sticky */
+  .hub-page__sidebar {
+    align-self: start;
+  }
+
+  /* Markdown content styling */
+  .hub-page__section--intro :global(p) {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .hub-page__section--intro :global(h3) {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hub-page__section--intro :global(ul),
+  .hub-page__section--intro :global(ol) {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .hub-page__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .hub-page__sidebar {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hub-page__insurance-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

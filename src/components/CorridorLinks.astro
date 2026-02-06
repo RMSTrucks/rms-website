@@ -1,0 +1,111 @@
+---
+import { getStateByAbbrev } from '../data/states';
+
+interface Props {
+  corridors: { name: string; slug: string; states: string[] }[];
+  currentState?: string;
+  class?: string;
+}
+
+const { corridors, currentState, class: className } = Astro.props;
+---
+
+{corridors.length > 0 && (
+  <div class:list={['corridor-links', className]}>
+    {corridors.map((corridor) => (
+      <div class="corridor-links__corridor">
+        <a href={`/corridors/${corridor.slug}/`} class="corridor-links__label">
+          Running {corridor.name}?
+        </a>
+        <div class="corridor-links__states">
+          {corridor.states.map((abbrev, i) => {
+            const stateData = getStateByAbbrev(abbrev);
+            const isCurrent = abbrev === currentState;
+            const href = stateData ? `/states/trucking-insurance-${stateData.slug}/` : '#';
+            return (
+              <>
+                {i > 0 && <span class="corridor-links__arrow">&rarr;</span>}
+                {isCurrent ? (
+                  <span class="corridor-links__pill corridor-links__pill--current">{abbrev}</span>
+                ) : (
+                  <a href={href} class="corridor-links__pill">{abbrev}</a>
+                )}
+              </>
+            );
+          })}
+        </div>
+      </div>
+    ))}
+  </div>
+)}
+
+<style>
+  .corridor-links__corridor {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .corridor-links__corridor:last-child {
+    border-bottom: none;
+  }
+
+  .corridor-links__label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--forest);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .corridor-links__label:hover {
+    color: var(--gold);
+  }
+
+  .corridor-links__states {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .corridor-links__pill {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: var(--bg-light);
+    border: 1px solid var(--gray-200);
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .corridor-links__pill:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .corridor-links__pill--current {
+    background: var(--forest);
+    color: var(--gold);
+    border-color: var(--forest);
+  }
+
+  .corridor-links__arrow {
+    color: var(--gold);
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 640px) {
+    .corridor-links__arrow {
+      display: none;
+    }
+
+    .corridor-links__states {
+      gap: 0.35rem;
+    }
+  }
+</style>

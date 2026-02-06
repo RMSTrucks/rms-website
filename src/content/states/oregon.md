@@ -1,0 +1,87 @@
+---
+title: "Oregon Trucking Insurance"
+state: "Oregon"
+stateAbbrev: "OR"
+metaDescription: "Oregon trucking insurance guide covering the weight-mile tax, Cabbage Hill safety data, chain laws, Green Light bypass, and carrier requirements."
+corridors:
+  - name: "I-84 Corridor"
+    slug: "i-84"
+    description: "376 miles from Portland to the Idaho border through the Columbia River Gorge and over Cabbage Hill -- one of the most dangerous truck descents in America."
+  - name: "I-5 Corridor"
+    slug: "i-5"
+    description: "308 miles through Oregon connecting Washington to California. Portland metro congestion, agricultural corridor, and Siskiyou Pass at the southern border."
+subpages:
+  - title: "Weight-Mile Tax Guide"
+    slug: "weight-mile-tax"
+  - title: "Cabbage Hill Safety Guide"
+    slug: "cabbage-hill"
+  - title: "Chain Laws & Mountain Passes"
+    slug: "chain-laws"
+  - title: "New Carrier Requirements"
+    slug: "new-carrier"
+relatedStates:
+  - name: "Washington"
+    abbrev: "WA"
+    descriptor: "I-5 continues north to Seattle and Tacoma port operations"
+  - name: "Idaho"
+    abbrev: "ID"
+    descriptor: "I-84 heads east through Cabbage Hill to Idaho's Snake River corridor"
+  - name: "Nevada"
+    abbrev: "NV"
+    descriptor: "US-95 and US-395 connect to Nevada's I-80 corridor"
+faqItems:
+  - question: "What is Oregon's weight-mile tax?"
+    answer: "Oregon is the only state that charges a per-mile tax on trucks over 26,000 lbs instead of diesel fuel tax. You declare your weight, track all Oregon miles, and file quarterly. The system currently has 85 rate tiers, being simplified to 10 under recent legislation."
+  - question: "Does Oregon participate in IFTA?"
+    answer: "Not for vehicles over 26,000 lbs. The weight-mile tax replaces IFTA fuel tax in Oregon for heavy vehicles. You still need IFTA for fuel tax credits in other states."
+  - question: "How dangerous is Cabbage Hill?"
+    answer: "Very. 78% of crashes involve out-of-state carriers and 59% are caused by brake failure. It is a 6% grade for 6 miles dropping 2,000+ feet with a double hairpin turn. Gear down before the descent and check brakes at the weigh station at milepost 227."
+  - question: "What insurance do I need for Oregon?"
+    answer: "Interstate for-hire carriers need $750,000 federal minimum (we recommend $1M). Intrastate for-hire requires $750,000 minimum filed with the Commerce and Compliance Division. Cargo insurance minimum is $10,000. Insurance must be filed BEFORE operating in Oregon."
+  - question: "What is the Green Light program?"
+    answer: "Oregon's weigh station bypass system. Sensors check weight, credentials, and safety rating automatically. It is now interoperable with PrePass and Drivewyze at 21 facilities with over 4,000 carriers enrolled."
+  - question: "Can I skip Oregon weigh stations?"
+    answer: "Only with Green Light, PrePass, or Drivewyze bypass signal. Oregon actively enforces weigh station entry -- they have cited 122+ truckers in a single enforcement operation. All trucks 10,000+ lbs must stop at open scales."
+  - question: "What do I need to start trucking in Oregon?"
+    answer: "USDOT number, Oregon Motor Carrier Account with CCD, insurance filing within 60 days of registration, and weight-mile tax registration for vehicles over 26,000 lbs. Intrastate for-hire carriers also need a Class 1A Permit ($300 application fee) with $750,000 liability and $10,000 cargo insurance."
+insuranceMinimums:
+  biPerPerson: "$25,000"
+  biPerAccident: "$50,000"
+  pdPerAccident: "$20,000"
+federalMinimum: "$750,000"
+coverageOptions:
+  - name: "Auto Liability"
+    slug: "auto-liability"
+    description: "Oregon requires $750,000 CSL for intrastate for-hire carriers -- higher than most states. We recommend $1M given Cabbage Hill crash severity."
+  - name: "Physical Damage"
+    slug: "physical-damage"
+    description: "Covers your truck and trailer against collision and weather. Critical for Columbia River Gorge wind events and mountain operations."
+  - name: "Cargo Insurance"
+    slug: "cargo"
+    description: "Oregon requires $10,000 minimum cargo insurance for intrastate for-hire carriers. Most shippers require substantially more."
+  - name: "Bobtail Coverage"
+    slug: "bobtail"
+    description: "Covers your truck when driving without a trailer. Important for owner-operators repositioning between loads in Oregon."
+freightHubs:
+  - name: "Portland Metro"
+    description: "Oregon's primary freight hub. Port of Portland, I-5/I-84 interchange, and distribution centers for Pacific Northwest goods."
+  - name: "Salem / Willamette Valley"
+    description: "Agricultural corridor on I-5. Produce, nursery stock, and food processing freight."
+  - name: "Pendleton / Eastern Oregon"
+    description: "I-84 corridor east of the Blue Mountains. Agricultural freight and livestock."
+regulations:
+  - category: "Weight-Mile Tax"
+    detail: "ALL carriers over 26,000 lbs GVW pay per-mile tax instead of diesel fuel tax. File quarterly. Oregon does not participate in IFTA for heavy vehicles."
+  - category: "Chain Law"
+    detail: "Statewide activation. More aggressive than Idaho's. Conditional road closures require ALL vehicles to chain up."
+  - category: "Green Light Bypass"
+    detail: "Oregon's unique weigh station bypass system. Interoperable with PrePass and Drivewyze at 21 facilities."
+  - category: "Insurance Filing"
+    detail: "Insurance must be filed with CCD BEFORE operating in Oregon. Carriers without filed insurance face immediate enforcement."
+---
+
+Oregon is unique in American trucking. It is the only state that charges a weight-mile tax instead of diesel fuel tax for trucks over 26,000 lbs. Every mile you drive in Oregon is taxed based on your declared weight -- currently across 85 rate tiers, though recent legislation is simplifying the system to 10. Oregon does not participate in IFTA for vehicles over 26,000 lbs because the weight-mile tax replaces it. If you run heavy loads through Oregon without understanding this system, you will get a bill you did not expect.
+
+The terrain demands equal attention. Cabbage Hill on I-84 eastbound drops 2,000 feet in 6 miles at a 6% grade with a double hairpin turn. Out-of-state drivers account for 78% of CMV crashes here, and 59% of those crashes are caused by brake failure. Start your descent in low gear at milepost 270, check your brakes at the weigh station at milepost 227, and respect the speed advisory signs that recommend as slow as 18 mph. Escape ramps sit at mileposts 220 and 221 for those who wait too long. Oregon's [chain law](/states/trucking-insurance-oregon/chain-laws/) is more aggressive than Idaho's -- statewide activation including conditional road closures that require all vehicles to chain up.
+
+Oregon requires insurance filing with the Commerce and Compliance Division before you operate on state highways. Not after. Carriers who show up in Oregon without filed insurance face immediate enforcement. The intrastate for-hire minimum is $750,000 CSL -- already higher than most states require. Given the severity of Cabbage Hill corridor accidents and Portland metro congestion, $1M is the responsible floor. The Green Light preclearance program has saved carriers over 2 million hours and is now interoperable with PrePass and Drivewyze at 21 facilities statewide.

@@ -1,0 +1,85 @@
+---
+title: "Georgia Trucking Insurance"
+state: "Georgia"
+stateAbbrev: "GA"
+metaDescription: "Georgia trucking insurance guide covering Port of Savannah access, Atlanta freight navigation, weigh station locations, and coverage requirements from RMS."
+corridors:
+  - name: "I-95 Corridor"
+    slug: "i-95"
+    description: "112 miles along Georgia coast connecting Florida to South Carolina, with Port of Savannah access at MM 94-109."
+  - name: "I-75 Corridor"
+    slug: "i-75"
+    description: "355 miles from the Florida line through Macon and Atlanta to Tennessee, including the Forsyth weigh station gauntlet."
+  - name: "I-20 Corridor"
+    slug: "i-20"
+    description: "200 miles from Alabama border through Atlanta to Augusta and the South Carolina line."
+subpages:
+  - title: "Port of Savannah Guide"
+    slug: "savannah-port"
+  - title: "Atlanta Freight Hub"
+    slug: "atlanta-freight"
+  - title: "Georgia Corridors"
+    slug: "corridors"
+relatedStates:
+  - name: "Florida"
+    abbrev: "FL"
+    descriptor: "I-95 and I-75 continue south to Jacksonville and beyond"
+  - name: "South Carolina"
+    abbrev: "SC"
+    descriptor: "I-95 and I-20 cross into the Port of Charleston corridor"
+  - name: "Alabama"
+    abbrev: "AL"
+    descriptor: "I-20 and I-85 connect Atlanta to Birmingham"
+  - name: "Tennessee"
+    abbrev: "TN"
+    descriptor: "I-75 climbs north through Chattanooga to the freight triangle"
+  - name: "North Carolina"
+    abbrev: "NC"
+    descriptor: "I-85 runs northeast from Atlanta toward Charlotte"
+faqItems:
+  - question: "Can trucks use Georgia express lanes?"
+    answer: "No. All express lanes in Georgia -- I-85, I-75, I-75 NWC, and the I-85 Extension -- prohibit vehicles with 3 or more axles or any vehicle towing a trailer. Georgia interstates are toll-free for trucks."
+  - question: "What is the GIMC seminar requirement?"
+    answer: "New Georgia intrastate carriers must complete an educational seminar on motor carrier operations approved by the Commissioner of Public Safety within the preceding 12 months before registering."
+  - question: "How do I access the Port of Savannah?"
+    answer: "Take I-95 to I-16 West, then exit to GA-21 toward Garden City Terminal. A TWIC card is required for drivers making 5 or more visits within 365 days. Download the GPA mobile app for live gate wait times."
+  - question: "What is the tandem axle limit in Georgia?"
+    answer: "40,680 lbs if your GVW is under 73,280 lbs AND overall length is under 55 feet. Exceed either threshold and the limit drops to 34,000 lbs."
+  - question: "Is there a toll to drive through Georgia?"
+    answer: "No tolls for trucks on any Georgia interstate. Express lanes exist on I-85 and I-75 but are car-only. Through-trucks travel the entire state toll-free."
+  - question: "What is the truck speed limit in Georgia?"
+    answer: "Same as passenger vehicles -- 70 mph rural, 65 mph urban, 55 mph in city zones. Georgia has no differential truck speed limit."
+insuranceMinimums:
+  biPerPerson: "$25,000"
+  biPerAccident: "$50,000"
+  pdPerAccident: "$25,000"
+federalMinimum: "$750,000"
+coverageOptions:
+  - name: "Auto Liability"
+    slug: "auto-liability"
+    description: "Required for all carriers. Georgia commercial minimum is $100K/$300K for vehicles over 10,001 lbs."
+  - name: "Cargo Insurance"
+    slug: "cargo"
+    description: "Essential for Port of Savannah drayage and Southeast regional hauls."
+  - name: "Physical Damage"
+    slug: "physical-damage"
+    description: "Protects your equipment in Atlanta metro congestion and on I-16 port runs."
+freightHubs:
+  - name: "Port of Savannah"
+    description: "Third-largest US container port handling 5.8M+ TEUs annually at Garden City Terminal."
+  - name: "Atlanta"
+    description: "Southeast freight crossroads where I-75, I-85, and I-20 converge."
+regulations:
+  - category: "Express Lane Ban"
+    detail: "All Georgia express lanes prohibit vehicles with 3+ axles or trailers."
+  - category: "GEICS Monitoring"
+    detail: "Electronic Insurance Compliance System flags coverage lapses in real time."
+  - category: "Tandem Axle Rule"
+    detail: "40,680 lbs if GVW under 73,280 and length under 55 ft; otherwise 34,000 lbs."
+---
+
+If you run the Southeast, you run through Georgia. Three interstates converge in Atlanta. The third-busiest container port in the country sits in Savannah. I-16 connects the two with some of the densest truck traffic per lane-mile in the region. Georgia is not a state you pass through -- it is the state that connects the entire Southeast freight network.
+
+The Downtown Connector -- where I-75 and I-85 merge through central Atlanta -- is consistently one of the most congested highway segments in the United States. Every Georgia express lane on I-85, I-75, and their extensions bans trucks with 3 or more axles outright. Peach Pass is useless for commercial vehicles. The good news: Georgia interstates are completely toll-free for trucks. The I-285 perimeter loop is your bypass, and knowing when to take it is worth more than any shortcut app.
+
+Georgia insurance enforcement has teeth. The GEICS electronic monitoring system detects coverage lapses in real time, which means letting a policy lapse even briefly can trigger enforcement action before you know it happened. Commercial vehicles over 10,001 lbs face a $100,000/$300,000 state liability minimum -- higher than the personal auto $25K/$50K/$25K but still far below what Atlanta metro exposure demands. RMS recommends $1,000,000 CSL for any carrier running Georgia freight. Most shippers and brokers require it, and one incident on the Downtown Connector or at the Port of Savannah can blow through lower limits before the paperwork is filed.

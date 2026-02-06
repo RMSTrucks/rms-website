@@ -1,0 +1,131 @@
+---
+interface SubpageItem {
+  title: string;
+  slug: string;
+}
+
+interface Props {
+  state: string;
+  stateAbbrev: string;
+  subpages: SubpageItem[];
+  currentTopic?: string;
+  class?: string;
+}
+
+const { state, stateAbbrev, subpages, currentTopic, class: className } = Astro.props;
+const parentSlug = `trucking-insurance-${state.toLowerCase().replace(/\s+/g, '-')}`;
+---
+
+<details class:list={['state-sidebar', className]} open>
+  <summary class="state-sidebar__toggle">
+    <h2 class="state-sidebar__heading">{state} Trucking</h2>
+  </summary>
+  <nav class="state-sidebar__nav" aria-label={`${state} subpages`}>
+    <ul class="state-sidebar__list">
+      {subpages.map((page) => {
+        const isActive = currentTopic === page.slug;
+        return (
+          <li class:list={['state-sidebar__item', { 'state-sidebar__item--active': isActive }]}>
+            <a
+              href={`/states/${parentSlug}/${page.slug}/`}
+              {...(isActive ? { 'aria-current': 'page' } : {})}
+            >
+              {page.title}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+</details>
+
+<style>
+  .state-sidebar {
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    background: var(--white);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .state-sidebar__toggle {
+    cursor: pointer;
+    list-style: none;
+    padding: 1rem 1.25rem;
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .state-sidebar__toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .state-sidebar__heading {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin: 0;
+  }
+
+  .state-sidebar__nav {
+    padding: 0.5rem 0;
+  }
+
+  .state-sidebar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .state-sidebar__item a {
+    display: block;
+    padding: 0.5rem 1.25rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .state-sidebar__item a:hover {
+    color: var(--gold);
+    background: var(--gray-100);
+  }
+
+  .state-sidebar__item--active a {
+    border-left-color: var(--gold);
+    color: var(--forest);
+    font-weight: 600;
+    background: rgba(218, 165, 32, 0.04);
+  }
+
+  /* Desktop: force open, hide toggle */
+  @media (min-width: 769px) {
+    .state-sidebar {
+      position: sticky;
+      top: 6rem;
+      max-height: calc(100vh - 8rem);
+      overflow-y: auto;
+    }
+
+    .state-sidebar__toggle {
+      pointer-events: none;
+    }
+  }
+
+  /* Mobile: collapsible */
+  @media (max-width: 768px) {
+    .state-sidebar__toggle::after {
+      content: '+';
+      float: right;
+      font-size: 1.2rem;
+      color: var(--gray-600);
+    }
+
+    .state-sidebar[open] .state-sidebar__toggle::after {
+      content: '-';
+    }
+  }
+</style>
