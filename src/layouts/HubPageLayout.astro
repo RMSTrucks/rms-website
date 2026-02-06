@@ -1,14 +1,10 @@
 ---
 import Layout from './Layout.astro';
 import SEOHead from '../components/SEOHead.astro';
-import PageHeader from '../components/PageHeader.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import StateSidebar from '../components/StateSidebar.astro';
 import CorridorLinks from '../components/CorridorLinks.astro';
 import RelatedStates from '../components/RelatedStates.astro';
-import QuoteFormCTA from '../components/QuoteFormCTA.astro';
-import CoverageNav from '../components/CoverageNav.astro';
 import FAQSection from '../components/FAQSection.astro';
+import CoverageNav from '../components/CoverageNav.astro';
 
 import type { CollectionEntry } from 'astro:content';
 import type { CorridorData } from '../data/corridors';
@@ -45,6 +41,7 @@ const insuranceAgencySchema = {
   "areaServed": { "@type": "State", "name": state },
   "serviceType": "Commercial Trucking Insurance",
   "telephone": "+12088000640",
+  "slogan": "Finally, someone on your side.",
 };
 
 const breadcrumbSchema = {
@@ -69,6 +66,15 @@ const faqSchema = faqItems?.length ? {
 } : null;
 
 const jsonLdSchemas = [insuranceAgencySchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+
+// Coverage cards with badges
+const defaultCoverage = [
+  { name: 'Auto Liability', badge: 'Required', description: `Damage/injury you cause to others. $750K minimum for interstate carriers in ${state}.`, highlight: true },
+  { name: 'Physical Damage', badge: 'If Financed', description: 'Your truck -- collision, theft, fire, vandalism.' },
+  { name: 'Cargo Insurance', badge: 'Usually', description: 'The freight you\'re hauling. Required by most brokers.' },
+  { name: 'Bobtail / Non-Trucking', badge: 'Optional', description: 'Driving without a trailer, personal use.' },
+  { name: 'Occupational Accident', badge: 'Optional', description: 'Medical coverage if you\'re injured (independent contractors).' },
+];
 ---
 
 <Layout title={`${title} | RMS Truck Insurance`} description={metaDescription}>
@@ -81,294 +87,396 @@ const jsonLdSchemas = [insuranceAgencySchema, breadcrumbSchema, ...(faqSchema ? 
     jsonLd={jsonLdSchemas}
   />
 
-  <div class="hub-page">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <nav class="hero-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span>&rsaquo;</span> <a href="/states/">States</a> <span>&rsaquo;</span> <span>{state}</span>
+      </nav>
+
+      <div class="state-badge">
+        <span class="state-flag">&#9733;</span>
+        <span>{stateAbbrev} &middot; Licensed &amp; Active</span>
+      </div>
+
+      <h1>{title}</h1>
+      <p class="hero-tagline">{metaDescription}</p>
+
+      <div class="trust-badges">
+        <div class="badge"><span class="badge-icon">&#10003;</span> Trucking Specialists</div>
+        <div class="badge"><span class="badge-icon">&#10003;</span> 1,000+ Truckers Helped</div>
+        <div class="badge"><span class="badge-icon">&#10003;</span> 5-Minute COIs</div>
+        <div class="badge"><span class="badge-icon">&#10003;</span> Licensed in 40+ States</div>
+      </div>
+
+      <a href="tel:208-800-0640" class="hero-cta">
+        <span class="cta-label">Get Your {state} Quote</span>
+        <span class="cta-number">208-800-0640</span>
+      </a>
+
+      {subpages.length > 0 && (
+        <div class="hero-sublinks">
+          {subpages.map((sp) => (
+            <a href={`${canonicalUrl}${sp.slug}/`} class="hero-sublink">{sp.title}</a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- INTRO (Markdown body) -->
+  <section class="intro">
     <div class="container">
-      <Breadcrumbs items={breadcrumbItems} />
-      <PageHeader title={title} />
-
-      <div class="hub-page__layout">
-        <article class="hub-page__content">
-          <!-- Markdown body from Content Collection -->
-          <section class="hub-page__section hub-page__section--intro">
-            <h2>Trucking in {state}</h2>
-            <slot />
-          </section>
-
-          <!-- Corridors -->
-          {corridors.length > 0 && (
-            <section class="hub-page__section">
-              <h2>Major Trucking Corridors in {state}</h2>
-              <CorridorLinks corridors={corridors} currentState={stateAbbrev} />
-            </section>
-          )}
-
-          <!-- Insurance Requirements Table -->
-          <section class="hub-page__section">
-            <h2>{state} Trucking Insurance Requirements</h2>
-            <div class="hub-page__insurance-grid">
-              <div class="hub-page__insurance-card">
-                <h3>State Minimums (Intrastate)</h3>
-                <table class="hub-page__table">
-                  <tbody>
-                    <tr><td>Bodily Injury (per person)</td><td>{insuranceMinimums.biPerPerson}</td></tr>
-                    <tr><td>Bodily Injury (per accident)</td><td>{insuranceMinimums.biPerAccident}</td></tr>
-                    <tr><td>Property Damage</td><td>{insuranceMinimums.pdPerAccident}</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="hub-page__insurance-card hub-page__insurance-card--federal">
-                <h3>Federal Minimum (Interstate)</h3>
-                <p class="hub-page__federal-amount">{federalMinimum}</p>
-                <p class="hub-page__federal-note">Required for interstate for-hire carriers</p>
-              </div>
-            </div>
-            <p class="hub-page__recommendation">
-              <strong>RMS Recommendation:</strong> We recommend $1,000,000 CSL for most carriers.
-              Most brokers and shippers require $1M, and it protects your personal assets.
-            </p>
-          </section>
-
-          <!-- Coverage Types -->
-          <section class="hub-page__section">
-            <h2>Coverage Types for {state} Truckers</h2>
-            <CoverageNav />
-          </section>
-
-          <!-- Freight Hubs -->
-          {freightHubs && freightHubs.length > 0 && (
-            <section class="hub-page__section">
-              <h2>Major Freight Hubs in {state}</h2>
-              <div class="hub-page__freight-grid">
-                {freightHubs.map((hub) => (
-                  <div class="hub-page__freight-card">
-                    <h3>{hub.name}</h3>
-                    <p>{hub.description}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          <!-- Regulations -->
-          {regulations && regulations.length > 0 && (
-            <section class="hub-page__section">
-              <h2>{state} Trucking Regulations</h2>
-              <table class="hub-page__table hub-page__table--full">
-                <thead><tr><th>Category</th><th>Requirement</th></tr></thead>
-                <tbody>
-                  {regulations.map((reg) => (
-                    <tr><td>{reg.category}</td><td>{reg.detail}</td></tr>
-                  ))}
-                </tbody>
-              </table>
-            </section>
-          )}
-
-          <!-- Full-width Quote CTA -->
-          <QuoteFormCTA variant="full-width" state={state} />
-
-          <!-- FAQ -->
-          {faqItems?.length > 0 && (
-            <section class="hub-page__section">
-              <FAQSection faqs={faqItems} title={`${state} Trucking Insurance FAQ`} />
-            </section>
-          )}
-
-          <!-- Related States -->
-          <RelatedStates currentState={state} relatedStates={relatedStates} />
-        </article>
-
-        <aside class="hub-page__sidebar">
-          <StateSidebar state={state} stateAbbrev={stateAbbrev} subpages={subpages} />
-          <QuoteFormCTA variant="sidebar" state={state} />
-        </aside>
+      <div class="section-header">
+        <span class="section-tag">Overview</span>
+        <h2>Trucking in {state}</h2>
+      </div>
+      <div class="intro-body">
+        <slot />
       </div>
     </div>
+  </section>
+
+  <!-- CORRIDORS -->
+  {corridors.length > 0 && (
+    <section class="corridors">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">The Corridors</span>
+          <h2>{state} Trucking Corridors</h2>
+        </div>
+        <div class="corridor-grid">
+          {entry.data.corridors.map((c) => (
+            <div class="corridor-card">
+              <h3>{c.name}</h3>
+              <p>{c.description}</p>
+            </div>
+          ))}
+        </div>
+        <div class="corridor-links-wrap">
+          <CorridorLinks corridors={corridors} currentState={stateAbbrev} />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- INSURANCE REQUIREMENTS -->
+  <section class="requirements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Requirements</span>
+        <h2>{state} Trucking Insurance Requirements</h2>
+      </div>
+      <div class="insurance-grid">
+        <div class="insurance-card">
+          <h3>State Minimums (Intrastate)</h3>
+          <table class="req-table">
+            <tbody>
+              <tr><td>Bodily Injury (per person)</td><td><strong>{insuranceMinimums.biPerPerson}</strong></td></tr>
+              <tr><td>Bodily Injury (per accident)</td><td><strong>{insuranceMinimums.biPerAccident}</strong></td></tr>
+              <tr><td>Property Damage</td><td><strong>{insuranceMinimums.pdPerAccident}</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="insurance-card insurance-card--federal">
+          <h3>Federal Minimum (Interstate)</h3>
+          <p class="federal-amount">{federalMinimum}</p>
+          <p class="federal-note">Required for interstate for-hire carriers</p>
+        </div>
+      </div>
+      <div class="recommendation">
+        <strong>RMS Recommendation:</strong> We recommend $1,000,000 CSL for most carriers.
+        Most brokers and shippers require $1M, and it protects your personal assets.
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section class="coverage">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Coverage</span>
+        <h2>Coverage Options for {state} Truckers</h2>
+      </div>
+      <div class="coverage-grid">
+        {defaultCoverage.map((cov) => (
+          <div class:list={['coverage-card', { 'coverage-card--required': cov.highlight }]}>
+            <span class:list={['coverage-badge', { 'coverage-badge--required': cov.highlight }]}>{cov.badge}</span>
+            <h3>{cov.name}</h3>
+            <p>{cov.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FREIGHT HUBS -->
+  {freightHubs && freightHubs.length > 0 && (
+    <section class="freight">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">{state} Freight</span>
+          <h2>Major Freight Hubs</h2>
+        </div>
+        <div class="freight-grid">
+          {freightHubs.map((hub) => (
+            <div class="freight-card">
+              <h3>{hub.name}</h3>
+              <p>{hub.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- REGULATIONS -->
+  {regulations && regulations.length > 0 && (
+    <section class="regs">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Regulations</span>
+          <h2>{state} Trucking Regulations</h2>
+        </div>
+        <div class="table-wrap">
+          <table class="regs-table">
+            <thead><tr><th>Category</th><th>Requirement</th></tr></thead>
+            <tbody>
+              {regulations.map((reg) => (
+                <tr><td>{reg.category}</td><td>{reg.detail}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- QUOTE CTA -->
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-layout">
+        <div class="quote-text">
+          <h2>Get {state} Trucking Insurance</h2>
+          <p>Same-day quotes. We explain everything. Licensed in 40+ states.</p>
+          <p class="quote-phone">Call or text: <a href="tel:+12088000640">(208) 800-0640</a></p>
+        </div>
+        <div class="quote-form">
+          <close-form id="form_032NQNfP6CK0A5C418i9kw"></close-form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  {faqItems?.length > 0 && (
+    <FAQSection faqs={faqItems} title={`${state} Trucking Insurance FAQ`} />
+  )}
+
+  <!-- RELATED STATES -->
+  <section class="related">
+    <div class="container">
+      <RelatedStates currentState={state} relatedStates={relatedStates} />
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Ready to Talk to Your {state} Insurance Experts?</h2>
+      <p>Whether you're a new authority, an established owner-operator, or a fleet manager, RMS is here. We specialize in trucking, we know {state} regulations, and we move fast.</p>
+      <div class="cta-options">
+        <a href="tel:208-800-0640" class="cta-phone">
+          <span class="cta-type">Call</span>
+          <span class="cta-value">208-800-0640</span>
+        </a>
+        <a href="sms:208-800-0644" class="cta-text">
+          <span class="cta-type">Text</span>
+          <span class="cta-value">208-800-0644</span>
+        </a>
+      </div>
+      <p class="trust-close">Idaho-based. Trucking specialists since 2022. Licensed in 40+ states.</p>
+    </div>
+  </section>
+
+  <!-- MOBILE STICKY -->
+  <div class="mobile-cta">
+    <a href="tel:208-800-0640" class="mobile-btn">Get {state} Quote - 208-800-0640</a>
   </div>
 </Layout>
 
 <!-- Close CRM form embed script -->
-<script src="https://app.close.com/forms/embed.js" is:inline defer></script>
+<script src="https://webforms.closeiocdn.com/webforms.js" type="module" crossorigin="anonymous" is:inline defer></script>
 
 <style>
-  .hub-page {
-    padding: 0 0 4rem;
+  /* ===== HERO ===== */
+  .hero { position: relative; padding: 7rem 2rem 5rem; text-align: center; color: var(--white); }
+  .hero-bg { position: absolute; inset: 0; background: var(--forest-deep); z-index: 0; }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+
+  .hero-breadcrumb {
+    font-size: 0.8rem; margin-bottom: 1.5rem; opacity: 0.6;
+  }
+  .hero-breadcrumb a { color: var(--white); }
+  .hero-breadcrumb span { margin: 0 0.35rem; }
+
+  .state-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(218,165,32,0.15); border: 1px solid rgba(218,165,32,0.3);
+    padding: 8px 16px; border-radius: 50px; font-size: 0.7rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 1.5rem;
+  }
+  .state-flag { font-size: 1rem; }
+
+  .hero h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); margin-bottom: 0.5rem; }
+  .hero-tagline { font-size: 1.05rem; opacity: 0.8; line-height: 1.7; margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+  .trust-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+  .badge { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; opacity: 0.8; }
+  .badge-icon { color: var(--gold); font-weight: bold; }
+
+  .hero-cta {
+    display: inline-flex; flex-direction: column; align-items: center;
+    background: var(--gold); color: var(--forest-deep); padding: 1.25rem 3rem;
+    border-radius: 4px; text-decoration: none; transition: all 0.2s; margin-bottom: 1.5rem;
+  }
+  .hero-cta:hover { background: var(--white); transform: translateY(-2px); color: var(--forest-deep); }
+  .cta-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin-bottom: 2px; }
+  .cta-number { font-family: 'Crimson Pro', serif; font-size: 1.6rem; font-weight: 600; }
+
+  .hero-sublinks { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+  .hero-sublink {
+    font-size: 0.8rem; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.15);
+    padding: 6px 14px; border-radius: 4px; transition: all 0.2s;
+  }
+  .hero-sublink:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* ===== SECTION PATTERNS ===== */
+  .section-tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .section-header { margin-bottom: 2.5rem; }
+  .section-header h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.15; margin-bottom: 0.5rem; color: var(--forest);
   }
 
-  .hub-page__layout {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 2.5rem;
+  /* ===== INTRO ===== */
+  .intro { padding: 5rem 0; background: var(--white); }
+  .intro-body { max-width: 800px; }
+  .intro-body :global(p) { color: var(--gray-600); line-height: 1.7; margin-bottom: 1rem; font-size: 1.05rem; }
+  .intro-body :global(h3) { font-family: 'Crimson Pro', serif; color: var(--forest); font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+  .intro-body :global(ul), .intro-body :global(ol) { color: var(--gray-600); line-height: 1.7; padding-left: 1.5rem; margin-bottom: 1rem; }
+  .intro-body :global(strong) { color: var(--text); }
+
+  /* ===== CORRIDORS (dark section) ===== */
+  .corridors { padding: 5rem 0; background: var(--forest-deep); color: var(--white); }
+  .corridors .section-header h2 { color: var(--white); }
+  .corridor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+  .corridor-card {
+    background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--gold);
+  }
+  .corridor-card h3 { font-family: 'Crimson Pro', serif; font-size: 1.15rem; color: var(--white); margin-bottom: 0.5rem; }
+  .corridor-card p { font-size: 0.9rem; opacity: 0.8; line-height: 1.6; margin: 0; }
+  .corridor-links-wrap { padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
+  .corridor-links-wrap :global(.corridor-links__label) { color: var(--white); }
+  .corridor-links-wrap :global(.corridor-links__label:hover) { color: var(--gold); }
+  .corridor-links-wrap :global(.corridor-links__corridor) { border-color: rgba(255,255,255,0.1); }
+  .corridor-links-wrap :global(.corridor-links__pill) { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: var(--white); }
+  .corridor-links-wrap :global(.corridor-links__pill:hover) { border-color: var(--gold); color: var(--gold); }
+
+  /* ===== REQUIREMENTS ===== */
+  .requirements { padding: 5rem 0; background: var(--white); }
+  .insurance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .insurance-card { padding: 1.75rem; border: 1px solid var(--gray-200); border-radius: 8px; background: var(--gray-100); }
+  .insurance-card h3 { font-family: 'Crimson Pro', serif; font-size: 1.15rem; color: var(--forest); margin: 0 0 1rem; }
+  .insurance-card--federal { background: var(--forest); color: var(--white); }
+  .insurance-card--federal h3 { color: var(--gold); }
+  .federal-amount { font-family: 'Crimson Pro', serif; font-size: 2rem; font-weight: 700; color: var(--gold); margin: 0 0 0.5rem; }
+  .federal-note { color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 0; }
+  .req-table { width: 100%; font-size: 0.9rem; }
+  .req-table td { padding: 0.6rem 0; border-bottom: 1px solid var(--gray-200); color: var(--text); }
+  .req-table td:last-child { text-align: right; }
+  .recommendation {
+    padding: 1rem 1.25rem; border-left: 4px solid var(--gold); background: rgba(218,165,32,0.04);
+    border-radius: 0 6px 6px 0; color: var(--text); line-height: 1.6;
   }
 
-  .hub-page__content {
-    min-width: 0;
+  /* ===== COVERAGE ===== */
+  .coverage { padding: 5rem 0; background: var(--gray-100); }
+  .coverage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+  .coverage-card { background: var(--white); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--gray-200); }
+  .coverage-card--required { border-color: var(--gold); border-width: 2px; }
+  .coverage-badge {
+    display: inline-block; font-size: 0.6rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--gray-600); background: var(--gray-100); padding: 3px 8px; border-radius: 4px; margin-bottom: 0.5rem;
   }
+  .coverage-badge--required { background: rgba(218,165,32,0.2); color: var(--gold-hover); }
+  .coverage-card h3 { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--forest); margin-bottom: 0.4rem; }
+  .coverage-card p { font-size: 0.8rem; color: var(--gray-600); line-height: 1.5; margin: 0; }
 
-  .hub-page__section {
-    margin-bottom: 3rem;
+  /* ===== FREIGHT HUBS ===== */
+  .freight { padding: 5rem 0; background: var(--white); }
+  .freight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; }
+  .freight-card { padding: 1.5rem; border-radius: 8px; background: var(--gray-100); border-left: 3px solid var(--gold); }
+  .freight-card h3 { font-family: 'Crimson Pro', serif; font-size: 1.1rem; color: var(--forest); margin-bottom: 0.5rem; }
+  .freight-card p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.6; margin: 0; }
+
+  /* ===== REGULATIONS TABLE ===== */
+  .regs { padding: 5rem 0; background: var(--gray-100); }
+  .table-wrap { overflow-x: auto; }
+  .regs-table { width: 100%; border-collapse: collapse; }
+  .regs-table th, .regs-table td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--gray-200); }
+  .regs-table th {
+    background: var(--forest); color: var(--white); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
   }
+  .regs-table th:first-child { border-radius: 4px 0 0 0; }
+  .regs-table th:last-child { border-radius: 0 4px 0 0; }
+  .regs-table td { background: var(--white); color: var(--text); }
 
-  .hub-page__section h2 {
-    font-family: 'Crimson Pro', Georgia, serif;
-    color: var(--forest);
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--gold);
-  }
+  /* ===== QUOTE SECTION ===== */
+  .quote-section { padding: 5rem 0; background: var(--forest-deep); color: var(--white); }
+  .quote-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: start; }
+  .quote-text h2 { color: var(--white); font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .quote-text p { color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 0.5rem; }
+  .quote-phone a { color: var(--gold); font-weight: 600; }
 
-  /* Insurance grid */
-  .hub-page__insurance-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-  }
+  /* ===== RELATED STATES ===== */
+  .related { padding: 5rem 0; background: var(--white); }
+  .related :global(.related-states) { margin: 0; padding-top: 0; border-top: none; }
 
-  .hub-page__insurance-card {
-    padding: 1.5rem;
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    background: var(--bg-light);
-  }
+  /* ===== FINAL CTA ===== */
+  .final-cta { padding: 5rem 0; background: var(--gold); text-align: center; }
+  .final-cta h2 { color: var(--forest); margin-bottom: 0.75rem; }
+  .final-cta > .container > p { color: var(--forest); opacity: 0.85; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .cta-options { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+  .cta-phone, .cta-text { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--forest); }
+  .cta-type { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; }
+  .cta-value { font-family: 'Crimson Pro', serif; font-size: 2rem; font-weight: 600; }
+  .cta-phone:hover .cta-value, .cta-text:hover .cta-value { color: var(--white); }
+  .trust-close { font-size: 0.9rem; color: var(--forest); opacity: 0.75; }
 
-  .hub-page__insurance-card h3 {
-    font-family: 'Crimson Pro', Georgia, serif;
-    color: var(--forest);
-    font-size: 1.1rem;
-    margin: 0 0 1rem;
-  }
+  /* ===== MOBILE STICKY ===== */
+  .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 1rem; background: var(--forest); z-index: 999; }
+  .mobile-btn { display: block; width: 100%; padding: 14px; background: var(--gold); color: var(--forest); font-weight: 600; text-align: center; border-radius: 4px; text-decoration: none; }
 
-  .hub-page__insurance-card--federal {
-    background: var(--forest);
-    color: var(--white);
-  }
-
-  .hub-page__insurance-card--federal h3 {
-    color: var(--gold);
-  }
-
-  .hub-page__federal-amount {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--gold);
-    margin: 0 0 0.5rem;
-  }
-
-  .hub-page__federal-note {
-    font-family: 'DM Sans', sans-serif;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    margin: 0;
-  }
-
-  .hub-page__recommendation {
-    font-family: 'DM Sans', sans-serif;
-    color: var(--text);
-    line-height: 1.6;
-    padding: 1rem;
-    border-left: 4px solid var(--gold);
-    background: rgba(218, 165, 32, 0.04);
-    border-radius: 0 6px 6px 0;
-  }
-
-  /* Tables */
-  .hub-page__table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'DM Sans', sans-serif;
-  }
-
-  .hub-page__table td,
-  .hub-page__table th {
-    padding: 0.75rem;
-    border-bottom: 1px solid var(--gray-200);
-    text-align: left;
-    color: var(--text);
-  }
-
-  .hub-page__table th {
-    font-weight: 600;
-    background: var(--bg-light);
-  }
-
-  .hub-page__table--full {
-    margin-top: 1rem;
-  }
-
-  /* Freight grid */
-  .hub-page__freight-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-
-  .hub-page__freight-card {
-    padding: 1.25rem;
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-  }
-
-  .hub-page__freight-card h3 {
-    font-family: 'Crimson Pro', Georgia, serif;
-    color: var(--forest);
-    font-size: 1rem;
-    margin: 0 0 0.5rem;
-  }
-
-  .hub-page__freight-card p {
-    font-family: 'DM Sans', sans-serif;
-    color: var(--gray-600);
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  /* Sidebar sticky */
-  .hub-page__sidebar {
-    align-self: start;
-  }
-
-  /* Markdown content styling */
-  .hub-page__section--intro :global(p) {
-    font-family: 'DM Sans', sans-serif;
-    color: var(--text);
-    line-height: 1.7;
-    margin-bottom: 1rem;
-  }
-
-  .hub-page__section--intro :global(h3) {
-    font-family: 'Crimson Pro', Georgia, serif;
-    color: var(--forest);
-    font-size: 1.25rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .hub-page__section--intro :global(ul),
-  .hub-page__section--intro :global(ol) {
-    font-family: 'DM Sans', sans-serif;
-    color: var(--text);
-    line-height: 1.7;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    .hub-page__layout {
-      grid-template-columns: 1fr;
-    }
-
-    .hub-page__sidebar {
-      order: -1;
-    }
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 968px) {
+    .corridor-grid { grid-template-columns: 1fr; }
+    .insurance-grid { grid-template-columns: 1fr; }
+    .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+    .freight-grid { grid-template-columns: 1fr; }
+    .quote-layout { grid-template-columns: 1fr; }
+    .mobile-cta { display: block; }
+    .final-cta { padding-bottom: 7rem; }
   }
 
   @media (max-width: 640px) {
-    .hub-page__insurance-grid {
-      grid-template-columns: 1fr;
-    }
+    .hero { padding: 5rem 1.5rem 3rem; }
+    .trust-badges { flex-direction: column; align-items: center; }
+    .coverage-grid { grid-template-columns: 1fr; }
+    .cta-options { flex-direction: column; gap: 1rem; }
+    .hero-sublinks { flex-direction: column; align-items: center; }
   }
 </style>

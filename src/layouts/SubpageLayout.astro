@@ -1,10 +1,7 @@
 ---
 import Layout from './Layout.astro';
 import SEOHead from '../components/SEOHead.astro';
-import PageHeader from '../components/PageHeader.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import StateSidebar from '../components/StateSidebar.astro';
-import QuoteFormCTA from '../components/QuoteFormCTA.astro';
 
 import type { CollectionEntry } from 'astro:content';
 
@@ -20,12 +17,13 @@ const {
 
 const parentHubUrl = `/states/trucking-insurance-${parentHub}/`;
 const canonicalUrl = `${parentHubUrl}${topic}/`;
+const shortTitle = title.replace(` in ${state}`, '').replace(` for ${state}`, '').replace(` - ${state}`, '');
 
 const breadcrumbItems = [
   { label: 'Home', href: '/' },
   { label: 'States', href: '/states/' },
   { label: state, href: parentHubUrl },
-  { label: title.replace(` in ${state}`, '').replace(` for ${state}`, ''), href: '' },
+  { label: shortTitle, href: '' },
 ];
 
 // JSON-LD schemas
@@ -64,151 +62,174 @@ const jsonLdSchemas = [insuranceAgencySchema, breadcrumbSchema];
     jsonLd={jsonLdSchemas}
   />
 
-  <div class="subpage">
-    <div class="container">
-      <Breadcrumbs items={breadcrumbItems} />
-      <PageHeader title={title} />
+  <!-- HERO -->
+  <section class="sub-hero">
+    <div class="sub-hero-bg"></div>
+    <div class="container sub-hero-content">
+      <nav class="sub-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span>&rsaquo;</span>
+        <a href="/states/">States</a> <span>&rsaquo;</span>
+        <a href={parentHubUrl}>{state}</a> <span>&rsaquo;</span>
+        <span>{shortTitle}</span>
+      </nav>
+      <h1>{title}</h1>
+      <p class="sub-hero-tagline">{metaDescription}</p>
+    </div>
+  </section>
 
-      <div class="subpage__layout">
-        <article class="subpage__content">
+  <!-- CONTENT -->
+  <section class="sub-content-section">
+    <div class="container">
+      <div class="sub-layout">
+        <article class="sub-article">
           <slot />
 
-          <div class="subpage__meta">
+          <div class="sub-meta">
             <p>Last updated: <time datetime={lastUpdated}>
               {new Date(lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </time></p>
-            <a href={parentHubUrl} class="subpage__back-link">
-              &larr; Back to {state} Trucking Insurance
-            </a>
           </div>
-
-          <QuoteFormCTA variant="full-width" state={state} />
         </article>
 
-        <aside class="subpage__sidebar">
+        <aside class="sub-sidebar">
           {subpages && subpages.length > 0 && (
             <StateSidebar state={state} stateAbbrev={stateAbbrev} subpages={subpages} currentTopic={topic} />
           )}
-          <QuoteFormCTA variant="sidebar" state={state} />
+          <div class="sidebar-cta">
+            <h3>Get {state} Trucking Insurance</h3>
+            <p>Same-day quotes. We explain everything.</p>
+            <a href="tel:+12088000640" class="sidebar-cta-btn">
+              <span class="sidebar-cta-label">Call Now</span>
+              <span class="sidebar-cta-number">208-800-0640</span>
+            </a>
+          </div>
         </aside>
       </div>
     </div>
+  </section>
+
+  <!-- BACK + CTA -->
+  <section class="sub-bottom">
+    <div class="container">
+      <a href={parentHubUrl} class="back-link">&larr; Back to {state} Trucking Insurance</a>
+    </div>
+  </section>
+
+  <!-- FULL-WIDTH QUOTE CTA -->
+  <section class="sub-quote">
+    <div class="container sub-quote-inner">
+      <h2>Need {state} Trucking Insurance?</h2>
+      <p>Whether you need {shortTitle.toLowerCase()} guidance or a full insurance package, RMS has you covered.</p>
+      <div class="sub-cta-options">
+        <a href="tel:208-800-0640" class="sub-cta-phone">
+          <span class="sub-cta-type">Call</span>
+          <span class="sub-cta-value">208-800-0640</span>
+        </a>
+        <a href="sms:208-800-0644" class="sub-cta-text">
+          <span class="sub-cta-type">Text</span>
+          <span class="sub-cta-value">208-800-0644</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE STICKY -->
+  <div class="mobile-cta">
+    <a href="tel:208-800-0640" class="mobile-btn">Get {state} Quote - 208-800-0640</a>
   </div>
 </Layout>
 
-<!-- Close CRM form embed script -->
-<script src="https://app.close.com/forms/embed.js" is:inline defer></script>
-
 <style>
-  .subpage {
-    padding: 0 0 4rem;
+  /* ===== HERO ===== */
+  .sub-hero { position: relative; padding: 5rem 2rem 3rem; text-align: center; color: var(--white); }
+  .sub-hero-bg { position: absolute; inset: 0; background: var(--forest); z-index: 0; }
+  .sub-hero-content { position: relative; z-index: 1; max-width: 750px; margin: 0 auto; }
+
+  .sub-breadcrumb { font-size: 0.8rem; margin-bottom: 1.25rem; opacity: 0.6; }
+  .sub-breadcrumb a { color: var(--white); }
+  .sub-breadcrumb span { margin: 0 0.35rem; }
+
+  .sub-hero h1 { font-size: clamp(1.75rem, 5vw, 2.75rem); margin-bottom: 0.5rem; }
+  .sub-hero-tagline { font-size: 1rem; opacity: 0.8; line-height: 1.7; }
+
+  /* ===== CONTENT LAYOUT ===== */
+  .sub-content-section { padding: 4rem 0; background: var(--white); }
+  .sub-layout { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; }
+
+  /* Article markdown styling */
+  .sub-article :global(h2) {
+    font-family: 'Crimson Pro', serif; color: var(--forest); font-size: 1.5rem;
+    margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--gold);
+  }
+  .sub-article :global(h3) {
+    font-family: 'Crimson Pro', serif; color: var(--forest); font-size: 1.2rem;
+    margin-top: 2rem; margin-bottom: 0.75rem;
+  }
+  .sub-article :global(p) { color: var(--text); line-height: 1.7; margin-bottom: 1rem; }
+  .sub-article :global(strong) { color: var(--forest); }
+  .sub-article :global(table) { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+  .sub-article :global(td), .sub-article :global(th) {
+    padding: 0.75rem; border-bottom: 1px solid var(--gray-200); text-align: left;
+  }
+  .sub-article :global(th) { font-weight: 600; background: var(--gray-100); }
+  .sub-article :global(ul), .sub-article :global(ol) {
+    color: var(--text); line-height: 1.7; padding-left: 1.5rem; margin-bottom: 1rem;
+  }
+  .sub-article :global(blockquote), .sub-article :global(.tip) {
+    padding: 1rem 1.25rem; border-left: 4px solid var(--gold); background: rgba(218,165,32,0.04);
+    border-radius: 0 6px 6px 0; margin: 1.5rem 0;
   }
 
-  .subpage__layout {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 2.5rem;
+  .sub-meta {
+    margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-200);
+    font-size: 0.85rem; color: var(--gray-600);
   }
 
-  .subpage__content {
-    min-width: 0;
+  /* Sidebar */
+  .sub-sidebar { align-self: start; position: sticky; top: 100px; }
+  .sidebar-cta {
+    margin-top: 1.5rem; padding: 1.5rem; background: var(--forest); color: var(--white); border-radius: 8px;
   }
-
-  /* Markdown content styling */
-  .subpage__content :global(h2) {
-    font-family: 'Crimson Pro', Georgia, serif;
-    color: var(--forest);
-    font-size: 1.5rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--gold);
+  .sidebar-cta h3 { font-family: 'Crimson Pro', serif; font-size: 1.1rem; color: var(--gold); margin-bottom: 0.5rem; }
+  .sidebar-cta p { font-size: 0.85rem; opacity: 0.8; margin-bottom: 1rem; }
+  .sidebar-cta-btn {
+    display: flex; flex-direction: column; align-items: center;
+    background: var(--gold); color: var(--forest-deep); padding: 0.75rem 1.5rem;
+    border-radius: 4px; text-decoration: none; transition: all 0.2s;
   }
+  .sidebar-cta-btn:hover { background: var(--white); }
+  .sidebar-cta-label { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; }
+  .sidebar-cta-number { font-family: 'Crimson Pro', serif; font-size: 1.25rem; font-weight: 600; }
 
-  .subpage__content :global(h3) {
-    font-family: 'Crimson Pro', Georgia, serif;
-    color: var(--forest);
-    font-size: 1.2rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-  }
+  /* Back link */
+  .sub-bottom { padding: 2rem 0; background: var(--gray-100); }
+  .back-link { color: var(--forest); font-weight: 600; transition: color 0.15s; }
+  .back-link:hover { color: var(--gold); }
 
-  .subpage__content :global(p) {
-    font-family: 'DM Sans', sans-serif;
-    color: var(--text);
-    line-height: 1.7;
-    margin-bottom: 1rem;
-  }
+  /* Quote CTA */
+  .sub-quote { padding: 4rem 0; background: var(--gold); text-align: center; }
+  .sub-quote h2 { color: var(--forest); margin-bottom: 0.5rem; }
+  .sub-quote p { color: var(--forest); opacity: 0.85; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .sub-cta-options { display: flex; justify-content: center; gap: 2rem; }
+  .sub-cta-phone, .sub-cta-text { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--forest); }
+  .sub-cta-type { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; }
+  .sub-cta-value { font-family: 'Crimson Pro', serif; font-size: 1.75rem; font-weight: 600; }
+  .sub-cta-phone:hover .sub-cta-value, .sub-cta-text:hover .sub-cta-value { color: var(--white); }
 
-  .subpage__content :global(table) {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-    font-family: 'DM Sans', sans-serif;
-  }
+  /* Mobile sticky */
+  .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 1rem; background: var(--forest); z-index: 999; }
+  .mobile-btn { display: block; width: 100%; padding: 14px; background: var(--gold); color: var(--forest); font-weight: 600; text-align: center; border-radius: 4px; text-decoration: none; }
 
-  .subpage__content :global(td),
-  .subpage__content :global(th) {
-    padding: 0.75rem;
-    border-bottom: 1px solid var(--gray-200);
-    text-align: left;
-  }
-
-  .subpage__content :global(th) {
-    font-weight: 600;
-    background: var(--bg-light);
-  }
-
-  .subpage__content :global(ul),
-  .subpage__content :global(ol) {
-    font-family: 'DM Sans', sans-serif;
-    color: var(--text);
-    line-height: 1.7;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .subpage__content :global(.tip) {
-    padding: 1rem 1.25rem;
-    border-left: 4px solid var(--gold);
-    background: rgba(218, 165, 32, 0.04);
-    border-radius: 0 6px 6px 0;
-    margin: 1.5rem 0;
-  }
-
-  .subpage__meta {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--gray-200);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    color: var(--gray-600);
-  }
-
-  .subpage__back-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: var(--forest);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.15s ease;
-  }
-
-  .subpage__back-link:hover {
-    color: var(--gold);
-  }
-
-  .subpage__sidebar {
-    align-self: start;
-  }
-
+  /* Responsive */
   @media (max-width: 768px) {
-    .subpage__layout {
-      grid-template-columns: 1fr;
-    }
+    .sub-layout { grid-template-columns: 1fr; }
+    .sub-sidebar { position: static; order: -1; }
+    .mobile-cta { display: block; }
+    .sub-quote { padding-bottom: 6rem; }
+  }
 
-    .subpage__sidebar {
-      order: -1;
-    }
+  @media (max-width: 640px) {
+    .sub-hero { padding: 4rem 1.5rem 2.5rem; }
+    .sub-cta-options { flex-direction: column; gap: 1rem; }
   }
 </style>
