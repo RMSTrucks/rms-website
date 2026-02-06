@@ -1,0 +1,29 @@
+---
+/**
+ * SEOHead - Adds page-specific JSON-LD schemas to the <head>.
+ *
+ * NOTE: Title, description, canonical, OG, and Twitter tags are already
+ * handled by the base Layout.astro. This component only adds JSON-LD
+ * structured data that Layout doesn't provide.
+ */
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noIndex?: boolean;
+  ogType?: string;
+}
+
+const { jsonLd } = Astro.props;
+
+const jsonLdArray = jsonLd
+  ? Array.isArray(jsonLd) ? jsonLd : [jsonLd]
+  : [];
+---
+
+<!-- JSON-LD Structured Data -->
+{jsonLdArray.map((schema) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

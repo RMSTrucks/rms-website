@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import HubPageLayout from '../../../layouts/HubPageLayout.astro';
+import { STATES } from '../../../data/states';
+import { getCorridorsForState } from '../../../data/corridors';
+
+export async function getStaticPaths() {
+  const stateEntries = await getCollection('states');
+  return stateEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const corridors = getCorridorsForState(entry.data.stateAbbrev);
+---
+
+<HubPageLayout entry={entry} corridors={corridors}>
+  <Content />
+</HubPageLayout>

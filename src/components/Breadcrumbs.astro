@@ -1,0 +1,88 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+---
+
+<nav class:list={['breadcrumbs', className]} aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <ol class="breadcrumbs__list">
+    {items.map((item, index) => {
+      const isLast = index === items.length - 1;
+      return (
+        <li
+          class:list={['breadcrumbs__item', { 'breadcrumbs__item--current': isLast }]}
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          {isLast ? (
+            <>
+              <span aria-current="page" itemprop="name">{item.label}</span>
+              <meta itemprop="position" content={String(index + 1)} />
+            </>
+          ) : (
+            <>
+              <a href={item.href} class="breadcrumbs__link" itemprop="item">
+                <span itemprop="name">{item.label}</span>
+              </a>
+              <meta itemprop="position" content={String(index + 1)} />
+            </>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs {
+    padding: 0.75rem 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .breadcrumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .breadcrumbs__item {
+    display: flex;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+  }
+
+  .breadcrumbs__item + .breadcrumbs__item::before {
+    content: '>';
+    margin: 0 0.5rem;
+    color: var(--gray-600);
+  }
+
+  .breadcrumbs__link {
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .breadcrumbs__link:hover {
+    color: var(--gold);
+  }
+
+  .breadcrumbs__item--current {
+    color: var(--text);
+    font-weight: 600;
+  }
+</style>

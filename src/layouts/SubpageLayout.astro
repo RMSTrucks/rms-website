@@ -1,0 +1,214 @@
+---
+import Layout from './Layout.astro';
+import SEOHead from '../components/SEOHead.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StateSidebar from '../components/StateSidebar.astro';
+import QuoteFormCTA from '../components/QuoteFormCTA.astro';
+
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'state-subpages'>;
+}
+
+const { entry } = Astro.props;
+const {
+  title, state, stateAbbrev, parentHub, metaDescription,
+  topic, lastUpdated, ogImage, subpages,
+} = entry.data;
+
+const parentHubUrl = `/states/trucking-insurance-${parentHub}/`;
+const canonicalUrl = `${parentHubUrl}${topic}/`;
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'States', href: '/states/' },
+  { label: state, href: parentHubUrl },
+  { label: title.replace(` in ${state}`, '').replace(` for ${state}`, ''), href: '' },
+];
+
+// JSON-LD schemas
+const insuranceAgencySchema = {
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "name": "RMS Truck Insurance",
+  "url": "https://rmstruckers.com",
+  "description": `Commercial trucking insurance specialists serving owner-operators and fleets in ${state}.`,
+  "areaServed": { "@type": "State", "name": state },
+  "serviceType": "Commercial Trucking Insurance",
+  "telephone": "+12088000640",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    ...(item.href ? { "item": `https://rmstruckers.com${item.href}` } : {}),
+  })),
+};
+
+const jsonLdSchemas = [insuranceAgencySchema, breadcrumbSchema];
+---
+
+<Layout title={`${title} | RMS Truck Insurance`} description={metaDescription}>
+  <SEOHead
+    slot="head"
+    title={`${title} | RMS Truck Insurance`}
+    description={metaDescription}
+    canonicalUrl={canonicalUrl}
+    ogImage={ogImage}
+    jsonLd={jsonLdSchemas}
+  />
+
+  <div class="subpage">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      <PageHeader title={title} />
+
+      <div class="subpage__layout">
+        <article class="subpage__content">
+          <slot />
+
+          <div class="subpage__meta">
+            <p>Last updated: <time datetime={lastUpdated}>
+              {new Date(lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time></p>
+            <a href={parentHubUrl} class="subpage__back-link">
+              &larr; Back to {state} Trucking Insurance
+            </a>
+          </div>
+
+          <QuoteFormCTA variant="full-width" state={state} />
+        </article>
+
+        <aside class="subpage__sidebar">
+          {subpages && subpages.length > 0 && (
+            <StateSidebar state={state} stateAbbrev={stateAbbrev} subpages={subpages} currentTopic={topic} />
+          )}
+          <QuoteFormCTA variant="sidebar" state={state} />
+        </aside>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<!-- Close CRM form embed script -->
+<script src="https://app.close.com/forms/embed.js" is:inline defer></script>
+
+<style>
+  .subpage {
+    padding: 0 0 4rem;
+  }
+
+  .subpage__layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2.5rem;
+  }
+
+  .subpage__content {
+    min-width: 0;
+  }
+
+  /* Markdown content styling */
+  .subpage__content :global(h2) {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .subpage__content :global(h3) {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .subpage__content :global(p) {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .subpage__content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .subpage__content :global(td),
+  .subpage__content :global(th) {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--gray-200);
+    text-align: left;
+  }
+
+  .subpage__content :global(th) {
+    font-weight: 600;
+    background: var(--bg-light);
+  }
+
+  .subpage__content :global(ul),
+  .subpage__content :global(ol) {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .subpage__content :global(.tip) {
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--gold);
+    background: rgba(218, 165, 32, 0.04);
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+  }
+
+  .subpage__meta {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray-200);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+  }
+
+  .subpage__back-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--forest);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease;
+  }
+
+  .subpage__back-link:hover {
+    color: var(--gold);
+  }
+
+  .subpage__sidebar {
+    align-self: start;
+  }
+
+  @media (max-width: 768px) {
+    .subpage__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .subpage__sidebar {
+      order: -1;
+    }
+  }
+</style>

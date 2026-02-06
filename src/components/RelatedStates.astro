@@ -1,0 +1,110 @@
+---
+interface RelatedStateItem {
+  name: string;
+  abbrev: string;
+  descriptor: string;
+}
+
+interface Props {
+  currentState: string;
+  relatedStates: RelatedStateItem[];
+  heading?: string;
+  class?: string;
+}
+
+const { currentState, relatedStates, heading, class: className } = Astro.props;
+const resolvedHeading = heading || `Truckers in ${currentState} Also Check`;
+---
+
+{relatedStates.length > 0 && (
+  <section class:list={['related-states', className]} aria-labelledby="related-states-heading">
+    <h2 class="related-states__heading" id="related-states-heading">
+      {resolvedHeading}
+    </h2>
+    <div class="related-states__grid">
+      {relatedStates.map((rs) => (
+        <a
+          href={`/states/trucking-insurance-${rs.name.toLowerCase().replace(/\s+/g, '-')}/`}
+          class="related-states__card"
+        >
+          <span class="related-states__abbrev">{rs.abbrev}</span>
+          <span class="related-states__name">{rs.name}</span>
+          <span class="related-states__descriptor">{rs.descriptor}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .related-states {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-200);
+  }
+
+  .related-states__heading {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin: 0 0 1.25rem;
+  }
+
+  .related-states__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .related-states__card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .related-states__card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 2px 8px rgba(218, 165, 32, 0.15);
+  }
+
+  .related-states__abbrev {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+  }
+
+  .related-states__name {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--forest);
+  }
+
+  .related-states__descriptor {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .related-states__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 400px) {
+    .related-states__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

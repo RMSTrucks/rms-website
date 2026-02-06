@@ -1,0 +1,170 @@
+---
+interface Props {
+  state?: string;
+  heading?: string;
+  variant: 'sidebar' | 'full-width' | 'inline';
+  showPhone?: boolean;
+  showValueProp?: boolean;
+  class?: string;
+}
+
+const {
+  state,
+  heading,
+  variant,
+  showPhone = true,
+  showValueProp,
+  class: className,
+} = Astro.props;
+
+const resolvedHeading = heading
+  ? heading
+  : state
+    ? `Get ${state} Trucking Insurance`
+    : 'Get a Free Trucking Insurance Quote';
+
+const showValue = showValueProp !== undefined
+  ? showValueProp
+  : variant !== 'inline';
+
+const headingTag = variant === 'full-width' ? 'h2' : 'h3';
+---
+
+<div class:list={[
+  'quote-cta',
+  `quote-cta--${variant}`,
+  className,
+]}>
+  <div class="quote-cta__text">
+    {headingTag === 'h2' ? (
+      <h2 class="quote-cta__heading">{resolvedHeading}</h2>
+    ) : (
+      <h3 class="quote-cta__heading">{resolvedHeading}</h3>
+    )}
+    {showValue && (
+      <p class="quote-cta__value-prop">
+        Same-day quotes. We explain everything. Licensed in 40+ states.
+      </p>
+    )}
+    {showPhone && (
+      <p class="quote-cta__phone">
+        Call or text: <a href="tel:+12088000640">(208) 800-0640</a>
+      </p>
+    )}
+  </div>
+  <div class="quote-cta__form">
+    <close-form id="form_032NQNfP6CK0A5C418i9kw"></close-form>
+  </div>
+</div>
+
+<style>
+  /* Base */
+  .quote-cta__heading {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+
+  .quote-cta__value-prop {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+  }
+
+  .quote-cta__phone a {
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  /* Sidebar variant */
+  .quote-cta--sidebar {
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+  }
+
+  .quote-cta--sidebar .quote-cta__heading {
+    font-size: 1.15rem;
+    color: var(--forest);
+  }
+
+  .quote-cta--sidebar .quote-cta__value-prop {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+  }
+
+  .quote-cta--sidebar .quote-cta__phone {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin: 0 0 1rem;
+  }
+
+  .quote-cta--sidebar .quote-cta__phone a {
+    color: var(--gold);
+  }
+
+  /* Full-width variant */
+  .quote-cta--full-width {
+    background: var(--forest-deep);
+    color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+    align-items: start;
+    margin: 2rem 0;
+  }
+
+  .quote-cta--full-width .quote-cta__heading {
+    font-size: 1.75rem;
+    color: var(--white);
+  }
+
+  .quote-cta--full-width .quote-cta__value-prop {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .quote-cta--full-width .quote-cta__phone {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+
+  .quote-cta--full-width .quote-cta__phone a {
+    color: var(--gold);
+  }
+
+  /* Inline variant */
+  .quote-cta--inline {
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--gold);
+    background: rgba(218, 165, 32, 0.04);
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+  }
+
+  .quote-cta--inline .quote-cta__heading {
+    font-size: 1.1rem;
+    color: var(--forest);
+  }
+
+  .quote-cta--inline .quote-cta__phone {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin: 0 0 1rem;
+  }
+
+  .quote-cta--inline .quote-cta__phone a {
+    color: var(--gold);
+  }
+
+  @media (max-width: 768px) {
+    .quote-cta--full-width {
+      grid-template-columns: 1fr;
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,88 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  variant?: 'default' | 'hero';
+  class?: string;
+}
+
+const { title, subtitle, variant = 'default', class: className } = Astro.props;
+const isHero = variant === 'hero';
+---
+
+<header class:list={['page-header', { 'page-header--hero': isHero }, className]}>
+  <div class="page-header__inner">
+    <h1 class="page-header__title">{title}</h1>
+    {subtitle && <p class="page-header__subtitle">{subtitle}</p>}
+  </div>
+</header>
+
+<style>
+  .page-header {
+    padding: 1.5rem 0 1rem;
+    border-bottom: 2px solid var(--gray-200);
+    margin-bottom: 2rem;
+  }
+
+  .page-header__inner {
+    max-width: 100%;
+  }
+
+  .page-header__title {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--forest);
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .page-header__subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    margin: 0.5rem 0 0;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  /* Hero variant */
+  .page-header--hero {
+    background: var(--forest);
+    padding: 3rem 2rem;
+    border-bottom: none;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .page-header--hero .page-header__title {
+    color: var(--white);
+    font-size: 2.75rem;
+  }
+
+  .page-header--hero .page-header__subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0.75rem auto 0;
+    max-width: 700px;
+  }
+
+  @media (max-width: 768px) {
+    .page-header__title {
+      font-size: 1.75rem;
+    }
+
+    .page-header--hero .page-header__title {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-header__title {
+      font-size: 1.5rem;
+    }
+
+    .page-header--hero .page-header__title {
+      font-size: 1.65rem;
+    }
+  }
+</style>
