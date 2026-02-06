@@ -368,31 +368,34 @@ import faqData from '../data/faqs.json';
       </div>
 
       <div class="states-grid">
-        <a href="/trucking-insurance-texas/" class="state-card">
+        <a href="/states/trucking-insurance-texas/" class="state-card">
           <span class="state-flag">&#9733;</span>
           <h3>Texas</h3>
           <p>66,000+ trucking companies. I-35 corridor. Cross-border specialists.</p>
         </a>
-        <a href="/trucking-insurance-illinois/" class="state-card">
+        <a href="/states/trucking-insurance-illinois/" class="state-card">
           <span class="state-flag">&#9733;</span>
           <h3>Illinois</h3>
           <p>Midwest freight hub. I-55, I-80, I-94 corridors. Chicago-area specialists.</p>
         </a>
-        <a href="/trucking-insurance-ohio/" class="state-card">
+        <a href="/states/trucking-insurance-ohio/" class="state-card">
           <span class="state-flag">&#9733;</span>
           <h3>Ohio</h3>
           <p>East-West crossroads. I-70, I-71, I-75 corridors. Manufacturing freight.</p>
         </a>
-        <a href="/trucking-insurance-pennsylvania/" class="state-card">
+        <a href="/states/trucking-insurance-pennsylvania/" class="state-card">
           <span class="state-flag">&#9733;</span>
           <h3>Pennsylvania</h3>
           <p>Northeast gateway. I-76, I-80, I-81 corridors. Port of Philadelphia.</p>
         </a>
-        <a href="/trucking-insurance-georgia/" class="state-card">
+        <a href="/states/trucking-insurance-georgia/" class="state-card">
           <span class="state-flag">&#9733;</span>
           <h3>Georgia</h3>
           <p>Southeast logistics hub. I-75, I-85, I-20 corridors. Port of Savannah.</p>
         </a>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="/states/" class="view-all-states">View All 39 States &rarr;</a>
       </div>
     </div>
   </section>
@@ -1143,7 +1146,6 @@ import faqData from '../data/faqs.json';
      STATES WE SERVE
      ======================================== */
   .states-served {
-    display: none;
     padding: 6rem 0;
     background: var(--white);
   }
@@ -1193,6 +1195,24 @@ import faqData from '../data/faqs.json';
     color: var(--gray-600);
     line-height: 1.5;
     margin: 0;
+  }
+
+  .view-all-states {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--forest);
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--forest);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .view-all-states:hover {
+    background: var(--forest);
+    color: var(--white);
   }
 
   /* ========================================
