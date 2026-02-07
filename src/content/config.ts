@@ -33,6 +33,37 @@ const states = defineCollection({
   }),
 });
 
+const coverage = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    metaDescription: z.string().max(160),
+    shortDescription: z.string(),
+    icon: z.string(),
+    federalMinimum: z.string().optional(),
+    whoNeedsIt: z.array(z.string()),
+    stateVariations: z.array(z.object({ state: z.string(), note: z.string() })),
+  }),
+});
+
+const corridors = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    metaDescription: z.string().max(160),
+    interstate: z.string(),
+    endpoints: z.string(),
+    totalMiles: z.number(),
+    states: z.array(z.object({
+      abbrev: z.string(),
+      name: z.string(),
+      slug: z.string(),
+      miles: z.number(),
+      keyInfo: z.string(),
+    })),
+  }),
+});
+
 const stateSubpages = defineCollection({
   type: 'content',
   schema: z.object({
@@ -48,4 +79,4 @@ const stateSubpages = defineCollection({
   }),
 });
 
-export const collections = { blog, states, 'state-subpages': stateSubpages };
+export const collections = { blog, states, 'state-subpages': stateSubpages, coverage, corridors };

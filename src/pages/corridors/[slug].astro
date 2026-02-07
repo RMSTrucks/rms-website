@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import CorridorLayout from '../../layouts/CorridorLayout.astro';
+
+export async function getStaticPaths() {
+  const corridorEntries = await getCollection('corridors');
+  return corridorEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<CorridorLayout entry={entry}>
+  <Content />
+</CorridorLayout>

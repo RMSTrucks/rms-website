@@ -1,0 +1,309 @@
+---
+import Layout from './Layout.astro';
+import SEOHead from '../components/SEOHead.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CoverageNav from '../components/CoverageNav.astro';
+import QuoteFormCTA from '../components/QuoteFormCTA.astro';
+
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'coverage'>;
+}
+
+const { entry } = Astro.props;
+const { title, metaDescription, whoNeedsIt, stateVariations, federalMinimum } = entry.data;
+const slug = entry.slug;
+
+const canonicalUrl = `/coverage/${slug}/`;
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Coverage', href: '/coverage/' },
+  { label: title, href: '' },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": title,
+  "description": metaDescription,
+  "provider": {
+    "@type": "InsuranceAgency",
+    "name": "RMS Truck Insurance",
+    "url": "https://rmstruckers.com",
+    "telephone": "+12088000640",
+  },
+  "serviceType": "Commercial Trucking Insurance",
+  "areaServed": { "@type": "Country", "name": "United States" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    ...(item.href ? { "item": `https://rmstruckers.com${item.href}` } : {}),
+  })),
+};
+---
+
+<Layout title={`${title} | RMS Truck Insurance`} description={metaDescription}>
+  <SEOHead
+    slot="head"
+    title={`${title} | RMS Truck Insurance`}
+    description={metaDescription}
+    canonicalUrl={canonicalUrl}
+    jsonLd={[serviceSchema, breadcrumbSchema]}
+  />
+
+  <div class="coverage-page">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <!-- Hero -->
+      <header class="coverage-page__hero">
+        <h1 class="coverage-page__title">{title}</h1>
+        {federalMinimum && (
+          <div class="coverage-page__federal">
+            Federal Minimum: <strong>{federalMinimum}</strong>
+          </div>
+        )}
+      </header>
+
+      <!-- Main content from markdown -->
+      <article class="coverage-page__content">
+        <slot />
+      </article>
+
+      <!-- Who Needs It -->
+      <section class="coverage-page__section">
+        <h2>Who Needs {title}?</h2>
+        <ul class="coverage-page__needs-list">
+          {whoNeedsIt.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- State Variations -->
+      {stateVariations.length > 0 && (
+        <section class="coverage-page__section">
+          <h2>State-by-State Variations</h2>
+          <div class="coverage-page__state-grid">
+            {stateVariations.map((sv) => (
+              <div class="coverage-page__state-card">
+                <h3>{sv.state}</h3>
+                <p>{sv.note}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Quote CTA -->
+      <QuoteFormCTA variant="full-width" heading={`Get ${title} Today`} />
+
+      <!-- Related Coverage Types -->
+      <section class="coverage-page__section">
+        <h2>All Coverage Types</h2>
+        <CoverageNav currentCoverage={slug} />
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<script src="https://app.close.com/forms/embed.js" is:inline defer></script>
+
+<style>
+  .coverage-page {
+    padding: 0 0 4rem;
+  }
+
+  .coverage-page__hero {
+    padding: 2rem 0 1.5rem;
+    border-bottom: 2px solid var(--gray-200);
+    margin-bottom: 2.5rem;
+  }
+
+  .coverage-page__title {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin: 0;
+  }
+
+  .coverage-page__federal {
+    margin-top: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--gray-600);
+  }
+
+  .coverage-page__federal strong {
+    color: var(--forest);
+    font-size: 1.1rem;
+  }
+
+  /* Article content */
+  .coverage-page__content {
+    max-width: 800px;
+    margin-bottom: 3rem;
+  }
+
+  .coverage-page__content :global(h2) {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .coverage-page__content :global(h3) {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .coverage-page__content :global(p) {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .coverage-page__content :global(ul),
+  .coverage-page__content :global(ol) {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .coverage-page__content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .coverage-page__content :global(td),
+  .coverage-page__content :global(th) {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--gray-200);
+    text-align: left;
+  }
+
+  .coverage-page__content :global(th) {
+    font-weight: 600;
+    background: var(--bg-light);
+  }
+
+  .coverage-page__content :global(strong) {
+    color: var(--forest);
+  }
+
+  .coverage-page__content :global(blockquote) {
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--gold);
+    background: rgba(218, 165, 32, 0.04);
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+    font-style: normal;
+  }
+
+  .coverage-page__content :global(blockquote p) {
+    margin: 0;
+  }
+
+  /* Sections */
+  .coverage-page__section {
+    margin-bottom: 3rem;
+  }
+
+  .coverage-page__section h2 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  /* Who needs it */
+  .coverage-page__needs-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .coverage-page__needs-list li {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    padding: 0.75rem 1rem;
+    background: var(--bg-light);
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
+    line-height: 1.5;
+  }
+
+  .coverage-page__needs-list li::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+  }
+
+  /* State variations */
+  .coverage-page__state-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .coverage-page__state-card {
+    padding: 1.25rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+  }
+
+  .coverage-page__state-card h3 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.05rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .coverage-page__state-card p {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .coverage-page__title {
+      font-size: 1.85rem;
+    }
+
+    .coverage-page__needs-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

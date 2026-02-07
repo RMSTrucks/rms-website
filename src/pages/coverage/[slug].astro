@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import CoverageLayout from '../../layouts/CoverageLayout.astro';
+
+export async function getStaticPaths() {
+  const coverageEntries = await getCollection('coverage');
+  return coverageEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<CoverageLayout entry={entry}>
+  <Content />
+</CoverageLayout>

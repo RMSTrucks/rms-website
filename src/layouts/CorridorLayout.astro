@@ -1,0 +1,328 @@
+---
+import Layout from './Layout.astro';
+import SEOHead from '../components/SEOHead.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import QuoteFormCTA from '../components/QuoteFormCTA.astro';
+
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'corridors'>;
+}
+
+const { entry } = Astro.props;
+const { title, metaDescription, interstate, endpoints, totalMiles, states } = entry.data;
+const slug = entry.slug;
+
+const canonicalUrl = `/corridors/${slug}/`;
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Corridors', href: '/corridors/' },
+  { label: interstate, href: '' },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    ...(item.href ? { "item": `https://rmstruckers.com${item.href}` } : {}),
+  })),
+};
+---
+
+<Layout title={`${title} | RMS Truck Insurance`} description={metaDescription}>
+  <SEOHead
+    slot="head"
+    title={`${title} | RMS Truck Insurance`}
+    description={metaDescription}
+    canonicalUrl={canonicalUrl}
+    jsonLd={breadcrumbSchema}
+  />
+
+  <div class="corridor-page">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <!-- Hero -->
+      <header class="corridor-page__hero">
+        <div class="corridor-page__interstate-badge">{interstate}</div>
+        <h1 class="corridor-page__title">{title}</h1>
+        <div class="corridor-page__meta">
+          <span>{endpoints}</span>
+          <span class="corridor-page__divider">|</span>
+          <span>{totalMiles.toLocaleString()} miles</span>
+          <span class="corridor-page__divider">|</span>
+          <span>{states.length} states</span>
+        </div>
+      </header>
+
+      <!-- Route indicator -->
+      <div class="corridor-page__route-bar">
+        {states.map((s, i) => (
+          <>
+            {i > 0 && <span class="corridor-page__route-arrow">&rarr;</span>}
+            <a href={`/states/trucking-insurance-${s.slug}/`} class="corridor-page__route-pill">
+              <span class="corridor-page__route-abbrev">{s.abbrev}</span>
+              <span class="corridor-page__route-miles">{s.miles} mi</span>
+            </a>
+          </>
+        ))}
+      </div>
+
+      <!-- Main content from markdown -->
+      <article class="corridor-page__content">
+        <slot />
+      </article>
+
+      <!-- State-by-State quick ref -->
+      <section class="corridor-page__section">
+        <h2>State-by-State Quick Reference</h2>
+        <div class="corridor-page__state-table-wrap">
+          <table class="corridor-page__state-table">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Miles on {interstate}</th>
+                <th>Key Info</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {states.map((s) => (
+                <tr>
+                  <td><strong>{s.name}</strong></td>
+                  <td>{s.miles}</td>
+                  <td>{s.keyInfo}</td>
+                  <td><a href={`/states/trucking-insurance-${s.slug}/`}>Insurance Guide &rarr;</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Quote CTA -->
+      <QuoteFormCTA variant="full-width" heading="Get Covered for This Corridor" />
+    </div>
+  </div>
+</Layout>
+
+<script src="https://app.close.com/forms/embed.js" is:inline defer></script>
+
+<style>
+  .corridor-page {
+    padding: 0 0 4rem;
+  }
+
+  /* Hero */
+  .corridor-page__hero {
+    padding: 2rem 0 1.5rem;
+    border-bottom: 2px solid var(--gray-200);
+    margin-bottom: 2rem;
+  }
+
+  .corridor-page__interstate-badge {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.75rem;
+    background: var(--forest);
+    color: var(--gold);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+  }
+
+  .corridor-page__title {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin: 0 0 0.5rem;
+  }
+
+  .corridor-page__meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--gray-600);
+  }
+
+  .corridor-page__divider {
+    margin: 0 0.5rem;
+    color: var(--gray-200);
+  }
+
+  /* Route bar */
+  .corridor-page__route-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 1.25rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .corridor-page__route-arrow {
+    color: var(--gold);
+    font-size: 0.85rem;
+  }
+
+  .corridor-page__route-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+
+  .corridor-page__route-pill:hover {
+    border-color: var(--gold);
+  }
+
+  .corridor-page__route-abbrev {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--forest);
+  }
+
+  .corridor-page__route-miles {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    color: var(--gray-600);
+  }
+
+  /* Content */
+  .corridor-page__content {
+    max-width: 800px;
+    margin-bottom: 3rem;
+  }
+
+  .corridor-page__content :global(h2) {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .corridor-page__content :global(h3) {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .corridor-page__content :global(p) {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .corridor-page__content :global(ul),
+  .corridor-page__content :global(ol) {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .corridor-page__content :global(blockquote) {
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--gold);
+    background: rgba(218, 165, 32, 0.04);
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+    font-style: normal;
+  }
+
+  .corridor-page__content :global(blockquote p) {
+    margin: 0;
+  }
+
+  .corridor-page__content :global(strong) {
+    color: var(--forest);
+  }
+
+  /* Sections */
+  .corridor-page__section {
+    margin-bottom: 3rem;
+  }
+
+  .corridor-page__section h2 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--forest);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  /* State table */
+  .corridor-page__state-table-wrap {
+    overflow-x: auto;
+  }
+
+  .corridor-page__state-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .corridor-page__state-table th,
+  .corridor-page__state-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--gray-200);
+    text-align: left;
+  }
+
+  .corridor-page__state-table th {
+    font-weight: 600;
+    background: var(--bg-light);
+    font-size: 0.9rem;
+  }
+
+  .corridor-page__state-table td {
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  .corridor-page__state-table a {
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .corridor-page__state-table a:hover {
+    color: var(--gold-hover);
+  }
+
+  @media (max-width: 768px) {
+    .corridor-page__title {
+      font-size: 1.75rem;
+    }
+
+    .corridor-page__route-bar {
+      gap: 0.25rem;
+    }
+
+    .corridor-page__route-arrow {
+      display: none;
+    }
+  }
+</style>

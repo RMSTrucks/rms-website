@@ -1,0 +1,186 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEOHead from '../../components/SEOHead.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { getCollection } from 'astro:content';
+
+const corridorEntries = await getCollection('corridors');
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Corridors', href: '' },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    ...(item.href ? { "item": `https://rmstruckers.com${item.href}` } : {}),
+  })),
+};
+---
+
+<Layout
+  title="Major Trucking Corridors | RMS Truck Insurance"
+  description="State-by-state guides for America's major trucking corridors. Weigh stations, chain laws, toll strategies, parking, and insurance tips for I-95, I-10, I-80, and more."
+>
+  <SEOHead
+    slot="head"
+    title="Major Trucking Corridors | RMS Truck Insurance"
+    description="State-by-state guides for America's major trucking corridors. Weigh stations, chain laws, toll strategies, parking, and insurance tips for I-95, I-10, I-80, and more."
+    canonicalUrl="/corridors/"
+    jsonLd={breadcrumbSchema}
+  />
+
+  <div class="corridors-index">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      <PageHeader
+        title="Major Trucking Corridors"
+        subtitle="Segment-by-segment guides for America's busiest interstates. Written by people who've actually run these routes."
+      />
+
+      <div class="corridors-index__intro">
+        <p>
+          Every corridor has its own personality -- its own hazards, its own weigh stations,
+          its own weather patterns. These guides break down each interstate segment by segment
+          so you know what to expect before your wheels hit the pavement.
+        </p>
+      </div>
+
+      <div class="corridors-index__grid">
+        {corridorEntries.map((entry) => (
+          <a href={`/corridors/${entry.slug}/`} class="corridors-index__card">
+            <div class="corridors-index__badge">{entry.data.interstate}</div>
+            <h2 class="corridors-index__name">{entry.data.title}</h2>
+            <div class="corridors-index__details">
+              <span>{entry.data.endpoints}</span>
+              <span class="corridors-index__sep">|</span>
+              <span>{entry.data.totalMiles.toLocaleString()} miles</span>
+            </div>
+            <div class="corridors-index__states">
+              {entry.data.states.map((s, i) => (
+                <>
+                  {i > 0 && <span class="corridors-index__arrow">&rarr;</span>}
+                  <span class="corridors-index__pill">{s.abbrev}</span>
+                </>
+              ))}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .corridors-index {
+    padding: 0 0 4rem;
+  }
+
+  .corridors-index__intro {
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+  }
+
+  .corridors-index__intro p {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+
+  .corridors-index__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .corridors-index__card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .corridors-index__card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 16px rgba(218, 165, 32, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .corridors-index__badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.6rem;
+    background: var(--forest);
+    color: var(--gold);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+  }
+
+  .corridors-index__name {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin: 0 0 0.5rem;
+  }
+
+  .corridors-index__details {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin-bottom: 0.75rem;
+  }
+
+  .corridors-index__sep {
+    margin: 0 0.35rem;
+    color: var(--gray-200);
+  }
+
+  .corridors-index__states {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin-top: auto;
+  }
+
+  .corridors-index__arrow {
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+
+  .corridors-index__pill {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.45rem;
+    background: var(--bg-light);
+    border: 1px solid var(--gray-200);
+    border-radius: 3px;
+    color: var(--text);
+  }
+
+  @media (max-width: 640px) {
+    .corridors-index__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .corridors-index__arrow {
+      display: none;
+    }
+  }
+</style>
